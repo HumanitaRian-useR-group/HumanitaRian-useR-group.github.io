@@ -46,9 +46,19 @@ KoBoToolbox has a number of advanced features which are very useful for advanced
     </item>
     
     <item>
+      <title>Support the Grand Bargain commitment on Impartial &amp; Joint Needs Assessment</title>
+      <link>/post/first-meeting/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/first-meeting/</guid>
+      <description>This report is the output of a 2 days workshop held in Amman -5-6 Nov 2018. The presentation &amp;amp; group work output that fed the discussions are accessible here. Participation was diverse and included analysts from all organisations below:
+Problem statement: Science is “show me”, not “trust me”! While the data collection phase has been for years the main challenge, we have now a deluge of data that we do not always make the most of.</description>
+    </item>
+    
+    <item>
       <title>Hello R Markdown - How to contribute to this site?</title>
       <link>/post/r-rmarkdown/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/r-rmarkdown/</guid>
       <description>Creating Websites with R Markdown is easy and can be done directly R Blogfown package. This is how this site is built.
@@ -57,10 +67,10 @@ KoBoToolbox has a number of advanced features which are very useful for advanced
     
     <item>
       <title>How to make the most of our data?</title>
-      <link>/post/post-title/</link>
-      <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
+      <link>/post/make-most-of-data/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/post-title/</guid>
+      <guid>/post/make-most-of-data/</guid>
       <description>AirBnB particpated to the recent R user conference in NYC in May 2017.
 The video posted here and this blog post presents 3 important principles:
  Develop packages to mainstream analysis workflow.

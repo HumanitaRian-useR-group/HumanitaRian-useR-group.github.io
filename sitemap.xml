@@ -18,18 +18,23 @@
   </url>
   
   <url>
-    <loc>/post/r-rmarkdown/</loc>
-    <lastmod>2018-12-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/</loc>
     <lastmod>2018-11-28T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/post-title/</loc>
-    <lastmod>2017-05-28T00:00:00+00:00</lastmod>
+    <loc>/post/first-meeting/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/r-rmarkdown/</loc>
+    <lastmod>2018-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/make-most-of-data/</loc>
+    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -87,6 +92,12 @@
   <url>
     <loc>/tags/</loc>
     <lastmod>2018-12-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/user-group/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

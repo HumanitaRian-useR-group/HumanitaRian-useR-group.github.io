@@ -1,7 +1,10 @@
 ---
 title: "Hello R Markdown - How to contribute to this site?"
 author: "HumanitaRian useR group"
-date: '2018-12-08'
+date: '2018-11-08'
+tags:
+  - WebData
+  - User-group
 ---
 
 ```{r setup, include=FALSE}
@@ -90,3 +93,6 @@ Simply fork the main repository - open the [vigie-blogdown.R] script and start c
 
 
 ![](/post/r-rmarkdown_files/new-post.png)
+
+
+An [indepth tutorial is presented here](https://amber.rbind.io/blog/2016/12/19/creatingsite/)
