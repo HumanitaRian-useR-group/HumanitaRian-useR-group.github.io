@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>Refugee Population Data Visualisation</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  <meta name="author" content="Edouard Legoupil">
+  <meta name="description" content="UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
+ Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
+ Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@HumanitaRianus1">
+    <meta name="twitter:title" content="Refugee Population Data Visualisation">
+    <meta name="twitter:description" content="UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
+ Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
+ Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Refugee Population Data Visualisation">
+  <meta property="og:description" content="UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
+ Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
+ Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.">
+  <meta property="og:url" content="/post/refugee-population-viz/">
+  <meta property="og:image" content="/images/avatar.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.53">
+
+
+<link rel="canonical" href="/post/refugee-population-viz/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HumanitaRian useR group">
+<meta name="msapplication-tooltip" content="HumanitaRian useR group">
+<meta name='msapplication-navbutton-color' content="#5fbf5e">
+<meta name="msapplication-TileColor" content="#5fbf5e">
+<meta name="msapplication-TileImage" content="/images/tile-image-windows.png">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" sizes="192x192" href="/images/touch-icon-android.png">
+<link rel="apple-touch-icon" href="/images/touch-icon-apple.png">
+
+
+<link rel="preload" href="/styles/main.min.css" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="/images/avatar.jpg" as="image">
+<link rel="preload" href="/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="/styles/main.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+        <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="/images/avatar.jpg" alt="Avatar">
+  
+  <h2 class="title">HumanitaRian useR group</h2>
+  
+  <p class="subtitle">~ Science is show me - not trust me ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://join.skype.com/qYBKC5q3wKp4">Contact</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:humanitarian.user@gmail.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/HumanitaRian-useR-group" title="GitHub" aria-label="GitHub">
+            <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/HumanitaRianus1" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Refugee Population Data Visualisation</h1>
+      <p class="post-meta">@Edouard Legoupil · Dec 24, 2018 · 3 min read</p>
+    </header>
+    <article class="post-content">
+
+
+<p>UNHCR <a href="http://popstats.unhcr.org">Population Statistics Database</a> contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.</p>
+<!--MORE-->
+<div id="displacement-statistics" class="section level1">
+<h1>Displacement Statistics</h1>
+<div id="the-population-database" class="section level2">
+<h2>The Population Database</h2>
+<p>UNHCR’s populations of concern status includes:</p>
+<ul>
+<li><p><strong>Refugees</strong> include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection. Since 2007, the refugee population also includes people in a refugee-like situation.</p></li>
+<li><p><strong>Asylum-seekers</strong> are individuals who have sought international protection and whose claims for refugee status have not yet been determined, irrespective of when they may have been lodged.</p></li>
+<li><p><strong>Internally displaced persons (IDPs)</strong> are people or groups of individuals who have been forced to leave their homes or places of habitual residence, in particular as a result of, or in order to avoid the effects of armed conflict, situations of generalised violence, violations of human rights, or natural or man-made disasters, and who have not crossed an international border. For the purposes of UNHCR’s statistics, this population only includes conflict-generated IDPs to whom the Office extends protection and/or assistance. Since 2007, the IDP population also includes people in an IDP-like situation. For global IDP estimates, see www.internal-displacement.org.</p></li>
+<li><p><strong>Returned refugees</strong> are former refugees who have returned to their country of origin spontaneously or in an organised fashion but are yet to be fully integrated. Such return would normally only take place in conditions of safety and dignity.</p></li>
+<li><p><strong>Returned IDPs</strong> refer to those IDPs who were beneficiaries of UNHCR’s protection and assistance activities and who returned to their areas of origin or habitual residence during the year.</p></li>
+<li><p><strong>Stateless persons</strong> are defined under international law as persons who are not considered as nationals by any State under the operation of its law. In other words, they do not possess the nationality of any State. UNHCR statistics refer to persons who fall under the agency’s statelessness mandate because they are stateless according to this international definition, but data from some countries may also include persons with undetermined nationality.</p></li>
+<li><p><strong>Others of concern</strong> refers to individuals who do not necessarily fall directly into any of the groups above, but to whom UNHCR extends its protection and/or assistance services, based on humanitarian or other special grounds.</p></li>
+</ul>
+</div>
+<div id="from-table-to-visualisation" class="section level2">
+<h2>from Table to Visualisation</h2>
+<p>The elements present below have been developped to facilitate the understanding of the statistics generated on displaced population in Middle East &amp; North Africa (MENA). The objective is to identify the most important trend both in terms of temporal and spatial approach in order to support advocacy.</p>
+<p>The MENA region have seen a series of conflict over the past 15 years that have generated large scale population displacement. There is currently 4 major conflict in the region and additional ones outside that have or are generating population displacement.</p>
+<p><img src="/post/refugee-population-viz_files/figure-html/time1-1.png" width="672" /></p>
+</div>
+</div>
+<div id="temporal-analysis" class="section level1">
+<h1>Temporal Analysis</h1>
+<p><a href="https://en.wikipedia.org/wiki/Sankey_diagram">Sankey Diagram</a> are a specific type of flow diagram, in which the width of the arrows is shown proportionally to the flow quantity. This type of dataviz put a visual emphasis on the <strong>major change of flows profile</strong> of refugees within multiple countries or regions.</p>
+<div id="asylum-seekers-refugees-in-mena" class="section level2">
+<h2>Asylum Seekers &amp; Refugees in MENA</h2>
+<p><img src="/post/refugee-population-viz_files/figure-html/sankeyregion-1.png" width="672" /></p>
+<p><img src="/post/refugee-population-viz_files/figure-html/sankey1-1.png" width="672" /></p>
+<p><img src="/post/refugee-population-viz_files/figure-html/sankeyorigin1-1.png" width="672" /></p>
+<p><img src="/post/refugee-population-viz_files/figure-html/sankey2-1.png" width="672" /></p>
+<p><img src="/post/refugee-population-viz_files/figure-html/sankeyorigin2-1.png" width="672" /></p>
+<p><img src="/post/refugee-population-viz_files/figure-html/sankey3-1.png" width="672" />
+<img src="/post/refugee-population-viz_files/figure-html/sankeyorigin3-1.png" width="672" /></p>
+</div>
+<div id="internally-displaced-persons-idps-in-mena" class="section level2">
+<h2>Internally displaced persons (IDPs) in MENA</h2>
+<p><img src="/post/refugee-population-viz_files/figure-html/sankeyregionidp-1.png" width="672" /></p>
+<p><img src="/post/refugee-population-viz_files/figure-html/sankeycountryidp-1.png" width="672" /></p>
+</div>
+</div>
+<div id="from-where-spatial-flow-visualisation" class="section level1">
+<h1>From Where ? Spatial Flow Visualisation</h1>
+<p><img src="/post/refugee-population-viz_files/figure-html/map1-1.png" width="672" /></p>
+<div id="map-for-2017-to-syria-situation-countries" class="section level2">
+<h2>Map for 2017 to Syria Situation Countries</h2>
+<p><img src="/post/refugee-population-viz_files/figure-html/map11-1.png" width="672" /></p>
+</div>
+<div id="map-for-2017-from-north-africa-countries" class="section level2">
+<h2>Map for 2017 from North Africa Countries</h2>
+<p><img src="/post/refugee-population-viz_files/figure-html/map2-1.png" width="672" /></p>
+</div>
+<div id="map-for-2017-from-north-africa-countries-1" class="section level2">
+<h2>Map for 2017 from North Africa Countries</h2>
+<p><img src="/post/refugee-population-viz_files/figure-html/map22-1.png" width="672" /></p>
+</div>
+<div id="map-for-2017-from-gulf-countries" class="section level2">
+<h2>Map for 2017 from Gulf Countries</h2>
+<p><img src="/post/refugee-population-viz_files/figure-html/map3-1.png" width="672" /></p>
+</div>
+<div id="map-for-2017-to-gulf-countries" class="section level2">
+<h2>Map for 2017 to Gulf Countries</h2>
+<p><img src="/post/refugee-population-viz_files/figure-html/map33-1.png" width="672" /></p>
+</div>
+</div>
+<div id="spatio-temporal-analysis" class="section level1">
+<h1>Spatio Temporal Analysis</h1>
+<p>An animation can be used to present the population movement over time</p>
+<ul>
+<li>This needs still to be adjusted to represent difference in flow betwen years…*</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/unhcr-mena/popstats/gh-pages/out/animatedmap.gif" /></p>
+</div>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/refugee"><span class="tag">Refugee</span></a></li>
+        
+          <li><a href="/tags/webdata"><span class="tag">WebData</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+
+
+<footer class="site-footer">
+  <p>© 2017-2018 HumanitaRian useR group</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="/scripts/index.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>

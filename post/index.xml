@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Sun, 23 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Refugee Population Data Visualisation</title>
+      <link>/post/refugee-population-viz/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/refugee-population-viz/</guid>
+      <description>UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
+ Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
+ Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.</description>
+    </item>
     
     <item>
       <title>rhdx: a R package to interact with HDX</title>
