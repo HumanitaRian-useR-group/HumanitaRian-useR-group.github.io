@@ -1,5 +1,5 @@
 ---
-title: "Hello R Markdown"
+title: "Hello R Markdown - How to contribute to this site?"
 author: "HumanitaRian useR group"
 date: '2018-12-08'
 ---
@@ -8,11 +8,18 @@ date: '2018-12-08'
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
+[Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/) is easy and can be done directly R Blogfown package. This is how this site is built.
 
+<!--MORE-->
+
+The website is generated from R Markdown documents (R is optional, i.e., you can use plain Markdown documents without R code chunks). This brings a huge amount of benefits, especially if your website is related to data analysis or (R) programming. Being able to use Markdown implies simplicity and more importantly, portability (e.g., you are giving yourself the chance to convert your blog posts to PDF and publish to journals or even books in the future). R Markdown gives you the benefits of dynamic documents — all your results, such as tables, graphics, and inline values, can be computed and rendered dynamically from R code, hence the results you present on your website are more likely to be reproducible. 
+
+
+![](/post/r-rmarkdown_files/cover.png)
 
 # R Markdown
 
-This is an R Markdown document. 
+
 Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 You can embed an R code chunk like this:
@@ -38,7 +45,7 @@ pie(
 ```
 
 
-# Submit blog post to the community
+# Blog post writing
 
 This is a post written in plain Markdown (`*.md`) instead of R Markdown (`*.Rmd`). The major differences are:
 
@@ -60,3 +67,9 @@ When creating a new post, you have to decide whether the post format is Markdown
 blogdown::new_post("Post Title", rmd = FALSE)
 ```
 
+# Submiting to the platform
+
+Simply fork the main repository - open the [vigie-blogdown.R] script and start creating your Rmd.
+
+
+![](/post/r-rmarkdown_files/new-post.png)

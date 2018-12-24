@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>rhdx: a R package to interact with HDX</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  <meta name="author" content="Ahmadou Dicko">
+  <meta name="description" content="rhdx is an R package to interact with the HDX API.
+It provide a series of utilities to facilitates interaction &amp;amp; analysis.
+The Humanitarian Data Exchange (HDX) is an open platform for sharing data across crises and organisations. Launched in July 2014, the goal of HDX is to make humanitarian data easy to find and use for analysis. Our growing collection of datasets has been accessed by users in over 200 countries and territories.">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@HumanitaRianus1">
+    <meta name="twitter:title" content="rhdx: a R package to interact with HDX">
+    <meta name="twitter:description" content="rhdx is an R package to interact with the HDX API.
+It provide a series of utilities to facilitates interaction &amp;amp; analysis.
+The Humanitarian Data Exchange (HDX) is an open platform for sharing data across crises and organisations. Launched in July 2014, the goal of HDX is to make humanitarian data easy to find and use for analysis. Our growing collection of datasets has been accessed by users in over 200 countries and territories.">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="rhdx: a R package to interact with HDX">
+  <meta property="og:description" content="rhdx is an R package to interact with the HDX API.
+It provide a series of utilities to facilitates interaction &amp;amp; analysis.
+The Humanitarian Data Exchange (HDX) is an open platform for sharing data across crises and organisations. Launched in July 2014, the goal of HDX is to make humanitarian data easy to find and use for analysis. Our growing collection of datasets has been accessed by users in over 200 countries and territories.">
+  <meta property="og:url" content="/post/rhdx_demo/">
+  <meta property="og:image" content="/images/avatar.jpg">
+
+
+
+
+<meta name="generator" content="Hugo 0.53">
+
+
+<link rel="canonical" href="/post/rhdx_demo/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HumanitaRian useR group">
+<meta name="msapplication-tooltip" content="HumanitaRian useR group">
+<meta name='msapplication-navbutton-color' content="#5fbf5e">
+<meta name="msapplication-TileColor" content="#5fbf5e">
+<meta name="msapplication-TileImage" content="/images/tile-image-windows.png">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" sizes="192x192" href="/images/touch-icon-android.png">
+<link rel="apple-touch-icon" href="/images/touch-icon-apple.png">
+
+
+<link rel="preload" href="/styles/main.min.css" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="/images/avatar.jpg" as="image">
+<link rel="preload" href="/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="/styles/main.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+        <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="/images/avatar.jpg" alt="Avatar">
+  
+  <h2 class="title">HumanitaRian useR group</h2>
+  
+  <p class="subtitle">~ Science is show me - not trust me ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://join.skype.com/qYBKC5q3wKp4">Contact</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:humanitarian.user@gmail.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/HumanitaRian-useR-group" title="GitHub" aria-label="GitHub">
+            <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/HumanitaRianus1" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">rhdx: a R package to interact with HDX</h1>
+      <p class="post-meta">@Ahmadou Dicko · Dec 23, 2018 · 6 min read</p>
+    </header>
+    <article class="post-content">
+
+
+<p>rhdx is an R package to interact with the <a href="https://data.humdata.org/">HDX</a> API.</p>
+<p>It provide a series of utilities to facilitates interaction &amp; analysis.</p>
+<p>The Humanitarian Data Exchange (HDX) is an open platform for sharing data across crises and organisations. Launched in July 2014, the goal of HDX is to make humanitarian data easy to find and use for analysis. Our growing collection of datasets has been accessed by users in over 200 countries and territories.</p>
+<!--MORE-->
+<div id="install-rhdx" class="section level1">
+<h1>Install <code>rhdx</code></h1>
+<pre class="r"><code>devtools::install_git(&quot;https://gitlab.com/dickoa/rhdx&quot;)</code></pre>
+<pre><code>## 
+##   
+   checking for file ‘/tmp/RtmpLTkLYg/file2057236d9c72/DESCRIPTION’ ...
+  
+✔  checking for file ‘/tmp/RtmpLTkLYg/file2057236d9c72/DESCRIPTION’
+## ─  preparing ‘rhdx’:
+## ✔  checking DESCRIPTION meta-information
+## 
+  
+─  checking for LF line-endings in source and make files and shell scripts
+## 
+  
+─  checking for empty or unneeded directories
+## 
+  
+─  building ‘rhdx_0.0.1.9000.tar.gz’
+## 
+  
+   
+## </code></pre>
+<pre class="r"><code>devtools::install_github(&quot;dickoa/rhxl&quot;)</code></pre>
+<pre class="r"><code>devtools::install_git(&quot;https://gitlab.com/dickoa/rhdx&quot;)
+devtools::install_github(&quot;dickoa/rhxl&quot;)</code></pre>
+</div>
+<div id="connect-to-the-hdx-server" class="section level1">
+<h1>Connect to the HDX server</h1>
+<pre class="r"><code>library(rhdx)
+set_rhdx_config(hdx_site = &quot;prod&quot;)</code></pre>
+<p>You can check your config</p>
+<pre class="r"><code>get_rhdx_config()</code></pre>
+<pre><code>## &lt;HDX Configuration&gt; 
+##   HDX site: prod
+##   HDX site url: https://data.humdata.org/
+##   HDX API key:</code></pre>
+</div>
+<div id="search-datasets" class="section level1">
+<h1>Search datasets</h1>
+<div id="list-datasets-matching-a-pattern" class="section level2">
+<h2>List datasets matching a pattern</h2>
+<pre class="r"><code>library(tidyverse)
+search_datasets(&quot;ACLED Mali&quot;, rows = 2)</code></pre>
+<pre><code>## [[1]]
+## &lt;HDX Dataset&gt; 5895de63-010c-4716-97cb-fbdd3caf4e3a 
+##   Title: Mali - Conflict Data
+##   Name: acled-data-for-mali
+##   Date: 01/01/1997-12/31/2018
+##   Tags (up to 5): conflicts, hxl, political violence, protests
+##   Locations (up to 5): mli
+##   Resources (up to 5): Conflict Data for Mali
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;datasets_list&quot;</code></pre>
+</div>
+<div id="select-the-dataset" class="section level2">
+<h2>Select the dataset</h2>
+<p>We will select the first dataset</p>
+<pre class="r"><code>search_datasets(&quot;ACLED Mali&quot;, rows = 2) %&gt;%
+  nth(1)</code></pre>
+<pre><code>## &lt;HDX Dataset&gt; 5895de63-010c-4716-97cb-fbdd3caf4e3a 
+##   Title: Mali - Conflict Data
+##   Name: acled-data-for-mali
+##   Date: 01/01/1997-12/31/2018
+##   Tags (up to 5): conflicts, hxl, political violence, protests
+##   Locations (up to 5): mli
+##   Resources (up to 5): Conflict Data for Mali</code></pre>
+</div>
+<div id="list-dataset-resources" class="section level2">
+<h2>List dataset resources</h2>
+<pre class="r"><code>search_datasets(&quot;ACLED Mali&quot;, rows = 2) %&gt;%
+  nth(1) %&gt;%
+  get_resources()</code></pre>
+<pre><code>## [[1]]
+## &lt;HDX Resource&gt; 54b56e5d-571b-4416-a1fa-4000fae6d15b 
+##   Name: Conflict Data for Mali
+##   Description: Conflict data with HXL tags
+##   Size: 
+##   Format: CSV</code></pre>
+</div>
+<div id="we-select-the-first-resource-and-read-it-directly-in-r" class="section level2">
+<h2>We select the first resource and read it directly in R</h2>
+<pre class="r"><code>search_datasets(&quot;ACLED Mali&quot;, rows = 2) %&gt;%
+  nth(1) %&gt;%
+  get_resources() %&gt;%
+  nth(1) %&gt;%
+  read_session(filename = &quot;acled_mali.csv&quot;, hxl = TRUE)</code></pre>
+<pre><code>## # A tibble: 2,422 x 30
+##    data_id   iso event_id_cnty event_id_no_cnty event_date  year
+##  *   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                    &lt;dbl&gt; &lt;date&gt;     &lt;dbl&gt;
+##  1 2350101   466 MLI2512                   2512 2018-12-15  2018
+##  2 2350100   466 MLI2510                   2510 2018-12-14  2018
+##  3 2350099   466 MLI2511                   2511 2018-12-14  2018
+##  4 2350096   466 MLI2507                   2507 2018-12-13  2018
+##  5 2350097   466 MLI2509                   2509 2018-12-13  2018
+##  6 2350098   466 MLI2506                   2506 2018-12-13  2018
+##  7 2350095   466 MLI2505                   2505 2018-12-13  2018
+##  8 2350094   466 MLI2508                   2508 2018-12-13  2018
+##  9 2350091   466 MLI2501                   2501 2018-12-12  2018
+## 10 2350090   466 MLI2504                   2504 2018-12-12  2018
+## # ... with 2,412 more rows, and 24 more variables: time_precision &lt;dbl&gt;,
+## #   event_type &lt;chr&gt;, actor1 &lt;chr&gt;, assoc_actor_1 &lt;chr&gt;, inter1 &lt;dbl&gt;,
+## #   actor2 &lt;chr&gt;, assoc_actor_2 &lt;chr&gt;, inter2 &lt;dbl&gt;, interaction &lt;dbl&gt;,
+## #   region &lt;chr&gt;, country &lt;chr&gt;, admin1 &lt;chr&gt;, admin2 &lt;chr&gt;, admin3 &lt;chr&gt;,
+## #   location &lt;chr&gt;, latitude &lt;dbl&gt;, longitude &lt;dbl&gt;, geo_precision &lt;dbl&gt;,
+## #   source &lt;chr&gt;, source_scale &lt;chr&gt;, notes &lt;chr&gt;, fatalities &lt;dbl&gt;,
+## #   timestamp &lt;dbl&gt;, iso3 &lt;chr&gt;</code></pre>
+</div>
+<div id="save-it-for-further-use" class="section level2">
+<h2>Save it for further use</h2>
+<pre class="r"><code>search_datasets(&quot;ACLED Mali&quot;, rows = 2) %&gt;%
+  nth(1) %&gt;%
+  get_resources() %&gt;%
+  nth(1) %&gt;%
+  read_session(filename = &quot;acled_mali.csv&quot;, hxl = TRUE) -&gt; acled_mali</code></pre>
+</div>
+</div>
+<div id="now-lets-see-where-we-have-these-conflicts-in-mali" class="section level1">
+<h1>Now let’s see where we have these conflicts in Mali</h1>
+<div id="first-step-just-select-the-coordinates" class="section level2">
+<h2>First step: just select the coordinates</h2>
+<pre class="r"><code>acled_mali %&gt;%
+  select(longitude, latitude) %&gt;%
+  distinct() -&gt; acled_mali_coord
+acled_mali_coord</code></pre>
+<pre><code>## # A tibble: 557 x 2
+##    longitude latitude
+##        &lt;dbl&gt;    &lt;dbl&gt;
+##  1    -4.43      15.2
+##  2    -4.50      14.2
+##  3    -8         12.6
+##  4    -3.48      15.1
+##  5    -0.844     16.1
+##  6    -2.86      16.2
+##  7     0.992     16.4
+##  8    -4.35      16.5
+##  9     2.55      15.5
+## 10     0.830     20.5
+## # ... with 547 more rows</code></pre>
+</div>
+<div id="second-step-download-the-official-mali-cod-boundaries-from-hdx" class="section level2">
+<h2>Second step download the official Mali COD boundaries from HDX</h2>
+<pre class="r"><code>read_dataset(&quot;administrative-boundaries-cod-mli&quot;) %&gt;%
+  get_resources()</code></pre>
+<pre><code>## [[1]]
+## &lt;HDX Resource&gt; a1cb6b00-b08a-4ab7-867a-db4669fcea7e 
+##   Name: MLI_COD_AdminBoundaries_KMZ.zip
+##   Description: Admin Levels 0 - 4 for Mali COD 
+##   Size: 1572358
+##   Format: KMZ
+## 
+## [[2]]
+## &lt;HDX Resource&gt; 7f0a10f2-9082-4196-806e-f4034a38839d 
+##   Name: MLI_COD_AdminBoundaries_gdb101.zip
+##   Description: Admin Levels 0 - 4 for Mali COD 
+##   Size: 3950069
+##   Format: ZIP
+## 
+## [[3]]
+## &lt;HDX Resource&gt; 4d3a2021-c6ba-47af-97af-d016e4509667 
+##   Name: MLI_COD_AdminBoundaries_CSV_WKT.zip
+##   Description: This dataset is a WKT file (embedded in CSV) of COD administrative boundaries for Mali
+##   Size: 1354097
+##   Format: wkt
+## 
+## [[4]]
+## &lt;HDX Resource&gt; 1ba8420f-7361-4967-a042-afcef4217167 
+##   Name: mli_admbnda_adm0_gov.zip
+##   Description: Admin Levels 0 for Mali COD - polygon shapefile 
+##   Size: 175757
+##   Format: zipped shapefile
+## 
+## [[5]]
+## &lt;HDX Resource&gt; 6cea9194-7747-4103-8188-c41053bc7e05 
+##   Name: mli_admbnda_adm1_gov_ocha_itos.zip
+##   Description: Admin Levels 1 for Mali COD - polygon shapefile 
+##   Size: 249120
+##   Format: ZIPPED SHAPEFILE
+## 
+## [[6]]
+## &lt;HDX Resource&gt; 986d42a2-dfa1-4317-aaa8-a1cb276ee5bd 
+##   Name: mli_admbnda_adm2_gov_ocha_itos.zip
+##   Description: Admin Levels 2 for Mali COD - polygon shapefile 
+##   Size: 363515
+##   Format: zipped shapefile
+## 
+## [[7]]
+## &lt;HDX Resource&gt; 18481193-df8b-4f91-8c5e-fd4b94919dec 
+##   Name: mli_admbnda_adm3_gov_ocha.zip
+##   Description: Admin Levels 3 for Mali COD - polygon shapefile 
+##   Size: 807237
+##   Format: ZIPPED SHAPEFILE
+## 
+## [[8]]
+## &lt;HDX Resource&gt; ebed0012-ddc7-4bd6-9ab1-4f0b01a795cd 
+##   Name: mli_admbnda_adm4_iom_gov.zip
+##   Description: Admin Levels 4 for Mali COD - polygon shapefile 
+##   Size: 145651
+##   Format: zipped shapefile
+## 
+## [[9]]
+## &lt;HDX Resource&gt; 02e988ca-1996-47d5-9d8b-d58a9ee96914 
+##   Name: MLI feature server (French)
+##   Description: This map service contains OCHA Common Operational Datasets for Mali: Administrative Boundaries and Populated Places. The service is available as ESRI Map, ESRI Feature, WMS, and KML Services. 
+##   Size: 
+##   Format: web service
+## 
+## [[10]]
+## &lt;HDX Resource&gt; 89788941-205e-465e-bf1f-5c3b7422a71b 
+##   Name: MLI map server (French)
+##   Description: This map service contains OCHA Common Operational Datasets for Mali: Administrative Boundaries and Populated Places. The service is available as ESRI Map, ESRI Feature, WMS, and KML Services. 
+##   Size: 
+##   Format: web service
+## 
+## [[11]]
+## &lt;HDX Resource&gt; c65c3cf7-e4d5-4069-8f26-54ca6f49a22e 
+##   Name: MLI P-code feature server
+##   Description: This map service is intended as a labelling layer for PCODES from OCHA&#39;s Common Operational Datasets for Mali. It also provides access to Administrative Boundaries geometry. The service is available as ESRI Map, WMS, WFS and KML Services. The map service pcode labels are intended to be used in conjunction with the basemap services located at http://gistmaps.itos.uga.edu/arcgis/rest/services/COD_External/MLI_FR/MapServer 
+## 
+##   Size: 
+##   Format: web service
+## 
+## [[12]]
+## &lt;HDX Resource&gt; b4ff6a29-c1c9-491c-8391-858281d644e7 
+##   Name: MLI P-code map server
+##   Description: This map service is intended as a labelling layer for PCODES from OCHA&#39;s Common Operational Datasets for Mali. It also provides access to Administrative Boundaries geometry. The service is available as ESRI Map, WMS, WFS and KML Services. The map service pcode labels are intended to be used in conjunction with the basemap services located at http://gistmaps.itos.uga.edu/arcgis/rest/services/COD_External/MLI_FR/MapServer
+##   Size: 
+##   Format: web service</code></pre>
+<p>We just need the country boundary (admin 0) which is the fourth resource</p>
+<pre class="r"><code>read_dataset(&quot;administrative-boundaries-cod-mli&quot;) %&gt;%
+  get_resources() %&gt;%
+  nth(4) %&gt;% 
+  read_session() -&gt; adm0_mali</code></pre>
+<p><code>ggplot2</code> is a R package for graphics with a nice grammar to compose any type of visual, we also use <code>sf</code> which add spatial data support.</p>
+<pre class="r"><code>library(sf)
+ggplot() +
+  geom_sf(data = adm0_mali) +
+  geom_point(data = acled_mali_coord, aes(x = longitude, y = latitude)) +
+  theme_bw()</code></pre>
+<p><img src="/post/rhdx_demo_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+</div>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/hdx"><span class="tag">HDX</span></a></li>
+        
+          <li><a href="/tags/webdata"><span class="tag">WebData</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+
+
+<footer class="site-footer">
+  <p>© 2017-2018 HumanitaRian useR group</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="/scripts/index.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>
