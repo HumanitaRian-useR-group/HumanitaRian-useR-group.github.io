@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on HumanitaRian useR group</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on HumanitaRian useR group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accessing data from REST API using R: examples for KoBoToolbox and Country Based Pooled Fund (CBPF) data</title>
+      <link>/post/kobo_restapi/</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/kobo_restapi/</guid>
+      <description>R program has become a language of choice for data science work. It has rich feature library that can be readily used for variety of data management tasks. This article focuses on accessing data from the KoBoToolbox.
+KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
+KoBoToolbox has a number of advanced features which are very useful for advanced use case scenario.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/r-rmarkdown/</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>How to make the most of our data?</title>
+      <link>/post/post-title/</link>
+      <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/post-title/</guid>
+      <description>AirBnB particpated to the recent R user conference in NYC in May 2017.
+The video posted here and this blog post presents 3 important principles:
+ Develop packages to mainstream analysis workflow.
+ Promote education &amp;amp; contributions within the organisation
+ Ensure reproducibility.
+  </description>
+    </item>
+    
+    <item>
+      <title>Humanitarian Data Scientist Job</title>
+      <link>/post/humanitarian-data-scientist/</link>
+      <pubDate>Sat, 20 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/humanitarian-data-scientist/</guid>
+      <description>We have all heard and seen the trend of increasing volumes of data becoming available to us through a variety of mechanisms. With this trend, we have also seen the increased recognition of those who know how to handle such data. Historically, we may have referred to them as statisticians. However, as technologies in this discipline have multiplied and become affordable (or free), increasing numbers of people have been empowered to enter the business.</description>
+    </item>
+    
+  </channel>
+</rss>
