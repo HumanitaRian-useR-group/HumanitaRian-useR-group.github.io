@@ -35,14 +35,14 @@
   <meta name="twitter:site" content="@HumanitaRianus1">
   <meta name="twitter:title" content="HumanitaRian-useR-group">
   <meta name="twitter:description" content="The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.">
-  <meta name="twitter:image" content="/images/avatar.jpg">
+  <meta name="twitter:image" content="/images/avatar.png">
 
   
   <meta property="og:type" content="website">
   <meta property="og:title" content="HumanitaRian-useR-group">
   <meta property="og:description" content="The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.">
   <meta property="og:url" content="/tags/job/">
-  <meta property="og:image" content="/images/avatar.jpg">
+  <meta property="og:image" content="/images/avatar.png">
 
 
 
@@ -68,23 +68,25 @@
 
 
 
+<meta name="theme-color" content="#02b875">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="HumanitaRian useR group">
 <meta name="msapplication-tooltip" content="HumanitaRian useR group">
-<meta name='msapplication-navbutton-color' content="#5fbf5e">
-<meta name="msapplication-TileColor" content="#5fbf5e">
-<meta name="msapplication-TileImage" content="/images/tile-image-windows.png">
-<link rel="icon" href="/images/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-<link rel="icon" sizes="192x192" href="/images/touch-icon-android.png">
-<link rel="apple-touch-icon" href="/images/touch-icon-apple.png">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+<link rel="manifest" href="/manifest.json">
 
 
 <link rel="preload" href="/styles/main.min.css" as="style">
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
-<link rel="preload" href="/images/avatar.jpg" as="image">
+<link rel="preload" href="/images/avatar.png" as="image">
 <link rel="preload" href="/images/grey-prism.svg" as="image">
 
 
@@ -126,7 +128,7 @@
     
     
   <header class="site-header">
-  <img class="avatar" src="/images/avatar.jpg" alt="Avatar">
+  <img class="avatar" src="/images/avatar.png" alt="Avatar">
   
   <h2 class="title">HumanitaRian useR group</h2>
   
@@ -179,6 +181,10 @@
           <a href="//twitter.com/HumanitaRianus1" title="Twitter" aria-label="Twitter">
             <span class="icon icon-twitter" aria-hidden="true"></span>
           </a>
+        </li><li class="social-item">
+          <a href="//www.linkedin.com/in/https://www.linkedin.com/groups/8732707/" title="Linkedin" aria-label="Linkedin">
+            <span class="icon icon-linkedin" aria-hidden="true"></span>
+          </a>
         </li></ul>
   </nav>
 </header>
@@ -207,8 +213,6 @@
     
   </section>
   
-
-
 <footer class="site-footer">
   <p>© 2017-2019 HumanitaRian useR group</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
@@ -226,6 +230,14 @@
 
 
 <script src="/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
 
 
 
