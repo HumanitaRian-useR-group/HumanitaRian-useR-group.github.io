@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>Fatal events in the Sahel</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  <meta name="author" content="Ahmadou Dicko">
+  <meta name="description" content="In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries. The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
+remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@HumanitaRianus1">
+    <meta name="twitter:title" content="Fatal events in the Sahel">
+    <meta name="twitter:description" content="In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries. The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
+remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.">
+    <meta name="twitter:image" content="/images/avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fatal events in the Sahel">
+  <meta property="og:description" content="In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries. The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
+remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.">
+  <meta property="og:url" content="/post/sahel-fatalities/">
+  <meta property="og:image" content="/images/avatar.png">
+
+
+
+
+<meta name="generator" content="Hugo 0.53">
+
+
+<link rel="canonical" href="/post/sahel-fatalities/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="HumanitaRian useR group">
+<meta name="msapplication-tooltip" content="HumanitaRian useR group">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+<link rel="manifest" href="/manifest.json">
+
+
+<link rel="preload" href="/styles/main.min.css" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="/images/avatar.png" as="image">
+<link rel="preload" href="/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="/styles/main.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+        <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">HumanitaRian useR group</h2>
+  
+  <p class="subtitle">~ Science is show me - not trust me ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://join.skype.com/qYBKC5q3wKp4">Skype-group</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:humanitarian.user@gmail.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/HumanitaRian-useR-group" title="GitHub" aria-label="GitHub">
+            <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/HumanitaRianus1" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//www.linkedin.com/in/https://www.linkedin.com/groups/8732707/" title="Linkedin" aria-label="Linkedin">
+            <span class="icon icon-linkedin" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Fatal events in the Sahel</h1>
+      <p class="post-meta">@Ahmadou Dicko · Feb 27, 2019 · 11 min read</p>
+    </header>
+    <article class="post-content">
+
+
+<p>In this short post (crossposted <a href="https://www.ahmadoudicko.com/post/sahel-fatalities/">here</a>), we will show how to use the <code>rhdx</code>, <code>dplyr</code>, <code>purrr</code>, <code>sf</code> and <code>gganimate</code> R packages to show the number of fatal incidents in 5 Sahelian countries.
+The <a href="https://gitlab.com/dickoa/rhdx"><code>rhdx</code></a> package is not yet on CRAN, so you will need to use the <a href="https://cran.r-project.org/web/packages/remotes/index.html"><code>remotes</code></a> package to install it first:</p>
+<pre class="r"><code>remotes::install_gitlab(&quot;dickoa/rhxl&quot;) ## rhdx dependency
+remotes::install_gitlab(&quot;dickoa/rhdx&quot;) ## github mirror also avalailable
+
+install.packages(&quot;gifski&quot;)</code></pre>
+<p>This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+G5 Sahel: conflict-related fatalities totaled 2,832 in 2018, a 74% increase relative to 2017.<br><br>- On average, 63% of fatalities have been concentrated in Mali since 2012.<br>- Last year, fatalities were largely located in central Mali, the Liptako-Gourma region &amp; the Lake Chad basin. <a href="https://t.co/feRtcxsScb">pic.twitter.com/feRtcxsScb</a>
+</p>
+— José Luengo-Cabrera (<span class="citation">@J_LuengoCabrera</span>) <a href="https://twitter.com/J_LuengoCabrera/status/1100340244535263232?ref_src=twsrc%5Etfw">February 26, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Our visualization will be done for the following countries in the Sahel : <em>Burkina Faso</em>, <em>Mali</em>, <em>Chad</em>, <em>Mauritania</em> and <em>Niger</em>.
+There is a lot of insecurity and conflicts in these countries that resulted in the death of several thousands of people.</p>
+<pre class="r"><code>library(tidyverse)
+library(sf)
+library(rhdx)
+library(gganimate)</code></pre>
+<p>The goal of this post is to visualize the number of fatal events in theses countries between 2012 and 2018 using an animated map.
+In order to do that, will need to get the administrative boundaries for these countries.
+We can get the latest boundaries validated by the governments and the humanitarian community directly from <a href="https://data.humdata.org/"><em>HDX</em></a> using the <code>rhdx</code> package.
+We will use <code>rhdx::pull_dataset</code> function and use the name of the dataset of interest as value. <code>rhdx::get_resource</code> and <code>rhdx::download_resource</code> allow to respectively get the a resource
+by its index and read the data into memory.</p>
+<pre class="r"><code>set_rhdx_config()
+
+wca &lt;- pull_dataset(&quot;west-and-central-africa-administrative-boundaries-levels&quot;) %&gt;%
+  get_resource(1) %&gt;%
+  read_resource()</code></pre>
+<pre><code>## reading layer: wca_adm0</code></pre>
+<pre class="r"><code>glimpse(wca)</code></pre>
+<pre><code>## Observations: 24
+## Variables: 6
+## $ OBJECTID   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16…
+## $ admin0Name &lt;chr&gt; &quot;Benin&quot;, &quot;Burkina Faso&quot;, &quot;Cabo Verde&quot;, &quot;Cameroon&quot;, &quot;C…
+## $ admin0Pcod &lt;chr&gt; &quot;BJ&quot;, &quot;BF&quot;, &quot;CV&quot;, &quot;CM&quot;, &quot;CF&quot;, &quot;TD&quot;, &quot;CI&quot;, &quot;CD&quot;, &quot;GQ&quot;,…
+## $ Shape_Leng &lt;dbl&gt; 19.027187, 31.489997, 13.599357, 47.520296, 49.366900…
+## $ Shape_Area &lt;dbl&gt; 9.52054910, 22.71996765, 0.34276153, 38.08645238, 50.…
+## $ geometry   &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((2.890491 12..., MULTIPOL…</code></pre>
+<p><code>wca</code> is a <a href="https://r-spatial.github.io/sf/articles/sf1.html"><code>Simple Feature</code></a> and we can manipulate it using <code>sf</code> and <code>dplyr</code>.
+The data downloaded from <em>HDX</em> covers the 24 countries of West and Central Africa, we will filter the data to extract the 5 countries of interest.</p>
+<pre class="r"><code>g5_ab &lt;- wca %&gt;%
+  filter(admin0Pcod %in% c(&quot;BF&quot;, &quot;ML&quot;, &quot;NE&quot;, &quot;MR&quot;, &quot;TD&quot;))</code></pre>
+<p>We can now check our data by plotting it</p>
+<pre class="r"><code>g5_ab %&gt;%
+  ggplot() +
+  geom_sf() +
+  theme_minimal()</code></pre>
+<p><img src="/post/sahel-fatalities_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Now that we have our background map, the next step is to get the <em>conflict data</em>. One of the main source for conflict data in the Sahel is <a href="https://www.acleddata.com/">ACLED</a>
+and it can also be accessed from <em>HDX</em>. We will use the <code>rhdx::search_datasets</code> function since it allows to access multiple datasets as <code>list</code>.
+<em>HDX</em> is based on CKAN whose search is powered by <a href="http://lucene.apache.org/solr/"><code>SOLR</code></a>. SOLR can be used to build complex queries to get exactly the datasets we want.
+In our case, we want conflict data from the <a href="http://data.humdata.org/organization/acled">ACLED organization</a> in <em>HDX</em> and from the 5 countries (<code>group</code> in CKAN API)</p>
+<pre class="r"><code>solr_query &lt;- &quot;organization:acled AND groups:(mli OR bfa OR tcd OR mrt OR ner)&quot;
+g5_acled &lt;- search_datasets(query = &quot;conflict data&quot;,
+                            fq = solr_query)</code></pre>
+<pre class="r"><code>g5_acled</code></pre>
+<pre><code>## [[1]]
+## &lt;HDX Dataset&gt; 331be608-def1-45c5-a9b0-36d4b3b4197e 
+##   Title: Chad - Conflict Data
+##   Name: acled-data-for-chad
+##   Date: 01/01/1997-12/31/2019
+##   Tags (up to 5): conflicts, hxl, political violence, protests
+##   Locations (up to 5): tcd
+##   Resources (up to 5): Conflict Data for Chad
+## 
+## [[2]]
+## &lt;HDX Dataset&gt; 653dc159-097d-4fef-9527-53ee30d132ff 
+##   Title: Niger - Conflict Data
+##   Name: acled-data-for-niger
+##   Date: 01/01/1997-12/31/2019
+##   Tags (up to 5): conflicts, hxl, political violence, protests
+##   Locations (up to 5): ner
+##   Resources (up to 5): Conflict Data for Niger
+## 
+## [[3]]
+## &lt;HDX Dataset&gt; 537ee9a6-ff76-4e00-a9f6-1c7c16ae1628 
+##   Title: Mauritania - Conflict Data
+##   Name: acled-data-for-mauritania
+##   Date: 01/01/1997-12/31/2019
+##   Tags (up to 5): conflicts, hxl, political violence, protests
+##   Locations (up to 5): mrt
+##   Resources (up to 5): Conflict Data for Mauritania
+## 
+## [[4]]
+## &lt;HDX Dataset&gt; 5895de63-010c-4716-97cb-fbdd3caf4e3a 
+##   Title: Mali - Conflict Data
+##   Name: acled-data-for-mali
+##   Date: 01/01/1997-12/31/2019
+##   Tags (up to 5): conflicts, hxl, political violence, protests
+##   Locations (up to 5): mli
+##   Resources (up to 5): Conflict Data for Mali
+## 
+## [[5]]
+## &lt;HDX Dataset&gt; 6913ddaf-1ad2-4cad-b178-592b6d49cd61 
+##   Title: Burkina Faso - Conflict Data
+##   Name: acled-data-for-burkina-faso
+##   Date: 01/01/1997-12/31/2019
+##   Tags (up to 5): conflicts, hxl, political violence, protests
+##   Locations (up to 5): bfa
+##   Resources (up to 5): Conflict Data for Burkina Faso
+## 
+## [[6]]
+## &lt;HDX Dataset&gt; 71d852e4-e41e-4320-a770-9fc2bb87fb64 
+##   Title: ACLED Conflict Data for Africa 1997-2016
+##   Name: acled-conflict-data-for-africa-1997-lastyear
+##   Date: 01/01/2017
+##   Tags (up to 5): conflict, coordinates, geodata, political violence, protection
+##   Locations (up to 5): dza, ago, ben, bwa, bfa
+##   Resources (up to 5): ACLED-Version-7-All-Africa-1997-2016_csv_dyadic-file.zip, ACLED-Version-7-All-Africa-1997-2016_dyadic-file.xlsx, ACLED-Version-7-All-Africa-1997-2016_monadic-file_csv.zip, ACLED-Version-7-All-Africa-1997-2016_monadic-file-1.xlsx, ACLED-Version-7-All-Africa-1997-2016_actordyad_csv.zip
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;datasets_list&quot;</code></pre>
+<p>We will select the first 5 datasets (our 5 countries) in the list of datasets and bind them together using <code>purrr::map_df</code> and a helper function.</p>
+<pre class="r"><code>g5_acled &lt;- g5_acled[1:5] ## pick the first 5 the 6th is the Africa wide dataset
+
+## create a helper function to read resources from each dataset
+read_acled_data &lt;- function(dataset) {
+  dataset %&gt;%
+    get_resource(1) %&gt;%
+    read_resource(force_download = TRUE)
+}
+
+g5_acled_data &lt;- map_df(g5_acled, read_acled_data)
+glimpse(g5_acled_data)</code></pre>
+<pre><code>## Observations: 6,088
+## Variables: 30
+## $ data_id          &lt;dbl&gt; 3124276, 3124273, 3124274, 3124275, 3124272, 30…
+## $ iso              &lt;dbl&gt; 148, 148, 148, 148, 148, 148, 148, 148, 148, 14…
+## $ event_id_cnty    &lt;chr&gt; &quot;CHA805&quot;, &quot;CHA804&quot;, &quot;CHA802&quot;, &quot;CHA803&quot;, &quot;CHA801…
+## $ event_id_no_cnty &lt;dbl&gt; 805, 804, 802, 803, 801, 800, 799, 798, 796, 79…
+## $ event_date       &lt;date&gt; 2019-02-20, 2019-02-19, 2019-02-19, 2019-02-19…
+## $ year             &lt;dbl&gt; 2019, 2019, 2019, 2019, 2019, 2019, 2019, 2019,…
+## $ time_precision   &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1,…
+## $ event_type       &lt;chr&gt; &quot;Violence against civilians&quot;, &quot;Riots/Protests&quot;,…
+## $ actor1           &lt;chr&gt; &quot;Boko Haram - Wilayat Gharb Ifriqiyyah&quot;, &quot;Prote…
+## $ assoc_actor_1    &lt;chr&gt; NA, &quot;MPS: Patriotic Salvation Movement&quot;, NA, NA…
+## $ inter1           &lt;dbl&gt; 2, 6, 2, 2, 6, 6, 6, 6, 6, 6, 2, 8, 8, 6, 8, 3,…
+## $ actor2           &lt;chr&gt; &quot;Civilians (Chad)&quot;, NA, &quot;Civilians (Chad)&quot;, &quot;Ci…
+## $ assoc_actor_2    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+## $ inter2           &lt;dbl&gt; 7, 0, 7, 7, 1, 0, 0, 0, 0, 1, 1, 2, 2, 0, 2, 7,…
+## $ interaction      &lt;dbl&gt; 27, 60, 27, 27, 16, 60, 60, 60, 60, 16, 12, 28,…
+## $ region           &lt;chr&gt; &quot;Middle Africa&quot;, &quot;Middle Africa&quot;, &quot;Middle Afric…
+## $ country          &lt;chr&gt; &quot;Chad&quot;, &quot;Chad&quot;, &quot;Chad&quot;, &quot;Chad&quot;, &quot;Chad&quot;, &quot;Chad&quot;,…
+## $ admin1           &lt;chr&gt; &quot;Lac&quot;, &quot;Ouaddai&quot;, &quot;Lac&quot;, &quot;Lac&quot;, &quot;N&#39;Djamena&quot;, &quot;N…
+## $ admin2           &lt;chr&gt; &quot;Kaya&quot;, &quot;Ouara&quot;, &quot;Wayi&quot;, &quot;Fouli&quot;, &quot;N&#39;Djamena&quot;, …
+## $ admin3           &lt;chr&gt; &quot;Kaya&quot;, &quot;Kachimel-Abeche&quot;, &quot;Wayi&quot;, &quot;Daboua&quot;, &quot;N…
+## $ location         &lt;chr&gt; &quot;Hougou&quot;, &quot;Abeche&quot;, &quot;Bourboura&quot;, &quot;Ngacha&quot;, &quot;NDj…
+## $ latitude         &lt;dbl&gt; 13.4767, 13.8290, 13.5015, 13.6547, 12.1085, 12…
+## $ longitude        &lt;dbl&gt; 14.0323, 20.8320, 15.4459, 13.8206, 15.0482, 15…
+## $ geo_precision    &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 2, 2, 2, 1, 2, 1,…
+## $ source           &lt;chr&gt; &quot;UN (unspecified)&quot;, &quot;Alwihda (Chad)&quot;, &quot;Alwihda …
+## $ source_scale     &lt;chr&gt; &quot;Other&quot;, &quot;National&quot;, &quot;Other-National&quot;, &quot;Other-N…
+## $ notes            &lt;chr&gt; &quot;20 February. Boko Haram attack the village of …
+## $ fatalities       &lt;dbl&gt; 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, 0, …
+## $ timestamp        &lt;dbl&gt; 1551122597, 1551122597, 1551122597, 1551122597,…
+## $ iso3             &lt;chr&gt; &quot;TCD&quot;, &quot;TCD&quot;, &quot;TCD&quot;, &quot;TCD&quot;, &quot;TCD&quot;, &quot;TCD&quot;, &quot;TCD&quot;…</code></pre>
+<p>We have all the data we need for our analysis, we just need to aggregate total number fatalities by geographical coordinates, countries and year.</p>
+<pre class="r"><code>g5_acled_fatalities_loc &lt;- g5_acled_data %&gt;%
+  filter(year %in% 2012:2018, fatalities &gt; 0) %&gt;%
+  group_by(year, country, latitude, longitude) %&gt;%
+  summarise(total_fatalities = sum(fatalities, na.rm = TRUE)) %&gt;%
+  arrange(year) %&gt;%
+  ungroup()</code></pre>
+<p>We can finally use our boundaries (<code>g5_ab</code>), the conflict data (<code>g5_acled_fatalities_loc</code>) with <code>gganimate</code> to dynamically visualize the different fatal incidents in G5 Sahel countries.</p>
+<pre class="r"><code>g5_ab %&gt;%
+  ggplot() +
+  geom_sf(fill = &quot;#383838&quot;, color = &quot;gray&quot;) +
+  coord_sf(datum = NA) +
+  geom_point(data = g5_acled_fatalities_loc, aes(longitude, latitude, size = total_fatalities, fill = total_fatalities), shape  = 21, color = &quot;transparent&quot;) +
+  scale_fill_viridis_c(option = &quot;plasma&quot;) +
+  geom_sf_text(aes(label = admin0Name), color = &quot;gray&quot;, fontface = &quot;bold&quot;) +
+  labs(x = &quot;&quot;,
+       y = &quot;&quot;,
+       title = &quot;Fatal events in the Sahel G5&quot;,
+       subtitle = &quot;for the year {current_frame}&quot;,
+       caption = &quot;source: ACLED&quot;) +
+  theme_void() +
+  theme(legend.position = &quot;none&quot;) +
+  transition_manual(year, cumulative = TRUE) +
+  shadow_mark()</code></pre>
+<p><img src="/post/sahel-fatalities_files/figure-html/anim_map-1.gif" /><!-- --></p>
+<p><img src="https://gitlab.com/dickoa/dickoa.gitlab.io/raw/master/static/post/sahel-fatalities_files/figure-html/anim_map-1.gif" width="100%" /></p>
+<p>Session info for this analysis.</p>
+<details>
+<p><summary>Session info</summary></p>
+<pre class="r"><code>devtools::session_info()</code></pre>
+<pre><code>## ─ Session info ──────────────────────────────────────────────────────────
+##  setting  value                       
+##  version  R version 3.5.2 (2018-12-20)
+##  os       Ubuntu 18.04.2 LTS          
+##  system   x86_64, linux-gnu           
+##  ui       X11                         
+##  language en_US:en                    
+##  collate  en_US.UTF-8                 
+##  ctype    en_US.UTF-8                 
+##  tz       Asia/Amman                  
+##  date     2019-03-04                  
+## 
+## ─ Packages ──────────────────────────────────────────────────────────────
+##  package     * version    date       lib source                           
+##  assertthat    0.2.0      2017-04-11 [3] CRAN (R 3.5.0)                   
+##  backports     1.1.3      2018-12-14 [3] CRAN (R 3.5.1)                   
+##  blogdown      0.10       2019-01-09 [1] CRAN (R 3.5.2)                   
+##  bookdown      0.9        2018-12-21 [1] CRAN (R 3.5.2)                   
+##  broom         0.5.1      2018-12-05 [1] CRAN (R 3.5.2)                   
+##  callr         3.1.1      2018-12-21 [3] CRAN (R 3.5.2)                   
+##  cellranger    1.1.0      2016-07-27 [1] CRAN (R 3.5.2)                   
+##  class         7.3-15     2019-01-01 [4] CRAN (R 3.5.2)                   
+##  classInt      0.3-1      2018-12-18 [1] CRAN (R 3.5.2)                   
+##  cli           1.0.1      2018-09-25 [3] CRAN (R 3.5.1)                   
+##  colorspace    1.4-0      2019-01-13 [1] CRAN (R 3.5.2)                   
+##  crayon        1.3.4      2017-09-16 [3] CRAN (R 3.5.0)                   
+##  crul          0.7.0      2019-01-04 [1] CRAN (R 3.5.2)                   
+##  curl          3.3        2019-01-10 [3] CRAN (R 3.5.2)                   
+##  DBI           1.0.0      2018-05-02 [1] CRAN (R 3.5.2)                   
+##  desc          1.2.0      2018-05-01 [3] CRAN (R 3.5.0)                   
+##  devtools      2.0.1      2018-10-26 [3] CRAN (R 3.5.1)                   
+##  digest        0.6.18     2018-10-10 [3] CRAN (R 3.5.1)                   
+##  dplyr       * 0.8.0.1    2019-02-15 [1] CRAN (R 3.5.2)                   
+##  e1071         1.7-0.1    2019-01-21 [1] CRAN (R 3.5.2)                   
+##  evaluate      0.13       2019-02-12 [1] CRAN (R 3.5.2)                   
+##  fansi         0.4.0      2018-10-05 [3] CRAN (R 3.5.1)                   
+##  farver        1.1.0      2018-11-20 [1] CRAN (R 3.5.2)                   
+##  forcats     * 0.4.0      2019-02-17 [1] CRAN (R 3.5.2)                   
+##  fs            1.2.6      2018-08-23 [3] CRAN (R 3.5.1)                   
+##  generics      0.0.2      2018-11-29 [1] CRAN (R 3.5.2)                   
+##  gganimate   * 1.0.2.9000 2019-03-04 [1] Github (dgrtwo/gganimate@e134fd9)
+##  ggplot2     * 3.1.0      2018-10-25 [3] CRAN (R 3.5.1)                   
+##  gifski        0.8.6      2018-09-28 [1] CRAN (R 3.5.2)                   
+##  glue          1.3.0      2018-07-17 [3] CRAN (R 3.5.1)                   
+##  gtable        0.2.0      2016-02-26 [3] CRAN (R 3.5.0)                   
+##  haven         2.1.0      2019-02-19 [1] CRAN (R 3.5.2)                   
+##  hms           0.4.2      2018-03-10 [1] CRAN (R 3.5.2)                   
+##  htmltools     0.3.6      2017-04-28 [3] CRAN (R 3.5.0)                   
+##  httpcode      0.2.0      2016-11-14 [1] CRAN (R 3.5.2)                   
+##  httr          1.4.0      2018-12-11 [3] CRAN (R 3.5.1)                   
+##  jsonlite      1.6        2018-12-07 [3] CRAN (R 3.5.1)                   
+##  knitr         1.21       2018-12-10 [3] CRAN (R 3.5.1)                   
+##  lattice       0.20-38    2018-11-04 [4] CRAN (R 3.5.1)                   
+##  lazyeval      0.2.1      2017-10-29 [3] CRAN (R 3.5.0)                   
+##  lubridate     1.7.4      2018-04-11 [1] CRAN (R 3.5.2)                   
+##  magrittr      1.5        2014-11-22 [1] CRAN (R 3.5.2)                   
+##  memoise       1.1.0      2017-04-21 [3] CRAN (R 3.5.0)                   
+##  modelr        0.1.4      2019-02-18 [1] CRAN (R 3.5.2)                   
+##  munsell       0.5.0      2018-06-12 [3] CRAN (R 3.5.0)                   
+##  nlme          3.1-137    2018-04-07 [4] CRAN (R 3.5.0)                   
+##  pillar        1.3.1      2018-12-15 [3] CRAN (R 3.5.2)                   
+##  pkgbuild      1.0.2      2018-10-16 [3] CRAN (R 3.5.1)                   
+##  pkgconfig     2.0.2      2018-08-16 [3] CRAN (R 3.5.1)                   
+##  pkgload       1.0.2      2018-10-29 [3] CRAN (R 3.5.1)                   
+##  plyr          1.8.4      2016-06-08 [3] CRAN (R 3.5.0)                   
+##  png           0.1-7      2013-12-03 [3] CRAN (R 3.5.0)                   
+##  prettyunits   1.0.2      2015-07-13 [3] CRAN (R 3.5.0)                   
+##  processx      3.2.1      2018-12-05 [3] CRAN (R 3.5.1)                   
+##  progress      1.2.0      2018-06-14 [1] CRAN (R 3.5.2)                   
+##  ps            1.3.0      2018-12-21 [3] CRAN (R 3.5.2)                   
+##  purrr       * 0.3.1      2019-03-03 [1] CRAN (R 3.5.2)                   
+##  R6            2.4.0      2019-02-14 [1] CRAN (R 3.5.2)                   
+##  Rcpp          1.0.0      2018-11-07 [3] CRAN (R 3.5.1)                   
+##  readr       * 1.3.1      2018-12-21 [1] CRAN (R 3.5.2)                   
+##  readxl        1.3.0      2019-02-15 [1] CRAN (R 3.5.2)                   
+##  remotes       2.0.2      2018-10-30 [3] CRAN (R 3.5.1)                   
+##  rhdx        * 0.0.1.9000 2019-03-04 [1] gitlab (dickoa/rhdx@92d3e3f)     
+##  rhxl          0.1.0.9000 2019-03-04 [1] gitlab (dickoa/rhxl@4c325b7)     
+##  rlang         0.3.1      2019-01-08 [3] CRAN (R 3.5.2)                   
+##  rmarkdown     1.11       2018-12-08 [1] CRAN (R 3.5.2)                   
+##  rprojroot     1.3-2      2018-01-03 [1] CRAN (R 3.5.2)                   
+##  rstudioapi    0.9.0      2019-01-09 [3] CRAN (R 3.5.2)                   
+##  rvest         0.3.2      2016-06-17 [1] CRAN (R 3.5.2)                   
+##  scales        1.0.0      2018-08-09 [3] CRAN (R 3.5.1)                   
+##  sessioninfo   1.1.1      2018-11-05 [3] CRAN (R 3.5.1)                   
+##  sf          * 0.7-3      2019-02-21 [1] CRAN (R 3.5.2)                   
+##  stringi       1.3.1      2019-02-13 [1] CRAN (R 3.5.2)                   
+##  stringr     * 1.4.0      2019-02-10 [1] CRAN (R 3.5.2)                   
+##  testthat      2.0.1      2018-10-13 [1] CRAN (R 3.5.2)                   
+##  tibble      * 2.0.1      2019-01-12 [1] CRAN (R 3.5.2)                   
+##  tidyr       * 0.8.2      2018-10-28 [1] CRAN (R 3.5.2)                   
+##  tidyselect    0.2.5      2018-10-11 [1] CRAN (R 3.5.2)                   
+##  tidyverse   * 1.2.1      2017-11-14 [1] CRAN (R 3.5.2)                   
+##  triebeard     0.3.0      2016-08-04 [1] CRAN (R 3.5.2)                   
+##  tweenr        1.0.1      2018-12-14 [1] CRAN (R 3.5.2)                   
+##  units         0.6-2      2018-12-05 [1] CRAN (R 3.5.2)                   
+##  urltools      1.7.2      2019-02-04 [1] CRAN (R 3.5.2)                   
+##  usethis       1.4.0      2018-08-14 [3] CRAN (R 3.5.1)                   
+##  utf8          1.1.4      2018-05-24 [3] CRAN (R 3.5.0)                   
+##  viridisLite   0.3.0      2018-02-01 [3] CRAN (R 3.5.0)                   
+##  withr         2.1.2      2018-03-15 [3] CRAN (R 3.5.0)                   
+##  xfun          0.5        2019-02-20 [3] CRAN (R 3.5.2)                   
+##  xml2          1.2.0      2018-01-24 [3] CRAN (R 3.5.0)                   
+##  yaml          2.2.0      2018-07-25 [3] CRAN (R 3.5.1)                   
+## 
+## [1] /home/edouard/R/x86_64-pc-linux-gnu-library/3.5
+## [2] /usr/local/lib/R/site-library
+## [3] /usr/lib/R/site-library
+## [4] /usr/lib/R/library</code></pre>
+</details>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/rhdx"><span class="tag">Rhdx</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 HumanitaRian useR group</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>

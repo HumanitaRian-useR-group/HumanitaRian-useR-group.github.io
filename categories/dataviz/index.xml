@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dataviz on HumanitaRian useR group</title>
+    <link>/categories/dataviz/</link>
+    <description>Recent content in Dataviz on HumanitaRian useR group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/dataviz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fatal events in the Sahel</title>
+      <link>/post/sahel-fatalities/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sahel-fatalities/</guid>
+      <description>In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries. The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
+remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.</description>
+    </item>
+    
+  </channel>
+</rss>
