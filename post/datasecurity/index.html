@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>Quick and Dirty Data Security</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  <meta name="author" content="Bill Olander, Regional Bureau Dakar, WFP">
+  <meta name="description" content="In this quick tutorial, I share 3 methods to keep you and your data out of trouble.
+Disclaimer : the fields of Data Security and Data Protection are vast. This tutorial hardly skims the surface. Check with your institution on the specific standards and tools which may be relevant to you.
+Quick note on the tutorial You should be able to follow and recreate all of the results by copying the syntax in the grey boxes.">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@HumanitaRianus1">
+    <meta name="twitter:title" content="Quick and Dirty Data Security">
+    <meta name="twitter:description" content="In this quick tutorial, I share 3 methods to keep you and your data out of trouble.
+Disclaimer : the fields of Data Security and Data Protection are vast. This tutorial hardly skims the surface. Check with your institution on the specific standards and tools which may be relevant to you.
+Quick note on the tutorial You should be able to follow and recreate all of the results by copying the syntax in the grey boxes.">
+    <meta name="twitter:image" content="/images/avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Quick and Dirty Data Security">
+  <meta property="og:description" content="In this quick tutorial, I share 3 methods to keep you and your data out of trouble.
+Disclaimer : the fields of Data Security and Data Protection are vast. This tutorial hardly skims the surface. Check with your institution on the specific standards and tools which may be relevant to you.
+Quick note on the tutorial You should be able to follow and recreate all of the results by copying the syntax in the grey boxes.">
+  <meta property="og:url" content="/post/datasecurity/">
+  <meta property="og:image" content="/images/avatar.png">
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0">
+
+
+<link rel="canonical" href="/post/datasecurity/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="HumanitaRian useR group">
+<meta name="msapplication-tooltip" content="HumanitaRian useR group">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+<link rel="manifest" href="/manifest.json">
+
+
+<link rel="preload" href="/styles/main.min.css" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="/images/avatar.png" as="image">
+<link rel="preload" href="/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="/styles/main.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+        <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">HumanitaRian useR group</h2>
+  
+  <p class="subtitle">~ Science is show me - not trust me ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://join.skype.com/qYBKC5q3wKp4">Skype-group</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:humanitarian.user@gmail.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/HumanitaRian-useR-group" title="GitHub" aria-label="GitHub">
+            <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/HumanitaRianus1" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//www.linkedin.com/in/https://www.linkedin.com/groups/8732707/" title="Linkedin" aria-label="Linkedin">
+            <span class="icon icon-linkedin" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Quick and Dirty Data Security</h1>
+      <p class="post-meta">@Bill Olander, Regional Bureau Dakar, WFP · Jun 11, 2019 · 8 min read</p>
+    </header>
+    <article class="post-content">
+
+
+<p>In this quick tutorial, I share 3 methods to keep you and your data out of trouble.</p>
+<p><em>Disclaimer</em> : the fields of Data Security and Data Protection are vast. This tutorial hardly skims the surface. Check with your institution on the specific standards and tools which may be relevant to you.</p>
+<div id="quick-note-on-the-tutorial" class="section level2">
+<h2>Quick note on the tutorial</h2>
+<p>You should be able to follow and recreate all of the results by copying the syntax in the grey boxes.</p>
+</div>
+<div id="installing-packages" class="section level2">
+<h2>Installing packages</h2>
+<p>To get started, if you don’t have them already, the following packages are necessary: <code>charlatan</code>,<code>dpylr</code>,<code>safer</code> and <code>anonymizer</code>. Note that you will need to install <code>anonymizer</code> from github as the package is not available on CRAN</p>
+<pre class="r"><code>## Getting all necessary package
+
+using &lt;- function(...) {
+    libs &lt;- unlist(list(...))
+    req &lt;- unlist(lapply(libs,require,character.only = TRUE))
+    need &lt;- libs[req == FALSE]
+    if (length(need) &gt; 0) { 
+        install.packages(need)
+        lapply(need,require,character.only = TRUE)
+    }
+}
+
+
+using(&quot;charlatan&quot;,&quot;dpylr&quot;,&quot;safer&quot;)</code></pre>
+<pre><code>## Loading required package: charlatan</code></pre>
+<pre><code>## Loading required package: dpylr</code></pre>
+<pre><code>## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+## logical.return = TRUE, : there is no package called &#39;dpylr&#39;</code></pre>
+<pre><code>## Loading required package: safer</code></pre>
+<pre><code>## Installing package into &#39;/home/edouard/R/x86_64-pc-linux-gnu-library/3.6&#39;
+## (as &#39;lib&#39; is unspecified)</code></pre>
+<pre><code>## Warning: package &#39;dpylr&#39; is not available (for R version 3.6.0)</code></pre>
+<pre><code>## Loading required package: dpylr</code></pre>
+<pre><code>## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+## logical.return = TRUE, : there is no package called &#39;dpylr&#39;</code></pre>
+<pre><code>## [[1]]
+## [1] FALSE</code></pre>
+<pre class="r"><code>#devtools::install_github(&quot;paulhendricks/anonymizer&quot;)
+library(anonymizer)
+
+## Also removing files if exist
+fn &lt;- &quot;fakedata.csv&quot;
+if (file.exists(fn))   file.remove(fn)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>fn &lt;- &quot;fakedata_encrypted.csv&quot;
+if (file.exists(fn))   file.remove(fn)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>fn &lt;- &quot;fakedata_decrypted.csv&quot;
+if (file.exists(fn))   file.remove(fn)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="make-a-fake-dataset" class="section level2">
+<h2>Make a fake dataset</h2>
+<p>We can use the charlatan package to create a dataset with some fake sensitive data:</p>
+<p>first, let’s load charlatan and let’s quickly make a fake dataset that has names, jobs and phone numbers for 30 people</p>
+<pre class="r"><code>library(&quot;charlatan&quot;)
+
+fakedata &lt;- ch_generate(&#39;name&#39;, &#39;job&#39;, &#39;phone_number&#39;, n = 30)</code></pre>
+<p>Then, let’s add 4 more fake variables: Food Consumption Groups (fcg), admin1name and GPS coordinates (lat &amp; long)</p>
+<pre class="r"><code>fakedata$fcg &lt;- rep(c(&quot;poor&quot;, &quot;borderline&quot;, &quot;acceptable&quot;), 10)
+fakedata$adm1name &lt;- rep(c(&quot;North&quot;, &quot;Mountain&quot;, &quot;Isles&quot;, &quot;Rock&quot;, &quot;Stormlands&quot;,  &quot;Dorne&quot;), 5)
+x &lt;- fraudster()
+fakedata$lat &lt;- round(replicate(30, x$lat()),2)
+fakedata$long &lt;- round(replicate(30, x$lon()),2)</code></pre>
+<p>last, let’s take a look at the dataset we created</p>
+<pre class="r"><code>str(fakedata)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    30 obs. of  7 variables:
+##  $ name        : chr  &quot;Del Kihn&quot; &quot;Dr. Angel Price&quot; &quot;Wyatt Lind&quot; &quot;Rosalee Brekke&quot; ...
+##  $ job         : chr  &quot;Optometrist&quot; &quot;Lecturer, higher education&quot; &quot;Control and instrumentation engineer&quot; &quot;Commercial horticulturist&quot; ...
+##  $ phone_number: chr  &quot;(400)597-4952x95625&quot; &quot;(409)030-7917x3580&quot; &quot;03467032798&quot; &quot;683.088.3511&quot; ...
+##  $ fcg         : chr  &quot;poor&quot; &quot;borderline&quot; &quot;acceptable&quot; &quot;poor&quot; ...
+##  $ adm1name    : chr  &quot;North&quot; &quot;Mountain&quot; &quot;Isles&quot; &quot;Rock&quot; ...
+##  $ lat         : num  -70.3 87.4 79 -72.8 -73.8 ...
+##  $ long        : num  34.1 -40.3 -52.4 -112.3 -101.9 ...</code></pre>
+</div>
+<div id="case-1-get-rid-of-sensitive-information-before-sharing" class="section level2">
+<h2>Case #1 : Get rid of sensitive information before sharing</h2>
+<p>Maybe we only need to share the job , adm1name and fcg variables with someone else - these three variables are not “sensitive” so all we have to do is keep them or exclude the other variables in the dataset. Doing this is easy using select verb from dplyr</p>
+<p>first, let’s load <code>dplyr</code> and let’s create the dataset we’d like to share, <code>fakedata_external</code> , from the dataset <code>fakedata</code> , selecting only the variables <code>job</code> , <code>adm1name</code> and <code>fcg</code>.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>fakedata_external &lt;- fakedata %&gt;% 
+                     select(job, adm1name, fcg)</code></pre>
+<p>take a look - it only contains the 3 variables and is safe for sharing</p>
+<pre class="r"><code>str(fakedata_external)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    30 obs. of  3 variables:
+##  $ job     : chr  &quot;Optometrist&quot; &quot;Lecturer, higher education&quot; &quot;Control and instrumentation engineer&quot; &quot;Commercial horticulturist&quot; ...
+##  $ adm1name: chr  &quot;North&quot; &quot;Mountain&quot; &quot;Isles&quot; &quot;Rock&quot; ...
+##  $ fcg     : chr  &quot;poor&quot; &quot;borderline&quot; &quot;acceptable&quot; &quot;poor&quot; ...</code></pre>
+<p>Alternatively, instead of specifying the variables you want to keep, like we did above, you can just specify the variables you want to get rid of.</p>
+<p>Let’s create the dataset fakedata_external2 from the dataset fakedata , by de-selecting the variables <code>name</code> , <code>phone_number</code> , <code>lat</code> , <code>long</code>.</p>
+<pre class="r"><code>fakedata_external2 &lt;- fakedata %&gt;% 
+                      select(-name, -phone_number, -lat, -long)</code></pre>
+<p>voila, we get the same results as above</p>
+<pre class="r"><code>str(fakedata_external2)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    30 obs. of  3 variables:
+##  $ job     : chr  &quot;Optometrist&quot; &quot;Lecturer, higher education&quot; &quot;Control and instrumentation engineer&quot; &quot;Commercial horticulturist&quot; ...
+##  $ fcg     : chr  &quot;poor&quot; &quot;borderline&quot; &quot;acceptable&quot; &quot;poor&quot; ...
+##  $ adm1name: chr  &quot;North&quot; &quot;Mountain&quot; &quot;Isles&quot; &quot;Rock&quot; ...</code></pre>
+</div>
+<div id="case-2-anonymize-sensitive-information-for-sharing" class="section level2">
+<h2>Case #2 : Anonymize sensitive information for sharing</h2>
+<p>We might want to transform or anonymize sensitive information so it can be used but with less risk.</p>
+<p>We can anonymize variables using the anonymizer (read more about it on the [anonymizer package documentation]<a href="https://github.com/paulhendricks/anonymizer" class="uri">https://github.com/paulhendricks/anonymizer</a>) and the mutate verb from <code>dplyr</code>.</p>
+<p>First, let’s load <code>anonymizer</code> and <code>dplyr</code> and let’s create the dataset fakedata_anonymized with anonymized values for the variables <code>name</code> , <code>phone_number</code> , <code>lat</code> , <code>long</code> using the algorithm <code>crc32</code> (you can read more about this and other options in the anonymizer documentation)</p>
+<pre class="r"><code>library(anonymizer)
+library(dplyr)
+
+fakedata_anonymized &lt;- mutate(fakedata, 
+                              name = anonymize(name, .algo = &quot;crc32&quot;), 
+                              phone_number = anonymize(phone_number, .algo = &quot;crc32&quot;), 
+                              lat = anonymize(lat, .algo = &quot;crc32&quot;), 
+                              long = anonymize(long, .algo = &quot;crc32&quot;))</code></pre>
+<p>Let’s take a look</p>
+<pre class="r"><code>str(fakedata_anonymized)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    30 obs. of  7 variables:
+##  $ name        : chr  &quot;b60b15d8&quot; &quot;b0c196a8&quot; &quot;adc85dbf&quot; &quot;8098c412&quot; ...
+##  $ job         : chr  &quot;Optometrist&quot; &quot;Lecturer, higher education&quot; &quot;Control and instrumentation engineer&quot; &quot;Commercial horticulturist&quot; ...
+##  $ phone_number: chr  &quot;4ace4ed8&quot; &quot;7c412e3f&quot; &quot;5b84b840&quot; &quot;f8b0039a&quot; ...
+##  $ fcg         : chr  &quot;poor&quot; &quot;borderline&quot; &quot;acceptable&quot; &quot;poor&quot; ...
+##  $ adm1name    : chr  &quot;North&quot; &quot;Mountain&quot; &quot;Isles&quot; &quot;Rock&quot; ...
+##  $ lat         : chr  &quot;0cb39b82&quot; &quot;104acf3f&quot; &quot;c4be78b5&quot; &quot;a1c8576c&quot; ...
+##  $ long        : chr  &quot;831f27aa&quot; &quot;0c3b8a3e&quot; &quot;284b8e12&quot; &quot;92514d6e&quot; ...</code></pre>
+<p>yep, all the variables with sensitive data have now been anonymized.</p>
+</div>
+<div id="case-3-encrypt-a-file-containing-sensitive-information" class="section level2">
+<h2>Case #3 : Encrypt a file containing sensitive information</h2>
+<p>Finally, sometimes we might need to share the whole dataset in its original condition. To do this, we’ll want to encrypt the dataset and we can use the <a href="https://cran.r-project.org/web/packages/safer/index.html">package safer</a></p>
+<p>First, let’s load safer and</p>
+<pre class="r"><code>library(safer)
+write.csv(fakedata, &quot;fakedata.csv&quot;)</code></pre>
+<p>Now, we will create the file fakedata_encrypted.csv by encrypting the file the fakedata . We created the password/key <code>m@keupuR0wnp@ss</code></p>
+<pre class="r"><code>encrypt_file(infile = &quot;fakedata.csv&quot;, key = &quot;m@keupuR0wnp@ss&quot;, outfile = &quot;fakedata_encrypted.csv&quot;)</code></pre>
+<p>importing and taking a quick look, fakedata_encrypted.csv looks unusable to those without the key</p>
+<pre class="r"><code>tried &lt;- try(read.csv(&quot;fakedata_encrypted.csv&quot;),
+                 silent = TRUE)</code></pre>
+<pre><code>## Warning in read.table(file = file, header = header, sep = sep, quote =
+## quote, : line 2 appears to contain embedded nulls</code></pre>
+<pre><code>## Warning in read.table(file = file, header = header, sep = sep, quote =
+## quote, : line 3 appears to contain embedded nulls</code></pre>
+<pre><code>## Warning in scan(file = file, what = what, sep = sep, quote = quote, dec =
+## dec, : EOF within quoted string</code></pre>
+<pre><code>## Warning in scan(file = file, what = what, sep = sep, quote = quote, dec =
+## dec, : embedded nul(s) found in input</code></pre>
+<pre class="r"><code>head(tried, 2)</code></pre>
+<pre><code>## [1] &quot;Error in type.convert.default(data[[i]], as.is = as.is[i], dec = dec,  : \n  invalid multibyte string at &#39;&lt;94&gt;\027xﲯ&lt;29&gt;&lt;cb&gt;zK&lt;f2&gt;\177^&lt;b9&gt;\005&lt;97&gt;&lt;b1&gt;&lt;b2&gt;&lt;fb&gt;&lt;83&gt;&lt;ee&gt;HJ&lt;d8&gt;&lt;c2&gt;\006&lt;f7&gt;&lt;fa&gt;&lt;95&gt;&lt;ca&gt;H&lt;9d&gt;&lt;9e&gt;@&lt;94&gt;&lt;a2&gt;&lt;b1&gt;&lt;ad&gt;&lt;e5&gt;f&lt;e2&gt;9&lt;99&gt;4&lt;e8&gt;&lt;e0&gt;\035&#39;\n&quot;</code></pre>
+<p>but if we share fakedata_encrypted.csv along with the key (it’s good to send the key to the recipient in a separate message, not in the same message/method that you share the encrypted file), your recipient can use the following code to decrypt the file</p>
+<pre class="r"><code>decrypt_file(infile = &quot;fakedata_encrypted.csv&quot;, key = &quot;m@keupuR0wnp@ss&quot;, outfile = &quot;fakedata_decrypted.csv&quot;)</code></pre>
+<p>take a look, we’ve decrypted it and it’s now useable</p>
+<pre class="r"><code>fakedata_decrypted &lt;- read.csv(&quot;fakedata_decrypted.csv&quot;)
+
+str(fakedata_decrypted)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    30 obs. of  8 variables:
+##  $ X           : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ name        : Factor w/ 30 levels &quot;Adolphus Koepp&quot;,..: 11 12 30 28 19 8 26 27 13 7 ...
+##  $ job         : Factor w/ 30 levels &quot;Animal nutritionist&quot;,..: 22 18 10 6 2 26 29 16 12 9 ...
+##  $ phone_number: Factor w/ 30 levels &quot;(030)412-8344&quot;,..: 3 4 10 29 20 11 25 27 26 9 ...
+##  $ fcg         : Factor w/ 3 levels &quot;acceptable&quot;,&quot;borderline&quot;,..: 3 2 1 3 2 1 3 2 1 3 ...
+##  $ adm1name    : Factor w/ 6 levels &quot;Dorne&quot;,&quot;Isles&quot;,..: 4 3 2 5 6 1 4 3 2 5 ...
+##  $ lat         : num  -70.3 87.4 79 -72.8 -73.8 ...
+##  $ long        : num  34.1 -40.3 -52.4 -112.3 -101.9 ...</code></pre>
+</div>
+<div id="the-end" class="section level2">
+<h2>The End</h2>
+<p>To wrap up, here are the 3 different scenarios which you might find yourself needing to transform and share sensitive data:</p>
+<ul>
+<li><p><strong>Case 1 - Get rid of only the sensitive data</strong> - use select verb to create a new data set which doesn’t contain the sensitive variables</p></li>
+<li><p><strong>Case 2 - Anonymize sensitive data</strong>: use package anonymizer and mutate verb to anonymize sensitive variables</p></li>
+<li><p><strong>Case 3 - Encrypt sensitive data</strong>: use package safer to create an encypted dataset. send your recipient the password seperately and they’ll be able to use safer to decrypt the file.</p></li>
+</ul>
+</div>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/wfp"><span class="tag">WFP</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 HumanitaRian useR group</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>

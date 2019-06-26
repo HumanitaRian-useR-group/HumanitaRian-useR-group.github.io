@@ -7,10 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Sun, 24 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data Quality Monitoring</title>
+      <link>/post/dataqualitymonitoring/</link>
+      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dataqualitymonitoring/</guid>
+      <description>In this quick tutorial, I share a simple method to graphically display information to monitor data quality of survey teams using a little bit of dplyr and ggplot2
+There is a lot to be said and done about data quality monitoring. Here is just one simple method to graphically observe “curb-stoning” or “flat-lining” - when enumerators stop administering/recording real questions and responses and instead start making up answers. Often fictious responses are not random and can sometimes be detected graphically.</description>
+    </item>
+    
+    <item>
+      <title>Quick and Dirty Data Security</title>
+      <link>/post/datasecurity/</link>
+      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/datasecurity/</guid>
+      <description>In this quick tutorial, I share 3 methods to keep you and your data out of trouble.
+Disclaimer : the fields of Data Security and Data Protection are vast. This tutorial hardly skims the surface. Check with your institution on the specific standards and tools which may be relevant to you.
+Quick note on the tutorial You should be able to follow and recreate all of the results by copying the syntax in the grey boxes.</description>
+    </item>
+    
+    <item>
+      <title>Euler chart for multichoice questions from Kobo</title>
+      <link>/post/eulerkobo/</link>
+      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/eulerkobo/</guid>
+      <description>Multiple choice question in which respondent can select more than one correct answer from the list is a usual part of almost every survey.
+It is usually visualized as a simple bar chart ignoring the overlap between the different categories, while this overlap can bring more analytical value and depth to the analysis.
+Euler diagram is a perfect way to show the relationship between different subsets and that’s hardly possible to build it with the commonly used spreadsheet software such as MS Excel.</description>
+    </item>
     
     <item>
       <title>Bar Chart Race for Refugees</title>
