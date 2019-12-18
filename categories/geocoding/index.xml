@@ -18,8 +18,8 @@
       <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/geonames/</guid>
-      <description>Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme.
- In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information.</description>
+      <description>Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme. It aggregates a huge number of data source: https://www.geonames.org/datasources/.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames.</description>
     </item>
     
   </channel>

@@ -18,9 +18,9 @@
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/profile-of-preference/</guid>
-      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset?
+      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.
  This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
-## This function will retrieve the packae if they are not yet installed. using &amp;lt;- function(...) { libs &amp;lt;- unlist(list(...)) req &amp;lt;- unlist(lapply(libs,require,character.</description>
+Loading packages ## This function will retrieve the packae if they are not yet installed.</description>
     </item>
     
     <item>

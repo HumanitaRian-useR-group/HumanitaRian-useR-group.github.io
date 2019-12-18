@@ -6,16 +6,18 @@ categories:
   - geodata
   - geocoding
 tags:
-  - Edouard Legoupil
+  - Edouard-Legoupil
   - UNHCR
 ---
 
-Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. [Geoname.org](https://www.geonames.org) is the most extensive database of toponyme.
+Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. [Geoname.org](https://www.geonames.org) is the most extensive database of toponyme. It aggregates a huge number of data source: [https://www.geonames.org/datasources/](https://www.geonames.org/datasources/).
 
 
 <!--MORE-->
 
 In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. It makes use of algorithm to measure the [edit distance](https://en.wikipedia.org/wiki/Edit_distance) (i.e. a way of quantifying how dissimilar two strings (e.g., words) are to one another by counting the minimum number of operations required to transform one string into the other).
+
+Fuzzy search is quite powerfull when searching for locations in where toponyme are [transliteration](https://en.wikipedia.org/wiki/Transliteration) of arabic for instance (i.e. transferring a word from one alphabet of one language to another one).
 
 
 ```{r setup, include=FALSE}
@@ -27,7 +29,7 @@ knitr::opts_chunk$set(cache = TRUE, warning = FALSE, message = FALSE)
 ## Geonames.org
 
 
-There's a dedicated R package to use geonames. First we need to create an account on geonames: [https://www.geonames.org/login](https://www.geonames.org/login) and enable the web service capacity: [http://www.geonames.org/enablefreewebservice](http://www.geonames.org/enablefreewebservice).
+There's a dedicated R package to use geonames. First we need to create an account on geonames: [https://www.geonames.org/login](https://www.geonames.org/login) in order to get your own `geonamesUsername`. You will also need to enable the web service capacity: [http://www.geonames.org/enablefreewebservice](http://www.geonames.org/enablefreewebservice).
 
 
 
@@ -138,16 +140,18 @@ str(drc)
  
 This would be the URL on geonames [https://www.geonames.org/advanced-search.html?q=Ndoumba&country=CD&featureClass=P&continentCode=AF&fuzzy=0.6](https://www.geonames.org/advanced-search.html?q=Ndoumba&country=CD&featureClass=P&continentCode=AF&fuzzy=0.6).
 
-You can not the argument to query the API:
+
+Beyond searching for the location name, you can note additional arguments to query the API:
 
  
- * featureClass = "P",
+ * featureClass = "P", - Here we are looking for populated place, you can narrow down this search by selecting one feature among the 645 different type available: [https://www.geonames.org/export/codes.html](https://www.geonames.org/export/codes.html)
  
- * fuzzy = "0.6",
+ * fuzzy = "0.6", - This enables the fuzzy search. By changing this variable, you will tune the sensitivity of the similar locations identification capacity.
  
- * country = "CD",
+ * country = "CD", continentCode = "AF" - This will narrow down your search to a country of continent.
  
- * continentCode = "AF",
+ 
+More documentation on the webservice is available at [https://www.geonames.org/export/web-services.html](https://www.geonames.org/export/web-services.html).
 
 
 ```{r}

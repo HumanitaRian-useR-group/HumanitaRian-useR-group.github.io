@@ -13,16 +13,18 @@ tags:
 ---
 
 
-Often affected population or key informant are requested to share their preference for specific type of interventions.  How can we identify patterns of preference within a dataset?
+Often affected population or key informant are requested to share their preference for specific type of interventions.  How can we identify patterns of preference within a dataset? Can we identify  groupings  on  the  basis of several (categorical or continuous) variables that differentiate profiles optimally.
 
 <!--MORE-->
 
 This tutorial is based on the publication [Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods](http://aldo-benini.org/Level2/HumanitData/OkularAnalytics_Priorities_and_Preferences_v2019_01_23.pdf).
 
+## Loading packages
+
 ```{r setup, include = TRUE, message = FALSE, warning = FALSE, echo = TRUE}
 ## This function will retrieve the packae if they are not yet installed.
 using <- function(...) {
-    libs <- unlist(list(...))
+   libs <- unlist(list(...))
     req <- unlist(lapply(libs,require,character.only = TRUE))
     need <- libs[req == FALSE]
     if (length(need) > 0) { 
@@ -94,7 +96,8 @@ covariate$resp <- resp
 covariate <- subset(covariate, rowMeans(resp, na.rm = TRUE) > 0 &   rowMeans(resp, na.rm = TRUE) < 1)
 ``` 
 
-We can now compute and display it
+We can now compute and display it. 
+
 If the Rasch tree shows at least one split, DIF is present and there are groups with significant difference in their hiearchy of needs.
 
 

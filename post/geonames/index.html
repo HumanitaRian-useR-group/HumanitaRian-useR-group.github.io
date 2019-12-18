@@ -25,12 +25,12 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fuzzy geocoding on location name"/>
-<meta name="twitter:description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme.
- In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information."/>
+<meta name="twitter:description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme. It aggregates a huge number of data source: https://www.geonames.org/datasources/.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames."/>
 
         <meta property="og:title" content="Fuzzy geocoding on location name" />
-<meta property="og:description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme.
- In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information." />
+<meta property="og:description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme. It aggregates a huge number of data source: https://www.geonames.org/datasources/.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/geonames/" />
 <meta property="article:published_time" content="2019-12-14T00:00:00&#43;00:00"/>
@@ -42,17 +42,17 @@
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="Fuzzy geocoding on location name">
-<meta itemprop="description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme.
- In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information.">
+<meta itemprop="description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme. It aggregates a huge number of data source: https://www.geonames.org/datasources/.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames.">
 
 
 <meta itemprop="datePublished" content="2019-12-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-12-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1305">
+<meta itemprop="wordCount" content="1429">
 
 
 
-<meta itemprop="keywords" content="Edouard Legoupil,UNHCR," />
+<meta itemprop="keywords" content="Edouard-Legoupil,UNHCR," />
 
         
 
@@ -489,12 +489,13 @@ if (!doNotTrack) {
       
 
 
-<p>Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. <a href="https://www.geonames.org">Geoname.org</a> is the most extensive database of toponyme.</p>
+<p>Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. <a href="https://www.geonames.org">Geoname.org</a> is the most extensive database of toponyme. It aggregates a huge number of data source: <a href="https://www.geonames.org/datasources/">https://www.geonames.org/datasources/</a>.</p>
 <!--MORE-->
 <p>In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. It makes use of algorithm to measure the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> (i.e. a way of quantifying how dissimilar two strings (e.g., words) are to one another by counting the minimum number of operations required to transform one string into the other).</p>
+<p>Fuzzy search is quite powerfull when searching for locations in where toponyme are <a href="https://en.wikipedia.org/wiki/Transliteration">transliteration</a> of arabic for instance (i.e. transferring a word from one alphabet of one language to another one).</p>
 <div id="geonames.org" class="section level2">
 <h2>Geonames.org</h2>
-<p>There’s a dedicated R package to use geonames. First we need to create an account on geonames: <a href="https://www.geonames.org/login">https://www.geonames.org/login</a> and enable the web service capacity: <a href="http://www.geonames.org/enablefreewebservice">http://www.geonames.org/enablefreewebservice</a>.</p>
+<p>There’s a dedicated R package to use geonames. First we need to create an account on geonames: <a href="https://www.geonames.org/login">https://www.geonames.org/login</a> in order to get your own <code>geonamesUsername</code>. You will also need to enable the web service capacity: <a href="http://www.geonames.org/enablefreewebservice">http://www.geonames.org/enablefreewebservice</a>.</p>
 </div>
 <div id="install-package" class="section level2">
 <h2>Install package</h2>
@@ -563,13 +564,13 @@ str(drc)</code></pre>
 ##  $ Long       : Factor w/ 1 level &quot;#N/A&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
 <p>We can search location one by one.</p>
 <p>This would be the URL on geonames <a href="https://www.geonames.org/advanced-search.html?q=Ndoumba&amp;country=CD&amp;featureClass=P&amp;continentCode=AF&amp;fuzzy=0.6">https://www.geonames.org/advanced-search.html?q=Ndoumba&amp;country=CD&amp;featureClass=P&amp;continentCode=AF&amp;fuzzy=0.6</a>.</p>
-<p>You can not the argument to query the API:</p>
+<p>Beyond searching for the location name, you can note additional arguments to query the API:</p>
 <ul>
-<li><p>featureClass = “P”,</p></li>
-<li><p>fuzzy = “0.6”,</p></li>
-<li><p>country = “CD”,</p></li>
-<li><p>continentCode = “AF”,</p></li>
+<li><p>featureClass = “P”, - Here we are looking for populated place, you can narrow down this search by selecting one feature among the 645 different type available: <a href="https://www.geonames.org/export/codes.html">https://www.geonames.org/export/codes.html</a></p></li>
+<li><p>fuzzy = “0.6”, - This enables the fuzzy search. By changing this variable, you will tune the sensitivity of the similar locations identification capacity.</p></li>
+<li><p>country = “CD”, continentCode = “AF” - This will narrow down your search to a country of continent.</p></li>
 </ul>
+<p>More documentation on the webservice is available at <a href="https://www.geonames.org/export/web-services.html">https://www.geonames.org/export/web-services.html</a>.</p>
 <pre class="r"><code>search1 &lt;- GNsearch(q = &quot;Ndoumba&quot;,
          featureClass = &quot;P&quot;,
          fuzzy = &quot;0.6&quot;,
@@ -1656,7 +1657,7 @@ names(results)</code></pre>
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="/tags/edouard-legoupil">Edouard Legoupil</a></li>
+                <li><a class="article-category-link" href="/tags/edouard-legoupil">Edouard-Legoupil</a></li>
                 
                 
                 <li><a class="article-category-link" href="/tags/unhcr">UNHCR</a></li>

@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/edouard-legoupil/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fuzzy geocoding on location name</title>
+      <link>/post/geonames/</link>
+      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/geonames/</guid>
+      <description>Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme. It aggregates a huge number of data source: https://www.geonames.org/datasources/.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames.</description>
+    </item>
     
     <item>
       <title>Profile of preference: Rashtree analysis</title>
@@ -18,9 +28,9 @@
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/profile-of-preference/</guid>
-      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset?
+      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.
  This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
-## This function will retrieve the packae if they are not yet installed. using &amp;lt;- function(...) { libs &amp;lt;- unlist(list(...)) req &amp;lt;- unlist(lapply(libs,require,character.</description>
+Loading packages ## This function will retrieve the packae if they are not yet installed.</description>
     </item>
     
     <item>

@@ -25,14 +25,14 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Profile of preference: Rashtree analysis"/>
-<meta name="twitter:description" content="Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset?
+<meta name="twitter:description" content="Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.
  This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
-## This function will retrieve the packae if they are not yet installed. using &lt;- function(...) { libs &lt;- unlist(list(...)) req &lt;- unlist(lapply(libs,require,character."/>
+Loading packages ## This function will retrieve the packae if they are not yet installed."/>
 
         <meta property="og:title" content="Profile of preference: Rashtree analysis" />
-<meta property="og:description" content="Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset?
+<meta property="og:description" content="Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.
  This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
-## This function will retrieve the packae if they are not yet installed. using &lt;- function(...) { libs &lt;- unlist(list(...)) req &lt;- unlist(lapply(libs,require,character." />
+Loading packages ## This function will retrieve the packae if they are not yet installed." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/profile-of-preference/" />
 <meta property="article:published_time" content="2019-12-10T00:00:00&#43;00:00"/>
@@ -44,14 +44,14 @@
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="Profile of preference: Rashtree analysis">
-<meta itemprop="description" content="Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset?
+<meta itemprop="description" content="Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.
  This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
-## This function will retrieve the packae if they are not yet installed. using &lt;- function(...) { libs &lt;- unlist(list(...)) req &lt;- unlist(lapply(libs,require,character.">
+Loading packages ## This function will retrieve the packae if they are not yet installed.">
 
 
 <meta itemprop="datePublished" content="2019-12-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-12-10T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="640">
+<meta itemprop="wordCount" content="659">
 
 
 
@@ -492,12 +492,14 @@ if (!doNotTrack) {
       
 
 
-<p>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset?</p>
+<p>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.</p>
 <!--MORE-->
 <p>This tutorial is based on the publication <a href="http://aldo-benini.org/Level2/HumanitData/OkularAnalytics_Priorities_and_Preferences_v2019_01_23.pdf">Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods</a>.</p>
+<div id="loading-packages" class="section level2">
+<h2>Loading packages</h2>
 <pre class="r"><code>## This function will retrieve the packae if they are not yet installed.
 using &lt;- function(...) {
-    libs &lt;- unlist(list(...))
+   libs &lt;- unlist(list(...))
     req &lt;- unlist(lapply(libs,require,character.only = TRUE))
     need &lt;- libs[req == FALSE]
     if (length(need) &gt; 0) { 
@@ -520,6 +522,7 @@ left_align &lt;- function(plot_name, pieces){
   grob$layout$l[grob$layout$name %in% pieces] &lt;- 2
   return(grob)
 }</code></pre>
+</div>
 <div id="dataset" class="section level2">
 <h2>Dataset</h2>
 <p>The data used in the this tutorial comes from NPM Site Assessment Round 11, 2018 - for the Rohingya refugee camps in Bangladesh.</p>
@@ -555,8 +558,8 @@ covariate$resp &lt;- resp
 # strictly between 0 and 1 forfuther analysis.
 covariate &lt;- subset(covariate, rowMeans(resp, na.rm = TRUE) &gt; 0 &amp; rowMeans(resp, 
     na.rm = TRUE) &lt; 1)</code></pre>
-<p>We can now compute and display it
-If the Rasch tree shows at least one split, DIF is present and there are groups with significant difference in their hiearchy of needs.</p>
+<p>We can now compute and display it.</p>
+<p>If the Rasch tree shows at least one split, DIF is present and there are groups with significant difference in their hiearchy of needs.</p>
 <pre class="r"><code>## Compute the rashtree
 raschtree &lt;- raschtree(resp ~ upazila + log10pop + healthWalk_enc, data = covariate)
 
