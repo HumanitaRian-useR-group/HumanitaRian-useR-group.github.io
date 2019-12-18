@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dataviz on HumanitaRian useR group</title>
+    <title>DataViz on HumanitaRian useR Group</title>
     <link>/categories/dataviz/</link>
-    <description>Recent content in Dataviz on HumanitaRian useR group</description>
+    <description>Recent content in DataViz on HumanitaRian useR Group</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Tue, 16 Apr 2019 00:00:00 +0000</lastBuildDate>
     
@@ -19,7 +19,7 @@
       
       <guid>/post/eulerkobo/</guid>
       <description>Multiple choice question in which respondent can select more than one correct answer from the list is a usual part of almost every survey.
-It is usually visualized as a simple bar chart ignoring the overlap between the different categories, while this overlap can bring more analytical value and depth to the analysis.
+It is usually visualized as a simple bar chart ignoring the overlap between the different categories, while this overlap can bring more analytical value and depth to the analysis. 
 Euler diagram is a perfect way to show the relationship between different subsets and that’s hardly possible to build it with the commonly used spreadsheet software such as MS Excel.</description>
     </item>
     
@@ -38,8 +38,20 @@ Euler diagram is a perfect way to show the relationship between different subset
       <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/sahel-fatalities/</guid>
-      <description>In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries. The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
+      <description>In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries.
+ The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
 remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.</description>
+    </item>
+    
+    <item>
+      <title>Refugee Population Data Visualisation</title>
+      <link>/post/refugee-population-viz/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/refugee-population-viz/</guid>
+      <description>UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
+ Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
+ Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.</description>
     </item>
     
   </channel>

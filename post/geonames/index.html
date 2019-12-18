@@ -1,0 +1,2006 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Fuzzy geocoding on location name</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.54.0" />
+        
+
+
+        
+            <meta name="author" content="Edouard Legoupil">
+        
+        
+            
+                <meta name="description" content="The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fuzzy geocoding on location name"/>
+<meta name="twitter:description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information."/>
+
+        <meta property="og:title" content="Fuzzy geocoding on location name" />
+<meta property="og:description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/geonames/" />
+<meta property="article:published_time" content="2019-12-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-12-14T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Fuzzy geocoding on location name">
+<meta itemprop="description" content="Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information.">
+
+
+<meta itemprop="datePublished" content="2019-12-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1305">
+
+
+
+<meta itemprop="keywords" content="Edouard Legoupil,UNHCR," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+      
+            <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+			  
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+        <h1><a href="/">post</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post/index.html">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-info-circle">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-database">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post/index.html">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-info-circle">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-database">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <h3>
+                                <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/geonames/">Fuzzy geocoding on location name</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-14'>
+                                    December 14, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-10'>
+                                    December 10, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-03'>
+                                    December 3, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/compositeindicator/">Building Severity Index with R</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-28'>
+                                    November 28, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/activityinfoscript/">How-to: Access ActivityInfo data with R</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-10-03'>
+                                    October 3, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">See more</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2fgeonames%2f&amp;text=Fuzzy%20geocoding%20on%20location%20name&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2fgeonames%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fgeonames%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2fgeonames%2f&amp;title=Fuzzy%20geocoding%20on%20location%20name" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2fgeonames%2f&amp;title=Fuzzy%20geocoding%20on%20location%20name" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2fgeonames%2f&amp;title=Fuzzy%20geocoding%20on%20location%20name" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2fgeonames%2f&amp;description=Fuzzy%20geocoding%20on%20location%20name" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Edouard%20Legoupil&amp;body=%2fpost%2fgeonames%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/geonames/">Fuzzy geocoding on location name</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        <time class="published"
+            datetime='2019-12-14 00:00:00 &#43;0000 UTC'>
+            December 14, 2019</time>
+        <span class="author">Edouard Legoupil</span>
+        
+            <p>7 minutes read</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  
+  <div>
+     
+ <div id="go-to-folding-div" style="display: inline-block;vertical-align: top;height: 1px;margin-top: -4em;"></div>
+ <div id="code-folding-buttons" class="btn-group pull-right">
+   <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast="">
+     <span>Show/Hide all code</span> 
+     <span class="caret"></span>
+   </button>
+   <ul class="dropdown-menu" style="min-width: 50px;">
+   <li><a id="rmd-show-all-code" href="#go-to-folding-div">Show All Code</a>
+   </li><li><a id="rmd-hide-all-code" href="#go-to-folding-div">Hide All Code</a></li>
+   </ul>
+ </div>
+ 
+
+    <br/>
+    <div id="content" class="article-entry">
+      
+
+
+<p>Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. <a href="https://www.geonames.org">Geoname.org</a> is the most extensive database of toponyme.</p>
+<!--MORE-->
+<p>In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. It makes use of algorithm to measure the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> (i.e. a way of quantifying how dissimilar two strings (e.g., words) are to one another by counting the minimum number of operations required to transform one string into the other).</p>
+<div id="geonames.org" class="section level2">
+<h2>Geonames.org</h2>
+<p>There’s a dedicated R package to use geonames. First we need to create an account on geonames: <a href="https://www.geonames.org/login">https://www.geonames.org/login</a> and enable the web service capacity: <a href="http://www.geonames.org/enablefreewebservice">http://www.geonames.org/enablefreewebservice</a>.</p>
+</div>
+<div id="install-package" class="section level2">
+<h2>Install package</h2>
+<pre class="r"><code>#install.packages(&quot;geonames&quot;)
+library(geonames)
+library(kableExtra)
+##options(geonamesUsername=&quot;user&quot;)</code></pre>
+</div>
+<div id="available-functions-in-the-package" class="section level2">
+<h2>Available functions in the package</h2>
+<div id="basic-search" class="section level3">
+<h3>Basic search</h3>
+<pre class="r"><code>###
+### some sample usages
+
+# GNsearch(q=&quot;london&quot;,maxRows=10)
+# GNcities(north=44.1,south=-9.9,east=-22.4,west=55.2,lang=&quot;de&quot;)
+# GNchildren(3175395)</code></pre>
+</div>
+<div id="get-nearby-functions" class="section level3">
+<h3>Get nearby functions</h3>
+<pre class="r"><code># GNneighbours(3041565)
+# GNneighbourhood(40.7834,-73.96625)
+# GNfindNearbyPlaceName(52,-128,300, &quot;30&quot;,&quot;FULL&quot;) 
+# GNfindNearbyStreets(37.45,-122.18)</code></pre>
+</div>
+<div id="country-functions" class="section level3">
+<h3>Country functions</h3>
+<pre class="r"><code># GNcountryCode(lat=47.03,lng=10.2)
+# GNcountryInfo()
+# GNcountryInfo(&quot;DE&quot;)</code></pre>
+</div>
+<div id="wikipedia-functions" class="section level3">
+<h3>Wikipedia functions</h3>
+<pre class="r"><code>## Wikipedia functions
+# GNwikipediaSearch(&quot;london&quot;)
+# GNfindNearbyWikipedia(postalcode=8775,country=&quot;CH&quot;,radius=10)
+# GNwikipediaBoundingBox(north=44.1,south=-9.9,east=-22.4,west=55.2)</code></pre>
+</div>
+<div id="timezone-function" class="section level3">
+<h3>Timezone function</h3>
+<pre class="r"><code># GNtimezone(57.01,-2)
+# GNtimezone(lat=0,lng=-40)
+# GNtimezone(lat=0,lng=-40, radius=200)</code></pre>
+</div>
+<div id="postal-code-function" class="section level3">
+<h3>Postal code function</h3>
+<pre class="r"><code># GNfindNearbyPostalCodes(lat=47,lng=9)
+# GNpostalCodeSearch(postalcode=90210,country=&quot;FI&quot;)
+# GNpostalCodeSearch(postalcode=90210,country=&quot;US&quot;)
+# GNpostalCodeLookup(postalcode=&quot;LA1&quot;,country=&quot;UK&quot;)
+# GNpostalCodeLookup(postalcode=&quot;90210&quot;)
+# GNpostalCodeCountryInfo()</code></pre>
+</div>
+</div>
+<div id="practical-example-in-drc" class="section level2">
+<h2>Practical example in DRC</h2>
+<p>Let’s use a dataset recently shared on the “GRP Inter Agency IM” skype group.</p>
+<pre class="r"><code>drc &lt;- read.delim(&quot;drc.tsv&quot;)
+str(drc)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    40 obs. of  5 variables:
+##  $ Departement: Factor w/ 2 levels &quot;cuvette&quot;,&quot;Likouala&quot;: 1 1 2 2 2 2 2 2 2 2 ...
+##  $ District   : Factor w/ 8 levels &quot;betou&quot;,&quot;Bouanela&quot;,..: 8 8 7 7 3 7 3 3 7 2 ...
+##  $ VILLAGES   : Factor w/ 40 levels &quot;&quot;,&quot;Afrique du sud&quot;,..: 37 36 40 39 38 35 34 33 32 31 ...
+##  $ Lat        : Factor w/ 1 level &quot;#N/A&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Long       : Factor w/ 1 level &quot;#N/A&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>We can search location one by one.</p>
+<p>This would be the URL on geonames <a href="https://www.geonames.org/advanced-search.html?q=Ndoumba&amp;country=CD&amp;featureClass=P&amp;continentCode=AF&amp;fuzzy=0.6">https://www.geonames.org/advanced-search.html?q=Ndoumba&amp;country=CD&amp;featureClass=P&amp;continentCode=AF&amp;fuzzy=0.6</a>.</p>
+<p>You can not the argument to query the API:</p>
+<ul>
+<li><p>featureClass = “P”,</p></li>
+<li><p>fuzzy = “0.6”,</p></li>
+<li><p>country = “CD”,</p></li>
+<li><p>continentCode = “AF”,</p></li>
+</ul>
+<pre class="r"><code>search1 &lt;- GNsearch(q = &quot;Ndoumba&quot;,
+         featureClass = &quot;P&quot;,
+         fuzzy = &quot;0.6&quot;,
+         country = &quot;CD&quot;,
+         continentCode = &quot;AF&quot;,
+         maxRows = 20)
+
+
+
+kable(search1)</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+adminCode1
+</th>
+<th style="text-align:left;">
+lng
+</th>
+<th style="text-align:left;">
+geonameId
+</th>
+<th style="text-align:left;">
+toponymName
+</th>
+<th style="text-align:left;">
+countryId
+</th>
+<th style="text-align:left;">
+fcl
+</th>
+<th style="text-align:left;">
+population
+</th>
+<th style="text-align:left;">
+countryCode
+</th>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:left;">
+fclName
+</th>
+<th style="text-align:left;">
+adminCodes1.ISO3166_2
+</th>
+<th style="text-align:left;">
+countryName
+</th>
+<th style="text-align:left;">
+fcodeName
+</th>
+<th style="text-align:left;">
+adminName1
+</th>
+<th style="text-align:left;">
+lat
+</th>
+<th style="text-align:left;">
+fcode
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+22.35055
+</td>
+<td style="text-align:left;">
+923194
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+LU
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Lualaba
+</td>
+<td style="text-align:left;">
+-10.71362
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+22.0647
+</td>
+<td style="text-align:left;">
+8541961
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+LU
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Lualaba
+</td>
+<td style="text-align:left;">
+-9.73041
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+23.98294
+</td>
+<td style="text-align:left;">
+8462158
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+LU
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Lualaba
+</td>
+<td style="text-align:left;">
+-9.47691
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+21.34056
+</td>
+<td style="text-align:left;">
+8327318
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+KS
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Kasai
+</td>
+<td style="text-align:left;">
+-6.47715
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+22.27717
+</td>
+<td style="text-align:left;">
+8285154
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+KC
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Kasai-Central
+</td>
+<td style="text-align:left;">
+-6.97654
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+22.51405
+</td>
+<td style="text-align:left;">
+8285223
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+KC
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Kasai-Central
+</td>
+<td style="text-align:left;">
+-6.89121
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+22.48846
+</td>
+<td style="text-align:left;">
+923204
+</td>
+<td style="text-align:left;">
+Ndjamba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndjamba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+LU
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Lualaba
+</td>
+<td style="text-align:left;">
+-10.50816
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+29.13872
+</td>
+<td style="text-align:left;">
+8327977
+</td>
+<td style="text-align:left;">
+Ndoluma
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndoluma
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+NK
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Nord Kivu
+</td>
+<td style="text-align:left;">
+-0.30456
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+21
+</td>
+<td style="text-align:left;">
+25.00174
+</td>
+<td style="text-align:left;">
+212789
+</td>
+<td style="text-align:left;">
+Kipase Deuxième
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Kipase Deuxième
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+LO
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Lomami
+</td>
+<td style="text-align:left;">
+-6.47707
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+22.67092
+</td>
+<td style="text-align:left;">
+8463674
+</td>
+<td style="text-align:left;">
+Ndjamba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndjamba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+LU
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Lualaba
+</td>
+<td style="text-align:left;">
+-10.32607
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+21.9611
+</td>
+<td style="text-align:left;">
+207350
+</td>
+<td style="text-align:left;">
+Dombi
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Dombi
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+KC
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Kasai-Central
+</td>
+<td style="text-align:left;">
+-7.59213
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+22.53354
+</td>
+<td style="text-align:left;">
+8285243
+</td>
+<td style="text-align:left;">
+Ndumbu
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumbu
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+KC
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Kasai-Central
+</td>
+<td style="text-align:left;">
+-6.99824
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+22.5749
+</td>
+<td style="text-align:left;">
+8285247
+</td>
+<td style="text-align:left;">
+Ndumbu
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumbu
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+KC
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Kasai-Central
+</td>
+<td style="text-align:left;">
+-6.9623
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:left;">
+17.5095
+</td>
+<td style="text-align:left;">
+2312111
+</td>
+<td style="text-align:left;">
+Ndamba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndamba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+KG
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Kwango
+</td>
+<td style="text-align:left;">
+-6.33728
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+08
+</td>
+<td style="text-align:left;">
+15.25322
+</td>
+<td style="text-align:left;">
+8254913
+</td>
+<td style="text-align:left;">
+Ndamba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndamba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+BC
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Bas-Congo
+</td>
+<td style="text-align:left;">
+-5.47251
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+22.22394
+</td>
+<td style="text-align:left;">
+8461668
+</td>
+<td style="text-align:left;">
+Ndemba
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndemba
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+LU
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Lualaba
+</td>
+<td style="text-align:left;">
+-9.8634
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+22.17769
+</td>
+<td style="text-align:left;">
+8283546
+</td>
+<td style="text-align:left;">
+Ndumbi
+</td>
+<td style="text-align:left;">
+203312
+</td>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+CD
+</td>
+<td style="text-align:left;">
+Ndumbi
+</td>
+<td style="text-align:left;">
+city, village,…
+</td>
+<td style="text-align:left;">
+KC
+</td>
+<td style="text-align:left;">
+DR Congo
+</td>
+<td style="text-align:left;">
+populated place
+</td>
+<td style="text-align:left;">
+Kasai-Central
+</td>
+<td style="text-align:left;">
+-6.23421
+</td>
+<td style="text-align:left;">
+PPL
+</td>
+</tr>
+</tbody>
+</table>
+<p>In order to get quick results, we can also loop through the list of locations.</p>
+<p>First we create an empty dataframe with the right structure.</p>
+<pre class="r"><code>results &lt;- data.frame( adminCode1= &quot;&quot;,
+                       lng= &quot;&quot;,
+                       geonameId= &quot;&quot;,
+                       toponymName= &quot;&quot;,
+                       countryId= &quot;&quot;,
+                       fcl= &quot;&quot;,
+                       population= &quot;&quot;,
+                       countryCode= &quot;&quot;,
+                       name= &quot;&quot;,
+                       fclName= &quot;&quot;,
+                       adminCodes1.ISO3166_2= &quot;&quot;,
+                       countryName= &quot;&quot;,
+                       fcodeName= &quot;&quot;, 
+                       adminName1= &quot;&quot;,
+                       lat= &quot;&quot;, 
+                       fcode= &quot;&quot;,
+                       Village= &quot;&quot;,
+                       Departement= &quot;&quot;,
+                       District= &quot;&quot;,
+                       stringsAsFactors = FALSE)
+
+names(results)</code></pre>
+<pre><code>##  [1] &quot;adminCode1&quot;            &quot;lng&quot;                   &quot;geonameId&quot;            
+##  [4] &quot;toponymName&quot;           &quot;countryId&quot;             &quot;fcl&quot;                  
+##  [7] &quot;population&quot;            &quot;countryCode&quot;           &quot;name&quot;                 
+## [10] &quot;fclName&quot;               &quot;adminCodes1.ISO3166_2&quot; &quot;countryName&quot;          
+## [13] &quot;fcodeName&quot;             &quot;adminName1&quot;            &quot;lat&quot;                  
+## [16] &quot;fcode&quot;                 &quot;Village&quot;               &quot;Departement&quot;          
+## [19] &quot;District&quot;</code></pre>
+<p>Now we can loop around locations, to search and append results.</p>
+<pre class="r"><code>for (i in 1:nrow(drc)) {
+  #i &lt;- 1
+  Village &lt;- as.character(drc[ i, c(&quot;VILLAGES&quot;)])
+  Departement &lt;- as.character(drc[ i, c(&quot;Departement&quot;)])
+  District &lt;- as.character(drc[ i, c(&quot;District&quot;)])
+  cat(paste0(&quot;searching for &quot;, Village, &quot;\n&quot;))
+  
+  resulti &lt;- GNsearch(q = Village ,
+                      country = &quot;CD&quot;,
+                      featureClass = &quot;P&quot;,
+                      continentCode = &quot;AF&quot;,
+                      fuzzy = &quot;0.6&quot;,
+                      maxRows = 20)
+  cat(paste0(&quot;Results potential &quot;, nrow(resulti), &quot;\n&quot;))
+  if (nrow(resulti) &gt; 0 ) {
+    resulti$Village  &lt;- Village
+    resulti$Departement  &lt;- Departement
+    resulti$District  &lt;- District
+  results &lt;- rbind(results, resulti) } else { results &lt;- results}
+}</code></pre>
+<pre><code>## searching for Obembo
+## Results potential 0
+## searching for Obambou
+## Results potential 0
+## searching for Yeleyele
+## Results potential 4
+## searching for Yabayeleyele
+## Results potential 0
+## searching for Talanamisso
+## Results potential 0
+## searching for Nongo
+## Results potential 12
+## searching for Nianga Kake
+## Results potential 3
+## searching for Ndzokou
+## Results potential 0
+## searching for Ndoumba
+## Results potential 17
+## searching for Moutembou
+## Results potential 0
+## searching for Moumenguele
+## Results potential 0
+## searching for Monokoboli
+## Results potential 1
+## searching for Mongombete
+## Results potential 6
+## searching for Moliangolo
+## Results potential 0
+## searching for Mogbala
+## Results potential 20
+## searching for Mobéyé (village autochtones)
+## Results potential 0
+## searching for Mawangui
+## Results potential 20
+## searching for Mankolo
+## Results potential 20
+## searching for Makolo
+## Results potential 20
+## searching for Loumbe
+## Results potential 20
+## searching for Lissala Ngomba
+## Results potential 0
+## searching for Ligoyi
+## Results potential 8
+## searching for Lignete
+## Results potential 1
+## searching for Kpeta
+## Results potential 1
+## searching for Itele
+## Results potential 6
+## searching for Ikongolo
+## Results potential 10
+## searching for Gaga
+## Results potential 20
+## searching for Etima
+## Results potential 2
+## searching for Epena centre (4 quartiers)
+## Results potential 0
+## searching for Elenda
+## Results potential 19
+## searching for Bossessengue
+## Results potential 0
+## searching for Bokpende
+## Results potential 20
+## searching for Bokoumba
+## Results potential 20
+## searching for Bogboko
+## Results potential 20
+## searching for Boboukou
+## Results potential 2
+## searching for Bissobe
+## Results potential 1
+## searching for Bete-Ntolo
+## Results potential 1
+## searching for Bangala
+## Results potential 20
+## searching for Afrique du sud
+## Results potential 0
+## searching for 
+## Results potential 0</code></pre>
+<pre class="r"><code>#names(resulti)</code></pre>
+<p>Last write resuts in csv file.</p>
+<pre class="r"><code>write.csv(results, &quot;results.csv&quot;, row.names = FALSE)</code></pre>
+<p>et voila…</p>
+</div>
+
+    </div>
+      
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/geodata">geodata</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/geocoding">geocoding</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/edouard-legoupil">Edouard Legoupil</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/unhcr">UNHCR</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+    
+ 
+  <script>
+  $(document).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
+  });
+  </script>
+  
+  <script>
+    window.initializeCodeFolding = function(show) {
+
+  
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  
+  var currentIndex = 1;
+
+  
+  var rCodeBlocks = $('');
+  rCodeBlocks.each(function() {
+
+    
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+
+  </script>
+  
+
+
+  </footer>
+  
+
+<div class="related-articles">
+<h3>Related articles</h3>
+<ul>
+	<li>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a>
+          </h3>
+          
+          <time class="published" datetime='2019-12-10 00:00:00 &#43;0000 UTC'>
+          December 10, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a>
+          </h3>
+          
+          <time class="published" datetime='2019-12-03 00:00:00 &#43;0000 UTC'>
+          December 3, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/compositeindicator/">Building Severity Index with R</a>
+          </h3>
+          
+          <time class="published" datetime='2019-11-28 00:00:00 &#43;0000 UTC'>
+          November 28, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	</li>	
+</ul>
+</div>
+
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/profile-of-preference/"
+                class="button big previous">Profile of preference: Rashtree analysis</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/images/avatar.png" alt="HumanitaRian useR Group" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>~ Science is 'show me' - not 'trust me' ~</p>
+      </header>
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/geonames/">Fuzzy geocoding on location name</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-14 00:00:00 &#43;0000 UTC'>
+              December 14, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-10 00:00:00 &#43;0000 UTC'>
+              December 10, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-03 00:00:00 &#43;0000 UTC'>
+              December 3, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/compositeindicator/">Building Severity Index with R</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-28 00:00:00 &#43;0000 UTC'>
+              November 28, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/activityinfoscript/">How-to: Access ActivityInfo data with R</a>
+              </h3>
+              
+              <time class="published" datetime='2019-10-03 00:00:00 &#43;0000 UTC'>
+              October 3, 2019</time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">See more</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+
+  
+  
+    <section id="mini-bio">
+      <h3>about</h3>
+      <p>The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.</p>
+      <a href="/about" class="button">learn more</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+    
+    
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+    
+
+    
+      
+        
+      
+    
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+      
+          
+    
+      <script src="/js/collapse.js"></script>
+      <script src="/js/dropdown.js"></script>
+      <script src="/js/transition.js"></script>
+    
+    
+  </body>
+</html>
+

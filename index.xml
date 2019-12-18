@@ -1,16 +1,69 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HumanitaRian useR group</title>
+    <title>HumanitaRian useR Group</title>
     <link>/</link>
-    <description>Recent content on HumanitaRian useR group</description>
+    <description>Recent content on HumanitaRian useR Group</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Tue, 18 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fuzzy geocoding on location name</title>
+      <link>/post/geonames/</link>
+      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/geonames/</guid>
+      <description>Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme.
+ In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames. A fuzzy search is a process that get results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information.</description>
+    </item>
+    
+    <item>
+      <title>Profile of preference: Rashtree analysis</title>
+      <link>/post/profile-of-preference/</link>
+      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/profile-of-preference/</guid>
+      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset?
+ This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
+## This function will retrieve the packae if they are not yet installed. using &amp;lt;- function(...) { libs &amp;lt;- unlist(list(...)) req &amp;lt;- unlist(lapply(libs,require,character.</description>
+    </item>
+    
+    <item>
+      <title>Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</title>
+      <link>/post/plackett-luce/</link>
+      <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/plackett-luce/</guid>
+      <description>Ratings and rankings account for the majority of data generated in the course of rapid key informant needs assessments during humanitarian emergencies. Using this information to develop consolidated need prioritisation comes with challenges. 
+Practically speaking, the method presented here can be used for dataset that includes questions such as
+ what’s your first need? (select_one among different options)
+  what’s your second need? (select_one among different options)</description>
+    </item>
+    
+    <item>
+      <title>Building Severity Index with R</title>
+      <link>/post/compositeindicator/</link>
+      <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/compositeindicator/</guid>
+      <description>In this tutorial, We will see how to build a severity index using a key informant interview dataset. Building such index, also called composite indicator, is among the regular and expected task of any humanitarian data analyst.The objective is to summarize information into a simple indicator that can reduce information overflow. Severity index informs the sectoral and inter-sectoral discussions taking place as part of the Humanitarian Needs Overview (HNO) process, in particular facilitating a comparison of needs across geographic areas.</description>
+    </item>
+    
+    <item>
+      <title>How-to: Access ActivityInfo data with R</title>
+      <link>/post/activityinfoscript/</link>
+      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/activityinfoscript/</guid>
+      <description>ActivityInfo is a data collection and management platform used in the humanitarian sector, designed particularly for Monitoring &amp;amp; Evaluation. This short tutorial aims to explain how to access data using the ActivityInfo API with R. 
+ActivityInfo version used for this tutorial is V4.0, focusing on the new interface (forms, not activities).
+The activityinfo-R package “Be Data Driven”, the company managing ActivityInfo, has developed the “activityinfo-R” package. The package conveniently allows R users to read and write data through the ActivityInfo API.</description>
+    </item>
     
     <item>
       <title>Data Quality Monitoring</title>
@@ -18,7 +71,7 @@
       <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/dataqualitymonitoring/</guid>
-      <description>In this quick tutorial, I share a simple method to graphically display information to monitor data quality of survey teams using a little bit of dplyr and ggplot2
+      <description>In this quick tutorial, I share a simple method to graphically display information to monitor data quality of survey teams using a little bit of dplyr and ggplot2 
 There is a lot to be said and done about data quality monitoring. Here is just one simple method to graphically observe “curb-stoning” or “flat-lining” - when enumerators stop administering/recording real questions and responses and instead start making up answers. Often fictious responses are not random and can sometimes be detected graphically.</description>
     </item>
     
@@ -28,7 +81,7 @@ There is a lot to be said and done about data quality monitoring. Here is just o
       <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/datasecurity/</guid>
-      <description>In this quick tutorial, I share 3 methods to keep you and your data out of trouble.
+      <description>In this quick tutorial, I share 3 methods to keep you and your data out of trouble. 
 Disclaimer : the fields of Data Security and Data Protection are vast. This tutorial hardly skims the surface. Check with your institution on the specific standards and tools which may be relevant to you.
 Quick note on the tutorial You should be able to follow and recreate all of the results by copying the syntax in the grey boxes.</description>
     </item>
@@ -40,7 +93,7 @@ Quick note on the tutorial You should be able to follow and recreate all of the 
       
       <guid>/post/eulerkobo/</guid>
       <description>Multiple choice question in which respondent can select more than one correct answer from the list is a usual part of almost every survey.
-It is usually visualized as a simple bar chart ignoring the overlap between the different categories, while this overlap can bring more analytical value and depth to the analysis.
+It is usually visualized as a simple bar chart ignoring the overlap between the different categories, while this overlap can bring more analytical value and depth to the analysis. 
 Euler diagram is a perfect way to show the relationship between different subsets and that’s hardly possible to build it with the commonly used spreadsheet software such as MS Excel.</description>
     </item>
     
@@ -59,7 +112,8 @@ Euler diagram is a perfect way to show the relationship between different subset
       <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/sahel-fatalities/</guid>
-      <description>In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries. The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
+      <description>In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries.
+ The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
 remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.</description>
     </item>
     
@@ -92,7 +146,7 @@ The Humanitarian Data Exchange (HDX) is an open platform for sharing data across
       
       <guid>/post/kobo_restapi/</guid>
       <description>R program has become a language of choice for data science work. It has rich feature library that can be readily used for variety of data management tasks. This article focuses on accessing data from the KoBoToolbox.
-KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
+ KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
 KoBoToolbox has a number of advanced features which are very useful for advanced use case scenario.</description>
     </item>
     
@@ -102,12 +156,11 @@ KoBoToolbox has a number of advanced features which are very useful for advanced
       <pubDate>Wed, 28 Nov 2018 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This site hosts information related to the HumanitaRian-useR-group. This group is open to Humanitarian Information Management officers.
+      <description>This site hosts information related to the HumanitaRian-useR-group. This group is open to Humanitarian Information Management officers from any organisation. The initial group was created in November 2018 after a workshop in Amman funded by UNHCR.
 The idea is to:
- Organise regular webinars using different format: panel discussion, one long in-depth talk, a couple of shorter talks or open-mic &amp;ldquo;quickfire&amp;rdquo; talks&amp;hellip;
  Share and disseminate some interesting approaches.
  Link up colleagues for potential code peer review
-  Why R statistical language? R has many advantages</description>
+ Organise regular webinars using different format: panel discussion, one long in-depth talk, a couple of shorter talks or open-mic &amp;ldquo;quickfire&amp;rdquo; talks&amp;hellip;</description>
     </item>
     
     <item>
@@ -116,7 +169,8 @@ The idea is to:
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/first-meeting/</guid>
-      <description>This report is the output of a 2 days workshop held in Amman -5-6 Nov 2018. The presentation &amp;amp; group work output that fed the discussions are accessible here. Participation was diverse and included analysts from all organisations below: Problem statement: Science is “show me”, not “trust me”! While the data collection phase has been for years the main challenge, we have now a deluge of data that we do not always make the most of.</description>
+      <description>This report is the output of a 2 days workshop held in Amman -5-6 Nov 2018. The presentation &amp;amp; group work output that fed the discussions are accessible here. Participation was diverse and included analysts from all organisations below: 
+Problem statement: Science is “show me”, not “trust me”! While the data collection phase has been for years the main challenge, we have now a deluge of data that we do not always make the most of.</description>
     </item>
     
     <item>
@@ -135,7 +189,8 @@ The idea is to:
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/make-most-of-data/</guid>
-      <description>AirBnB particpated to the recent R user conference in NYC in May 2017.
+      <description> An excellent video on how to build a data science culture within an organisation 
+AirBnB particpated to the recent R user conference in NYC in May 2017.
 The video posted here and this blog post presents 3 important principles:
  Develop packages to mainstream analysis workflow.
  Promote education &amp;amp; contributions within the organisation

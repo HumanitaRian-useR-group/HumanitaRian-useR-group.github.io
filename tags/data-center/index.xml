@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data-Center on HumanitaRian useR Group</title>
+    <link>/tags/data-center/</link>
+    <description>Recent content in Data-Center on HumanitaRian useR Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Sun, 23 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/data-center/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>rhdx: a R package to interact with HDX</title>
+      <link>/post/rhdx_demo/</link>
+      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rhdx_demo/</guid>
+      <description>rhdx is an R package to interact with the HDX API.
+It provide a series of utilities to facilitates interaction &amp;amp; analysis.
+The Humanitarian Data Exchange (HDX) is an open platform for sharing data across crises and organisations. Launched in July 2014, the goal of HDX is to make humanitarian data easy to find and use for analysis. Our growing collection of datasets has been accessed by users in over 200 countries and territories.</description>
+    </item>
+    
+  </channel>
+</rss>

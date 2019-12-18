@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ahmadou-Dicko on HumanitaRian useR Group</title>
+    <link>/tags/ahmadou-dicko/</link>
+    <description>Recent content in Ahmadou-Dicko on HumanitaRian useR Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ahmadou-dicko/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fatal events in the Sahel</title>
+      <link>/post/sahel-fatalities/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sahel-fatalities/</guid>
+      <description>In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries.
+ The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
+remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.</description>
+    </item>
+    
+    <item>
+      <title>rhdx: a R package to interact with HDX</title>
+      <link>/post/rhdx_demo/</link>
+      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rhdx_demo/</guid>
+      <description>rhdx is an R package to interact with the HDX API.
+It provide a series of utilities to facilitates interaction &amp;amp; analysis.
+The Humanitarian Data Exchange (HDX) is an open platform for sharing data across crises and organisations. Launched in July 2014, the goal of HDX is to make humanitarian data easy to find and use for analysis. Our growing collection of datasets has been accessed by users in over 200 countries and territories.</description>
+    </item>
+    
+  </channel>
+</rss>

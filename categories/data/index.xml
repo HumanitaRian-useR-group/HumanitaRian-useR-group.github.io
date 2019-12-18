@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data on HumanitaRian useR group</title>
+    <title>Data on HumanitaRian useR Group</title>
     <link>/categories/data/</link>
-    <description>Recent content in Data on HumanitaRian useR group</description>
+    <description>Recent content in Data on HumanitaRian useR Group</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Refugee Population Data Visualisation</title>
-      <link>/post/refugee-population-viz/</link>
-      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/refugee-population-viz/</guid>
-      <description>UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
- Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
- Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.</description>
-    </item>
     
     <item>
       <title>rhdx: a R package to interact with HDX</title>
@@ -41,31 +30,8 @@ The Humanitarian Data Exchange (HDX) is an open platform for sharing data across
       
       <guid>/post/kobo_restapi/</guid>
       <description>R program has become a language of choice for data science work. It has rich feature library that can be readily used for variety of data management tasks. This article focuses on accessing data from the KoBoToolbox.
-KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
+ KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
 KoBoToolbox has a number of advanced features which are very useful for advanced use case scenario.</description>
-    </item>
-    
-    <item>
-      <title>How to make the most of our data?</title>
-      <link>/post/make-most-of-data/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/make-most-of-data/</guid>
-      <description>AirBnB particpated to the recent R user conference in NYC in May 2017.
-The video posted here and this blog post presents 3 important principles:
- Develop packages to mainstream analysis workflow.
- Promote education &amp;amp; contributions within the organisation
- Ensure reproducibility.
-  </description>
-    </item>
-    
-    <item>
-      <title>Humanitarian Data Scientist Job</title>
-      <link>/post/humanitarian-data-scientist/</link>
-      <pubDate>Sat, 20 Dec 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/post/humanitarian-data-scientist/</guid>
-      <description>We have all heard and seen the trend of increasing volumes of data becoming available to us through a variety of mechanisms. With this trend, we have also seen the increased recognition of those who know how to handle such data. Historically, we may have referred to them as statisticians. However, as technologies in this discipline have multiplied and become affordable (or free), increasing numbers of people have been empowered to enter the business.</description>
     </item>
     
   </channel>

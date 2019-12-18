@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Edouard-Legoupil on HumanitaRian useR Group</title>
+    <link>/tags/edouard-legoupil/</link>
+    <description>Recent content in Edouard-Legoupil on HumanitaRian useR Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/edouard-legoupil/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Profile of preference: Rashtree analysis</title>
+      <link>/post/profile-of-preference/</link>
+      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/profile-of-preference/</guid>
+      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset?
+ This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
+## This function will retrieve the packae if they are not yet installed. using &amp;lt;- function(...) { libs &amp;lt;- unlist(list(...)) req &amp;lt;- unlist(lapply(libs,require,character.</description>
+    </item>
+    
+    <item>
+      <title>Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</title>
+      <link>/post/plackett-luce/</link>
+      <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/plackett-luce/</guid>
+      <description>Ratings and rankings account for the majority of data generated in the course of rapid key informant needs assessments during humanitarian emergencies. Using this information to develop consolidated need prioritisation comes with challenges. 
+Practically speaking, the method presented here can be used for dataset that includes questions such as
+ what’s your first need? (select_one among different options)
+  what’s your second need? (select_one among different options)</description>
+    </item>
+    
+    <item>
+      <title>Building Severity Index with R</title>
+      <link>/post/compositeindicator/</link>
+      <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/compositeindicator/</guid>
+      <description>In this tutorial, We will see how to build a severity index using a key informant interview dataset. Building such index, also called composite indicator, is among the regular and expected task of any humanitarian data analyst.The objective is to summarize information into a simple indicator that can reduce information overflow. Severity index informs the sectoral and inter-sectoral discussions taking place as part of the Humanitarian Needs Overview (HNO) process, in particular facilitating a comparison of needs across geographic areas.</description>
+    </item>
+    
+    <item>
+      <title>Bar Chart Race for Refugees</title>
+      <link>/post/refugee-bar-chart-race/</link>
+      <pubDate>Sun, 24 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/refugee-bar-chart-race/</guid>
+      <description>“Bar Chart Race” are a specific type of bar chart that moves to show rankings over time. It became recently a quite popular approach to bring a storytelling elements within a longitudinal dataset. Readers are suggested to connect and combine what they see on the chart with other qualitive elements that they know about (elements of history). By using the allegory of F1 Race, it gives a very dynamic dimension.</description>
+    </item>
+    
+    <item>
+      <title>Refugee Population Data Visualisation</title>
+      <link>/post/refugee-population-viz/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/refugee-population-viz/</guid>
+      <description>UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
+ Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
+ Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,68 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Webdata on HumanitaRian useR group</title>
+    <title>WebData on HumanitaRian useR Group</title>
     <link>/tags/webdata/</link>
-    <description>Recent content in Webdata on HumanitaRian useR group</description>
+    <description>Recent content in WebData on HumanitaRian useR Group</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/webdata/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Refugee Population Data Visualisation</title>
-      <link>/post/refugee-population-viz/</link>
-      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/refugee-population-viz/</guid>
-      <description>UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
- Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
- Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.</description>
-    </item>
-    
-    <item>
-      <title>rhdx: a R package to interact with HDX</title>
-      <link>/post/rhdx_demo/</link>
-      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rhdx_demo/</guid>
-      <description>rhdx is an R package to interact with the HDX API.
-It provide a series of utilities to facilitates interaction &amp;amp; analysis.
-The Humanitarian Data Exchange (HDX) is an open platform for sharing data across crises and organisations. Launched in July 2014, the goal of HDX is to make humanitarian data easy to find and use for analysis. Our growing collection of datasets has been accessed by users in over 200 countries and territories.</description>
-    </item>
-    
-    <item>
-      <title>Accessing data from REST API using R: examples for KoBoToolbox and Country Based Pooled Fund (CBPF) data</title>
-      <link>/post/kobo_restapi/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/kobo_restapi/</guid>
-      <description>R program has become a language of choice for data science work. It has rich feature library that can be readily used for variety of data management tasks. This article focuses on accessing data from the KoBoToolbox.
-KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
-KoBoToolbox has a number of advanced features which are very useful for advanced use case scenario.</description>
-    </item>
-    
-    <item>
-      <title>Support the Grand Bargain commitment on Impartial &amp; Joint Needs Assessment</title>
-      <link>/post/first-meeting/</link>
-      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/first-meeting/</guid>
-      <description>This report is the output of a 2 days workshop held in Amman -5-6 Nov 2018. The presentation &amp;amp; group work output that fed the discussions are accessible here. Participation was diverse and included analysts from all organisations below: Problem statement: Science is “show me”, not “trust me”! While the data collection phase has been for years the main challenge, we have now a deluge of data that we do not always make the most of.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown - How to contribute to this site?</title>
-      <link>/post/r-rmarkdown/</link>
-      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/r-rmarkdown/</guid>
-      <description>Creating Websites with R Markdown is easy and can be done directly R Blogfown package. This is how this site is built.
- The website is generated from R Markdown documents (R is optional, i.e., you can use plain Markdown documents without R code chunks). This brings a huge amount of benefits, especially if your website is related to data analysis or (R) programming. Being able to use Markdown implies simplicity and more importantly, portability (e.</description>
-    </item>
     
     <item>
       <title>How to make the most of our data?</title>
