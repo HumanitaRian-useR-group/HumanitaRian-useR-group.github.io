@@ -348,7 +348,7 @@ if (!doNotTrack) {
             March 19, 2020</time>
         <span class="author">Edouard Legoupil</span>
         
-            <p>14 minutes read</p>
+            <p>17 minutes read</p>
         
     </div>
 </header>
@@ -397,6 +397,124 @@ if (!doNotTrack) {
 <li><p>If necessary, <strong>relaunch the survey</strong> and iterate back to the previous step as much as needed;</p></li>
 <li><p>Apply the importance level for each critiria as the <strong>weights to be used with the geometric mean aggregation</strong> for all indicators.</p></li>
 </ol>
+<pre class="r"><code>using &lt;- function(...) {
+    libs &lt;- unlist(list(...))
+    req &lt;- unlist(lapply(libs,require,character.only = TRUE))
+    need &lt;- libs[req == FALSE]
+    if (length(need) &gt; 0) { 
+        install.packages(need)
+        lapply(need,require,character.only = TRUE)
+    }
+}
+using(&#39;conjoint&#39;,&#39;readr&#39;,&#39;DoE.base&#39;,&#39;ggpubr&#39;, &#39;dplyr&#39;, &#39;tidyr&#39;, &#39;AlgDesign&#39;, &#39;ggplot2&#39;,  &#39;rlist&#39;, &#39;forcats&#39;, &#39;R.utils&#39;, &#39;png&#39;, &#39;grid&#39;, &#39;ggpubr&#39;, &#39;scales&#39;, &#39;cowplot&#39;, &#39;markdown&#39;, &#39;fpc&#39;, &#39;broom&#39;,&#39;openxlsx&#39;, &#39;GGally&#39;)
+options(scipen = 999) # turn-off scientific notation like 1e+48
+
+unhcr_style &lt;- function() {
+  font &lt;- &quot;Lato&quot;
+  ggplot2::theme(
+    
+#This sets the font, size, type and colour of text for the chart&#39;s title
+  plot.title = ggplot2::element_text(family = font, size = 15, face = &quot;bold&quot;, color = &quot;#222222&quot;),
+#This sets the font, size, type and colour of text for the chart&#39;s subtitle,  as well as setting a margin between the title and the subtitle
+  plot.subtitle = ggplot2::element_text(family = font, size = 12, margin = ggplot2::margin(9,0,9,0)),
+  plot.caption = ggplot2::element_blank(),
+#This sets the position and alignment of the legend, removes a title and backround for it and sets the requirements for any text within the legend. The legend may often need some more manual tweaking when it comes to its exact position based on the plot coordinates.
+  legend.position = &quot;top&quot;,
+  legend.text.align = 0,
+  legend.background = ggplot2::element_blank(),
+  legend.title = ggplot2::element_blank(),
+  legend.key = ggplot2::element_blank(),
+  legend.text = ggplot2::element_text(family = font, size = 13, color = &quot;#222222&quot;),
+#This sets the text font, size and colour for the axis test, as well as setting the margins and removes lines and ticks. In some cases, axis lines and axis ticks are things we would want to have in the chart
+  axis.title = ggplot2::element_blank(),
+  axis.text = ggplot2::element_text(family = font, size = 13, color = &quot;#222222&quot;),
+  axis.text.x = ggplot2::element_text(margin = ggplot2::margin(5, b = 10)),
+  axis.ticks = ggplot2::element_blank(),
+  axis.line = ggplot2::element_blank(),
+#This removes all minor gridlines and adds major y gridlines. In many cases you will want to change this to remove y gridlines and add x gridlines. 
+  panel.grid.minor = ggplot2::element_blank(),
+  panel.grid.major.y = ggplot2::element_line(color = &quot;#cbcbcb&quot;),
+  panel.grid.major.x = ggplot2::element_blank(),
+#This sets the panel background as blank, removing the standard grey ggplot background colour from the plot
+  panel.background = ggplot2::element_blank(),
+#This sets the panel background for facet-wrapped plots to white, removing the standard grey ggplot background colour and sets the title size of the facet-wrap title to font size 22
+  strip.background = ggplot2::element_rect(fill = &quot;white&quot;),
+  strip.text = ggplot2::element_text(size  = 13,  hjust = 0)
+  )
+}
+
+#Left align text
+left_align &lt;- function(plot_name, pieces){
+  grob &lt;- ggplot2::ggplotGrob(plot_name)
+  n &lt;- length(pieces)
+  grob$layout$l[grob$layout$name %in% pieces] &lt;- 2
+  return(grob)
+}
+
+## functions used for utilities calculation - changed from initial package for better viz
+m2v &lt;- function(y,w=TRUE)
+{
+  y &lt;- as.matrix(y)
+  if (w) {S &lt;- nrow(y); n &lt;- ncol(y)} else {S &lt;- ncol(y); n &lt;- nrow(y)}
+  tmp &lt;- vector(&quot;numeric&quot;,S*n)
+  k &lt;- 0 
+  for (i in 1:S) 
+  { 
+    for (j in 1:n) 
+    { 
+      k = k + 1 
+      if (w) tmp[k] &lt;- y[i,j] else tmp[k] &lt;- y[j,i]
+    }
+  } 
+  ytmp &lt;- as.data.frame(tmp)
+  return(ytmp)
+}
+
+matexpand &lt;- function(m, n, S, x)
+{
+  N &lt;- n*S
+  X &lt;- matrix(0, N, m)
+  k &lt;- 1
+  for (s in 1:S)
+  {
+    for (i in 1:n)
+    {
+      for (j in 1:m) {X[k,j] &lt;- x[i,j]}
+      k &lt;- k + 1
+    }
+  }
+  colnames(X) &lt;- names(x)
+  return(X)
+}
+
+caUtilities2   &lt;-  function(y,x,z)
+{
+    options(contrasts = c(&quot;contr.sum&quot;,&quot;contr.poly&quot;))
+    outdec  &lt;-  options(OutDec = &quot;.&quot;); on.exit(options(outdec))
+    options(OutDec = &quot;,&quot;)
+    y  &lt;-  m2v(y)
+    m  &lt;-  length(x)
+    n  &lt;-  nrow(x)
+    S  &lt;-  nrow(y)/n
+    xnms  &lt;-  names(x)
+    ynms  &lt;-  names(y)
+    xtmp  &lt;-  paste(&quot;factor(x$&quot;,xnms,sep = &quot;&quot;,paste(&quot;)&quot;))
+    xfrm  &lt;-  paste(xtmp,collapse = &quot;+&quot;)
+    yfrm  &lt;-  paste(&quot;y$&quot;,ynms,sep = &quot;&quot;,&quot;~&quot;)
+    frml  &lt;-  as.formula(paste(yfrm,xfrm))
+    Lj  &lt;-  vector(&quot;numeric&quot;,m)
+    for (j in 1:m) {Lj[j]  &lt;-  nlevels(factor(x[[xnms[j]]]))}
+    x  &lt;-  as.data.frame(matexpand(m,n,S,x))
+    camodel  &lt;-  lm(frml)
+    return(camodel)
+    # print(summary.lm(camodel))
+    # u  &lt;-  as.matrix(camodel$coeff)  
+    # intercept  &lt;-  u[1]
+    # ul  &lt;-  utilities(u,Lj)
+    # utlsplot(ul,Lj,z,m,xnms)
+    # uli  &lt;-  c(intercept,ul)
+    # return(uli)
+}</code></pre>
 </div>
 <div id="define-the-combined-alternatives-to-be-compared" class="section level2">
 <h2>Define the combined alternatives to be compared</h2>
@@ -721,36 +839,54 @@ cowplot::plot_grid(plotlist = myplots, nrow = 3, ncol = 2)</code></pre>
 <p><img src="/post/Conjoint-Analysis_files/figure-html/unnamed-chunk-13-1.png" width="768" /></p>
 <p>The standard deviation for each level allows to better understand how homogeneous the target group is with respect to one level. It might give us a hint on whether the preferences here considered are correct.</p>
 <pre class="r"><code># The higher the utility value, the more importance that the expert places on that attribute’s level.
-caUtilities(y = Data.basicneeds2 , 
-            x = selectedProfiles.basicneeds, 
-            z = basicneeds_values)</code></pre>
-<pre><code>## 
-## Call:
-## lm(formula = frml)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -4,4919 -1,9924  0,1524  1,9643  4,3319 
-## 
-## Coefficients:
-##                        Estimate Std. Error t value            Pr(&gt;|t|)    
-## (Intercept)             4,90881    0,17523  28,013 &lt;0,0000000000000002 ***
-## factor(x$Meals)1        0,14190    0,17067   0,831              0,4062    
-## factor(x$Shelter)1      0,01206    0,25946   0,046              0,9629    
-## factor(x$Shelter)2      0,01873    0,23179   0,081              0,9356    
-## factor(x$Water)1       -0,11119    0,13082  -0,850              0,3958    
-## factor(x$Bathroom)1    -0,39540    0,32358  -1,222              0,2224    
-## factor(x$Bathroom)2     0,35651    0,20033   1,780              0,0758 .  
-## factor(x$Electricity)1 -0,03857    0,19830  -0,195              0,8459    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0,001 &#39;**&#39; 0,01 &#39;*&#39; 0,05 &#39;.&#39; 0,1 &#39; &#39; 1
-## 
-## Residual standard error: 2,473 on 442 degrees of freedom
-## Multiple R-squared:  0,01148,    Adjusted R-squared:  -0,004177 
-## F-statistic: 0,7332 on 7 and 442 DF,  p-value: 0,6439</code></pre>
-<pre><code>##  [1]  4.90880952  0.14190476 -0.14190476  0.01206349  0.01873016 -0.03079365
-##  [7] -0.11119048  0.11119048 -0.39539683  0.35650794  0.03888889 -0.03857143
-## [13]  0.03857143</code></pre>
+
+  
+model  &lt;-  caUtilities2(y = Data.basicneeds2 , 
+                     x = selectedProfiles.basicneeds, 
+                     z = basicneeds_values)
+
+model.tidy  &lt;-  broom::tidy(model,
+                          conf.int = TRUE,
+                          conf.level = 0.95,
+                          exponentiate = TRUE
+)
+
+model.tidy  &lt;-  model.tidy[ !(is.na(model.tidy$term)), ]
+
+Results$seq &lt;- 1
+for (i in 2:nrow(Results)) {
+  if (Results[ i - 1 , c(&quot;Variable&quot;)] == Results[ i , c(&quot;Variable&quot;)])
+  {Results[ i , c(&quot;seq&quot;)] &lt;- Results[ i - 1 , c(&quot;seq&quot;)] + 1 } else {Results[ i , c(&quot;seq&quot;)] &lt;- Results[ i , c(&quot;seq&quot;)]}
+     
+}
+
+Results$term &lt;- paste0(&quot;factor(x$&quot;, Results$Variable, &quot;)&quot;, Results$seq )
+Results$Levels2 &lt;- paste0( Results$Variable, &quot;: &quot;, Results$Levels )
+model.tidy2 &lt;- merge(x = model.tidy, y = Results[ ,c(&quot;term&quot;, &quot;Levels2&quot;)], by = &quot;term&quot;, all.x = TRUE  )
+
+### Chart showing the model
+#ggcoef(model., 
+plot1  &lt;-  GGally::ggcoef(model.tidy2,        
+                  exponentiate = TRUE, 
+                color = &quot;purple&quot;, shape = 18,  size = 3.5, exclude_intercept = TRUE, 
+                vline_color = &quot;red&quot;, vline_linetype =  &quot;solid&quot;,
+                errorbar_color = &quot;black&quot;, errorbar_height = .25,
+                conf.level = 0.95, conf.int = TRUE, 
+                mapping = aes(x = estimate, y = Levels2)) +
+  xlab(&quot;Influence factor for each variable&quot;) +
+  ylab(&quot;&quot;) +
+  labs(title = &quot;Basic needs&quot;,
+       subtitle =  &quot;Contribution of answers to vulnerability scale&quot;,
+       caption = &quot;The black lines (also called &#39;whiskers&#39;) around the point represent the confidence interval \n for each variable to be included in the model (the shorter the line, the more experts are in agreement)&quot;,
+       x = NULL, y = NULL) +
+  unhcr_style() +
+  theme( plot.caption = element_text(size = 8, hjust = 1),
+         panel.grid.major.x = element_line(color = &quot;#cbcbcb&quot;), 
+         panel.grid.major.y = element_blank(),
+         strip.text.x = element_text(size = 13))
+
+ggpubr::ggarrange(left_align(plot1, c(&quot;subtitle&quot;, &quot;title&quot;, &quot;caption&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Conjoint-Analysis_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
 <div id="importance-of-each-criteria" class="section level2">
 <h2>Importance of each criteria</h2>
@@ -808,7 +944,9 @@ plot1 &lt;- ggplot(assignments) +
              y = &quot;&quot;,
              x = &quot;&quot;) +
         theme(panel.grid.major.x = element_line(color = &quot;#cbcbcb&quot;), 
-              panel.grid.major.y = element_line(color = &quot;#cbcbcb&quot;))  
+              panel.grid.major.y = element_line(color = &quot;#cbcbcb&quot;),
+        axis.text.x  = ggplot2::element_blank(),
+        axis.text.y  = ggplot2::element_blank())   
 
 ggpubr::ggarrange(left_align(plot1, c(&quot;subtitle&quot;, &quot;title&quot;)), ncol = 1, nrow = 1)</code></pre>
 <p><img src="/post/Conjoint-Analysis_files/figure-html/unnamed-chunk-16-1.png" width="576" /></p>

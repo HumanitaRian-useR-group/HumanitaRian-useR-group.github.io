@@ -45,8 +45,9 @@ In order to use AHP, the following steps can be used:
 5. Review results
 6. Apply the formula
 
-![](process.png) 
-```{r setup, include = TRUE, message = FALSE,  echo = TRUE}
+![](/post/Analytic-Hierachy-Process_files/process.png)
+
+```{r setup, include = TRUE, message = FALSE,  echo = TRUE,  warning = FALSE}
 knitr::opts_chunk$set(
  collapse = TRUE,
  comment = " "
@@ -110,7 +111,9 @@ A form will allow to collect from expert priorities between criteria by making a
 
 - Ranking Scales for Criteria 
 
-![](importance.png) 
+![](/post/Analytic-Hierachy-Process_files/importance.png)
+
+
 
 The function below allows to build a [xlsform file](http://xlsform.org) based on criteria defined above.
 The input file here is a csv file with two columns:
@@ -203,7 +206,9 @@ criteria_to_xlsform(critf)
 The form `ahp_form.xlsx` can be used within [UNHCR Kobo server](httpp://kobo.unhcr.org). Experts can be humanitarian case workers that are used to assess vulnerability. 
 See an [example here](https://enketo.unhcr.org/x/#ASAPg7eu)
 
-![](ahpform.png)
+
+![](/post/Analytic-Hierachy-Process_files/ahpform.png)
+
 
 ## 3. Generate the AHP file from the collected data
 
@@ -344,7 +349,10 @@ Once sufficient consensus has been reach, one just needs to apply the formula
 - Collect data on each criteria for all household
 - Apply weight to each record for the different criteria to get the vulnerability level of each household 
 
-![](score.jpg)
+
+![](/post/Analytic-Hierachy-Process_files/score.jpg)
+
+
 
 
 
