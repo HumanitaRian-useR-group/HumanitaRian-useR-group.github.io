@@ -1,0 +1,1352 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Conjoint analysis: modeling judgement to calibrate vulnerability scoring</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.54.0" />
+        
+
+
+        
+            <meta name="author" content="Edouard Legoupil">
+        
+        
+            
+                <meta name="description" content="The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Conjoint analysis: modeling judgement to calibrate vulnerability scoring"/>
+<meta name="twitter:description" content="What is Conjoint analysis? Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria."/>
+
+        <meta property="og:title" content="Conjoint analysis: modeling judgement to calibrate vulnerability scoring" />
+<meta property="og:description" content="What is Conjoint analysis? Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/conjoint-analysis/" />
+<meta property="article:published_time" content="2020-03-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-03-19T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Conjoint analysis: modeling judgement to calibrate vulnerability scoring">
+<meta itemprop="description" content="What is Conjoint analysis? Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria.">
+
+
+<meta itemprop="datePublished" content="2020-03-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2733">
+
+
+
+<meta itemprop="keywords" content="UNHCR,Edouard-Legoupil," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+      
+            <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+			  
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+        <h1><a href="/">post</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post/index.html">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-info-circle">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-database">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post/index.html">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-info-circle">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-database">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <h3>
+                                <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-19'>
+                                    March 19, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-02-23'>
+                                    February 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-01-23'>
+                                    January 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/geonames/">Fuzzy geocoding on location name</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-14'>
+                                    December 14, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-10'>
+                                    December 10, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-03'>
+                                    December 3, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/compositeindicator/">Building Severity Index with R</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-28'>
+                                    November 28, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">See more</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2fconjoint-analysis%2f&amp;text=Conjoint%20analysis%3a%20modeling%20judgement%20to%20calibrate%20vulnerability%20scoring&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2fconjoint-analysis%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fconjoint-analysis%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2fconjoint-analysis%2f&amp;title=Conjoint%20analysis%3a%20modeling%20judgement%20to%20calibrate%20vulnerability%20scoring" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2fconjoint-analysis%2f&amp;title=Conjoint%20analysis%3a%20modeling%20judgement%20to%20calibrate%20vulnerability%20scoring" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2fconjoint-analysis%2f&amp;title=Conjoint%20analysis%3a%20modeling%20judgement%20to%20calibrate%20vulnerability%20scoring" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2fconjoint-analysis%2f&amp;description=Conjoint%20analysis%3a%20modeling%20judgement%20to%20calibrate%20vulnerability%20scoring" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Edouard%20Legoupil&amp;body=%2fpost%2fconjoint-analysis%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        <time class="published"
+            datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+            March 19, 2020</time>
+        <span class="author">Edouard Legoupil</span>
+        
+            <p>13 minutes read</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  
+  <div>
+     
+ <div id="go-to-folding-div" style="display: inline-block;vertical-align: top;height: 1px;margin-top: -4em;"></div>
+ <div id="code-folding-buttons" class="btn-group pull-right">
+   <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast="">
+     <span>Show/Hide all code</span> 
+     <span class="caret"></span>
+   </button>
+   <ul class="dropdown-menu" style="min-width: 50px;">
+   <li><a id="rmd-show-all-code" href="#go-to-folding-div">Show All Code</a>
+   </li><li><a id="rmd-hide-all-code" href="#go-to-folding-div">Hide All Code</a></li>
+   </ul>
+ </div>
+ 
+
+    <br/>
+    <div id="content" class="article-entry">
+      
+
+
+<div id="what-is-conjoint-analysis" class="section level2">
+<h2>What is Conjoint analysis?</h2>
+<p>Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria. CA then allows to “decompose” or reverse-engineer these ratings into estimates of how important each criteria or attribute is to a participant’s ranking decisions.
+In humanitarian data analysis, this technique can be quite relevant to organize expert consultations in order to get the relative weights (or relative contribution) of each sub-indicator value when <strong>creating a vulnerability scorecard</strong>. Conjoint analysis can speed up expert consultations by offering an <strong>objective mean to compile expert opinions</strong>.</p>
+<p>As per <a href="https://www.oecd.org/els/soc/handbookonconstructingcompositeindicatorsmethodologyanduserguide.htm">OECD 10 Steps guide</a>, one important elements to consider is the need to explore and compare different weighting approaches before making a decision on the final formula (i.e. also called sensitivity and robustness analysis).</p>
+<p>As usual, R offers all the tools for that. Conjoint analysis can be done with the <a href="http://keii.ue.wroc.pl/conjoint/Conjoint_R.html">Conjoint Package</a>, developed by the Department of Econometrics and Computer Science from Wrocław University of Economics. More details are available in their article: <a href="http://keii.ue.wroc.pl/pracownicy/tb/Bak_A_and_Bartlomowicz_T_Conjoint_analysis_method_and_its_implementation_in_conjoint_R_package.pdf">Conjoint analysis method and its implementation in conjoint R package</a>.</p>
+<p>Below is re-usable tutorial with reproducible code that should help any data analyst to quickly use this weighting discovery method.</p>
+<p>Steps of the procedure for this example include:
+1. Choosing the attributes that are used to determine vulnerability scoring.
+2. Determine the different potential levels for each attribute that indicate scoring of less vulnerable to more vulnerable
+3. Use fractional factorial design to generate a number of household profiles, each possessing unique combinations of the attributes.
+4. Build the expert consultation form where each expert will rate each household profile from low vulnerability to high vulnerability.<br />
+5.<br />
+6.<br />
+7.</p>
+</div>
+<div id="define-the-combined-alternatives-to-be-compared" class="section level2">
+<h2>Define the combined alternatives to be compared</h2>
+<p>The <a href="https://interagencystandingcommittee.org/system/files/gbna_tools_and_guidance_pkg_final_june_2019.pdf">Joint Intersectoral Analysis Framework (JIAF)</a> is a theoretical generic measurement framework to be used for Humanitarian needs assessment. It specifies three distinct and complementary components of humanitarian severity and vulnerability indexes:</p>
+<ul>
+<li>Basic Needs &amp; Living standards</li>
+<li>Coping Capacity</li>
+<li>Well Being &amp; Community integration</li>
+</ul>
+<p>This generic model can be contextualized in each operations as different sub-indicators might be used for each of the 3 dimensions depending on cultural and political situations. Conjoint analysis will allow to discover the relative importance to be allocated for each sub-indicator.</p>
+<pre class="r"><code># Declaration of features and feature values
+basicneeds_indic &lt;- c(&quot;Meals&quot;,
+                      &quot;Shelter&quot;,
+                      &quot;Water&quot;, #safely managed drinking water services inside accomodation
+                      &quot;Bathroom&quot;,
+                      &quot;Electricity&quot;) # electricity inside accomodation)
+
+basicneeds_values.Meals &lt;- c(&quot;One or less&quot;, &quot;Two or more&quot;)
+basicneeds_values.Shelter &lt;- c(&quot;Owned or Rental&quot;, #&quot;Owned or Rental (apartment or house) / Hotel&quot;,
+                               &quot;Hosted or Collective&quot;, #&quot;Hosted Arrangement or Collective Accommodation in Transit/Reception center)&quot;,
+                               &quot;Spontaneous or Squatting&quot;) # &quot;Spontaneous Arrangement or Street Squatting&quot;
+basicneeds_values.Water &lt;- c(&quot;Safe Water&quot;, &quot;No safe Water&quot;) # c(&quot;Safe Water in accomodation&quot;, &quot;No safe Water in accomodation&quot;)
+basicneeds_values.Bathroom &lt;- c(&quot;Private&quot;,
+                                &quot;Collective or Shared toilets&quot;,
+                                #&quot;Collective or shared toilets and latrines&quot;,
+                                &quot;No bathroom&quot;)
+basicneeds_values.Electricity &lt;- c(&quot;Has electricity&quot;, &quot;No electricity&quot;)
+
+basicneeds_values &lt;- c(basicneeds_values.Meals, 
+                       basicneeds_values.Shelter, 
+                       basicneeds_values.Water, 
+                       basicneeds_values.Bathroom,
+                       basicneeds_values.Electricity)
+
+# All concept generation
+basicneeds &lt;- expand.grid(
+  Meals = basicneeds_values.Meals,
+  Shelter = basicneeds_values.Shelter,
+  Water = basicneeds_values.Water,
+  Bathroom = basicneeds_values.Bathroom,
+  Electricity = basicneeds_values.Electricity
+)</code></pre>
+<pre class="r"><code>coping_indic &lt;- c(&quot;HH.Head&quot;,
+                  &quot;Dependency&quot;,
+                  &quot;Disability&quot;, # has household one member with disability
+                  &quot;Work&quot;, # at least one member in HH was able to get paid jobs in last month
+                  &quot;Neg.mechanism&quot;)
+
+coping_values.HH.Head &lt;- c(&quot;Male&quot;, &quot;Elderly.Disabled&quot;, &quot;Female&quot;, &quot;Single&quot;, &quot;Child&quot;)
+coping_values.Dependency &lt;- c(&quot;Low&quot;,&quot;Average&quot;, &quot;High&quot;, &quot;Full&quot;)
+coping_values.Disability &lt;- c(&quot;Has Disable&quot;, &quot;No disable&quot;)
+coping_values.Work &lt;- c(&quot;One member Worked once in the week&quot;, &quot;No work&quot;)
+coping_values.Neg.mechanism &lt;- c( &quot;None&quot;,
+                                 &quot;Stress&quot;, #&quot;Working for in-kind instead of cash, Restrict food consumption, Borrow money, Sold assets, Increase Debt&quot;,
+                                 &quot;Extreme&quot;) #&quot;Sending children to other families or to work, Beging, Collecting food leftovers, Survival sex, Early mariage&quot;)
+
+coping_values &lt;- c(coping_values.HH.Head, 
+                   coping_values.Dependency,
+                   coping_values.Disability, 
+                   coping_values.Work,
+                   coping_values.Neg.mechanism)
+
+# All concept generation
+coping &lt;- expand.grid(
+  HH.Head = coping_values.HH.Head,
+  Dependency = coping_values.Dependency,
+  Disability = coping_values.Disability,
+  Work = coping_values.Work,
+  Neg.mechanism = coping_values.Neg.mechanism
+)</code></pre>
+<pre class="r"><code>wellbeing_indic &lt;- c(&quot;Safety&quot;,
+                     &quot;Documentation&quot;, 
+                     &quot;Communication&quot;,
+                     &quot;Isolation&quot;)
+
+wellbeing_values.Safety &lt;- c(&quot;Feel safe&quot;, &quot;Not feeling safe&quot;)
+wellbeing_values.Documentation &lt;- c(&quot;Has essential documentation&quot;, &quot;Missing document&quot;)
+wellbeing_values.Communication &lt;- c(&quot;Can access internet&quot;, &quot;No access to internet&quot;)
+wellbeing_values.Isolation &lt;- c(&quot;Feel isolated&quot;, &quot;Feel connected&quot;)
+
+wellbeing_values &lt;- c(wellbeing_values.Safety,
+                      wellbeing_values.Documentation,
+                      wellbeing_values.Communication,
+                      wellbeing_values.Isolation)
+
+# All concept generation
+wellbeing &lt;- expand.grid(
+  Safety = wellbeing_values.Safety,
+  Documentation = wellbeing_values.Documentation,
+  Communication = wellbeing_values.Communication,
+  Isolation = wellbeing_values.Isolation
+)</code></pre>
+</div>
+<div id="select-most-relevant-alternatives-with-factorial-design" class="section level2">
+<h2>Select most relevant alternatives with Factorial Design</h2>
+<p>Instead of showing every possible combination of household profiles, fractional factorial design can be used to generate the fewest number of household profiles needed (each with a unique combination of the attribute levels).</p>
+<p>In statistics, fractional factorial designs are experimental designs consisting of a carefully chosen subset (fraction) of the experimental runs of a full factorial design (i.e. all possible combinations of answers for a series of questions). The subset is chosen so as to exploit the sparsity-of-effects principle to expose information about the most important features of the problem studied, while using a fraction of the effort of a full factorial design in terms of experimental runs and resources. In other words, it makes use of the fact that many experiments in full factorial design are often redundant, giving little or no new information about the system.</p>
+<p>In addition, the different profiles should be scanned to identify those specific interactions of criteria that are not rational (do not exist in the real world). Those should be removed manually.</p>
+<pre class="r"><code># Selection of relevant concepts
+selectedProfiles.basicneeds &lt;- caFactorialDesign(data = basicneeds,
+                                      type =&#39;fractional&#39;
+                                    )
+
+## need to clean up some impossible profile
+selectedProfiles.basicneeds &lt;- selectedProfiles.basicneeds[ !(selectedProfiles.basicneeds$Shelter == &quot;Spontaneous or Squatting&quot; &amp;
+                              selectedProfiles.basicneeds$Bathroom == &quot;Private&quot;)  , ] 
+
+selectedProfiles.basicneeds &lt;- selectedProfiles.basicneeds[!(selectedProfiles.basicneeds$Shelter == &quot;Hosted or Collective&quot; &amp;
+                              selectedProfiles.basicneeds$Bathroom == &quot;Private&quot;)  , ]  
+
+selectedProfiles.basicneeds &lt;- selectedProfiles.basicneeds[!(selectedProfiles.basicneeds$Shelter == &quot;Owned or Rental&quot; &amp;
+                              selectedProfiles.basicneeds$Electricity == &quot;No electricity&quot;)  , ] 
+
+
+# Checking if selected concepts are relevant for study
+# corrselectedProfiles.basicneeds &lt;- caEncodedDesign(selectedProfiles.basicneeds)
+# print(cor(corrselectedProfiles.basicneeds))</code></pre>
+<pre class="r"><code># Selection of relevant concepts
+selectedProfiles.coping &lt;- caFactorialDesign(data = coping,
+                                      type =&#39;fractional&#39;
+                                    )
+
+# Checking if selected concepts are relevant for study
+# corrselectedProfiles.coping &lt;- caEncodedDesign(selectedProfiles.coping)
+# print(cor(corrselectedProfiles.coping))</code></pre>
+<pre class="r"><code># Selection of relevant concepts
+selectedProfiles.wellbeing &lt;- caFactorialDesign(data = wellbeing,
+                                      type = &#39;fractional&#39;
+                                    )
+
+# Checking if selected concepts are relevant for study
+# corrselectedProfiles.wellbeing &lt;- caEncodedDesign(selectedProfiles.wellbeing)
+# print(cor(corrselectedProfiles.wellbeing))</code></pre>
+</div>
+<div id="build-the-expert-consultation-questionnaire-in-xlsform" class="section level2">
+<h2>Build the expert consultation questionnaire in xlsform</h2>
+<p>Once we have the main profile options to compare, we can automatically generate the corresponding xlsform in order to build the expert consultation form.</p>
+<p>Since we want the expert to rate each alternative, we will need a metric measurement, particularly a Likert scale. Likert scales are per default interval scales, which means that we would only have the knowledge of how much the overall utility would increase by changing the level of an attribute. We are also restricted to an interval scale due to the fact that we chose a part-worth model as well as fractional factorial design. A continuous or ratio variable would generally not be possible with a fractional factorial design or part worth model unless we can make some assumption about linearity and interactions which are simply unrealistic. But the advantage of a Likert scale is that it has proven to be more reliable in studies.</p>
+<p>The rating of a run might look like this:
+- each expert is presented with a set of unique household profiles that represent different combinations of the attributes together (i.e. a “run from the experimental design”)
+- each expert then rates each profile with a number ranging from 1 to 9, where the higher number indicates that the household is highly vulnerable. 9 indicates extreme vulnerability, while 1 equals low vulnerability.</p>
+<p>The questionnaire generation in <a href="http://xlsform.org">xlsform</a> can also be automatized with a script in order to save time. We predefined the survey introduction <code>conjointSurvey.csv</code> and the choices <code>conjointShoices.csv</code></p>
+<pre class="r"><code>## survey intro and response can be predifined
+survey &lt;- read_csv(&quot;conjointSurvey.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   type = col_character(),
+##   name = col_character(),
+##   label = col_character(),
+##   hint = col_character(),
+##   required = col_logical(),
+##   appearance = col_logical()
+## )</code></pre>
+<pre class="r"><code>choices &lt;- read_csv(&quot;conjointChoices.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   list_name = col_character(),
+##   name = col_character(),
+##   label = col_character()
+## )</code></pre>
+<pre class="r"><code>## Aggregate profiles
+
+profiles.basicneeds &lt;- cbind(&quot;basicneeds&quot;, selectedProfiles.basicneeds)
+profiles.basicneeds$type &lt;- &quot;select_one scale_basicneeds&quot;
+profiles.basicneeds$appearance &lt;- &quot;horizontal-compact&quot;
+profiles.basicneeds$hint &lt;- &quot; &quot;
+profiles.basicneeds$required &lt;- &quot;TRUE&quot;
+profiles.basicneeds$name &lt;- paste0(&quot;basicneeds&quot;,row.names(profiles.basicneeds))
+profiles.basicneeds$label &lt;- paste0(&quot;Accomodation type is &quot;,profiles.basicneeds$Shelter,&quot;,\n&quot;,
+                                    &quot;there is &quot;,profiles.basicneeds$Water,&quot;,\n&quot;,
+                                    &quot;and &quot;,profiles.basicneeds$Bathroom,&quot; can be accessed.\n&quot;,
+                                    &quot;There is &quot;,profiles.basicneeds$Electricity,&quot;\n&quot;,
+                                    &quot;and household members had &quot;,profiles.basicneeds$Meals,&quot; meal(s) per day.&quot;)
+
+
+profiles.coping &lt;- cbind(&quot;coping&quot;, selectedProfiles.coping)
+profiles.coping$type &lt;- &quot;select_one scale_coping&quot;
+profiles.coping$appearance &lt;- &quot;horizontal-compact&quot;
+profiles.coping$hint &lt;- &quot; &quot;
+profiles.coping$required &lt;- &quot;TRUE&quot;
+profiles.coping$name &lt;- paste0(&quot;coping&quot;,row.names(profiles.coping))
+profiles.coping$label &lt;- paste0(&quot;Head of household is &quot;,profiles.coping$HH.Head,&quot;,\n&quot;,
+                                    &quot;household has &quot;,profiles.coping$Dependency,&quot; dependency level.\n&quot;,
+                                    &quot;and includes &quot;,profiles.coping$Disability,&quot; can be accessed.\n&quot;,
+                                    &quot;Members &quot;,profiles.coping$Work,&quot;\n&quot;,
+                                    &quot;and have used &quot;,profiles.coping$Neg.mechanism,&quot; negative coping mechanisms.&quot;)
+
+profiles.wellbeing &lt;- cbind(&quot;wellbeing&quot;, selectedProfiles.wellbeing)
+profiles.wellbeing$type &lt;- &quot;select_one scale_wellbeing&quot;
+profiles.wellbeing$appearance &lt;- &quot;horizontal-compact&quot;
+profiles.wellbeing$hint &lt;- &quot; &quot;
+profiles.wellbeing$required &lt;- &quot;TRUE&quot;
+profiles.wellbeing$name &lt;- paste0(&quot;wellbeing&quot;,row.names(profiles.wellbeing))
+profiles.wellbeing$label &lt;- paste0(&quot;Household members are &quot;,profiles.wellbeing$Safety,&quot;.\n&quot;,
+                                    &quot;They &quot;,profiles.wellbeing$Isolation,&quot;.\n&quot;,
+                                    &quot;They &quot;,profiles.wellbeing$Documentation,&quot;.\n&quot;,
+                                    &quot;They &quot;,profiles.wellbeing$Communication,&quot;\n&quot;)
+
+profiles &lt;- rbind(profiles.basicneeds[ ,c(&quot;type&quot;,&quot;name&quot;,&quot;label&quot;,&quot;hint&quot;,&quot;required&quot;,&quot;appearance&quot;)],
+                  profiles.coping[ ,c(&quot;type&quot;,&quot;name&quot;,&quot;label&quot;,&quot;hint&quot;,&quot;required&quot;,&quot;appearance&quot;)],
+                  profiles.wellbeing[ ,c(&quot;type&quot;,&quot;name&quot;,&quot;label&quot;,&quot;hint&quot;,&quot;required&quot;,&quot;appearance&quot;)])
+
+rm(profiles.basicneeds,
+   profiles.coping,
+   profiles.wellbeing)
+
+survey &lt;- rbind(survey, profiles)
+
+## Add a line to close the group
+survey[ nrow(survey) + 1 , c(&quot;type&quot;)] &lt;- &quot;end_group&quot;
+
+## Creating setting for the xlsform
+settings &lt;- data.frame(c(&quot;Vulnerability Profiles Rating&quot;))
+names(settings)[1] &lt;- &quot;form_title&quot;
+settings$id_string &lt;- &quot;vulnerability_rating&quot;
+settings$style &lt;- &quot;theme-grid&quot;
+
+## Dave the form
+xlsform &lt;- openxlsx::createWorkbook()
+openxlsx::addWorksheet(xlsform, &quot;survey&quot;); writeData(xlsform, &quot;survey&quot;, survey)
+openxlsx::addWorksheet(xlsform, &quot;choices&quot;); writeData(xlsform, &quot;choices&quot;, choices)
+openxlsx::addWorksheet(xlsform, &quot;settings&quot;); writeData(xlsform, &quot;settings&quot;, settings)
+openxlsx::saveWorkbook(xlsform, &quot;conjoint_form.xlsx&quot;, overwrite = TRUE)</code></pre>
+<p>For the time being, we can create a dummy dataset representing the consultation of 50 experts. We then merge the results with the design, so that each row represents an household with its features followed by the ratings it received by the experts.</p>
+<pre class="r"><code>set.seed(1234)
+nexpert &lt;- 50 # number of expert
+Data &lt;- data.frame(Expert = 1:nexpert)
+Data$Expert &lt;- as.factor(Data$Expert)</code></pre>
+<p>For Basic needs profile</p>
+<pre class="r"><code>## BasicNeeds
+Data.basicneeds &lt;- Data
+
+for (run in 1:nrow(selectedProfiles.basicneeds)) {
+  Data.basicneeds[,paste(&quot;Run&quot;,as.character(run), sep = &quot;&quot;)] &lt;- sample(c(1:9), nexpert, replace = TRUE)
+}
+
+# Merging FracDesign and Data.basicneeds
+Data.basicneeds$Expert &lt;- NULL
+Data.basicneeds2 &lt;- t(Data.basicneeds)
+rownames(Data.basicneeds2) &lt;- c(1:nrow(selectedProfiles.basicneeds))
+Conjoint.basicneeds &lt;- cbind(selectedProfiles.basicneeds, Data.basicneeds2)</code></pre>
+<p>For coping capacity profiles</p>
+<pre class="r"><code>## BasicNeeds
+Data.coping &lt;- Data
+
+for (run in 1:nrow(selectedProfiles.coping)) {
+  Data.coping[,paste(&quot;Run&quot;,as.character(run), sep = &quot;&quot;)] &lt;- sample(c(1:9), nexpert, replace = TRUE)
+}
+
+# Merging FracDesign and Data.coping
+Data.coping$Expert &lt;- NULL
+Data.coping2 &lt;- t(Data.coping)
+rownames(Data.coping2) &lt;- c(1:nrow(selectedProfiles.coping))
+Conjoint.coping &lt;- cbind(selectedProfiles.coping, Data.coping2)</code></pre>
+<p>For well being profiles</p>
+<pre class="r"><code>## wellbeing
+Data.wellbeing &lt;- Data
+
+for (run in 1:nrow(selectedProfiles.wellbeing)) {
+  Data.wellbeing[,paste(&quot;Run&quot;,as.character(run), sep = &quot;&quot;)] &lt;- sample(c(1:9), nexpert, replace = TRUE)
+}
+
+# Merging FracDesign and Data.wellbeing
+Data.wellbeing$Expert &lt;- NULL
+Data.wellbeing2 &lt;- t(Data.wellbeing)
+rownames(Data.wellbeing2) &lt;- c(1:nrow(selectedProfiles.wellbeing))
+Conjoint.wellbeing &lt;- cbind(selectedProfiles.wellbeing, Data.wellbeing2)</code></pre>
+</div>
+<div id="utility-values-estimating-the-part-worth-models" class="section level2">
+<h2>Utility values: estimating the Part-Worth Models</h2>
+<p>CA produces importance values and part-worth utility estimates. Importance values indicate the overall contribution of each attribute to how the profiles were rated (e.g. whether number of meals is more important in vulnerability scoring than access to safe water). Part-worth utility estimates the relative importance of each level within each attribute (e.g. the relative scoring of one or less meals vs. two or more meals a day). A higher utility estimate indicates that this level contributes to a higher vulnerability than the level with the lower utility estimate.</p>
+<p>The part-worth model follows the idea of marginal utility from economics. It means it does not give an absolute value for the utility of an option, but rather assumes a reference alternative. The part-worth values for each expert can be calculated through multiple linear regression. The objective is estimate the preference share - i.e. how much a specific vulnerability criteria can contribute to the entire vulnerability score for a specific case.</p>
+<p>A model is generated for each expert. The estimates of the linear regression are our part-worth utilities. Part-worth utilities are interval scale variables: for each categorical variable, one level is used as reference level. This means that for one level in each categorical variable no estimate will be shown because its value will be automatically 0.</p>
+<p>The following code creates a data frame where each row represents a level of a variable and where each column represents an Expert.</p>
+<pre class="r"><code>#  get the numeric values for each part utility for each respondent.
+PartUtilities &lt;- as.data.frame(t(caPartUtilities(y = Data.basicneeds2, 
+                                 x = selectedProfiles.basicneeds, 
+                                 z = basicneeds_values)))
+
+# Create dataframe with part-worthvalues
+vars &lt;- c(&quot;Intercept&quot;,
+          rep(&quot;Meals&quot;,2),
+          rep(&quot;Shelter&quot;,3),
+          rep(&quot;Water&quot;,2),
+          rep(&quot;Bathroom&quot;, 3),
+          rep(&quot;Electricity&quot;,2))
+lvls &lt;- c(&quot;Intercept&quot;,
+          as.character(levels(Conjoint.basicneeds$Meals)),
+          as.character(levels(Conjoint.basicneeds$Shelter)),
+          as.character(levels(Conjoint.basicneeds$Water)),
+          as.character(levels(Conjoint.basicneeds$Bathroom)),
+          as.character(levels(Conjoint.basicneeds$Electricity)))
+
+Results &lt;- data.frame(Variable = vars,Levels = lvls)
+Results &lt;- cbind(Results,PartUtilities )
+Results[,&quot;Average&quot;] &lt;- round(rowMeans(Results[,-c(1,2)]),digits = 1)</code></pre>
+<p>We can now visualize the results with ggplot2</p>
+<pre class="r"><code>myplots &lt;- list()
+count = 1
+
+for (var in basicneeds_indic) {
+  
+  #var &lt;- &quot;Shelter&quot;
+  subs &lt;- droplevels(subset(Results,Variable == var))
+  subs$Levels &lt;- reorder(subs$Levels,subs$Average)
+  if (min(subs$Average) &lt; 0) {
+    subs$Average &lt;- subs$Average + abs(min(subs$Average))
+  }
+  myplots[[count]]  &lt;- ggplot(data = subs,aes(x = Levels, y = Average, group = 1)) +
+    geom_line() +
+    geom_point() +
+    unhcr_style() + ## Insert UNHCR Style
+    ## and the chart labels
+    labs(title = paste0(&quot;Utilities level for &quot;, var)) +
+    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
+  count = count + 1
+  
+}
+
+cowplot::plot_grid(plotlist = myplots, nrow = 3, ncol = 2)</code></pre>
+<p><img src="/post/Conjoint-Analysis_files/figure-html/unnamed-chunk-13-1.png" width="768" /></p>
+<p>The standard deviation for each level allows to better understand how homogeneous the target group is with respect to one level. It might give us a hint on whether the preferences here considered are correct.</p>
+<pre class="r"><code># The higher the utility value, the more importance that the expert places on that attribute’s level.
+caUtilities(y = Data.basicneeds2 , 
+            x = selectedProfiles.basicneeds, 
+            z = basicneeds_values)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = frml)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4,4919 -1,9924  0,1524  1,9643  4,3319 
+## 
+## Coefficients:
+##                        Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)             4,90881    0,17523  28,013 &lt;0,0000000000000002 ***
+## factor(x$Meals)1        0,14190    0,17067   0,831              0,4062    
+## factor(x$Shelter)1      0,01206    0,25946   0,046              0,9629    
+## factor(x$Shelter)2      0,01873    0,23179   0,081              0,9356    
+## factor(x$Water)1       -0,11119    0,13082  -0,850              0,3958    
+## factor(x$Bathroom)1    -0,39540    0,32358  -1,222              0,2224    
+## factor(x$Bathroom)2     0,35651    0,20033   1,780              0,0758 .  
+## factor(x$Electricity)1 -0,03857    0,19830  -0,195              0,8459    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0,001 &#39;**&#39; 0,01 &#39;*&#39; 0,05 &#39;.&#39; 0,1 &#39; &#39; 1
+## 
+## Residual standard error: 2,473 on 442 degrees of freedom
+## Multiple R-squared:  0,01148,    Adjusted R-squared:  -0,004177 
+## F-statistic: 0,7332 on 7 and 442 DF,  p-value: 0,6439</code></pre>
+<pre><code>##  [1]  4.90880952  0.14190476 -0.14190476  0.01206349  0.01873016 -0.03079365
+##  [7] -0.11119048  0.11119048 -0.39539683  0.35650794  0.03888889 -0.03857143
+## [13]  0.03857143</code></pre>
+</div>
+<div id="importance-of-each-criteria" class="section level2">
+<h2>Importance of each criteria</h2>
+<p>We can now get the importance of each criteria. These importance values will then be used as the weights for each attribute inside each of our three dimensions. The importance values sum to 100%. In the example of the bar chart below, bathroom and shelter are more important than meals, water and electricity in rating vulnerability based on basic needs.</p>
+<pre class="r"><code>Importances.basicneeds &lt;- as.data.frame(basicneeds_indic)
+names(Importances.basicneeds)[1] &lt;- &quot;Variable&quot;
+
+Importances.basicneeds$Average &lt;- caImportance(Data.basicneeds2,
+                                    selectedProfiles.basicneeds)
+
+plot1 &lt;- ggplot(Importances.basicneeds,
+       aes(x = reorder(Variable, Average), y = Average)) + 
+  geom_bar(stat = &quot;identity&quot;, 
+           position = &quot;identity&quot;, 
+           fill = &quot;#0072bc&quot;) + # here we configure that it will be bar chart
+  coord_flip() +
+  scale_y_continuous(labels = function(x)paste(x, &quot;%&quot;)) +
+  unhcr_style() + ## Insert UNHCR Style
+  ## and the chart labels
+  labs(title = &quot;Criteria Average importance related to Basic Needs Vulnerability scoring&quot;,
+       subtitle = paste0(&quot;Conjoint Analysis from &quot;, nexpert, &quot; experts&quot;), 
+       caption = &quot;Dummy data&quot;,
+       y = &quot;&quot;) +
+  theme(panel.grid.major.x = element_line(color = &quot;#cbcbcb&quot;), 
+        panel.grid.major.y = element_blank()) ### changing grid line that should appear
+
+ggpubr::ggarrange(left_align(plot1, c(&quot;subtitle&quot;, &quot;title&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Conjoint-Analysis_files/figure-html/unnamed-chunk-15-1.png" width="768" /></p>
+</div>
+<div id="segmentation-of-respondents" class="section level2">
+<h2>Segmentation of respondents</h2>
+<p>Segmentation using k-means method - division into 3 segments:</p>
+<p>This will group experts according to their patterns of responses. This way we can identify if experts from different countries are giving different importance ratings compared to experts from other countries.</p>
+<p>We can also see on the plot if there is a higher agreement between experts of a certain segment (segment 1, dots are closer together) vs. another.</p>
+<pre class="r"><code>segments &lt;- caSegmentation(Data.basicneeds2,
+                           selectedProfiles.basicneeds,
+                           c = 3)
+
+# print(segments$seg) 
+# plotcluster(segments$util,segments$sclu)
+
+dcf &lt;- discrcoord(segments$util,segments$sclu)
+assignments &lt;- augment(segments$segm,dcf$proj[,1:2])
+
+plot1 &lt;- ggplot(assignments) + 
+          geom_point(aes(x = X1,
+                         y = X2,
+                         color = .cluster)) +
+        unhcr_style() + ## Insert UNHCR Style
+        ## and the chart labels
+        labs(title = &quot;Profiling experts contribution&quot;,
+             subtitle = paste0(&quot;K-Means Clustering of &quot;, nexpert, &quot; experts opinions&quot;), 
+             caption = &quot;Dummy data&quot;,
+             color = &quot;Cluster Assignment&quot;,
+             y = &quot;&quot;,
+             x = &quot;&quot;) +
+        theme(panel.grid.major.x = element_line(color = &quot;#cbcbcb&quot;), 
+              panel.grid.major.y = element_line(color = &quot;#cbcbcb&quot;))  
+
+ggpubr::ggarrange(left_align(plot1, c(&quot;subtitle&quot;, &quot;title&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Conjoint-Analysis_files/figure-html/unnamed-chunk-16-1.png" width="576" /></p>
+</div>
+
+    </div>
+      
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/indicator">Indicator</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/composite">Composite</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/protection">Protection</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/unhcr">UNHCR</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/edouard-legoupil">Edouard-Legoupil</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+    
+ 
+  <script>
+  $(document).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
+  });
+  </script>
+  
+  <script>
+    window.initializeCodeFolding = function(show) {
+
+  
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  
+  var currentIndex = 1;
+
+  
+  var rCodeBlocks = $('');
+  rCodeBlocks.each(function() {
+
+    
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+
+  </script>
+  
+
+
+  </footer>
+  
+
+<div class="related-articles">
+<h3>Related articles</h3>
+<ul>
+	<li>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+          </h3>
+          
+          <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+          February 23, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a>
+          </h3>
+          
+          <time class="published" datetime='2020-01-23 00:00:00 &#43;0000 UTC'>
+          January 23, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/geonames/">Fuzzy geocoding on location name</a>
+          </h3>
+          
+          <time class="published" datetime='2019-12-14 00:00:00 &#43;0000 UTC'>
+          December 14, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	</li>	
+</ul>
+</div>
+
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/analytic-hierachy-process/"
+                class="button big previous">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/images/avatar.png" alt="HumanitaRian useR Group" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>~ Science is 'show me' - not 'trust me' ~</p>
+      </header>
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+              March 19, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+              </h3>
+              
+              <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+              February 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a>
+              </h3>
+              
+              <time class="published" datetime='2020-01-23 00:00:00 &#43;0000 UTC'>
+              January 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/geonames/">Fuzzy geocoding on location name</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-14 00:00:00 &#43;0000 UTC'>
+              December 14, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-10 00:00:00 &#43;0000 UTC'>
+              December 10, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-03 00:00:00 &#43;0000 UTC'>
+              December 3, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/compositeindicator/">Building Severity Index with R</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-28 00:00:00 &#43;0000 UTC'>
+              November 28, 2019</time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">See more</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+
+  
+  
+    <section id="mini-bio">
+      <h3>about</h3>
+      <p>The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.</p>
+      <a href="/about" class="button">learn more</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+    
+    
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+    
+
+    
+      
+        
+      
+    
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+      
+          
+    
+      <script src="/js/collapse.js"></script>
+      <script src="/js/dropdown.js"></script>
+      <script src="/js/transition.js"></script>
+    
+    
+  </body>
+</html>
+

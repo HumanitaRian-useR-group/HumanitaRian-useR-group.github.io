@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/conjoint-analysis/</loc>
+    <lastmod>2020-03-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/analytic-hierachy-process/</loc>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/deprivation/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/geonames/</loc>
     <lastmod>2019-12-14T00:00:00+00:00</lastmod>
   </url>
@@ -124,7 +139,7 @@
   
   <url>
     <loc>/tags/benini/</loc>
-    <lastmod>2019-12-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,6 +152,12 @@
   <url>
     <loc>/categories/</loc>
     <lastmod>2019-03-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/composite/</loc>
+    <lastmod>2020-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -165,8 +186,14 @@
   </url>
   
   <url>
+    <loc>/categories/deprivation/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/edouard-legoupil/</loc>
-    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -177,8 +204,14 @@
   </url>
   
   <url>
+    <loc>/tags/hisham-galal/</loc>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -190,7 +223,7 @@
   
   <url>
     <loc>/categories/indicator/</loc>
-    <lastmod>2019-12-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -214,7 +247,7 @@
   
   <url>
     <loc>/tags/okular-analytics/</loc>
-    <lastmod>2019-12-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -226,13 +259,19 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/prioritisation/</loc>
     <lastmod>2019-12-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/protection/</loc>
+    <lastmod>2020-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -274,7 +313,7 @@
   
   <url>
     <loc>/tags/unhcr/</loc>
-    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

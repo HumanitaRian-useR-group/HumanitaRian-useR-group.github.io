@@ -40,6 +40,15 @@
     </item>
     
     <item>
+      <title>Composite</title>
+      <link>/categories/composite/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/composite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data</title>
       <link>/categories/data/</link>
       <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
@@ -67,6 +76,15 @@
     </item>
     
     <item>
+      <title>Deprivation</title>
+      <link>/categories/deprivation/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/deprivation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>HDX</title>
       <link>/categories/hdx/</link>
       <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
@@ -78,7 +96,7 @@
     <item>
       <title>Indicator</title>
       <link>/categories/indicator/</link>
-      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/indicator/</guid>
       <description></description>
@@ -108,6 +126,15 @@
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/prioritisation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Protection</title>
+      <link>/categories/protection/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/protection/</guid>
       <description></description>
     </item>
     

@@ -7,10 +7,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Conjoint analysis: modeling judgement to calibrate vulnerability scoring</title>
+      <link>/post/conjoint-analysis/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/conjoint-analysis/</guid>
+      <description>What is Conjoint analysis? Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria.</description>
+    </item>
+    
+    <item>
+      <title>Using Analytic Hierarchy Process to weight vulnerability scorecard</title>
+      <link>/post/analytic-hierachy-process/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/analytic-hierachy-process/</guid>
+      <description>Problem Statement: Defining vulnerabilities scorecard weights through expert judgment In humanitarian contexts, it’s not always possible to use a statistically representative dataset in order to infer the relative weights to be used for each criteria from the full vulnerability scorecard. The only options is to use multiple expert judgement in order to Define relative weights to be used for each criteria .
+Often teams of expert suffer from non-aligned goals, power politics, group dynamics and lack of mutual understanding, which comes though with specific challenges:</description>
+    </item>
+    
+    <item>
+      <title>A practical implementation of deprivation model: index of protection risks</title>
+      <link>/post/deprivation/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/deprivation/</guid>
+      <description>This example is based on the note: A new index of refugee protection and presents the construction of a lack-of-protection index (or “index of protection risks”) constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
+The Limitation of measurement based on incident analysis It is tempting to build measures of protection or of the lack thereof from counts of incident sand of other reported events for populations at risk.</description>
+    </item>
     
     <item>
       <title>Fuzzy geocoding on location name</title>

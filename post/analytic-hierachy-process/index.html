@@ -1,0 +1,2042 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Using Analytic Hierarchy Process to weight vulnerability scorecard</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.54.0" />
+        
+
+
+        
+            <meta name="author" content="Hisham Galal / Edouard Legoupil">
+        
+        
+            
+                <meta name="description" content="The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Analytic Hierarchy Process to weight vulnerability scorecard"/>
+<meta name="twitter:description" content="Problem Statement: Defining vulnerabilities scorecard weights through expert judgment In humanitarian contexts, it’s not always possible to use a statistically representative dataset in order to infer the relative weights to be used for each criteria from the full vulnerability scorecard. The only options is to use multiple expert judgement in order to Define relative weights to be used for each criteria .
+Often teams of expert suffer from non-aligned goals, power politics, group dynamics and lack of mutual understanding, which comes though with specific challenges:"/>
+
+        <meta property="og:title" content="Using Analytic Hierarchy Process to weight vulnerability scorecard" />
+<meta property="og:description" content="Problem Statement: Defining vulnerabilities scorecard weights through expert judgment In humanitarian contexts, it’s not always possible to use a statistically representative dataset in order to infer the relative weights to be used for each criteria from the full vulnerability scorecard. The only options is to use multiple expert judgement in order to Define relative weights to be used for each criteria .
+Often teams of expert suffer from non-aligned goals, power politics, group dynamics and lack of mutual understanding, which comes though with specific challenges:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/analytic-hierachy-process/" />
+<meta property="article:published_time" content="2020-02-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-02-23T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Using Analytic Hierarchy Process to weight vulnerability scorecard">
+<meta itemprop="description" content="Problem Statement: Defining vulnerabilities scorecard weights through expert judgment In humanitarian contexts, it’s not always possible to use a statistically representative dataset in order to infer the relative weights to be used for each criteria from the full vulnerability scorecard. The only options is to use multiple expert judgement in order to Define relative weights to be used for each criteria .
+Often teams of expert suffer from non-aligned goals, power politics, group dynamics and lack of mutual understanding, which comes though with specific challenges:">
+
+
+<meta itemprop="datePublished" content="2020-02-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3489">
+
+
+
+<meta itemprop="keywords" content="UNHCR,Hisham-Galal,Edouard-Legoupil," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+      
+            <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+			  
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+        <h1><a href="/">post</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post/index.html">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-info-circle">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-database">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post/index.html">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-info-circle">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-database">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <h3>
+                                <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-19'>
+                                    March 19, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-02-23'>
+                                    February 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-01-23'>
+                                    January 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/geonames/">Fuzzy geocoding on location name</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-14'>
+                                    December 14, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-10'>
+                                    December 10, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-03'>
+                                    December 3, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/compositeindicator/">Building Severity Index with R</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-28'>
+                                    November 28, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">See more</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2fanalytic-hierachy-process%2f&amp;text=Using%20Analytic%20Hierarchy%20Process%20to%20weight%20vulnerability%20scorecard&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2fanalytic-hierachy-process%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fanalytic-hierachy-process%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2fanalytic-hierachy-process%2f&amp;title=Using%20Analytic%20Hierarchy%20Process%20to%20weight%20vulnerability%20scorecard" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2fanalytic-hierachy-process%2f&amp;title=Using%20Analytic%20Hierarchy%20Process%20to%20weight%20vulnerability%20scorecard" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2fanalytic-hierachy-process%2f&amp;title=Using%20Analytic%20Hierarchy%20Process%20to%20weight%20vulnerability%20scorecard" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2fanalytic-hierachy-process%2f&amp;description=Using%20Analytic%20Hierarchy%20Process%20to%20weight%20vulnerability%20scorecard" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Hisham%20Galal%20%2f%20Edouard%20Legoupil&amp;body=%2fpost%2fanalytic-hierachy-process%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        <time class="published"
+            datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+            February 23, 2020</time>
+        <span class="author">Hisham Galal / Edouard Legoupil</span>
+        
+            <p>17 minutes read</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  
+  <div>
+     
+ <div id="go-to-folding-div" style="display: inline-block;vertical-align: top;height: 1px;margin-top: -4em;"></div>
+ <div id="code-folding-buttons" class="btn-group pull-right">
+   <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast="">
+     <span>Show/Hide all code</span> 
+     <span class="caret"></span>
+   </button>
+   <ul class="dropdown-menu" style="min-width: 50px;">
+   <li><a id="rmd-show-all-code" href="#go-to-folding-div">Show All Code</a>
+   </li><li><a id="rmd-hide-all-code" href="#go-to-folding-div">Hide All Code</a></li>
+   </ul>
+ </div>
+ 
+
+    <br/>
+    <div id="content" class="article-entry">
+      
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/viz/viz.js"></script>
+<link href="/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/grViz-binding/grViz.js"></script>
+
+
+<div id="problem-statement-defining-vulnerabilities-scorecard-weights-through-expert-judgment" class="section level2">
+<h2>Problem Statement: Defining vulnerabilities scorecard weights through expert judgment</h2>
+<p>In humanitarian contexts, it’s not always possible to use a statistically representative dataset in order to infer the relative weights to be used for each criteria from the full vulnerability scorecard. The only options is to use multiple expert judgement in order to Define relative weights to be used for each criteria .</p>
+<p>Often teams of expert suffer from non-aligned goals, power politics, group dynamics and lack of mutual understanding, which comes though with specific challenges:</p>
+<ul>
+<li>How expert can come up with values for the weight?</li>
+<li>How to reach consensus among expert on the suggested values on complex decisions in order to raise sufficient <a href="https://www.youtube.com/watch?v=WRKfl4owWKc">confidence in decision outcomes</a>?</li>
+<li>Is there an alternative to lenghty consensus building?</li>
+</ul>
+</div>
+<div id="what-is-analytic-hierarchy-process-ahp" class="section level2">
+<h2>What is Analytic Hierarchy Process (AHP)?</h2>
+<p>Analytic Hierarchy Process (AHP) is <a href="https://en.wikipedia.org/wiki/Analytic_hierarchy_process">structured technique</a>, developed in the 70’s by Thomas Saaty in Wharton Business School ( <a href="https://books.google.jo/books?id=c8KqSWPFwIUC&amp;lpg=PA1&amp;dq=inauthor%3A%22Thomas%20L.%20Saaty%22&amp;pg=PA1#v=onepage&amp;q&amp;f=false">Decision Making for Leaders: The Analytic Hierarchy Process for Decisions in a Complex World</a>), for organizing and analyzing complex decisions, based on mathematics and psychology . It is a comprehensive and rational framework to organize feeling, intuition &amp; logic for structuring group decision making. Rather than prescribing a “correct” decision, the AHP helps decision makers find one that best suits their goal and their understanding of the problem.</p>
+<p>Comparisons are made to define <a href="http://people.revoledu.com/kardi/tutorial/AHP/Priority%20Vector.htm">priorities between 2 alternatives</a> based on decision-maker’s feeling of priority dues to importance, preference and likelihood of influence. This breaks down complex decision into small judgement.</p>
+<p>AHP also comes with the following limitations:
+- Assumes a minimum level of judgement consistency among experts
+- Limited number of criteria to minimize the number of pairwise comparison estimation -<br />
+- Data should be available for all criteria
+- Assumes that when new alternatives are added to a decision problem, the ranking of the old alternatives is not changing</p>
+<p>In order to use AHP, the following steps can be used:</p>
+<ol style="list-style-type: decimal">
+<li>Define vulnerability criteria</li>
+<li>Build the expert consultation form</li>
+<li>Generate the AHP file from the collected data</li>
+<li>Run AHP algorithm</li>
+<li>Review results</li>
+<li>Apply the formula</li>
+</ol>
+<p><img src="process.png" /></p>
+<pre class="r"><code>knitr::opts_chunk$set(
+ collapse = TRUE,
+ comment = &quot; &quot;
+)
+## This function will retrieve the packae if they are not yet installed.
+using &lt;- function(...) {
+    libs &lt;- unlist(list(...))
+    req &lt;- unlist(lapply(libs,require,character.only = TRUE))
+    need &lt;- libs[req == FALSE]
+    if (length(need) &gt; 0) { 
+        install.packages(need)
+        lapply(need,require,character.only = TRUE)
+    }
+}
+
+## Getting all necessary package
+using(&quot;readxl&quot;, &quot;readr&quot;, &quot;tidyverse&quot;, &quot;openxlsx&quot;, &quot;readxl&quot;, &quot;yaml&quot;, &quot;ahp&quot;, &quot;R6&quot;, &quot;data.tree&quot;)
+
+rm(using)</code></pre>
+</div>
+<div id="define-vulnerability-criteria" class="section level2">
+<h2>1. Define vulnerability criteria</h2>
+<ul>
+<li><p>List potential criteria that would contribute to vulnerability within the current context. Note that criteria can be grouped together using hierarchy.</p></li>
+<li><p>Establish freehold for criteria so that they can be formulated as simple binary questions</p></li>
+</ul>
+</div>
+<div id="criteria-without-hierarchy" class="section level2">
+<h2>Criteria without hierarchy</h2>
+<p>In this case N*(N-1)/2 pairs to review: <em>5 criteria -&gt; 10 comparisons</em></p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Criteria-Code</strong></th>
+<th><strong>Criteria-Level-1-label</strong></th>
+<th><strong>Criteria-Level-2-label</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>age</td>
+<td>Age of head of household is above 50</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>gender</td>
+<td>Gender of head of household is female</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>size</td>
+<td>Household size is above 5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>needs</td>
+<td>Occurrence of Specific needs</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>assistance</td>
+<td>Do not Receive assistance</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>PS: 6 criteria -&gt; 15 comparison, 7 criteria -&gt; 24 comparisons, 8 criteria -&gt; 28 comparisons, 9 criteria -&gt; 36 comparisons</p>
+</div>
+<div id="criteria-with-hierarchy" class="section level2">
+<h2>Criteria with hierarchy</h2>
+<p>In this case 6 pairs to review…</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Criteria-Code</strong></th>
+<th><strong>Criteria-Level-1-label</strong></th>
+<th><strong>Criteria-Level-2-label</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>age</td>
+<td>Demography</td>
+<td>Age of head of household is above 50</td>
+</tr>
+<tr class="even">
+<td>gender</td>
+<td>Demography</td>
+<td>Gender of head of household is female</td>
+</tr>
+<tr class="odd">
+<td>size</td>
+<td>Demography</td>
+<td>Household size is above 5</td>
+</tr>
+<tr class="even">
+<td>needs</td>
+<td>Occurrence of Specific needs</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>assistance</td>
+<td>Do not Receive assistance</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="build-the-expert-consultation-form" class="section level2">
+<h2>2. Build the expert consultation form</h2>
+<p>A form will allow to collect from expert priorities between criteria by making a series of judgments based on pairwise comparisons:</p>
+<ul>
+<li><p>Collect judgment for all pairwise comparison and each expert</p></li>
+<li><p>Ranking Scales for Criteria</p></li>
+</ul>
+<p><img src="importance.png" /></p>
+<p>The function below allows to build a <a href="http://xlsform.org">xlsform file</a> based on criteria defined above.
+The input file here is a csv file with two columns:
+- name: a short variable name for analysis purposes only
+- label: the long description printed on the form</p>
+<p>Criteria should be saved in a configuration file using the format here <code>ahpCriteria.csv</code>.</p>
+<pre class="r"><code>
+criteria_to_xlsform &lt;- function(critf) {
+  criteria &lt;- read_csv(critf)
+
+  crit &lt;- set_names(criteria$label, criteria$name)
+  blank &lt;- &quot;&lt;span style=&#39;display:none&#39;&gt;foo&lt;/span&gt;&quot;
+  intro &lt;-
+    str_c(
+      &quot;THANK YOU FOR PARTICIPATING IN THE CRITERIA COMPARISON EXERCISE.&quot;,
+      &quot;THE FOLLOWING SURVEY HAS BEEN DESIGNED TO HELP YOU RECORD YOUR OPINION.&quot;,
+      sep = &quot; &quot;
+    )
+
+  survey &lt;-
+    cross_df(names(crit) %&gt;% list(crit1 = ., crit2 = .)) %&gt;%
+    filter((row_number() - 1) %&gt;% {. %/% length(crit) &gt; . %% length(crit)}) %&gt;%
+    transmute(
+      criteria =
+        map2(crit1, crit2,
+             ~tibble(
+               type = c(&quot;note&quot;, &quot;select_one priority&quot;, &quot;note&quot;, &quot;select_one importance&quot;),
+               name = str_c(c(&quot;note&quot;, &quot;prio&quot;, &quot;blank&quot;, &quot;imp&quot;), &quot;_&quot;, ..1, &quot;_x_&quot;, ..2),
+               label = c(str_glue(&quot;__Compare__ {crit[..1]}\n__with__ {crit[..2]}&quot;),
+                         blank, blank, blank),
+               appearance = c(&quot;w1&quot;, &quot;w1 likert&quot;, &quot;w2&quot;, &quot;w2 horizontal-compact&quot;),
+               relevant = c(NA, NA,
+                            str_c(&quot;${prio_&quot;, ..1, &quot;_x_&quot;, ..2, &quot;} = &#39;&quot;, c(&#39;&#39;, &#39;0&#39;), &quot;&#39;&quot;,
+                                  collapse = &quot; or &quot;),
+                            str_c(&quot;${prio_&quot;, ..1, &quot;_x_&quot;, ..2, &quot;} = &#39;&quot;, c(&#39;1&#39;, &#39;-1&#39;), &quot;&#39;&quot;,
+                                  collapse = &quot; or &quot;)),
+               required = c(NA, TRUE, NA, TRUE)))) %&gt;%
+    unnest()
+
+  survey &lt;-
+    bind_rows(
+      tribble(
+        ~type,         ~name,        ~label,           ~appearance,
+        &quot;note&quot;,        &quot;intro&quot;,      intro,            NA,
+        &quot;begin_group&quot;, &quot;criteria&quot;,   &quot;Criteria&quot;,       &quot;w4&quot;,
+        &quot;note&quot;,        &quot;compare&quot;,    blank,            &quot;w1&quot;,
+        &quot;note&quot;,        &quot;priority&quot;,   &quot;__Priority__&quot;,   &quot;w1&quot;,
+        &quot;note&quot;,        &quot;importance&quot;, &quot;__Importance__&quot;, &quot;w2&quot;
+      ),
+      survey,
+      c(&quot;type&quot; = &quot;end_group&quot;)
+    )
+
+  choices &lt;-
+    tribble(
+      ~list_name,   ~name, ~label,
+      &quot;priority&quot;,   1,     &quot;1st&quot;,
+      &quot;priority&quot;,   0,     &quot;equal&quot;,
+      &quot;priority&quot;,  -1,     &quot;2nd&quot;,
+      &quot;importance&quot;, 3,     &quot;moderate&quot;,
+      &quot;importance&quot;, 5,     &quot;strong&quot;,
+      &quot;importance&quot;, 7,     &quot;very strong&quot;,
+      &quot;importance&quot;, 9,     &quot;extreme&quot;
+    )
+
+  settings &lt;- tibble(style = &quot;theme-grid&quot;)
+
+  xlsform &lt;- createWorkbook()
+  addWorksheet(xlsform, &quot;survey&quot;); writeData(xlsform, &quot;survey&quot;, survey)
+  addWorksheet(xlsform, &quot;choices&quot;); writeData(xlsform, &quot;choices&quot;, choices)
+  addWorksheet(xlsform, &quot;settings&quot;); writeData(xlsform, &quot;settings&quot;, settings)
+
+  saveWorkbook(xlsform, &quot;ahp_form.xlsx&quot;, overwrite = TRUE)
+}
+
+## Now run the function
+
+critf &lt;- &quot;ahpCriteria.csv&quot;
+criteria_to_xlsform(critf)
+</code></pre>
+</div>
+<div id="form" class="section level2">
+<h2>Form</h2>
+<p>The form <code>ahp_form.xlsx</code> can be used within <a href="httpp://kobo.unhcr.org">UNHCR Kobo server</a>. Experts can be humanitarian case workers that are used to assess vulnerability.
+See an <a href="https://enketo.unhcr.org/x/#ASAPg7eu">example here</a></p>
+<p><img src="ahpform.png" /></p>
+</div>
+<div id="generate-the-ahp-file-from-the-collected-data" class="section level2">
+<h2>3. Generate the AHP file from the collected data</h2>
+<p>Once the selected experts (aka. decision-makers) have filled the online form , data can be exported from <a href="httpp://kobo.unhcr.org">UNHCR Kobo server</a> in csv format.</p>
+<p>A new function allows to create the <a href="https://cran.r-project.org/web/packages/ahp/vignettes/file-format.html">AHP file</a>.</p>
+<p>This create the file that format correctly the pairwise preferences of each decision-makers to run the next step.
+The input file is the survey data collected in kobotoolbox (do NOT use group names when extracting the data!).</p>
+<pre class="r"><code>
+survey_to_ahptree &lt;- function(dataf) {
+  data &lt;- read_delim(dataf, &quot;;&quot;, escape_double = FALSE, trim_ws = TRUE)
+
+  data &lt;- data %&gt;% select(matches(&quot;^(prio|imp)_&quot;)) %&gt;% mutate_all(as.numeric)
+
+  data &lt;- data %&gt;%
+    mutate(respondent = str_c(&quot;respondent_&quot;, row_number())) %&gt;%
+    gather(key, val, -respondent) %&gt;%
+    extract(key, c(&quot;measure&quot;, &quot;crit1&quot;, &quot;crit2&quot;), regex = &quot;(.*)_(.*)_x_(.*)&quot;) %&gt;%
+    spread(measure, val) %&gt;%
+    mutate(pref = case_when(prio == 1 ~ imp,
+                            prio == 0 ~ 1,
+                            prio == -1 ~ 1/imp)) %&gt;%
+    select(-prio, -imp)
+
+  criteria &lt;- union(data$crit1, data$crit2)
+  respondents &lt;- unique(data$respondent)
+
+  data &lt;-
+    data %&gt;%
+    nest(-respondent) %&gt;%
+    mutate(prefs = map(data, ~list(pairwise = pmap(., ~list(...)))))
+
+  goal.preferences &lt;- set_names(data$prefs, data$respondent)
+
+  cases &lt;-
+    rep(list(c(0, 1)), length(criteria)) %&gt;%
+    set_names(criteria) %&gt;%
+    cross_df()
+
+  caseids &lt;-
+    str_c(&quot;case&quot;, str_pad(seq_along(pull(cases)), ceiling(log10(2^length(criteria))), pad = &quot;0&quot;))
+
+  cases %&gt;% mutate(id = caseids) %&gt;% write_csv(&quot;cases.csv&quot;)
+
+  alternatives &lt;-
+    cases %&gt;%
+    pmap(~list(...)) %&gt;%
+    set_names(caseids)
+
+  goal.children &lt;-
+    cases %&gt;%
+    map(
+      ~list(
+        preferences =
+          rerun(
+            length(respondents),
+            list(score = map2(., caseids, ~set_names(list(.x),.y)))) %&gt;%
+          set_names(respondents),
+        children = alternatives))
+
+  ahptree &lt;-
+    list(
+      Version = 2.0,
+      Goal =
+        list(
+          name = &quot;Vulnerability ranking&quot;,
+          preferences = goal.preferences,
+          children = goal.children))
+
+  ahptree %&gt;% write_yaml(&quot;ahpTree.ahp&quot;)
+}
+
+dataf &lt;- &quot;ahpData.csv&quot;
+survey_to_ahptree(dataf)</code></pre>
+</div>
+<div id="run-ahp-algorithm" class="section level2">
+<h2>4. Run AHP algorithm</h2>
+<ul>
+<li>Calculation done using <a href="https://rpubs.com/gluc/ahp">R statistical language</a>.</li>
+<li>Synthesize these judgments to yield a set of overall priorities</li>
+<li>Check judgments consistency (consistency ratio)</li>
+<li>Compute weights for each expert</li>
+<li>Mathematical calculations to convert these judgments to priorities for each of the four criteria</li>
+</ul>
+<pre><code>              levelName
+1 Vulnerability ranking
+2  ¦--age              
+3  ¦--gender           
+4  ¦--need             </code></pre>
+<p>We can visualize the model</p>
+<div id="htmlwidget-1" style="width:672px;height:384px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"TB\"]\n\n\n\n  \"1\" [label = \"Vulnerability ranking\", tooltip = \"Decision Makers: respondent_1, respondent_2, respondent_3, respondent_4\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\", fillcolor = \"#F0FFF0\"] \n  \"2\" [label = \"age\", tooltip = \"priority: 17.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\", fillcolor = \"#F0FFF0\"] \n  \"3\" [label = \"gender\", tooltip = \"priority: 17.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\", fillcolor = \"#F0FFF0\"] \n  \"4\" [label = \"need\", tooltip = \"priority: 21.0%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\", fillcolor = \"#F0FFF0\"] \n  \"5\" [label = \"size\", tooltip = \"priority: 19.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\", fillcolor = \"#F0FFF0\"] \n  \"6\" [label = \"dependency\", tooltip = \"priority: 25.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\", fillcolor = \"#F0FFF0\"] \n  \"7\" [label = \"Alternatives\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"8\" [label = \"case01\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 0.0\ngender: 0.0\nneed: 0.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"9\" [label = \"case02\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 0.0\ngender: 0.0\nneed: 0.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"10\" [label = \"case03\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 0.0\ngender: 1.0\nneed: 0.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"11\" [label = \"case04\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 0.0\ngender: 1.0\nneed: 0.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"12\" [label = \"case05\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 0.0\ngender: 0.0\nneed: 1.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"13\" [label = \"case06\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 0.0\ngender: 0.0\nneed: 1.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"14\" [label = \"case07\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 0.0\ngender: 1.0\nneed: 1.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"15\" [label = \"case08\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 0.0\ngender: 1.0\nneed: 1.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"16\" [label = \"case09\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 0.0\ngender: 0.0\nneed: 0.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"17\" [label = \"case10\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 0.0\ngender: 0.0\nneed: 0.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"18\" [label = \"case11\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 0.0\ngender: 1.0\nneed: 0.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"19\" [label = \"case12\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 0.0\ngender: 1.0\nneed: 0.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"20\" [label = \"case13\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 0.0\ngender: 0.0\nneed: 1.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"21\" [label = \"case14\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 0.0\ngender: 0.0\nneed: 1.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"22\" [label = \"case15\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 0.0\ngender: 1.0\nneed: 1.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"23\" [label = \"case16\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 0.0\ngender: 1.0\nneed: 1.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"24\" [label = \"case17\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 1.0\ngender: 0.0\nneed: 0.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"25\" [label = \"case18\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 1.0\ngender: 0.0\nneed: 0.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"26\" [label = \"case19\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 1.0\ngender: 1.0\nneed: 0.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"27\" [label = \"case20\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 1.0\ngender: 1.0\nneed: 0.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"28\" [label = \"case21\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 1.0\ngender: 0.0\nneed: 1.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"29\" [label = \"case22\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 1.0\ngender: 0.0\nneed: 1.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"30\" [label = \"case23\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 1.0\ngender: 1.0\nneed: 1.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"31\" [label = \"case24\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 1.0\ngender: 1.0\nneed: 1.0\nsize: 0.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"32\" [label = \"case25\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 1.0\ngender: 0.0\nneed: 0.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"33\" [label = \"case26\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 1.0\ngender: 0.0\nneed: 0.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"34\" [label = \"case27\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 1.0\ngender: 1.0\nneed: 0.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"35\" [label = \"case28\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 1.0\ngender: 1.0\nneed: 0.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"36\" [label = \"case29\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 1.0\ngender: 0.0\nneed: 1.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"37\" [label = \"case30\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 1.0\ngender: 0.0\nneed: 1.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"38\" [label = \"case31\", tooltip = \"priority: 0.0%\nage: 0.0\ndependency: 1.0\ngender: 1.0\nneed: 1.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n  \"39\" [label = \"case32\", tooltip = \"priority: 6.2%\nage: 1.0\ndependency: 1.0\ngender: 1.0\nneed: 1.0\nsize: 1.0\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\", fillcolor = \"#D8BFD8\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"3\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"5\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"3\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"4\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"7\"->\"8\" [penwidth = \"2\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"9\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"10\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"11\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"12\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"13\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"14\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"15\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"16\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"17\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"18\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"19\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"20\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"21\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"22\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"23\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"24\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"25\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"26\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"27\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"28\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"29\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"30\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"31\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"32\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"33\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"34\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"35\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"36\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"37\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"38\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"7\"->\"39\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>We can now see the output from the model</p>
+<table class="table table-condensed">
+<thead>
+<tr>
+<th style="text-align:right;">
+</th>
+<th style="text-align:right;">
+Weight
+</th>
+<th style="text-align:right;">
+case32
+</th>
+<th style="text-align:right;">
+case30
+</th>
+<th style="text-align:right;">
+case31
+</th>
+<th style="text-align:right;">
+case24
+</th>
+<th style="text-align:right;">
+case28
+</th>
+<th style="text-align:right;">
+case16
+</th>
+<th style="text-align:right;">
+case29
+</th>
+<th style="text-align:right;">
+case22
+</th>
+<th style="text-align:right;">
+case23
+</th>
+<th style="text-align:right;">
+case26
+</th>
+<th style="text-align:right;">
+case27
+</th>
+<th style="text-align:right;">
+case20
+</th>
+<th style="text-align:right;">
+case14
+</th>
+<th style="text-align:right;">
+case15
+</th>
+<th style="text-align:right;">
+case08
+</th>
+<th style="text-align:right;">
+case12
+</th>
+<th style="text-align:right;">
+case21
+</th>
+<th style="text-align:right;">
+case25
+</th>
+<th style="text-align:right;">
+case18
+</th>
+<th style="text-align:right;">
+case19
+</th>
+<th style="text-align:right;">
+case13
+</th>
+<th style="text-align:right;">
+case06
+</th>
+<th style="text-align:right;">
+case07
+</th>
+<th style="text-align:right;">
+case10
+</th>
+<th style="text-align:right;">
+case11
+</th>
+<th style="text-align:right;">
+case04
+</th>
+<th style="text-align:right;">
+case17
+</th>
+<th style="text-align:right;">
+case05
+</th>
+<th style="text-align:right;">
+case09
+</th>
+<th style="text-align:right;">
+case02
+</th>
+<th style="text-align:right;">
+case03
+</th>
+<th style="text-align:right;">
+case01
+</th>
+<th style="text-align:right;">
+Inconsistency
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<span style="white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 0em">Vulnerability ranking</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #c1cdc1">100.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b">6.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #9e919e">5.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #9f929f">5.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #a194a1">5.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #a396a3">4.9%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #a89ca8">4.7%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b3a8b3">4.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b5aab5">4.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b5abb5">4.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b7adb7">3.9%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b7adb7">3.8%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b9afb9">3.7%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #bcb2bc">3.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #bcb3bc">3.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #beb5be">3.5%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #c0b8c0">3.4%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #c9c1c9">2.9%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #cbc4cb">2.8%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #cdc6cd">2.7%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #cdc7cd">2.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d0cad0">2.5%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d2ccd2">2.4%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d2ccd2">2.4%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d4ced4">2.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d4cfd4">2.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d6d1d6">2.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae">
+<i class="glyphicon glyphicon-exclamation-sign"></i>
+106.6%
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span style="white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em">dependency </span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f8faf8">25.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1">1.6%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae">
+<i class></i>
+NA
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span style="white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em">need </span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fcfcfc">21.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e3e6">1.3%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae">
+<i class></i>
+NA
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span style="white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em">size </span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd">19.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e5e8">1.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae">
+<i class></i>
+NA
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span style="white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em">age </span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fefefe">17.5%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae">
+<i class></i>
+NA
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span style="white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em">gender </span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">17.2%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb">1.1%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0%</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae">
+<i class></i>
+NA
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>An <a href="https://shinyus.ipub.com/ahp/inst/gui/shiny/">interactive</a> interface is available to interact with results.</p>
+<ul>
+<li><p>Lack of consistency is often observed</p></li>
+<li><p>If <strong>consistency ratio is above 0.1</strong>, then judgement are untrustworthy because they are too close to randomness -&gt; exercise needs to be repeated or abandoned.</p></li>
+</ul>
+<p>Once sufficient consensus has been reach, one just needs to apply the formula
+- Calculate mean relative weight
+- Apply the vulnerability formula
+- Collect data on each criteria for all household
+- Apply weight to each record for the different criteria to get the vulnerability level of each household</p>
+<p><img src="score.jpg" /></p>
+<p>Thanks to <a href="https://github.com/gluc/">Christoph Glur</a> for developing the original AHP package and answering <a href="https://github.com/gluc/ahp/issues/17">questions</a>.</p>
+</div>
+
+    </div>
+      
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/indicator">Indicator</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/composite">Composite</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/protection">Protection</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/unhcr">UNHCR</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/hisham-galal">Hisham-Galal</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/edouard-legoupil">Edouard-Legoupil</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+    
+ 
+  <script>
+  $(document).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
+  });
+  </script>
+  
+  <script>
+    window.initializeCodeFolding = function(show) {
+
+  
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  
+  var currentIndex = 1;
+
+  
+  var rCodeBlocks = $('');
+  rCodeBlocks.each(function() {
+
+    
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+
+  </script>
+  
+
+
+  </footer>
+  
+
+<div class="related-articles">
+<h3>Related articles</h3>
+<ul>
+	<li>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a>
+          </h3>
+          
+          <time class="published" datetime='2020-01-23 00:00:00 &#43;0000 UTC'>
+          January 23, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/geonames/">Fuzzy geocoding on location name</a>
+          </h3>
+          
+          <time class="published" datetime='2019-12-14 00:00:00 &#43;0000 UTC'>
+          December 14, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a>
+          </h3>
+          
+          <time class="published" datetime='2019-12-10 00:00:00 &#43;0000 UTC'>
+          December 10, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	</li>	
+</ul>
+</div>
+
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/deprivation/"
+                class="button big previous">A practical implementation of deprivation model: index of protection risks</a></li>
+    
+
+    
+        <li><a href="/post/conjoint-analysis/"
+                class="button big next">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/images/avatar.png" alt="HumanitaRian useR Group" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>~ Science is 'show me' - not 'trust me' ~</p>
+      </header>
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+              March 19, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+              </h3>
+              
+              <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+              February 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a>
+              </h3>
+              
+              <time class="published" datetime='2020-01-23 00:00:00 &#43;0000 UTC'>
+              January 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/geonames/">Fuzzy geocoding on location name</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-14 00:00:00 &#43;0000 UTC'>
+              December 14, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-10 00:00:00 &#43;0000 UTC'>
+              December 10, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-03 00:00:00 &#43;0000 UTC'>
+              December 3, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/compositeindicator/">Building Severity Index with R</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-28 00:00:00 &#43;0000 UTC'>
+              November 28, 2019</time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">See more</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+
+  
+  
+    <section id="mini-bio">
+      <h3>about</h3>
+      <p>The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.</p>
+      <a href="/about" class="button">learn more</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+    
+    
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+    
+
+    
+      
+        
+      
+    
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+      
+          
+    
+      <script src="/js/collapse.js"></script>
+      <script src="/js/dropdown.js"></script>
+      <script src="/js/transition.js"></script>
+    
+    
+  </body>
+</html>
+

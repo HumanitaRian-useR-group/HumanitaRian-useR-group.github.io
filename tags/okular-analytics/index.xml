@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/okular-analytics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A practical implementation of deprivation model: index of protection risks</title>
+      <link>/post/deprivation/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/deprivation/</guid>
+      <description>This example is based on the note: A new index of refugee protection and presents the construction of a lack-of-protection index (or “index of protection risks”) constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
+The Limitation of measurement based on incident analysis It is tempting to build measures of protection or of the lack thereof from counts of incident sand of other reported events for populations at risk.</description>
+    </item>
     
     <item>
       <title>Profile of preference: Rashtree analysis</title>

@@ -54,7 +54,7 @@ Practically speaking, the method presented here can be used for dataset that inc
 
 <meta itemprop="datePublished" content="2019-12-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-12-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3263">
+<meta itemprop="wordCount" content="3275">
 
 
 
@@ -255,6 +255,42 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-19'>
+                                    March 19, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-02-23'>
+                                    February 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-01-23'>
+                                    January 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/post/geonames/">Fuzzy geocoding on location name</a></h3>
                                 
                                 <time class="published" datetime=
@@ -296,42 +332,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2019-11-28'>
                                     November 28, 2019</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/post/activityinfoscript/">How-to: Access ActivityInfo data with R</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-10-03'>
-                                    October 3, 2019</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/post/dataqualitymonitoring/">Data Quality Monitoring</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-06-18'>
-                                    June 18, 2019</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/post/datasecurity/">Quick and Dirty Data Security</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-06-11'>
-                                    June 11, 2019</time>
                             </header>
                             
 
@@ -623,7 +623,7 @@ kobo_unhcr_style_scatter &lt;- function() {
 <p>The model-fitting function in PlackettLuce, requires data in the form of rankings, with the rank (1st, 2nd, 3rd, …) for each item. Therefore transformation is required for the data in their orginal stage as we can see below.</p>
 <pre class="r"><code>used_var &lt;- as.character(names(data_csv))[grepl(&quot;l_&quot;,as.character(names(data_csv)))]
  
- kable( data_csv[1:10 , c(&quot;block_id&quot;,&quot;population&quot;,&quot;priority1&quot;,&quot;priority3&quot;,&quot;priority3&quot;) ], 
+ kable( data_csv[1:10 , c(&quot;block_id&quot;,&quot;population&quot;,&quot;priority1&quot;,&quot;priority2&quot;,&quot;priority3&quot;) ], 
        caption = &quot;Data Overview&quot;) %&gt;%
         kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;bordered&quot;, &quot;condensed&quot;, &quot;responsive&quot;), font_size = 9)</code></pre>
 <table class="table table-striped table-bordered table-condensed table-responsive" style="font-size: 9px; margin-left: auto; margin-right: auto;">
@@ -642,10 +642,10 @@ population
 priority1
 </th>
 <th style="text-align:left;">
-priority3
+priority2
 </th>
 <th style="text-align:left;">
-priority3.1
+priority3
 </th>
 </tr>
 </thead>
@@ -661,7 +661,7 @@ CXB-001-001
 Food assistance
 </td>
 <td style="text-align:left;">
-Job opportunities
+Cooking fuel and firewood
 </td>
 <td style="text-align:left;">
 Job opportunities
@@ -678,7 +678,7 @@ CXB-005-001
 Cooking fuel and firewood
 </td>
 <td style="text-align:left;">
-Education for children
+Job opportunities
 </td>
 <td style="text-align:left;">
 Education for children
@@ -695,7 +695,7 @@ CXB-006-001
 Food assistance
 </td>
 <td style="text-align:left;">
-Healthcare
+Cooking fuel and firewood
 </td>
 <td style="text-align:left;">
 Healthcare
@@ -712,7 +712,7 @@ CXB-007-001
 Food assistance
 </td>
 <td style="text-align:left;">
-Education for children
+Sanitation
 </td>
 <td style="text-align:left;">
 Education for children
@@ -729,7 +729,7 @@ CXB-008-001
 Food assistance
 </td>
 <td style="text-align:left;">
-Healthcare
+Cooking fuel and firewood
 </td>
 <td style="text-align:left;">
 Healthcare
@@ -746,7 +746,7 @@ CXB-009-001
 Cooking fuel and firewood
 </td>
 <td style="text-align:left;">
-Shelter
+Healthcare
 </td>
 <td style="text-align:left;">
 Shelter
@@ -763,7 +763,7 @@ CXB-010-001
 Food assistance
 </td>
 <td style="text-align:left;">
-Healthcare
+Cooking fuel and firewood
 </td>
 <td style="text-align:left;">
 Healthcare
@@ -780,7 +780,7 @@ CXB-013-001
 Food assistance
 </td>
 <td style="text-align:left;">
-Sanitation
+Cooking fuel and firewood
 </td>
 <td style="text-align:left;">
 Sanitation
@@ -797,7 +797,7 @@ CXB-014-001
 Cooking fuel and firewood
 </td>
 <td style="text-align:left;">
-Job opportunities
+Sanitation
 </td>
 <td style="text-align:left;">
 Job opportunities
@@ -814,7 +814,7 @@ CXB-016-001
 Sanitation
 </td>
 <td style="text-align:left;">
-Healthcare
+Education for children
 </td>
 <td style="text-align:left;">
 Healthcare
@@ -2225,6 +2225,45 @@ ggpubr::ggarrange(left_align(plot1, c(&quot;subtitle&quot;, &quot;title&quot;)),
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+              March 19, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+              </h3>
+              
+              <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+              February 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a>
+              </h3>
+              
+              <time class="published" datetime='2020-01-23 00:00:00 &#43;0000 UTC'>
+              January 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/post/geonames/">Fuzzy geocoding on location name</a>
               </h3>
               
@@ -2269,45 +2308,6 @@ ggpubr::ggarrange(left_align(plot1, c(&quot;subtitle&quot;, &quot;title&quot;)),
               
               <time class="published" datetime='2019-11-28 00:00:00 &#43;0000 UTC'>
               November 28, 2019</time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/post/activityinfoscript/">How-to: Access ActivityInfo data with R</a>
-              </h3>
-              
-              <time class="published" datetime='2019-10-03 00:00:00 &#43;0000 UTC'>
-              October 3, 2019</time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/post/dataqualitymonitoring/">Data Quality Monitoring</a>
-              </h3>
-              
-              <time class="published" datetime='2019-06-18 00:00:00 &#43;0000 UTC'>
-              June 18, 2019</time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/post/datasecurity/">Quick and Dirty Data Security</a>
-              </h3>
-              
-              <time class="published" datetime='2019-06-11 00:00:00 &#43;0000 UTC'>
-              June 11, 2019</time>
             </header>
             
 

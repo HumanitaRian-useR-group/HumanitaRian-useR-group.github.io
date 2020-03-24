@@ -163,7 +163,7 @@ The model-fitting function in PlackettLuce, requires data in the form of ranking
  
 used_var <- as.character(names(data_csv))[grepl("l_",as.character(names(data_csv)))]
  
- kable( data_csv[1:10 , c("block_id","population","priority1","priority3","priority3") ], 
+ kable( data_csv[1:10 , c("block_id","population","priority1","priority2","priority3") ], 
        caption = "Data Overview") %>%
         kable_styling(bootstrap_options = c("striped", "bordered", "condensed", "responsive"), font_size = 9)
 

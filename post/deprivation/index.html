@@ -1,0 +1,2198 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>A practical implementation of deprivation model: index of protection risks</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.54.0" />
+        
+
+
+        
+            <meta name="author" content="Edouard Legoupil">
+        
+        
+            
+                <meta name="description" content="The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A practical implementation of deprivation model: index of protection risks"/>
+<meta name="twitter:description" content="This example is based on the note: A new index of refugee protection and presents the construction of a lack-of-protection index (or “index of protection risks”) constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
+The Limitation of measurement based on incident analysis It is tempting to build measures of protection or of the lack thereof from counts of incident sand of other reported events for populations at risk."/>
+
+        <meta property="og:title" content="A practical implementation of deprivation model: index of protection risks" />
+<meta property="og:description" content="This example is based on the note: A new index of refugee protection and presents the construction of a lack-of-protection index (or “index of protection risks”) constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
+The Limitation of measurement based on incident analysis It is tempting to build measures of protection or of the lack thereof from counts of incident sand of other reported events for populations at risk." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/deprivation/" />
+<meta property="article:published_time" content="2020-01-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-01-23T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="A practical implementation of deprivation model: index of protection risks">
+<meta itemprop="description" content="This example is based on the note: A new index of refugee protection and presents the construction of a lack-of-protection index (or “index of protection risks”) constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
+The Limitation of measurement based on incident analysis It is tempting to build measures of protection or of the lack thereof from counts of incident sand of other reported events for populations at risk.">
+
+
+<meta itemprop="datePublished" content="2020-01-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="4419">
+
+
+
+<meta itemprop="keywords" content="Okular-Analytics,Benini,UNHCR,Edouard-Legoupil," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+      
+            <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+			  
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+        <h1><a href="/">post</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post/index.html">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-info-circle">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-database">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post/index.html">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-info-circle">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-database">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <h3>
+                                <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-19'>
+                                    March 19, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-02-23'>
+                                    February 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-01-23'>
+                                    January 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/geonames/">Fuzzy geocoding on location name</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-14'>
+                                    December 14, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-10'>
+                                    December 10, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-12-03'>
+                                    December 3, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/compositeindicator/">Building Severity Index with R</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-11-28'>
+                                    November 28, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">See more</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2fdeprivation%2f&amp;text=A%20practical%20implementation%20of%20deprivation%20model%3a%20index%20of%20protection%20risks&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2fdeprivation%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fdeprivation%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2fdeprivation%2f&amp;title=A%20practical%20implementation%20of%20deprivation%20model%3a%20index%20of%20protection%20risks" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2fdeprivation%2f&amp;title=A%20practical%20implementation%20of%20deprivation%20model%3a%20index%20of%20protection%20risks" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2fdeprivation%2f&amp;title=A%20practical%20implementation%20of%20deprivation%20model%3a%20index%20of%20protection%20risks" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2fdeprivation%2f&amp;description=A%20practical%20implementation%20of%20deprivation%20model%3a%20index%20of%20protection%20risks" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Edouard%20Legoupil&amp;body=%2fpost%2fdeprivation%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        <time class="published"
+            datetime='2020-01-23 00:00:00 &#43;0000 UTC'>
+            January 23, 2020</time>
+        <span class="author">Edouard Legoupil</span>
+        
+            <p>21 minutes read</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  
+  <div>
+     
+ <div id="go-to-folding-div" style="display: inline-block;vertical-align: top;height: 1px;margin-top: -4em;"></div>
+ <div id="code-folding-buttons" class="btn-group pull-right">
+   <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast="">
+     <span>Show/Hide all code</span> 
+     <span class="caret"></span>
+   </button>
+   <ul class="dropdown-menu" style="min-width: 50px;">
+   <li><a id="rmd-show-all-code" href="#go-to-folding-div">Show All Code</a>
+   </li><li><a id="rmd-hide-all-code" href="#go-to-folding-div">Hide All Code</a></li>
+   </ul>
+ </div>
+ 
+
+    <br/>
+    <div id="content" class="article-entry">
+      
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<p>This example is based on the note: <a href="http://aldo-benini.org/Level2/HumanitData/Benini_Ng__A_New_Protection_Index__180806.pdf">A new index of refugee protection</a> and presents the construction of a lack-of-protection index (or “index of protection risks”) constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.</p>
+<div id="the-limitation-of-measurement-based-on-incident-analysis" class="section level2">
+<h2>The Limitation of measurement based on incident analysis</h2>
+<p>It is tempting to build measures of protection or of the lack thereof from counts of incident sand of other reported events for populations at risk. Incidents reveal major underlying problems. However, incidence rates are often so low, incomplete or unreliable that they frustrate robust measures. Additionally, incident reporting quality varies greatly due to differences in camp management across the settlements.</p>
+<p>Incident counts discriminate well between a small number of communities at elevated risk and the vast majority at lesser risk. However, whether a municipality suffered “at least one incident in the past” vs “none ever” is extremely random. Statistical models for dealing with these kinds of rare events are available from the disease surveillance field. The major challenges are:</p>
+<ul>
+<li><p>The signal-to-noise ratio is low, i.e. the detection of incident patterns is hampered by numerous random events and measurement errors.</p></li>
+<li><p>The optimal density of the monitoring network is hard to determine. Too few observation points miss out on local structure; too many produce low counts per point(many with zeros), which makes the modeling and estimation difficult.</p></li>
+<li><p>From a practical view point, one can either get fast results with many false positives, or more reliable measurements with delayed detection of true epidemics.</p></li>
+</ul>
+<p>An alternative to incident-based statistics seems desirable. Such approach would potentially circumnavigate one of the major problems with using protection monitoring data (in addition to sensitivity and anonymity) – that incident reporting does not adequately reflect the pattern of protection challenges.</p>
+</div>
+<div id="using-betti-verma-weighting-scheme" class="section level2">
+<h2>Using Betti-Verma weighting scheme</h2>
+<p>One of the many statistical methods for generating indicator weights and calculating sub-indices is known as the “Betti-Verma weighting scheme” or BV method. Betti and Verma(1999) and later others developed it for the measurement of deprivation (of individuals and households) in the field of poverty research. Betti-Verma determines indicator weights on the basis of two sets of statistical relationships: 1. The correlation pattern; the larger the sum of the coefficients with all theother variables, the more redundant is the indicator in point, and the smaller tends to be its weight; 2. The coefficient of variation, with indicators with higher coefficients getting higher weights.</p>
+<p>“Betti-Verma weighting scheme” has an ability to deal with large numbers of indicators. Indicator datasets often include subsets of indicators that are highly correlated. This happens, for example, when sub populations all experience the same phenomena. The Betti-Verma method detects redundancy among indicators, reducing the weights on those that are strongly correlated with others. It calculates weights on indicators that contribute to a sub-index or index of interest. It increases the weights of indicators that are more informative (technically: have a larger coefficient of variation) and decreases weights of indicators that are more redundant (have larger correlations with all the other indicators). Both mechanisms reward diversity, the novel information that a particular indicator provides. This allows indices to include multiple correlated indicators and to avoid bias against others of equal substantive importance, but which are less strongly correlated.</p>
+<p>The major strength of this method is to avoid “apples and oranges” issues in aggregation. It determines weights solely on the basis of the information contributions of the indicators. Betti-Verma weights are not substantive importance weights; the method throws a wide net to capture aspects of the concept of interest that are not yet covered in the statistical correlation patterns of the other indicators. A simplified technical explanation may be found in <a href="http://aldo-benini.org/Level2/HumanitData/Acaps_140527_CompositeMeasures_Philippines.pdf">Composite measures of local disaster impact -Lessons from Typhoon Yolanda, Philippines</a></p>
+<p>Its major weakness is that the method rewards <strong>measurement error</strong>. If a participating variable is measured with substantial error, its correlations with other, more reliablevariables are diminished fro m their true values. A lower sum of posit ive correlat ioncoefficients, however, increases the weight of the variable because it makes it appear to contribute more novel information.</p>
+<p>Finally, contrary to methods that emphasize a narrow focus (scales, factor analysis), Betti-Verma, with its premium on diversity of deprivation aspects, has no ready reliability tests(e.g., no analogue to Cronbach’s Alpha). This is outweighed by the ability to reduce doubts and disputes over the relative importance of the indicators within a sector.</p>
+</div>
+<div id="package-and-functions-required-for-the-analysis" class="section level2">
+<h2>Package and functions required for the analysis</h2>
+<p>A new package</p>
+<pre class="r"><code>knitr::opts_chunk$set(
+ collapse = TRUE,
+ comment = &quot; &quot;
+)
+## This function will retrieve the packae if they are not yet installed.
+using &lt;- function(...) {
+    libs &lt;- unlist(list(...))
+    req &lt;- unlist(lapply(libs,require,character.only = TRUE))
+    need &lt;- libs[req == FALSE]
+    if (length(need) &gt; 0) { 
+        install.packages(need)
+        lapply(need,require,character.only = TRUE)
+    }
+}
+
+## Getting all necessary package
+using(&quot;readxl&quot;, &quot;httr&quot;, &quot;tidyverse&quot;, &quot;qvcalc&quot;,&quot;kableExtra&quot;,&quot;cluster&quot;,&quot;ClustOfVar&quot;,&quot;dendextend&quot;,
+      &quot;moments&quot;,&quot;sjstats&quot;,&quot;sp&quot;,&quot;ape&quot;,&quot;spdep&quot;,&quot;ncf&quot;, &quot;spatstat&quot;,&quot;tmap&quot;,&quot;tmaptools&quot;,
+                     &quot;ggthemes&quot;, &quot;ggrepel&quot;, &quot;GGally&quot;, &quot;ggpubr&quot;)
+
+rm(using)
+
+# install package devtools if not yet installed
+# install.packages(&quot;devtools&quot;)
+# install fast from GitHub without vignettes (not recommanded)
+# devtools::install_github(&quot;a-benini/mdepriv&quot;)
+library(mdepriv)
+
+## Function used to scale variables from 0 to 1
+range01 &lt;- function(x){(x - min(x))/(max(x) - min(x))}
+
+## Style to apply to ggplot2
+unhcr_style &lt;- function() {
+  font &lt;- &quot;Lato&quot;
+  ggplot2::theme(
+    
+#This sets the font, size, type and colour of text for the chart&#39;s title
+  plot.title = ggplot2::element_text(family = font, size = 13, face = &quot;bold&quot;, color = &quot;#222222&quot;),
+
+#This sets the font, size, type and colour of text for the chart&#39;s subtitle,  as well as setting a margin between the title and the subtitle
+  plot.subtitle = ggplot2::element_text(family = font, size = 11, margin = ggplot2::margin(9,0,9,0)),
+  plot.caption = ggplot2::element_blank(),
+
+#This sets the position and alignment of the legend, removes a title and backround for it and sets the requirements for any text within the legend. The legend may often need some more manual tweaking when it comes to its exact position based on the plot coordinates.
+  legend.position = &quot;top&quot;,
+  legend.text.align = 0,
+  legend.background = ggplot2::element_blank(),
+  legend.title = ggplot2::element_blank(),
+  legend.key = ggplot2::element_blank(),
+  legend.text = ggplot2::element_text(family = font, size = 13, color = &quot;#222222&quot;),
+
+#This sets the text font, size and colour for the axis test, as well as setting the margins and removes lines and ticks. In some cases, axis lines and axis ticks are things we would want to have in the chart
+  axis.title = ggplot2::element_blank(),
+  axis.text = ggplot2::element_text(family = font, size = 13, color = &quot;#222222&quot;),
+  axis.text.x = ggplot2::element_text(margin = ggplot2::margin(5, b = 10)),
+  axis.ticks = ggplot2::element_blank(),
+  axis.line = ggplot2::element_blank(),
+
+#This removes all minor gridlines and adds major y gridlines. In many cases you will want to change this to remove y gridlines and add x gridlines. 
+  panel.grid.minor = ggplot2::element_blank(),
+  panel.grid.major.y = ggplot2::element_line(color = &quot;#cbcbcb&quot;),
+  panel.grid.major.x = ggplot2::element_blank(),
+
+#This sets the panel background as blank, removing the standard grey ggplot background colour from the plot
+  panel.background = ggplot2::element_blank(),
+
+#This sets the panel background for facet-wrapped plots to white, removing the standard grey ggplot background colour and sets the title size of the facet-wrap title to font size 22
+  strip.background = ggplot2::element_rect(fill = &quot;white&quot;),
+  strip.text = ggplot2::element_text(size  = 13,  hjust = 0)
+  )
+}
+
+# This small function is used to have nicely left align text within charts produced with ggplot2
+left_align &lt;- function(plot_name, pieces){
+  grob &lt;- ggplot2::ggplotGrob(plot_name)
+  n &lt;- length(pieces)
+  grob$layout$l[grob$layout$name %in% pieces] &lt;- 2
+  return(grob)
+}</code></pre>
+</div>
+<div id="data-used-for-analysis" class="section level2">
+<h2>Data used for analysis</h2>
+<p>Data used for the analysis is the IOM Bangladesh - Needs and Population Monitoring (NPM) Round 9 Site Assessment of the Rohingya Refugee Camps in Bangladesh, from March 2018, available in <a href="https://data.humdata.org/dataset/npm-bangladesh-round-9-baseline-master-list-march-2018">HDX</a></p>
+<pre class="r"><code>
+url1 &lt;- &quot;https://data.humdata.org/dataset/bef9f529-5ec0-4b31-a1fb-e9cb2eb1c987/resource/db78b145-eace-4113-a095-c63cbc9fd67f/download/npm-r9-site-assessment-dataset_2018-03-25.xlsx&quot;
+
+# GET(url1, write_disk(tf &lt;- tempfile(fileext = &quot;.xlsx&quot;)))
+# data &lt;- readxl::read_excel(tf, sheet = &quot;Dataset&quot;)
+
+#download.file(url1, destfile = &quot;npm-r9-site-assessment-dataset_2018-03-25.xlsx&quot; )
+data &lt;- readxl::read_excel(&quot;npm-r9-site-assessment-dataset_2018-03-25.xlsx&quot;, sheet = &quot;Dataset&quot;)
+#class(data)
+## Force object to be a data frame
+data &lt;- as.data.frame(data)
+
+
+## Rename variables of interest for the rest of the analysis so that they looks better in charts
+data$Safe_Bathing_Child &lt;- data$Children_safety_problems_Bathing_washing_facility
+data$Safe_Market_Child &lt;- data$Children_safety_problems_Market
+data$Safe_Transportation_Child &lt;- data$Children_safety_problems_Transportation
+data$Safe_Waterpoints_Child &lt;- data$Children_safety_problems_Waterpoints
+data$Safe_Distribution_Child &lt;- data$Children_safety_problems_Distribution_site
+data$Safe_Firewood_Child &lt;- data$Children_safety_problems_Firewood_collection_point
+data$Safe_Bathing_Female &lt;- data$Female_safety_problems_Bathing_washing_facility
+data$Safe_Market_Female &lt;- data$Female_safety_problems_Market
+data$Safe_Transportation_Female &lt;- data$Female_safety_problems_Transportation
+data$Safe_Waterpoints_Female &lt;- data$Female_safety_problems_Waterpoints
+data$Safe_Distribution_Female &lt;- data$Female_safety_problems_Distribution_site
+data$Safe_Firewood_Female &lt;- data$Female_safety_problems_Firewood_collection_point
+data$Safe_Bathing_Male &lt;- data$Male_safety_problems_Bathing_washing_facility
+data$Safe_Market_Male &lt;- data$Male_safety_problems_Market
+data$Safe_Transportation_Male &lt;- data$Male_safety_problems_Transportation
+data$Safe_Waterpoints_Male &lt;- data$Male_safety_problems_Waterpoints
+data$Safe_Distribution_Male &lt;- data$Male_safety_problems_Distribution_site
+data$Safe_Firewood_Male &lt;- data$Male_safety_problems_Firewood_collection_point
+data$Move_Work &lt;- data$Movement_Restrictions_Going_to_work
+data$Move_Market &lt;- data$Movement_Restrictions_Going_to_market
+data$Move_Distribution &lt;- data$Movement_Restrictions_At_distribution_site
+data$Move_Firewood &lt;- data$Movement_Restrictions_Collecting_firewood
+data$Move_Checkpoints &lt;- data$Movement_Restrictions_Crossing_checkpoints
+data$Move_betw_Camp &lt;- data$Movement_Restrictions_Moving_from_one_camp_to_another
+
+## Not used
+#&quot;Female_safety_problems_Prefer_not_to_answer&quot;,
+#&quot;Female_safety_problems_Dont_know&quot;,
+#&quot;Children_safety_problems_Prefer_not_to_answer&quot;,
+#&quot;Children_safety_problems_Dont_know&quot;,
+#&quot;Male_safety_problems_Prefer_not_to_answer&quot;,
+#&quot;Male_safety_problems_Dont_know&quot;)
+
+#&quot;Movement_Restrictions_Prefer_not_to_answer&quot;,
+#&quot;Movement_Restrictions_Dont_know&quot;</code></pre>
+</div>
+<div id="dimension" class="section level2">
+<h2>Dimension</h2>
+<div id="dimension-1-insecurity" class="section level3">
+<h3>Dimension 1: Insecurity</h3>
+<p>First, we select and visualise variables of interest.</p>
+<pre class="r"><code>safety &lt;- c(&quot;Safe_Bathing_Child&quot;,
+            &quot;Safe_Market_Child&quot;,
+            &quot;Safe_Transportation_Child&quot;,
+            &quot;Safe_Waterpoints_Child&quot;,
+            &quot;Safe_Distribution_Child&quot;,
+            &quot;Safe_Firewood_Child&quot;,
+            &quot;Safe_Bathing_Female&quot;,
+            &quot;Safe_Market_Female&quot;,
+            &quot;Safe_Transportation_Female&quot;,
+            &quot;Safe_Waterpoints_Female&quot;,
+            &quot;Safe_Distribution_Female&quot;,
+            &quot;Safe_Firewood_Female&quot;,
+            &quot;Safe_Bathing_Male&quot;,
+            &quot;Safe_Market_Male&quot;,
+            &quot;Safe_Transportation_Male&quot;,
+            &quot;Safe_Waterpoints_Male&quot;,
+            &quot;Safe_Distribution_Male&quot;,
+            &quot;Safe_Firewood_Male&quot;)
+
+data %&gt;%
+  select(safety) %&gt;%
+  tidyr::gather(key = &quot;item&quot;, value = &quot;value&quot;) %&gt;% 
+  ## note that we need to specify tidyr:: as gather function name is present in different packages
+  ggplot(aes(value)) +
+  geom_histogram(breaks = seq(0, 1, 0.05),stat = &quot;count&quot;,colour = &quot;white&quot;, fill = &quot;#0072bc&quot;) +
+  facet_wrap(~item, ncol = 3) +
+  unhcr_style() +
+  ggtitle(&quot;Items Distributions related to safety&quot;)
+  Note: Using an external vector in selections is ambiguous.
+  ℹ Use `all_of(safety)` instead of `safety` to silence this message.
+  ℹ See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.
+  This message is displayed once per session.
+  Warning: Ignoring unknown parameters: binwidth, bins, pad, breaks</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Then we check data structure in order to apply the model. We need to ensure that there’s no empty value and that all value are numeric. Additionally, values needs to be normalised from 0 to 1.</p>
+<pre class="r"><code>
+# all chosen safety items are characters and do not include any NA-values
+data.frame(class = map_chr(data[ ,safety], ~class(.x)),
+           anyNA = map_lgl(data[ ,safety], ~anyNA(.x)))
+                                 class anyNA
+  Safe_Bathing_Child         character FALSE
+  Safe_Market_Child          character FALSE
+  Safe_Transportation_Child  character FALSE
+  Safe_Waterpoints_Child     character FALSE
+  Safe_Distribution_Child    character FALSE
+  Safe_Firewood_Child        character FALSE
+  Safe_Bathing_Female        character FALSE
+  Safe_Market_Female         character FALSE
+  Safe_Transportation_Female character FALSE
+  Safe_Waterpoints_Female    character FALSE
+  Safe_Distribution_Female   character FALSE
+  Safe_Firewood_Female       character FALSE
+  Safe_Bathing_Male          character FALSE
+  Safe_Market_Male           character FALSE
+  Safe_Transportation_Male   character FALSE
+  Safe_Waterpoints_Male      character FALSE
+  Safe_Distribution_Male     character FALSE
+  Safe_Firewood_Male         character FALSE
+
+## We will need numeric value for the modeling phase - so 
+for (i in safety) {
+ data[ ,i] = as.numeric(if_else(data[ ,i] == &quot;Yes&quot;, 1L, 0L))
+ }
+
+# check if all safety items have become numeric ...
+map_chr(data[ ,safety], ~class(.x)) %&gt;% unique()
+  [1] &quot;numeric&quot;
+# ... yes they have
+
+## Scale variables
+#data[ , safety] &lt;-  range01(data[ , safety])
+
+#View(data[ , safety])
+#str(data[ , safety])
+
+## Count Number of NA
+# cat(&quot;Count Number of NA within selected variables.\n&quot;)
+# sapply(data[ , safety],function(x) sum(is.na(x)))</code></pre>
+<p>A cluster analysis of the variables reveals five of those six problems tend to co-occur closely (red rectangle in the dendrogram). The sixth - the safety problems that men face at relief distributions – aligns more closely with the same problem of women and children (orange rectangle) The safety of the three groups during transportation and market visits forms its own cluster, but the challenges for women and children (who may rarely move very far) and those for men (who likely do the shopping and travel in search for work) are not closely correlated. Some of this clustering could be a statistical artefact, caused by the individual propensities of key informants to check few or many problems.</p>
+<pre class="r"><code># Create a dendrogram and plot it
+dend &lt;- data[ , safety] %&gt;%  
+  #scale %&gt;% 
+  #dist %&gt;% 
+  hclustvar %&gt;% 
+  as.dendrogram
+dend &lt;- dend %&gt;% set(&quot;branches_k_color&quot;, k = 5)
+
+# Rectangle dendrogram using ggplot2
+ggd1 &lt;- as.ggdend(dend)
+#ggplot(ggd1) 
+
+dend1.plot &lt;- ggplot(ggd1, 
+                     horiz = TRUE) +
+  #scale_y_reverse()+
+  theme_dendro() +
+  #unhcr_style() +
+  coord_flip() +
+  labs(ylab = &quot;Jacquard distance&quot;,
+       title = &quot;Clustering on Safety Variable &quot;,
+       subtitle = &quot;&quot;, 
+       caption = &quot;NPM Data&quot;)
+  Coordinate system already present. Adding new coordinate system, which will replace the existing one.
+
+ggpubr::ggarrange(left_align(dend1.plot, c(&quot;subtitle&quot;, &quot;title&quot;, &quot;caption&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="dimension-2-movement-restrictions" class="section level3">
+<h3>Dimension 2: movement restrictions</h3>
+<p>The correlation pattern among the six indicators has two abnormalities – a medium strong negative correlation between movement restrictions on the way to work and at distribution sites, and a perfect positive correlation between restrictions at checkpoints and atdistribut ions sites. The former may indicate different safet y profiles for populat ion wit hgreater and lesser integration into local job markets. The second, seen in this cross-tabulation is more of an enigma: It implies that friendly checkpoints go hand in hand with safe movement to and fromdistribution sites, but not the reverse. The 74 camp points with zeros in both indicators reveal either an interesting protection regularity or a data management problem, using zerosinappropriately for missing values. Which it is only research on the ground will tell. The dendrogram reflects stronger coincidences among restrictions experienced while going to work, at checkpoints and while collecting firewood. Interestingly, although restrictions at checkpoints and at distribution sites are perfectly correlated, “at distribution sites” has moved away.</p>
+<pre class="r"><code>movement &lt;- c(&quot;Move_Work&quot;,
+            &quot;Move_Market&quot;,
+            &quot;Move_Distribution&quot;,
+            &quot;Move_Firewood&quot;,
+            &quot;Move_Checkpoints&quot;,
+            &quot;Move_betw_Camp&quot;)
+
+data %&gt;%
+  select(movement) %&gt;%
+  tidyr::gather(key = &quot;item&quot;, value = &quot;value&quot;) %&gt;% 
+  ## note that we need to specify tidyr:: as gather function name is present in different packages
+  ggplot(aes(value)) +
+  geom_histogram(breaks = seq(0, 1, 0.05),stat = &quot;count&quot;,colour = &quot;white&quot;, fill = &quot;#0072bc&quot;) +
+  facet_wrap(~item, ncol = 2) +
+  unhcr_style() +
+  ggtitle(&quot;Items Distributions related to Movement&quot;)
+  Note: Using an external vector in selections is ambiguous.
+  ℹ Use `all_of(movement)` instead of `movement` to silence this message.
+  ℹ See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.
+  This message is displayed once per session.
+  Warning: Ignoring unknown parameters: binwidth, bins, pad, breaks</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Then we check data structure in order to apply the model. We need to ensure that there’s no empty value and that all value are numeric. Additionally, values needs to be normalised from 0 to 1.</p>
+<pre class="r"><code>
+# all chosen safety items are characters and do not include any NA-values
+data.frame(class = map_chr(data[ ,movement], ~class(.x)),
+           anyNA = map_lgl(data[ ,movement], ~anyNA(.x)))
+                        class anyNA
+  Move_Work         character FALSE
+  Move_Market       character FALSE
+  Move_Distribution character FALSE
+  Move_Firewood     character FALSE
+  Move_Checkpoints  character FALSE
+  Move_betw_Camp    character FALSE
+
+## We will need numeric value for the modeling phase - so 
+for (i in movement) {
+ data[ ,i] = as.numeric(if_else(data[ ,i] == &quot;Yes&quot;, 1L, 0L))
+ }
+
+# check if all movement items have become numeric ...
+map_chr(data[ ,movement], ~class(.x)) %&gt;% unique()
+  [1] &quot;numeric&quot;
+# ... yes they have
+
+## Scale variables
+#data[ , movement] &lt;-  range01(data[ , movement])
+
+#View(data[ , movement])
+#str(data[ , movement])
+
+## Count Number of NA
+# cat(&quot;Count Number of NA within selected variables.\n&quot;)
+# sapply(data[ , movement],function(x) sum(is.na(x)))</code></pre>
+<p>Again, we apply a variable cluster analysis.</p>
+<pre class="r"><code># Create a dendrogram and plot it
+dend &lt;- data[ , movement] %&gt;%  
+  #scale %&gt;% 
+  #dist %&gt;% 
+  hclustvar %&gt;% 
+  as.dendrogram
+dend &lt;- dend %&gt;% set(&quot;branches_k_color&quot;, k = 3)
+
+# Rectangle dendrogram using ggplot2
+ggd1 &lt;- as.ggdend(dend)
+#ggplot(ggd1) 
+#ggplot(ggd1) 
+
+dend1.plot &lt;- ggplot(ggd1, 
+                     horiz = TRUE) +
+  #scale_y_reverse()+
+  theme_dendro() +
+  #coord_flip() +
+  #unhcr_style() +
+  #coord_cartesian( clip = &#39;off&#39;) +   # This keeps the labels from disappearing
+  theme(plot.margin = unit(c(1,2,1,1),&quot;cm&quot;)) +# top, right, bottom, left
+  #theme(plot.margin = unit(c(t = 0, r = 10, b = 0, l = 0), unit = &quot;pt&quot;)) +
+  #theme(plot.margin = unit(c(1, 4, 1, 1), &quot;pt&quot;)) +  
+  
+  labs(ylab = &quot;Jacquard distance&quot;,
+       title = &quot;Clustering on Movement Variable &quot;,
+       subtitle = &quot;&quot;, 
+       caption = &quot;NPM Data&quot;)
+
+ggpubr::ggarrange(left_align(dend1.plot, c(&quot;subtitle&quot;, &quot;title&quot;, &quot;caption&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-6-1.png" width="960" /></p>
+</div>
+</div>
+<div id="running-the-model" class="section level2">
+<h2>Running the model</h2>
+<div id="items-dimensions-weight" class="section level3">
+<h3>Items &amp; Dimensions weight</h3>
+<pre class="r"><code>#summary(data[ , c(movement,safety)])
+model_1 &lt;- mdepriv(data,
+                   items = list(&#39;safety&#39; = safety, 
+                                   &#39;movement&#39; = movement), # 2nd argument items in a named list grouped
+                   method = &quot;bv&quot;,
+                   output = &quot;all&quot;) 
+# get all possible outputs/returns -&gt; select later on required elements s. below</code></pre>
+<ul>
+<li>The “Index” column gives the proportions of refugees for which a particular safety problem was reported (the population-weighted prevalence among camp points).</li>
+<li>The weights are those used in the aggregation.</li>
+<li>The contributions are the prevalences multiplied by their weights; they represent the indicators’ contributions to the sub-index.</li>
+<li>The shares, summed to 1,make it easier to compare the contributions.</li>
+</ul>
+<pre class="r"><code>kable(model_1$summary_by_dimension, 
+       caption = &quot;Summary by dimension&quot;) %&gt;%
+        kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;bordered&quot;, &quot;condensed&quot;, &quot;responsive&quot;), font_size = 9)</code></pre>
+<table class="table table-striped table-bordered table-condensed table-responsive" style="font-size: 9px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:unnamed-chunk-8">Table 1: </span>Summary by dimension
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Dimension
+</th>
+<th style="text-align:right;">
+N_Item
+</th>
+<th style="text-align:right;">
+Index
+</th>
+<th style="text-align:right;">
+Weight
+</th>
+<th style="text-align:right;">
+Contri
+</th>
+<th style="text-align:right;">
+Share
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+movement
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+0.1861321
+</td>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+0.0930661
+</td>
+<td style="text-align:right;">
+0.3733313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.3124387
+</td>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+0.1562194
+</td>
+<td style="text-align:right;">
+0.6266687
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+0.2492854
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>kable(model_1$summary_by_item, 
+       caption = &quot;Summary by item&quot;) %&gt;%
+        kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;bordered&quot;, &quot;condensed&quot;, &quot;responsive&quot;), font_size = 9)</code></pre>
+<table class="table table-striped table-bordered table-condensed table-responsive" style="font-size: 9px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:unnamed-chunk-9">Table 2: </span>Summary by item
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Dimension
+</th>
+<th style="text-align:left;">
+Item
+</th>
+<th style="text-align:right;">
+Index
+</th>
+<th style="text-align:right;">
+Weight
+</th>
+<th style="text-align:right;">
+Contri
+</th>
+<th style="text-align:right;">
+Share
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Bathing_Child
+</td>
+<td style="text-align:right;">
+0.5983702
+</td>
+<td style="text-align:right;">
+0.0213341
+</td>
+<td style="text-align:right;">
+0.0127657
+</td>
+<td style="text-align:right;">
+0.0512092
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Market_Child
+</td>
+<td style="text-align:right;">
+0.1583236
+</td>
+<td style="text-align:right;">
+0.0137107
+</td>
+<td style="text-align:right;">
+0.0021707
+</td>
+<td style="text-align:right;">
+0.0087078
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Transportation_Child
+</td>
+<td style="text-align:right;">
+0.1699651
+</td>
+<td style="text-align:right;">
+0.0178266
+</td>
+<td style="text-align:right;">
+0.0030299
+</td>
+<td style="text-align:right;">
+0.0121544
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Waterpoints_Child
+</td>
+<td style="text-align:right;">
+0.4784633
+</td>
+<td style="text-align:right;">
+0.0129588
+</td>
+<td style="text-align:right;">
+0.0062003
+</td>
+<td style="text-align:right;">
+0.0248723
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Distribution_Child
+</td>
+<td style="text-align:right;">
+0.1833527
+</td>
+<td style="text-align:right;">
+0.0136681
+</td>
+<td style="text-align:right;">
+0.0025061
+</td>
+<td style="text-align:right;">
+0.0100531
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Firewood_Child
+</td>
+<td style="text-align:right;">
+0.2526193
+</td>
+<td style="text-align:right;">
+0.0274911
+</td>
+<td style="text-align:right;">
+0.0069448
+</td>
+<td style="text-align:right;">
+0.0278587
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Bathing_Female
+</td>
+<td style="text-align:right;">
+0.7019790
+</td>
+<td style="text-align:right;">
+0.0077932
+</td>
+<td style="text-align:right;">
+0.0054707
+</td>
+<td style="text-align:right;">
+0.0219453
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Market_Female
+</td>
+<td style="text-align:right;">
+0.0948778
+</td>
+<td style="text-align:right;">
+0.0157384
+</td>
+<td style="text-align:right;">
+0.0014932
+</td>
+<td style="text-align:right;">
+0.0059900
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Transportation_Female
+</td>
+<td style="text-align:right;">
+0.1391153
+</td>
+<td style="text-align:right;">
+0.0141243
+</td>
+<td style="text-align:right;">
+0.0019649
+</td>
+<td style="text-align:right;">
+0.0078822
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Waterpoints_Female
+</td>
+<td style="text-align:right;">
+0.7089639
+</td>
+<td style="text-align:right;">
+0.0133591
+</td>
+<td style="text-align:right;">
+0.0094711
+</td>
+<td style="text-align:right;">
+0.0379931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Distribution_Female
+</td>
+<td style="text-align:right;">
+0.3440047
+</td>
+<td style="text-align:right;">
+0.0138082
+</td>
+<td style="text-align:right;">
+0.0047501
+</td>
+<td style="text-align:right;">
+0.0190548
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Firewood_Female
+</td>
+<td style="text-align:right;">
+0.2456345
+</td>
+<td style="text-align:right;">
+0.0459441
+</td>
+<td style="text-align:right;">
+0.0112855
+</td>
+<td style="text-align:right;">
+0.0452712
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Bathing_Male
+</td>
+<td style="text-align:right;">
+0.1065192
+</td>
+<td style="text-align:right;">
+0.0272135
+</td>
+<td style="text-align:right;">
+0.0028988
+</td>
+<td style="text-align:right;">
+0.0116283
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Market_Male
+</td>
+<td style="text-align:right;">
+0.2374854
+</td>
+<td style="text-align:right;">
+0.0129966
+</td>
+<td style="text-align:right;">
+0.0030865
+</td>
+<td style="text-align:right;">
+0.0123814
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Transportation_Male
+</td>
+<td style="text-align:right;">
+0.2729919
+</td>
+<td style="text-align:right;">
+0.0098239
+</td>
+<td style="text-align:right;">
+0.0026818
+</td>
+<td style="text-align:right;">
+0.0107581
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Waterpoints_Male
+</td>
+<td style="text-align:right;">
+0.1426077
+</td>
+<td style="text-align:right;">
+0.0258954
+</td>
+<td style="text-align:right;">
+0.0036929
+</td>
+<td style="text-align:right;">
+0.0148139
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Distribution_Male
+</td>
+<td style="text-align:right;">
+0.3591385
+</td>
+<td style="text-align:right;">
+0.2032094
+</td>
+<td style="text-align:right;">
+0.0729803
+</td>
+<td style="text-align:right;">
+0.2927581
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+safety
+</td>
+<td style="text-align:left;">
+Safe_Firewood_Male
+</td>
+<td style="text-align:right;">
+0.9103609
+</td>
+<td style="text-align:right;">
+0.0031044
+</td>
+<td style="text-align:right;">
+0.0028261
+</td>
+<td style="text-align:right;">
+0.0113368
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+movement
+</td>
+<td style="text-align:left;">
+Move_Work
+</td>
+<td style="text-align:right;">
+0.5209546
+</td>
+<td style="text-align:right;">
+0.0542091
+</td>
+<td style="text-align:right;">
+0.0282405
+</td>
+<td style="text-align:right;">
+0.1132857
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+movement
+</td>
+<td style="text-align:left;">
+Move_Market
+</td>
+<td style="text-align:right;">
+0.1216531
+</td>
+<td style="text-align:right;">
+0.0744375
+</td>
+<td style="text-align:right;">
+0.0090556
+</td>
+<td style="text-align:right;">
+0.0363260
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+movement
+</td>
+<td style="text-align:left;">
+Move_Distribution
+</td>
+<td style="text-align:right;">
+0.0296857
+</td>
+<td style="text-align:right;">
+0.2059834
+</td>
+<td style="text-align:right;">
+0.0061148
+</td>
+<td style="text-align:right;">
+0.0245291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+movement
+</td>
+<td style="text-align:left;">
+Move_Firewood
+</td>
+<td style="text-align:right;">
+0.8073341
+</td>
+<td style="text-align:right;">
+0.0150103
+</td>
+<td style="text-align:right;">
+0.0121183
+</td>
+<td style="text-align:right;">
+0.0486121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+movement
+</td>
+<td style="text-align:left;">
+Move_Checkpoints
+</td>
+<td style="text-align:right;">
+0.9767171
+</td>
+<td style="text-align:right;">
+0.0236289
+</td>
+<td style="text-align:right;">
+0.0230788
+</td>
+<td style="text-align:right;">
+0.0925796
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+movement
+</td>
+<td style="text-align:left;">
+Move_betw_Camp
+</td>
+<td style="text-align:right;">
+0.1140861
+</td>
+<td style="text-align:right;">
+0.1267308
+</td>
+<td style="text-align:right;">
+0.0144582
+</td>
+<td style="text-align:right;">
+0.0579987
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+0.2492854
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="histogram-of-the-insecurity-subindex" class="section level3">
+<h3>Histogram of the insecurity subindex</h3>
+<p>The Coefficient of variation is a measure of relative dispersion representing the degree of variability relative to the mean</p>
+<p>Skewness and kurtosis measurement allows to confirm whether the scores distribution is “normal”.</p>
+<ul>
+<li><p>Skewness assesses the extent to which a variable’s distribution is symmetrical (degree of distortion). If the distribution of responses for a variable stretches toward the right or left tail of the distribution, then the distribution is referred to as skewed. A general guideline for skewness is that if the number is greater than +1 or lower than –1, this is an indication of a substantially skewed distribution.</p></li>
+<li><p>Kurtosis is a measure of whether the distribution is too peaked (a very narrow distribution with most of the responses in the center). it is actually a measure of outliers. For kurtosis, the general guideline is that if the number is greater than +3, the distribution is too peaked. Likewise, a kurtosis of less than –3 indicates a distribution that is too flat.</p></li>
+</ul>
+<p>We can check each dimension and the aggregated score.</p>
+<pre class="r"><code>data$move_scores &lt;- mdepriv(data,
+                     method = &quot;bv&quot;,
+                      items &lt;- list(&#39;movement&#39; &lt;- movement),
+                     output = &quot;score_i&quot;)
+
+# Chart
+histo &lt;-  ggplot(data, aes(move_scores)) +
+    geom_histogram(bins = 10,  colour = &quot;white&quot;, fill = &quot;#0072bc&quot;) +
+    geom_hline(yintercept = 0, size = 1, colour = &quot;#333333&quot;) +
+    unhcr_style() +
+    labs(ylab = &quot;Unique Block&quot;,
+         title = &quot;Distribution of Refugee Movement Deprivation Sub-Index&quot;,
+         subtitle = paste0(&quot;Mean: &quot;,round(mean(data$move_scores),2) ,
+                           &quot;, Standard Deviation: &quot;,round(sd(data$move_scores),2) ,
+                           &quot;, Coefficient of Variation: &quot;,round(cv(data$move_scores),2) ,
+                           &quot;, Skewness: &quot;,round(skewness(data$move_scores),2) ,
+                           &quot; and Kurtosis: &quot;,round(kurtosis(data$move_scores),2) ), 
+         caption = &quot;NPM Data&quot;)
+
+ggpubr::ggarrange(left_align(histo, c(&quot;subtitle&quot;, &quot;title&quot;, &quot;caption&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>data$safe_scores &lt;- mdepriv(data,
+                     method = &quot;bv&quot;,
+                      items &lt;- list(&#39;safety&#39; &lt;- safety),
+                     output = &quot;score_i&quot;)
+
+# Chart
+histo &lt;-  ggplot(data, aes(safe_scores)) +
+    geom_histogram(bins = 10, colour = &quot;white&quot;, fill = &quot;#0072bc&quot;) +
+    geom_hline(yintercept = 0, size = 1, colour = &quot;#333333&quot;) +
+    unhcr_style() +
+    labs(ylab = &quot;Unique Block&quot;,
+         title = &quot;Distribution of Refugee Safety Deprivation  Sub-Index&quot;,
+         subtitle = paste0(&quot;Mean: &quot;,round(mean(data$safe_scores),2) ,
+                           &quot;, Standard Deviation: &quot;,round(sd(data$safe_scores),2) ,
+                           &quot;, Coefficient of Variation: &quot;,round(cv(data$safe_scores),2) ,
+                           &quot;, Skewness: &quot;,round(skewness(data$safe_scores),2) ,
+                           &quot; and Kurtosis: &quot;,round(kurtosis(data$safe_scores),2) ), 
+         caption = &quot;NPM Data&quot;)
+
+ggpubr::ggarrange(left_align(histo, c(&quot;subtitle&quot;, &quot;title&quot;, &quot;caption&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>
+data$prot_scores &lt;- mdepriv(data,
+                    method = &quot;bv&quot;,
+                    items = list(&#39;safety&#39; = safety, 
+                                   &#39;movement&#39; = movement),
+                     output = &quot;score_i&quot;)
+
+# Chart
+histo &lt;-  ggplot(data, aes(prot_scores)) +
+    geom_histogram(bins = 10, colour = &quot;white&quot;, fill = &quot;#0072bc&quot;) +
+    geom_hline(yintercept = 0, size = 1, colour = &quot;#333333&quot;) +
+    unhcr_style() +
+    labs(ylab = &quot;Unique Block&quot;,
+         title = &quot;Distribution of Refugee Protection Deprivation Index&quot;,
+         subtitle = paste0(&quot;Mean: &quot;,round(mean(data$move_scores),2) ,
+                           &quot;, Standard Deviation: &quot;,round(sd(data$prot_scores),2) ,
+                           &quot;, Coefficient of Variation: &quot;,round(cv(data$prot_scores),2) ,
+                           &quot;, Skewness: &quot;,round(skewness(data$prot_scores),2) ,
+                           &quot; and Kurtosis: &quot;, round(kurtosis(data$prot_scores),2) ), 
+         caption = &quot;NPM Data&quot;)
+
+ggpubr::ggarrange(left_align(histo, c(&quot;subtitle&quot;, &quot;title&quot;, &quot;caption&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code># Chart
+histo &lt;-  ggplot(data, aes(prot_scores)) +
+    geom_histogram(bins = 10,  colour = &quot;white&quot;, fill = &quot;#0072bc&quot;) +
+    geom_hline(yintercept = 0, size = 1, colour = &quot;#333333&quot;) +
+    unhcr_style() +
+    facet_wrap(~ Union) +
+    labs(ylab = &quot;Unique Block&quot;,
+         title = &quot;Deprivation Index Level &quot;,
+         subtitle = &quot;Distribution of Refugee Protection index&quot;, 
+         caption = &quot;NPM Data&quot;)
+
+ggpubr::ggarrange(left_align(histo, c(&quot;subtitle&quot;, &quot;title&quot;, &quot;caption&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Distribution of the subindex in four areas (facet)</p>
+<pre class="r"><code>#
+boxplot &lt;-  ggplot(data, aes(x = Union, y = prot_scores, fill = `Site Type`  )) +
+          stat_boxplot(geom = &#39;errorbar&#39;, width = 0.5, position = position_dodge(0.7)) +
+          geom_boxplot(width = 0.6, position = position_dodge(0.7)) +
+          unhcr_style() +
+          scale_y_continuous(breaks = seq(0,1,0.2), limits = c(0,1)) +
+          unhcr_style() +
+    labs(ylab = &quot;Unique Block&quot;,
+         title = &quot;Protection Deprivation Index &quot;,
+         subtitle = &quot;Spread per Union &amp; Location Type &quot;, 
+         caption = &quot;NPM Data&quot;) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggpubr::ggarrange(left_align(boxplot, c(&quot;subtitle&quot;, &quot;title&quot;, &quot;caption&quot;)), ncol = 1, nrow = 1)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+<div id="spatial-correlation-identification-of-hotspots" class="section level3">
+<h3>Spatial Correlation: identification of hotspots</h3>
+<pre class="r"><code>
+data$Lon &lt;- data$&quot;_Geopoint_longitude&quot;
+data$Lat &lt;- data$&quot;_Geopoint_latitude&quot;
+data$total &lt;- data$&quot;Total HH&quot;
+ 
+xy &lt;- data[,c( &quot;Lon&quot;,&quot;Lat&quot; )]
+
+SPDF &lt;- SpatialPointsDataFrame(coords = xy, data = data,
+                               proj4string = CRS(&quot;+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0&quot;))
+
+#  [12] &quot;Total HH&quot;    
+# [13] &quot;Total Ind&quot;   
+SPDF.K &lt;- SPDF[ SPDF$Union == &quot;Palong Khali&quot;, ]
+SPDF.K_sf &lt;- st_as_sf(SPDF.K, 
+                       coords = c(&quot;Lon&quot;, &quot;Lat&quot;),
+                       crs = 4326)</code></pre>
+<pre class="r"><code>
+tmap::tmap_mode(&quot;plot&quot;)
+  tmap mode set to plotting
+## tmap style set 
+tmap::tmap_style(&quot;white&quot;)
+  tmap style set to &quot;white&quot;
+  other available styles are: &quot;gray&quot;, &quot;natural&quot;, &quot;cobalt&quot;, &quot;col_blind&quot;, &quot;albatross&quot;, &quot;beaver&quot;, &quot;bw&quot;, &quot;classic&quot;, &quot;watercolor&quot;
+## other available styles are: &quot;white&quot;, &quot;gray&quot;, &quot;natural&quot;, &quot;cobalt&quot;, &quot;col_blind&quot;,
+#&quot;albatross&quot;, &quot;beaver&quot;, &quot;bw&quot;, &quot;watercolor&quot;
+
+# plot with regular tmap functions
+#tm_shape(osm_tile) +
+tm_shape(SPDF.K_sf) +
+tm_bubbles(col = &quot;prot_scores&quot;, 
+           size = &quot;total&quot;,
+           border.col = &quot;white&quot;,
+           border.lwd = 1,
+           #shape = 21,
+           alpha = 0.8,
+           n = 5,  #number of color scale classes
+           style = &quot;pretty&quot;, #method to process the color scale
+           palette = &quot;viridis&quot;,
+           scale = 0.85,
+           legend.max.symbol.size = 1,
+           title = &quot;Index in relation to population&quot;,
+           title.size = &quot;Total HH&quot;,
+           legend.size.is.portrait  = TRUE,
+           title.col = &quot;Protection Score&quot;, 
+           legend.col.is.portrait  = TRUE) +
+tm_legend(outside = TRUE, 
+          outside.position = &quot;right&quot;, 
+          stack = &quot;vertical&quot;)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Moran’s I is a well-known test for spatial autocorrelation. It is a particular case of the general cross-product that depends on a spatial weight matrix or a distance related decline function. Like a correlation coefficient, the values of Moran’s I range from +1 meaning strong positive spatial autocorrelation to 0 meaning a random pattern to -1 indicating strong negative spatial autocorrelation. The Spatial Autocorrelation with Global Moran’s I is an inferential statistic, which means that the results of the analysis are always interpreted within the context of its null hypothesis.</p>
+<p>We first need to compute the neighbourhood matrix <code>dist.w</code></p>
+<pre class="r"><code>data.dists &lt;- as.matrix(dist(cbind(data$Lon, data$Lat)))
+data.dists.inv &lt;- 1/data.dists 
+diag(data.dists.inv) &lt;- 0
+dist.w &lt;- mat2listw(data.dists.inv)</code></pre>
+<p>We can now compute the Moran’s I indicator it with Monte Carlo simulation.</p>
+<pre class="r"><code>
+# Moran with ape package
+# moran.prot &lt;- ape::Moran.I(data$prot_scores, data.dists.inv)
+# cat(paste0(&quot;Moran&#39;s test for Protection deprivation p-value is &quot;,moran.prot$p.value, &quot;\n&quot; ))
+# 
+# moran.move &lt;- ape::Moran.I(data$move_scores, data.dists.inv)
+# cat(paste0(&quot;Moran&#39;s test for Movement deprivation p-value is &quot;,moran.move$p.value, &quot;\n&quot; ))
+# 
+# moran.safe &lt;- ape::Moran.I(data$safe_scores, data.dists.inv)
+# cat(paste0(&quot;Moran&#39;s test for Safetyn deprivation p-value is &quot;,moran.safe$p.value, &quot;\n&quot; ))
+
+# Moran without Monte Carlo
+# moran.test(data$prot_scores,
+#            dist.w )
+
+# Moran with Monte Carlo
+
+
+moran.mc(data$move_scores,
+         dist.w, 
+         nsim = 99,
+         zero.policy = T)
+  
+    Monte-Carlo simulation of Moran I
+  
+  data:  data$move_scores 
+  weights: dist.w  
+  number of simulations + 1: 100 
+  
+  statistic = 0.065441, observed rank = 100, p-value = 0.01
+  alternative hypothesis: greater
+
+
+moran.mc(data$safe_scores,
+         dist.w, 
+         nsim = 99,
+         zero.policy = T)
+  
+    Monte-Carlo simulation of Moran I
+  
+  data:  data$safe_scores 
+  weights: dist.w  
+  number of simulations + 1: 100 
+  
+  statistic = 0.037278, observed rank = 100, p-value = 0.01
+  alternative hypothesis: greater
+
+
+moran.mc(data$prot_scores,
+         dist.w, 
+         nsim = 99,
+         zero.policy = T)
+  
+    Monte-Carlo simulation of Moran I
+  
+  data:  data$prot_scores 
+  weights: dist.w  
+  number of simulations + 1: 100 
+  
+  statistic = 0.043762, observed rank = 100, p-value = 0.01
+  alternative hypothesis: greater</code></pre>
+<p>The spatial correlation of the movement restriction sub-index is stronger than that of insecurity. This applies particularly to within-camp situations and to neighboring points across the border of two camps. It means that neighboring points tend to both have either higher sub-index values, or both of them lower ones.</p>
+<p>We can finally test how much the Protection Deprivation Index is spatially correlated in terms of distance.</p>
+<pre class="r"><code>## First we need to reproject the Spatial Point dataframe to a CRS that allows calculation in meters.
+## WGS 84 / UTM zone 45N - CRS is 32645 -- CRS(&quot;+init=epsg:32645&quot;)
+
+SPDF.32645 &lt;- spTransform(SPDF,&quot;+init=epsg:32645&quot; )
+
+
+# leadI &lt;- ncf::spline.correlog(x=data$Lon, y=data$Lat,
+#                          z=data$prot_scores, 
+#                          resamp = 100, quiet=TRUE)
+
+leadI &lt;- ncf::spline.correlog(x = coordinates(SPDF.32645)[,1], 
+                              y = coordinates(SPDF.32645)[,2],
+                              z = SPDF.32645$prot_scores, 
+                              resamp = 100,
+                              quiet = TRUE)
+
+plot(leadI, main = &quot;Spatial autocorrelation in relation to distance&quot;)</code></pre>
+<p><img src="/post/Deprivation_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+</div>
+</div>
+<div id="discussion-on-index-properties" class="section level2">
+<h2>Discussion on index properties</h2>
+<p>The sub-indices are similar in mean and standard deviation (SD), and their skewness (a measure of asymmetry) is close to that of a normal distribut ion (0). The same for their kurtosis (a measure of thin or thick tails; the kurtosis of a normal distribution is 3).Neither are there any missing values (both sub-indices cover the full population). Moreover,since for every sub-index Betti-Verma sets the sum of weights on the indicators = 1, the means are directly comparable. In sum, these two constructs seem formally well-behaved.</p>
+<p>Properties of the subindices need to be noted:</p>
+<ol style="list-style-type: decimal">
+<li><p>Measurement level: The sub-indices, differently from the indicators, are no longer merely binary; they are ratio-level with multiple distinct values. The ratio-level characterization is reasonable if we think that a zero value signifies the absence of insecurity, respectively movement restrictions.</p></li>
+<li><p>Information value: Ratio-level sub-indices are more informative when their variablility, measured by the coefficients of variation (= standard deviation divided by the mean) is larger.</p></li>
+<li><p>The correlation between the sub-indices: Since they are at ratio-level constructs, the Pearson correlation is appropriate.</p></li>
+</ol>
+<p>The two sub-indices are weakly positively correlated. This might be counter intuitive: why would refugees subjected to more movement restrictions not feel more insecure? A potential explanation is that the conditions on the ground responsible for insecurity, respectively for movement restrictions are fairly independent the ones from the others. Speculatively, we can invoke two hypothesis that could explain the low correlation:</p>
+<ul>
+<li><p>First, security may be better where the Bangladeshi military are maintaining a stronger presence. A stronger presence implies more stringent checkpoints. The coincidence in some places of better security and tighter movement restrictions would dampen the overall correlation.</p></li>
+<li><p>Second, the two sub-indices describe very different problems. If so, it may be necessaryto rethink the combination of protection variables altogether. One way to go about this would be to take the 6 – 8 most highly weighted (in Betti-Verma) insecurity and movement restrict ion indicators and statistically project them onto a multidimensional space, and then to study the distribution of camps over that space.</p></li>
+</ul>
+</div>
+
+    </div>
+      
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/indicator">Indicator</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/composite">Composite</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/deprivation">Deprivation</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/protection">Protection</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/okular-analytics">Okular-Analytics</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/benini">Benini</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/unhcr">UNHCR</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/edouard-legoupil">Edouard-Legoupil</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+    
+ 
+  <script>
+  $(document).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
+  });
+  </script>
+  
+  <script>
+    window.initializeCodeFolding = function(show) {
+
+  
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  
+  var currentIndex = 1;
+
+  
+  var rCodeBlocks = $('');
+  rCodeBlocks.each(function() {
+
+    
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+
+  </script>
+  
+
+
+  </footer>
+  
+
+<div class="related-articles">
+<h3>Related articles</h3>
+<ul>
+	<li>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a>
+          </h3>
+          
+          <time class="published" datetime='2019-12-10 00:00:00 &#43;0000 UTC'>
+          December 10, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a>
+          </h3>
+          
+          <time class="published" datetime='2019-12-03 00:00:00 &#43;0000 UTC'>
+          December 3, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/geonames/">Fuzzy geocoding on location name</a>
+          </h3>
+          
+          <time class="published" datetime='2019-12-14 00:00:00 &#43;0000 UTC'>
+          December 14, 2019</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	</li>	
+</ul>
+</div>
+
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/geonames/"
+                class="button big previous">Fuzzy geocoding on location name</a></li>
+    
+
+    
+        <li><a href="/post/analytic-hierachy-process/"
+                class="button big next">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/images/avatar.png" alt="HumanitaRian useR Group" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>~ Science is 'show me' - not 'trust me' ~</p>
+      </header>
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+              March 19, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+              </h3>
+              
+              <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+              February 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a>
+              </h3>
+              
+              <time class="published" datetime='2020-01-23 00:00:00 &#43;0000 UTC'>
+              January 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/geonames/">Fuzzy geocoding on location name</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-14 00:00:00 &#43;0000 UTC'>
+              December 14, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/profile-of-preference/">Profile of preference: Rashtree analysis</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-10 00:00:00 &#43;0000 UTC'>
+              December 10, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/plackett-luce/">Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</a>
+              </h3>
+              
+              <time class="published" datetime='2019-12-03 00:00:00 &#43;0000 UTC'>
+              December 3, 2019</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/compositeindicator/">Building Severity Index with R</a>
+              </h3>
+              
+              <time class="published" datetime='2019-11-28 00:00:00 &#43;0000 UTC'>
+              November 28, 2019</time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">See more</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+
+  
+  
+    <section id="mini-bio">
+      <h3>about</h3>
+      <p>The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.</p>
+      <a href="/about" class="button">learn more</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+    
+    
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+    
+
+    
+      
+        
+      
+    
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+      
+          
+    
+      <script src="/js/collapse.js"></script>
+      <script src="/js/dropdown.js"></script>
+      <script src="/js/transition.js"></script>
+    
+    
+  </body>
+</html>
+
