@@ -619,7 +619,8 @@ plot1 <- ggplot(Importances.basicneeds,
        aes(x = reorder(Variable, Average), y = Average)) + 
   geom_bar(stat = "identity", 
            position = "identity", 
-           fill = "#0072bc") + # here we configure that it will be bar chart
+           fill = "#0072bc") + # here we configure that it will be bar chart  
+  geom_label(aes(label = Average), size = 9, fill = "#0072bc" ,  color = "white", hjust = 1) + 
   coord_flip() +
   scale_y_continuous(labels = function(x)paste(x, "%")) +
   unhcr_style() + ## Insert UNHCR Style
