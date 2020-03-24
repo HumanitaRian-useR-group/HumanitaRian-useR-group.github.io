@@ -14,7 +14,9 @@ tags:
   - Edouard-Legoupil
 ---
 
-This example is based on the note: [A new index of refugee protection](http://aldo-benini.org/Level2/HumanitData/Benini_Ng__A_New_Protection_Index__180806.pdf) and presents the construction of a lack-of-protection index (or “index of protection risks”) constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
+
+
+This example is based on the note: [A new index of refugee protection](http://aldo-benini.org/Level2/HumanitData/Benini_Ng__A_New_Protection_Index__180806.pdf). It explainss the construction of a lack-of-protection index (or “index of protection risks”),  a [composite indicator](https://humanitarian-user-group.github.io/categories/composite/) constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
 
 ## The Limitation of measurement based on incident analysis 
 

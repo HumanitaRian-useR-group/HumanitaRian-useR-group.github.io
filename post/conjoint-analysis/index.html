@@ -45,7 +45,7 @@
 
 <meta itemprop="datePublished" content="2020-03-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2733">
+<meta itemprop="wordCount" content="2783">
 
 
 
@@ -455,7 +455,7 @@ if (!doNotTrack) {
             March 19, 2020</time>
         <span class="author">Edouard Legoupil</span>
         
-            <p>13 minutes read</p>
+            <p>14 minutes read</p>
         
     </div>
 </header>
@@ -488,19 +488,22 @@ if (!doNotTrack) {
 
 <div id="what-is-conjoint-analysis" class="section level2">
 <h2>What is Conjoint analysis?</h2>
-<p>Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria. CA then allows to “decompose” or reverse-engineer these ratings into estimates of how important each criteria or attribute is to a participant’s ranking decisions.
-In humanitarian data analysis, this technique can be quite relevant to organize expert consultations in order to get the relative weights (or relative contribution) of each sub-indicator value when <strong>creating a vulnerability scorecard</strong>. Conjoint analysis can speed up expert consultations by offering an <strong>objective mean to compile expert opinions</strong>.</p>
+<p>Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria. CA then allows to “decompose” or reverse-engineer these ratings into estimates of how important each criteria or attribute is to a participant’s ranking decisions.</p>
+<p>In humanitarian data analysis, this technique can be quite relevant to organize expert consultations in order to get the relative weights (or relative contribution) of each sub-indicator value when creating <a href="https://humanitarian-user-group.github.io/categories/composite/">composite indicator</a> such as <strong>vulnerability scorecard</strong>. Conjoint analysis can speed up expert consultations by offering an <strong>objective mean to compile expert opinions</strong>.</p>
 <p>As per <a href="https://www.oecd.org/els/soc/handbookonconstructingcompositeindicatorsmethodologyanduserguide.htm">OECD 10 Steps guide</a>, one important elements to consider is the need to explore and compare different weighting approaches before making a decision on the final formula (i.e. also called sensitivity and robustness analysis).</p>
 <p>As usual, R offers all the tools for that. Conjoint analysis can be done with the <a href="http://keii.ue.wroc.pl/conjoint/Conjoint_R.html">Conjoint Package</a>, developed by the Department of Econometrics and Computer Science from Wrocław University of Economics. More details are available in their article: <a href="http://keii.ue.wroc.pl/pracownicy/tb/Bak_A_and_Bartlomowicz_T_Conjoint_analysis_method_and_its_implementation_in_conjoint_R_package.pdf">Conjoint analysis method and its implementation in conjoint R package</a>.</p>
 <p>Below is re-usable tutorial with reproducible code that should help any data analyst to quickly use this weighting discovery method.</p>
-<p>Steps of the procedure for this example include:
-1. Choosing the attributes that are used to determine vulnerability scoring.
-2. Determine the different potential levels for each attribute that indicate scoring of less vulnerable to more vulnerable
-3. Use fractional factorial design to generate a number of household profiles, each possessing unique combinations of the attributes.
-4. Build the expert consultation form where each expert will rate each household profile from low vulnerability to high vulnerability.<br />
-5.<br />
-6.<br />
-7.</p>
+<p>Steps of the procedure for this example include:</p>
+<ol style="list-style-type: decimal">
+<li><p>Choosing the attributes/<strong>sub-indicators</strong> that are used to determine vulnerability scoring;</p></li>
+<li><p>Determine the different potential levels for each attribute (i.e vulnerability <strong>scale attached to each answer option</strong> from sub-indicators) that indicate scoring of less vulnerable to more vulnerable;</p></li>
+<li><p>Use fractional factorial design to <strong>generate a number of household profiles</strong>, each possessing unique combinations of the attributes;</p></li>
+<li>Build the <strong>expert consultation</strong> form where each expert will rate each household profile from low vulnerability to high vulnerability;<br />
+</li>
+<li><p>Review results and assess <strong>agreement level</strong>;</p></li>
+<li><p>If necessary, <strong>relaunch the survey</strong> and iterate back to the previous step as much as needed;</p></li>
+<li><p>Apply the importance level for each critiria as the <strong>weights to be used with the geometric mean aggregation</strong> for all indicators.</p></li>
+</ol>
 </div>
 <div id="define-the-combined-alternatives-to-be-compared" class="section level2">
 <h2>Define the combined alternatives to be compared</h2>
@@ -510,6 +513,7 @@ In humanitarian data analysis, this technique can be quite relevant to organize 
 <li>Coping Capacity</li>
 <li>Well Being &amp; Community integration</li>
 </ul>
+<p><img src="/post/Conjoint-Analysis_files/jiagf.png" /></p>
 <p>This generic model can be contextualized in each operations as different sub-indicators might be used for each of the 3 dimensions depending on cultural and political situations. Conjoint analysis will allow to discover the relative importance to be allocated for each sub-indicator.</p>
 <pre class="r"><code># Declaration of features and feature values
 basicneeds_indic &lt;- c(&quot;Meals&quot;,
@@ -601,7 +605,7 @@ wellbeing &lt;- expand.grid(
 <p>In addition, the different profiles should be scanned to identify those specific interactions of criteria that are not rational (do not exist in the real world). Those should be removed manually.</p>
 <pre class="r"><code># Selection of relevant concepts
 selectedProfiles.basicneeds &lt;- caFactorialDesign(data = basicneeds,
-                                      type =&#39;fractional&#39;
+                                      type = &#39;fractional&#39;
                                     )
 
 ## need to clean up some impossible profile

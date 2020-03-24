@@ -14,7 +14,8 @@ tags:
 ## What is Conjoint analysis?
 
 Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria. CA then allows to “decompose” or reverse-engineer these ratings into estimates of how important each criteria or attribute is to a participant’s ranking decisions.
-In humanitarian data analysis, this technique can be quite relevant to organize expert consultations in order to get the relative weights (or relative contribution) of each sub-indicator value when __creating a vulnerability scorecard__. Conjoint analysis can speed up expert consultations by offering an __objective mean to compile expert opinions__.
+
+In humanitarian data analysis, this technique can be quite relevant to organize expert consultations in order to get the relative weights (or relative contribution) of each sub-indicator value when creating [composite indicator](https://humanitarian-user-group.github.io/categories/composite/) such as __vulnerability scorecard__. Conjoint analysis can speed up expert consultations by offering an __objective mean to compile expert opinions__.
 
 
 As per [OECD 10 Steps guide](https://www.oecd.org/els/soc/handbookonconstructingcompositeindicatorsmethodologyanduserguide.htm), one important elements to consider is the need to explore and compare different weighting approaches before making a decision on the final formula (i.e. also called sensitivity and robustness analysis).
@@ -24,14 +25,19 @@ As usual, R offers all the tools for that. Conjoint analysis can be done with th
 Below is re-usable tutorial with reproducible code that should help any data analyst to quickly use this weighting discovery method.
 
 Steps of the procedure for this example include: 
-1.	Choosing the attributes that are used to determine vulnerability scoring. 
-2.	Determine the different potential levels for each attribute that indicate scoring of less vulnerable to more vulnerable
-3.	Use fractional factorial design to generate a number of household profiles, each possessing unique combinations of the attributes.
-4.	Build the expert consultation form where each expert will rate each household profile from low vulnerability to high vulnerability.  
-5.	 
-6.	 
-7.	 
 
+ 1.	Choosing the attributes/__sub-indicators__ that are used to determine vulnerability scoring;   
+
+ 2.	Determine the different potential levels for each attribute (i.e vulnerability __scale attached to each answer option__ from sub-indicators) that indicate scoring of less vulnerable to more vulnerable;  
+
+ 3.	Use fractional factorial design to __generate a number of household profiles__, each possessing unique combinations of the attributes;    
+
+ 4.	Build the __expert consultation__ form where each expert will rate each household profile from low vulnerability to high vulnerability;     
+ 5.	Review results and assess __agreement level__;    
+ 
+ 6.	If necessary, __relaunch the survey__ and iterate back to the previous step as much as needed;   
+
+ 7.	Apply the importance level for each critiria as the __weights to be used with the geometric mean aggregation__ for all indicators.
 
 
 ```{r setup, include=FALSE}
@@ -54,9 +60,9 @@ unhcr_style <- function() {
   ggplot2::theme(
     
 #This sets the font, size, type and colour of text for the chart's title
-  plot.title = ggplot2::element_text(family=font, size=15, face = "bold", color = "#222222"),
+  plot.title = ggplot2::element_text(family = font, size = 15, face = "bold", color = "#222222"),
 #This sets the font, size, type and colour of text for the chart's subtitle,  as well as setting a margin between the title and the subtitle
-  plot.subtitle = ggplot2::element_text(family=font, size=12, margin=ggplot2::margin(9,0,9,0)),
+  plot.subtitle = ggplot2::element_text(family = font, size = 12, margin = ggplot2::margin(9,0,9,0)),
   plot.caption = ggplot2::element_blank(),
 #This sets the position and alignment of the legend, removes a title and backround for it and sets the requirements for any text within the legend. The legend may often need some more manual tweaking when it comes to its exact position based on the plot coordinates.
   legend.position = "top",
@@ -64,11 +70,11 @@ unhcr_style <- function() {
   legend.background = ggplot2::element_blank(),
   legend.title = ggplot2::element_blank(),
   legend.key = ggplot2::element_blank(),
-  legend.text = ggplot2::element_text(family=font, size=13, color = "#222222"),
+  legend.text = ggplot2::element_text(family = font, size = 13, color = "#222222"),
 #This sets the text font, size and colour for the axis test, as well as setting the margins and removes lines and ticks. In some cases, axis lines and axis ticks are things we would want to have in the chart
   axis.title = ggplot2::element_blank(),
-  axis.text = ggplot2::element_text(family=font, size=13, color = "#222222"),
-  axis.text.x = ggplot2::element_text(margin=ggplot2::margin(5, b = 10)),
+  axis.text = ggplot2::element_text(family = font, size = 13, color = "#222222"),
+  axis.text.x = ggplot2::element_text(margin = ggplot2::margin(5, b = 10)),
   axis.ticks = ggplot2::element_blank(),
   axis.line = ggplot2::element_blank(),
 #This removes all minor gridlines and adds major y gridlines. In many cases you will want to change this to remove y gridlines and add x gridlines. 
@@ -101,6 +107,8 @@ The [Joint Intersectoral Analysis Framework (JIAF)](https://interagencystandingc
 - Basic Needs & Living standards
 - Coping Capacity
 - Well Being & Community integration
+
+![](/post/Conjoint-Analysis_files/jiagf.png)
 
 This generic model can be contextualized in each operations as different sub-indicators might be used for each of the 3 dimensions depending on cultural and political situations. Conjoint analysis will allow to discover the relative importance to be allocated for each sub-indicator.
 
@@ -214,7 +222,7 @@ In addition, the different profiles should be scanned to identify those specific
 ```{r echo=TRUE}
 # Selection of relevant concepts
 selectedProfiles.basicneeds <- caFactorialDesign(data = basicneeds,
-                                      type ='fractional'
+                                      type = 'fractional'
                                     )
 
 ## need to clean up some impossible profile

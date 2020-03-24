@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>KoBoToolbox on HumanitaRian useR Group</title>
+    <title>Kobotoolbox on HumanitaRian useR Group</title>
     <link>/categories/kobotoolbox/</link>
-    <description>Recent content in KoBoToolbox on HumanitaRian useR Group</description>
+    <description>Recent content in Kobotoolbox on HumanitaRian useR Group</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/kobotoolbox/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Accessing data from REST API using R: examples for KoBoToolbox and Country Based Pooled Fund (CBPF) data</title>
-      <link>/post/kobo_restapi/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      <title>Euler chart for multichoice questions from Kobo</title>
+      <link>/post/eulerkobo/</link>
+      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/kobo_restapi/</guid>
-      <description>R program has become a language of choice for data science work. It has rich feature library that can be readily used for variety of data management tasks. This article focuses on accessing data from the KoBoToolbox.
- KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
-KoBoToolbox has a number of advanced features which are very useful for advanced use case scenario.</description>
+      <guid>/post/eulerkobo/</guid>
+      <description>Multiple choice question in which respondent can select more than one correct answer from the list is a usual part of almost every survey.
+It is usually visualized as a simple bar chart ignoring the overlap between the different categories, while this overlap can bring more analytical value and depth to the analysis. 
+Euler diagram is a perfect way to show the relationship between different subsets and that’s hardly possible to build it with the commonly used spreadsheet software such as MS Excel.</description>
     </item>
     
   </channel>
