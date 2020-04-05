@@ -332,7 +332,7 @@ selectedProfiles.wellbeing <- caFactorialDesign(data = wellbeing,
 ```
 
 
-## Build the expert consultation questionnaire in xlsform
+  ## Build the expert consultation questionnaire in xlsform
 
 Once we have the main profile options to compare, we can automatically generate the corresponding xlsform in order to build the expert consultation form. 
 

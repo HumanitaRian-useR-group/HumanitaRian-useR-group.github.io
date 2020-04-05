@@ -137,6 +137,12 @@ if (!doNotTrack) {
                     </a>
                 </li>
             
+                <li>
+                    <a href="https://www.r-bloggers.com/">
+                            <i class="fa fa-universal-access">&nbsp;</i>learn more with R-bloggers
+                    </a>
+                </li>
+            
         </ul>
     </nav>
     <nav class="main">
@@ -212,6 +218,14 @@ if (!doNotTrack) {
                         <a href="https://join.skype.com/qYBKC5q3wKp4">
                             <h3>
                                 <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.r-bloggers.com/">
+                            <h3>
+                                <i class="fa fa-universal-access">&nbsp;</i>learn more with R-bloggers
                             </h3>
                         </a>
                     </li>
@@ -649,9 +663,7 @@ selectedProfiles.wellbeing &lt;- caFactorialDesign(data = wellbeing,
 # Checking if selected concepts are relevant for study
 # corrselectedProfiles.wellbeing &lt;- caEncodedDesign(selectedProfiles.wellbeing)
 # print(cor(corrselectedProfiles.wellbeing))</code></pre>
-</div>
-<div id="build-the-expert-consultation-questionnaire-in-xlsform" class="section level2">
-<h2>Build the expert consultation questionnaire in xlsform</h2>
+<p>## Build the expert consultation questionnaire in xlsform</p>
 <p>Once we have the main profile options to compare, we can automatically generate the corresponding xlsform in order to build the expert consultation form.</p>
 <p>Since we want the expert to rate each alternative, we will need a metric measurement, particularly a Likert scale. Likert scales are per default interval scales, which means that we would only have the knowledge of how much the overall utility would increase by changing the level of an attribute. We are also restricted to an interval scale due to the fact that we chose a part-worth model as well as fractional factorial design. A continuous or ratio variable would generally not be possible with a fractional factorial design or part worth model unless we can make some assumption about linearity and interactions which are simply unrealistic. But the advantage of a Likert scale is that it has proven to be more reliable in studies.</p>
 <p>The rating of a run might look like this:
