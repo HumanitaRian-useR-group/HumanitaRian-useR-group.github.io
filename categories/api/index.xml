@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>API on HumanitaRian useR Group</title>
@@ -8,51 +10,13 @@
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Sun, 24 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/api/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     <item>
-      <title>Bar Chart Race for Refugees</title>
-      <link>/post/refugee-bar-chart-race/</link>
+      <title>API</title>
+      <link>/categories/api/</link>
       <pubDate>Sun, 24 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/refugee-bar-chart-race/</guid>
-      <description>“Bar Chart Race” are a specific type of bar chart that moves to show rankings over time. It became recently a quite popular approach to bring a storytelling elements within a longitudinal dataset. Readers are suggested to connect and combine what they see on the chart with other qualitive elements that they know about (elements of history). By using the allegory of F1 Race, it gives a very dynamic dimension.</description>
+      <guid>/categories/api/</guid>
+      <description></description>
     </item>
-    
-    <item>
-      <title>Fatal events in the Sahel</title>
-      <link>/post/sahel-fatalities/</link>
-      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/sahel-fatalities/</guid>
-      <description>In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries.
- The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
-remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.</description>
-    </item>
-    
-    <item>
-      <title>Refugee Population Data Visualisation</title>
-      <link>/post/refugee-population-viz/</link>
-      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/refugee-population-viz/</guid>
-      <description>UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
- Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
- Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.</description>
-    </item>
-    
-    <item>
-      <title>Accessing data from REST API using R: examples for KoBoToolbox and Country Based Pooled Fund (CBPF) data</title>
-      <link>/post/kobo_restapi/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/kobo_restapi/</guid>
-      <description>R program has become a language of choice for data science work. It has rich feature library that can be readily used for variety of data management tasks. This article focuses on accessing data from the KoBoToolbox.
- KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
-KoBoToolbox has a number of advanced features which are very useful for advanced use case scenario.</description>
-    </item>
-    
   </channel>
 </rss>

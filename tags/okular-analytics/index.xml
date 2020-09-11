@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Okular-Analytics on HumanitaRian useR Group</title>
@@ -8,42 +10,13 @@
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/okular-analytics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     <item>
-      <title>A practical implementation of deprivation model: index of protection risks</title>
-      <link>/post/deprivation/</link>
+      <title>Okular-Analytics</title>
+      <link>/tags/okular-analytics/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/deprivation/</guid>
-      <description>This example is based on the note: A new index of refugee protection. It explainss the construction of a lack-of-protection index (or “index of protection risks”), a composite indicator constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
-The Limitation of measurement based on incident analysis It is tempting to build measures of protection or of the lack thereof from counts of incident sand of other reported events for populations at risk.</description>
+      <guid>/tags/okular-analytics/</guid>
+      <description></description>
     </item>
-    
-    <item>
-      <title>Profile of preference: Rashtree analysis</title>
-      <link>/post/profile-of-preference/</link>
-      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/profile-of-preference/</guid>
-      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.
- This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
-Loading packages ## This function will retrieve the packae if they are not yet installed.</description>
-    </item>
-    
-    <item>
-      <title>Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</title>
-      <link>/post/plackett-luce/</link>
-      <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/plackett-luce/</guid>
-      <description>Ratings and rankings account for the majority of data generated in the course of rapid key informant needs assessments during humanitarian emergencies. Using this information to develop consolidated need prioritisation comes with challenges. 
-Practically speaking, the method presented here can be used for dataset that includes questions such as
- what’s your first need? (select_one among different options)
-  what’s your second need? (select_one among different options)</description>
-    </item>
-    
   </channel>
 </rss>

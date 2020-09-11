@@ -3,8 +3,8 @@ title: "Fuzzy geocoding on location name"
 author: "Edouard Legoupil"
 date: '2019-12-14'
 categories:
-  - geodata
-  - geocoding
+  - Geodata
+  - Geocoding
 tags:
   - Edouard-Legoupil
   - UNHCR

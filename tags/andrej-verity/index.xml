@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Andrej-Verity on HumanitaRian useR Group</title>
@@ -8,18 +10,13 @@
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Sat, 20 Dec 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/andrej-verity/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     <item>
-      <title>Humanitarian Data Scientist Job</title>
-      <link>/post/humanitarian-data-scientist/</link>
+      <title>Andrej-Verity</title>
+      <link>/tags/andrej-verity/</link>
       <pubDate>Sat, 20 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/humanitarian-data-scientist/</guid>
-      <description>We have all heard and seen the trend of increasing volumes of data becoming available to us through a variety of mechanisms. With this trend, we have also seen the increased recognition of those who know how to handle such data. Historically, we may have referred to them as statisticians. However, as technologies in this discipline have multiplied and become affordable (or free), increasing numbers of people have been empowered to enter the business.</description>
+      <guid>/tags/andrej-verity/</guid>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

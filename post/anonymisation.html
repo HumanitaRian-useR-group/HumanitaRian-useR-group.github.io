@@ -1,0 +1,606 @@
+<link href="anonymisation_files/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="anonymisation_files/pagedtable/js/pagedtable.js"></script>
+
+
+<p>The dissemination of microdata (i.e. survey data) allows to reduce duplication in data collection; to improve the reliability and relevance of data; to support research to promoting development of new tools for using data. Last but not least, it enhance the credibility of the organization that collected the data.</p>
+<p>In the context of the <a href="https://humanitarian-user-group.github.io/post/first-meeting/">grand bargain commitment of joint needs assessment</a>, being able to share such survey data, and therefore to <strong>anonymise</strong> it beforehand, is a key requirement for collective data interpretation. This post aims at demonstrating that the measurement of statistical disclosure risk is a key analysis and requirement for proper anonymisation.
+<!--MORE--></p>
+<p>Anonymisation is often erroneously perceived as the operation of <strong>simply removing direct identifiers</strong> (such as <em>name, telephone, GPS locations</em>). There are indeed ways to re-identify persons through other means using undirect identifiers. In addition, there’s also a potential perception that anonymisation can be fully automatized through the application of data treatment based on predefined threshold.</p>
+<p>The selection of variables to be considered for anonymisation has direct influence on disclosure risk level measurement. Different organizations may have different views and well-intended organizations may disclose elements that are identified as sensitive by another one. Although there are <a href="https://twitter.com/humdata/status/1159503163872952320">rule of thumbs to define acceptable level of acceptable risk</a>, i.e. the threshold for disclosure risk, this value is not absolute and heavily depends on how risks were initially defined.</p>
+<p>One challenge is therefore to avoid having anonymisation being seen as technical topic. This comes with a high risk of eluding the initial need for ethical and coordinated considerations on what can be a <strong>realistic intrusion scenario</strong> in order to have acceptable re-identification risk endorsement. In reality, it is likely that different organisations may have very different views on what can be such realistic intrusion scenarios.</p>
+<p>This analysis demonstrate that the first need is actually frame joint and collective data interpretation through <strong>research agreement and protocols</strong> rather than to assume that simple data sharing can the way forward.</p>
+<div id="theoretical-steps" class="section level1">
+<h1>Theoretical Steps</h1>
+<div id="step-1-intrusion-scenario" class="section level2">
+<h2>Step 1: Intrusion scenario</h2>
+<p>Suppose a hypothetical intruder has access to some released microdata and attempts to identify or find out more information about a particular respondent. Disclosure, also known as “re-identification,” occurs when the intruder reveals previously unknown information about a respondent by using the released data. Three types of disclosure can be distinguished:</p>
+<ul>
+<li><p><strong>Identity disclosure</strong> occurs if the intruder associates a known individual with a released data record. For example, the intruder links a released data record with external information, or identifies a respondent with extreme data values. In this case, an intruder can exploit a small subset of variables to make the linkage, and once the linkage is successful, the intruder has access to all other information in the released data related to the specific respondent.</p></li>
+<li><p><strong>Attribute disclosure</strong> occurs if the intruder is able to determine some new characteristics of an individual based on the information available in the released data. For example, if a hospital publishes data showing that all female patients aged 56 to 60 have cancer, an intruder then knows the medical condition of any female patient aged 56 to 60 without having to identify the specific individual.</p></li>
+<li><p><strong>Inferential disclosure</strong> occurs if the intruder is able to determine the value of some characteristic of an individual more accurately with the released data than otherwise would have been possible. For example, with a highly predictive regression model, an intruder may be able to infer a respondent’s sensitive income information using attributes recorded in the data, leading to inferential disclosure.</p></li>
+</ul>
+<p>To assess disclosure risk, one must make realistic assumptions about the information data users might have at hand to match against the micro dataset; these assumptions are called disclosure risk scenarios. This goes hand in hand with the selection of categorical key variables because the choice these identifying variables defines a specific disclosure risk scenario.</p>
+</div>
+<div id="step-2-assessing-disclosure-risks" class="section level2">
+<h2>Step 2: Assessing Disclosure Risks</h2>
+<p>Proper and secure microdata dissemination requires to apply Statistical Disclosure Control (SDC) methods to data before release. Data anonymisation is always a trade-off between disclosure risks and information loss. The objective is to modify data in such a way that both the disclosure risk and the information loss caused are acceptably low.</p>
+<p>Specific data analysis is required to allow to quickly identify potential statistical disclosure risks so that the organization can make informed decisions when disclosing data. A series of measurement can be performed to assess those risks:</p>
+<ul>
+<li><p>Risk linked to each records in the dataset: <strong>Global disclosure risk</strong> &amp; <strong>Record-level disclosure risk</strong>;</p></li>
+<li><p>Risk linked to combination of categorical variables in the dataset: <strong>k-anonymity</strong> &amp; <strong>l-diversity</strong>: ;</p></li>
+</ul>
+</div>
+<div id="step-3-anonymisation-treatment" class="section level2">
+<h2>Step 3: Anonymisation treatment</h2>
+<p>Perturbative and non-pertubative approaches to decrease the risks can be applied. This entails for <strong>categoric</strong> variable: Recoding, suppressing, post randomization , and for <strong>continuous</strong> variables: Adding noise, micro-aggregation, swapping… Based on a given threshold for disclosure risk, the “best” method to protect a microdata set is hard to determine in general. For a particular microdata set the “best” SDC method depends on the intended uses of the data by the users, the willingness of the statistical agency to disseminate this data set, the legal aspects of releasing these data, and on the structure of the data.</p>
+<p>The simplest option are:
+* <strong>Global recoding</strong>, a non-perturbative method, that can be applied to both categorical and continuous key variables. The basic idea of recoding a categorical variable is to combine several categories into a new, less informative category. A frequent use case is the recoding of age given in years into age-groups. If the method is applied to a continuous variable, it means to discretize the variable.</p>
+<ul>
+<li><strong>Local suppression</strong> is a non-perturbative method that is typically applied to categorical variables to suppress certain values in at least one variable. Individual values are suppressed in a way that the set of variables with a specific pattern are increased. Local suppression can be configured either to achieve k-Anonymity with minimum suppression of values or to comply with a record-level risk threshold and suppress values only for records with higher risks than the threshold.</li>
+</ul>
+<p>Once those additional treatments are applied, this report can be then regenerated till the <strong>ratio “Disclosure Risk” / “Information Loss”</strong> is acceptable.</p>
+</div>
+</div>
+<div id="how-to-a-practical-example" class="section level1">
+<h1>How to? A practical example</h1>
+<div id="sdcmicro-package" class="section level2">
+<h2>sdcMicro package</h2>
+<p>The World Bank has sponsored the development of a <a href="http://www.ihsn.org/software/disclosure-control-toolbox">disclosure Control Toolbox</a> for the R language and built on the recommendations from the <a href="http://ihsn.org/sites/default/files/resources/ihsn-working-paper-007-Oct27.pdf">International Household Survey Network</a>.</p>
+<pre class="r"><code>knitr::opts_chunk$set(
+ collapse = TRUE,
+ comment = &quot; &quot;,
+ message = FALSE, 
+ warning = FALSE
+)
+
+## Getting all necessary package
+using &lt;- function(...) {
+    libs &lt;- unlist(list(...))
+    req &lt;- unlist(lapply(libs,require,character.only = TRUE))
+    need &lt;- libs[req == FALSE]
+    if (length(need) &gt; 0) { 
+        install.packages(need, repos = &#39;https://mirrors.tuna.tsinghua.edu.cn/CRAN/&#39;)
+        lapply(need,require,character.only = TRUE)
+    }
+}
+
+## Getting all necessary package
+using(&quot;readxl&quot;, &quot;httr&quot;, &quot;tidyverse&quot;, &quot;sdcMicro&quot;, &quot;ggthemes&quot;, &quot;ggrepel&quot;, &quot;GGally&quot;, &quot;ggpubr&quot;,&quot;classInt&quot;)</code></pre>
+<pre><code>## Loading required package: readxl</code></pre>
+<pre><code>## Loading required package: httr</code></pre>
+<pre><code>## Loading required package: tidyverse</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre><code>## Loading required package: sdcMicro</code></pre>
+<pre><code>## --------
+## This is sdcMicro v5.5.1.
+## For references, please have a look at citation(&#39;sdcMicro&#39;)
+## Note: since version 5.0.0, the graphical user-interface is a shiny-app that can be started with sdcApp().
+## Please submit suggestions and bugs at: https://github.com/sdcTools/sdcMicro/issues
+## --------</code></pre>
+<pre><code>## Loading required package: ggthemes</code></pre>
+<pre><code>## Loading required package: ggrepel</code></pre>
+<pre><code>## Loading required package: GGally</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;GGally&#39;:
+##   method from   
+##   +.gg   ggplot2</code></pre>
+<pre><code>## Loading required package: ggpubr</code></pre>
+<pre><code>## Loading required package: classInt</code></pre>
+<pre class="r"><code>rm(using)</code></pre>
+</div>
+<div id="dataset-used-for-illustration" class="section level2">
+<h2>Dataset used for illustration</h2>
+<p>The dataset used for this tutorial, selected after a <a href="https://data.humdata.org/search?res_format=CSV&amp;res_format=XLS&amp;res_format=XLSX&amp;q=%22household%20survey%22">search on HDX</a> assuming that <a href="https://centre.humdata.org/improving-the-management-of-sensitive-data-on-hdx/">dataset shared there had already been assessed</a>, is from the <a href="https://data.humdata.org/dataset/internal-displacement-profiling-in-hargeisa">Internal Displacement Profiling in Hargeisa, Somalia that took place in 2015</a>.</p>
+<pre class="r"><code>
+#url1 &lt;- &quot;https://s3.eu-central-1.amazonaws.com/hdx-ckan-filestore-prod/resources/c3c43479-3367-479d-acd0-d8952351807a/somalia_hargesa_hdx.xlsx&quot;
+#GET(url1, write_disk(tf &lt;- tempfile(fileext = &quot;.xlsx&quot;)))
+# data &lt;- readxl::read_excel(tf, sheet = &quot;Dataset&quot;)
+#download.file(url1, destfile = &quot;somalia_hargesa_hdx.xlsx&quot; )
+dataanom &lt;- readxl::read_excel(&quot;somalia_hargesa_hdx.xlsx&quot;, sheet = &quot;Data&quot;)
+#class(data)
+## Force object to be a data frame
+dataanom &lt;- as.data.frame(dataanom)
+
+metadata &lt;- readxl::read_excel(&quot;somalia_hargesa_hdx.xlsx&quot;, sheet = &quot;Metadata&quot;)
+# &quot;Dataset&quot;, &quot;Name&quot; , &quot;Filter&quot;, &quot;Label new&quot;, &quot;Sub-label&quot;, &quot;Topic&quot;, &quot;QuestionType&quot;, &quot;DataType&quot;, &quot;HouseInd&quot;
+# Rename the variable label
+names(metadata)[4] &lt;- &quot;Label&quot;
+
+numrow &lt;- nrow(dataanom) 
+numvar &lt;- ncol(dataanom)</code></pre>
+<p>The dataset includes <strong>13065</strong> records and <strong>180</strong> variables.</p>
+</div>
+<div id="intrusion-scenario" class="section level2">
+<h2>Intrusion scenario</h2>
+<div id="categoric-key-variables" class="section level3">
+<h3>Categoric Key variables</h3>
+<p>Also called “<em>implicit identifiers</em>” or “<em>quasi-identifiers</em>”: Set of variables that, in combination, can be linked to external information to re-identify respondents in the released dataset (gender, age, occupation, specific needs, region..).</p>
+<p>The UK Government Statistical Service <a href="https://www.ons.gov.uk/methodology/methodologytopicsandstatisticalconcepts/disclosurecontrol/policyforsocialsurveymicrodata">policy for the release of social survey microdata</a> suggests that:</p>
+<blockquote>
+<p>A small selection of common key variables from a range of datasets is: age (individual or grouped), sex, health indicator (more likely to be a key variable if a specific condition), size or composition of household, income (household or individual), occupation or industry, ethnic group, religion, country of birth, marital status, house type, house age, floor size, college course, course provider, number of dependent children in household….</p>
+</blockquote>
+<p>The tables below present the variables that were considered for <strong>two distinct intrusion risk scenario</strong>: one considering <strong>age as a quasi-identifier</strong> and the second one not that does not consider age as a quasi-identifier .</p>
+<p>We will see in the rest of the analysis the relation between risk measurement and the selection of intrusion scenario</p>
+<pre class="r"><code># Key variables - To be converted to factors
+selected.keyVars &lt;- c(&quot;hargeisa3&quot;,# Sex of household member
+                      &quot;hargeisa7&quot;,# District of origin of household
+                      &quot;hargeisa26&quot;,# For households living in settlement    Settlement name
+                      &quot;hargeisa10&quot; , #Age of all household members (not grouped)
+                      &quot;hargeisa14&quot; #Number of members living in household
+)
+
+selected.keyVars2 &lt;- c(&quot;hargeisa3&quot;,# Sex of household member
+                      &quot;hargeisa7&quot;,# District of origin of household
+                      &quot;hargeisa26&quot;,# For households living in settlement    Settlement name
+                      &quot;hargeisa14&quot; #Number of members living in household
+)
+
+metadata[metadata$Name %in% selected.keyVars, c( &quot;Name&quot;,&quot;Label&quot;, &quot;QuestionType&quot; )] %&gt;% rmarkdown::paged_table()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Label"],"name":[2],"type":["chr"],"align":["left"]},{"label":["QuestionType"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"hargeisa3","2":"Sex of household member","3":"categorical"},{"1":"hargeisa7","2":"District of origin of household","3":"categorical"},{"1":"hargeisa10","2":"Age of all household members (not grouped)","3":"continuous"},{"1":"hargeisa14","2":"Number of members living in household","3":"continuous"},{"1":"hargeisa26","2":"Settlement name","3":"categorical"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>
+selected.key1 &lt;- metadata[metadata$Name %in% selected.keyVars, c( &quot;Name&quot;,&quot;Label&quot;, &quot;QuestionType&quot; )]</code></pre>
+</div>
+<div id="sensitive-variables" class="section level3">
+<h3>Sensitive variables</h3>
+<p>Variables whose values must not be discovered for any respondent. Determination is often subject to legal and ethical concerns (Protection risk, Vulnerabilities..)</p>
+<pre class="r"><code>selected.sensibleVars &lt;- c(&quot;hargeisa15&quot;,# Household member has a physical disability
+                           &quot;hargeisa16&quot;,# Household member has a mental disability
+                           &quot;hargeisa21&quot;,#       Household member has chronic illness
+                           &quot;hargeisa22&quot;#        Household member is a child without parent
+)
+
+metadata[metadata$Name %in% selected.sensibleVars, c(&quot;Topic&quot;, &quot;QuestionType&quot;,&quot;Label&quot;, &quot;Name&quot;  )]  %&gt;% rmarkdown::paged_table()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Topic"],"name":[1],"type":["chr"],"align":["left"]},{"label":["QuestionType"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Label"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Name"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"Special needs","2":"categorical","3":"Household member has a physical disability","4":"hargeisa15"},{"1":"Special needs","2":"categorical","3":"Household member has a mental disability","4":"hargeisa16"},{"1":"Special needs","2":"categorical","3":"Household member has chronic illness","4":"hargeisa21"},{"1":"Special needs","2":"categorical","3":"Household member is a child without parent","4":"hargeisa22"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>
+selected.sensible1 &lt;- metadata[metadata$Name %in% selected.sensibleVars, c(&quot;Topic&quot;, &quot;QuestionType&quot;,&quot;Label&quot;, &quot;Name&quot;  )]</code></pre>
+</div>
+</div>
+<div id="assessing-different-disclosure-risks-and-apply-treatment" class="section level2">
+<h2>Assessing different Disclosure Risks and apply Treatment</h2>
+<p>In order to use the sdcMicro function, we use the main function <code>createSdcObj</code> where variables to be considered for disclosure risk assessment are documented. Here we create 2 objects, one for each disclosure risk scenario.</p>
+<pre class="r"><code>
+## Sample weight
+selected.weightVar = c(&quot;hargeisa180&quot;)
+
+# All variables (id, key variables, sensible variables, numerical variables, weights)
+dataanom$id &lt;- row.names(dataanom) 
+
+## Variable indicating a hiearchical data - hargeisa179
+# Household ID
+selectedHouseholdID = c(&#39;hargeisa179&#39;)
+
+# Create subset of file 
+dataanom.anom &lt;- dataanom[ , c(&#39;id&#39;, selectedHouseholdID,
+ selected.keyVars,
+ selected.sensibleVars,
+ selected.weightVar)]
+
+# Create initial sdc object for selected variables
+sdc.dataanom &lt;- createSdcObj(dat = dataanom.anom,
+ keyVars = selected.keyVars,
+ numVars = NULL, #selected.numVars,
+ pramVars = NULL,
+ hhId = selectedHouseholdID ,
+ weightVar = selected.weightVar)
+
+sdc.dataanom2 &lt;- createSdcObj(dat = dataanom.anom,
+ keyVars = selected.keyVars2,
+ numVars = NULL, #selected.numVars,
+ pramVars = NULL,
+ hhId = selectedHouseholdID ,
+ weightVar = selected.weightVar)
+
+## Basic information on the input obj such as the number of observations and variables.
+#print(sdc.dataanom, type = &quot;general&quot;)</code></pre>
+<div id="risk-for-categoric-variables-observations-violating-k-anonymity" class="section level3">
+<h3>Risk for categoric variables: Observations violating k-anonymity</h3>
+<p>A dataset is said to satisfy <code>k-anonymity</code> for k &gt; 1 if, for each combination of values of quasi-identifiers (e.g. age, gender, occupation, etc.), at least <code>k</code> records exist in the dataset sharing that combination. Often k-anonymity is analysed at level 2, 3 &amp; 5.</p>
+<div id="risk-estimation" class="section level4">
+<h4>Risk Estimation</h4>
+<pre class="r"><code>## displays information about 2- and 3-anonymity for First scenario: age as an identifier 
+print(sdc.dataanom, type = &quot;kAnon&quot;)
+  Infos on 2/3-Anonymity:
+  
+  Number of observations violating
+    - 2-anonymity: 4901 (37.512%)
+    - 3-anonymity: 7521 (57.566%)
+    - 5-anonymity: 10459 (80.054%)
+  
+  ----------------------------------------------------------------------</code></pre>
+<pre class="r"><code>## displays information about 2- and 3-anonymity for second scenario: age NOT as an identifier 
+print(sdc.dataanom2, type = &quot;kAnon&quot;) 
+  Infos on 2/3-Anonymity:
+  
+  Number of observations violating
+    - 2-anonymity: 59 (0.452%)
+    - 3-anonymity: 216 (1.653%)
+    - 5-anonymity: 623 (4.768%)
+  
+  ----------------------------------------------------------------------</code></pre>
+<pre class="r"><code>#cat(&quot;Show lines with variables that violate k-anonymity 3&quot;)
+#dataanom.anom[sdc.dataanom@risk$individual[,2] &lt; 3,]
+#dataanom.anom[sdc.dataanom@risk$individual[,2] &lt; 5,]
+
+risk21 &lt;- nrow(dataanom.anom[sdc.dataanom@risk$individual[,2] &lt; 2,])
+risk22 &lt;- nrow(dataanom.anom[sdc.dataanom2@risk$individual[,2] &lt; 2,])
+
+risk31 &lt;- nrow(dataanom.anom[sdc.dataanom@risk$individual[,2] &lt; 3,])
+risk32 &lt;- nrow(dataanom.anom[sdc.dataanom2@risk$individual[,2] &lt; 3,])
+
+risk51 &lt;- nrow(dataanom.anom[sdc.dataanom@risk$individual[,2] &lt; 5,])
+risk52 &lt;- nrow(dataanom.anom[sdc.dataanom2@risk$individual[,2] &lt; 5,])</code></pre>
+<p>If we compare:</p>
+<ul>
+<li><p>There are <strong>4901</strong> # of observations (i.e. <em>0.38%</em>) that violate <code>2-anonymity</code> based on the first intrusion scenario, and <strong>59</strong> (i.e. <em>0.38%</em>) when considering the second scenario.</p></li>
+<li><p>There are <strong>7521</strong> # of observations (i.e. <em>58%</em>) that violate <code>3-anonymity</code> based on the first intrusion scenario, and <strong>216</strong> (i.e. <em>2%</em>) when considering the second scenario.</p></li>
+<li><p>There are <strong>10459</strong> # of observations (i.e. <em>80%</em>) that violate <code>5-anonymity</code> based on the first intrusion scenario, and <strong>623</strong> (i.e. <em>5%</em>) when considering the second scenario.</p></li>
+</ul>
+</div>
+<div id="consequences-of-treatment" class="section level4">
+<h4>Consequences of treatment</h4>
+<p>Even after recoding, some combinations of key variable values may still violate k-anonymity, or some records may still have relatively high disclosure risks. Further recoding, however, may not be possible because the data utility would be too low. At this stage, local suppression can be applied. Let’s see how many would be needed to achieve.</p>
+<p>The belows estimates are computed for both the original and perturbed data and then compared.</p>
+<p>Reported is the number, mean size and size of the smallest category &gt;0 for recoded variables.
+In parenthesis, the same statistics are shown for the unmodified data (NA (missings) are counted as separate categories!).</p>
+<ul>
+<li><code>2-anonymity</code></li>
+</ul>
+<p>Required suppression for scenario where age is considered as an identifier</p>
+<pre class="r"><code>sdc.dataanomk12 &lt;- localSuppression(sdc.dataanom, k = 2, importance = NULL) 
+calcRisks(sdc.dataanomk12)
+   Key Variable Number of categories      Mean size           
+      hargeisa3                    2  (2)  6532.500 (6532.500)
+      hargeisa7                   29 (29)   394.214  (397.429)
+     hargeisa26                   16 (15)   869.933  (871.000)
+     hargeisa10                   64 (90)   132.159  (145.167)
+     hargeisa14                   16 (15)   867.267  (871.000)
+   Size of smallest (&gt;0)       
+                    6315 (6315)
+                       3    (3)
+                      79   (80)
+                       1    (1)
+                      13   (15)
+       KeyVar | Suppressions (#) | Suppressions (%)
+    hargeisa3 |                0 |            0.000
+    hargeisa7 |               90 |            0.689
+   hargeisa26 |               16 |            0.122
+   hargeisa10 |             4739 |           36.272
+   hargeisa14 |               56 |            0.429</code></pre>
+<p>Required suppression for scenario where age is NOT considered as an identifier</p>
+<pre class="r"><code>sdc.dataanomk22 &lt;- localSuppression(sdc.dataanom2, k = 2, importance = NULL) 
+calcRisks(sdc.dataanomk22)
+   Key Variable Number of categories      Mean size           
+      hargeisa3                    2  (2)  6532.500 (6532.500)
+      hargeisa7                   29 (29)   395.750  (397.429)
+     hargeisa26                   15 (15)   871.000  (871.000)
+     hargeisa14                   16 (15)   870.200  (871.000)
+   Size of smallest (&gt;0)       
+                    6315 (6315)
+                       3    (3)
+                      80   (80)
+                      15   (15)
+       KeyVar | Suppressions (#) | Suppressions (%)
+    hargeisa3 |                0 |            0.000
+    hargeisa7 |               47 |            0.360
+   hargeisa26 |                0 |            0.000
+   hargeisa14 |               12 |            0.092</code></pre>
+<p>Below is the number of records value to remove to achieve <code>2-anonymity</code> depending on the scenario</p>
+<pre class="r"><code>
+sdc.dataanom.localsuppressionk12 &lt;- as.data.frame(t(as.data.frame(sdc.dataanomk12@localSuppression$supps)))
+sdc.dataanom.localsuppressionk12$Name &lt;- row.names(sdc.dataanom.localsuppressionk12)
+names(sdc.dataanom.localsuppressionk12)[1] &lt;- &quot;age.is.an.id&quot;
+
+sdc.dataanom.localsuppressionk22 &lt;- as.data.frame(t(as.data.frame(sdc.dataanomk22@localSuppression$supps)))
+sdc.dataanom.localsuppressionk22$Name &lt;- row.names(sdc.dataanom.localsuppressionk22)
+names(sdc.dataanom.localsuppressionk22)[1] &lt;- &quot;age.is.not.an.id&quot;
+
+localsuppressionk2 &lt;- merge(x = selected.key1, by = &quot;Name&quot;, y = sdc.dataanom.localsuppressionk12)
+localsuppressionk2 &lt;- merge(x = localsuppressionk2, by = &quot;Name&quot;, y = sdc.dataanom.localsuppressionk22)
+
+localsuppressionk2  %&gt;% rmarkdown::paged_table()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Label"],"name":[2],"type":["chr"],"align":["left"]},{"label":["QuestionType"],"name":[3],"type":["chr"],"align":["left"]},{"label":["age.is.an.id"],"name":[4],"type":["int"],"align":["right"]},{"label":["age.is.not.an.id"],"name":[5],"type":["int"],"align":["right"]}],"data":[{"1":"hargeisa14","2":"Number of members living in household","3":"continuous","4":"56","5":"12"},{"1":"hargeisa26","2":"Settlement name","3":"categorical","4":"16","5":"0"},{"1":"hargeisa3","2":"Sex of household member","3":"categorical","4":"0","5":"0"},{"1":"hargeisa7","2":"District of origin of household","3":"categorical","4":"90","5":"47"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<ul>
+<li><code>3-anonymity</code>
+Required suppression for scenario where age is considered as an identifier</li>
+</ul>
+<pre class="r"><code>## displays various information if local suppression has been applied
+sdc.dataanomk13 &lt;- localSuppression(sdc.dataanom, k = 3, importance = NULL) 
+calcRisks(sdc.dataanomk13)
+   Key Variable Number of categories      Mean size           
+      hargeisa3                    2  (2)  6532.500 (6532.500)
+      hargeisa7                   29 (29)   392.179  (397.429)
+     hargeisa26                   16 (15)   869.933  (871.000)
+     hargeisa10                   56 (90)   104.109  (145.167)
+     hargeisa14                   16 (15)   867.000  (871.000)
+   Size of smallest (&gt;0)       
+                    6315 (6315)
+                       2    (3)
+                      79   (80)
+                       1    (1)
+                      13   (15)
+       KeyVar | Suppressions (#) | Suppressions (%)
+    hargeisa3 |                0 |            0.000
+    hargeisa7 |              147 |            1.125
+   hargeisa26 |               16 |            0.122
+   hargeisa10 |             7339 |           56.173
+   hargeisa14 |               60 |            0.459</code></pre>
+<p>Required suppression for scenario where age is NOT considered as an identifier</p>
+<pre class="r"><code>sdc.dataanomk23 &lt;- localSuppression(sdc.dataanom2, k = 3, importance = NULL) 
+calcRisks(sdc.dataanomk23)
+   Key Variable Number of categories      Mean size           
+      hargeisa3                    2  (2)  6532.500 (6532.500)
+      hargeisa7                   29 (29)   391.286  (397.429)
+     hargeisa26                   15 (15)   871.000  (871.000)
+     hargeisa14                   16 (15)   868.000  (871.000)
+   Size of smallest (&gt;0)       
+                    6315 (6315)
+                       3    (3)
+                      80   (80)
+                      15   (15)
+       KeyVar | Suppressions (#) | Suppressions (%)
+    hargeisa3 |                0 |            0.000
+    hargeisa7 |              172 |            1.316
+   hargeisa26 |                0 |            0.000
+   hargeisa14 |               45 |            0.344</code></pre>
+<p>Below is the number of records value to remove to achieve <code>3-anonymity</code> depending on the scenario</p>
+<pre class="r"><code>sdc.dataanom.localsuppressionk13 &lt;- as.data.frame(t(as.data.frame(sdc.dataanomk13@localSuppression$supps)))
+sdc.dataanom.localsuppressionk13$Name &lt;- row.names(sdc.dataanom.localsuppressionk13)
+names(sdc.dataanom.localsuppressionk13)[1] &lt;- &quot;age.is.an.id&quot;
+
+sdc.dataanom.localsuppressionk23 &lt;- as.data.frame(t(as.data.frame(sdc.dataanomk23@localSuppression$supps)))
+sdc.dataanom.localsuppressionk23$Name &lt;- row.names(sdc.dataanom.localsuppressionk23)
+names(sdc.dataanom.localsuppressionk23)[1] &lt;- &quot;age.is.not.an.id&quot;
+
+localsuppressionk3 &lt;- merge(x = selected.key1, by = &quot;Name&quot;, y = sdc.dataanom.localsuppressionk13)
+localsuppressionk3 &lt;- merge(x = localsuppressionk3, by = &quot;Name&quot;, y = sdc.dataanom.localsuppressionk23)
+
+localsuppressionk3  %&gt;% rmarkdown::paged_table()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Label"],"name":[2],"type":["chr"],"align":["left"]},{"label":["QuestionType"],"name":[3],"type":["chr"],"align":["left"]},{"label":["age.is.an.id"],"name":[4],"type":["int"],"align":["right"]},{"label":["age.is.not.an.id"],"name":[5],"type":["int"],"align":["right"]}],"data":[{"1":"hargeisa14","2":"Number of members living in household","3":"continuous","4":"60","5":"45"},{"1":"hargeisa26","2":"Settlement name","3":"categorical","4":"16","5":"0"},{"1":"hargeisa3","2":"Sex of household member","3":"categorical","4":"0","5":"0"},{"1":"hargeisa7","2":"District of origin of household","3":"categorical","4":"147","5":"172"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<div id="risks-linked-to-observations-population-frequencies-and-global-re-identification-risks" class="section level3">
+<h3>Risks linked to observations: Population Frequencies and Global re-identification risks</h3>
+<p>When using sample based dataset, <code>k-Anonymity</code> can be difficult to achieve. In this case, using Individual Risk threshold is an option to consider.</p>
+<p>Risk evaluation is based on the concept of uniqueness in the sample and/or in the population. The focus is on individual units that possess rare combinations of selected key variables. The assumption is that units having rare combinations of key variables can be more easily identified and thus have a higher risk of re-identification/disclosure. It is possible to cross-tabulate all identifying variables and view their cast. Keys possessed by only very few individuals are considered risky, especially if these observations also have small sampling weights. This means that the expected number of individuals with these patterns is expected to be low in the population as well.</p>
+<p>Two approaches can be used to determine the global risk for a dataset using individual risks:</p>
+<ul>
+<li><p>Benchmark: This approach counts the number of observations that can be considered risky and also have higher risk as the main part of the data. For example, we consider units with individual risks being both ≥ 0 : 1 and twice as large as the median of all individual risks + 2 times the median absolute deviation (MAD) of all unit risks.</p></li>
+<li><p>Global risk: The sum of the individual risks in the dataset gives the expected number of re-identifications.</p></li>
+</ul>
+<p>The expected <strong>number of re-identification</strong> indicator is estimated by the sum of record-level disclosure risks. The <strong>number of records with higher risks than the main part of the dataset</strong> are the number of records whose individual risk is greater than 0.1 and greater than 2 X [median(r) + 2 X MAD(r)], where r is a vector of record-level risks, and MAD is the median absolute deviation of all record-level risks.</p>
+<div id="risk-estimation-1" class="section level4">
+<h4>Risk Estimation</h4>
+<pre class="r"><code>
+riskglobal &lt;- sdc.dataanom@risk$global
+riskglobalh &lt;- sdc.dataanom2@risk$global</code></pre>
+<p>Here the global risk is <strong>0.5734761, 7492.4656107, 57.3476128, 0, 0.01, 1.228553810^{4}, 0.9403397, 94.033971%</strong> based on the first intrusion scenario, and <strong>0.0520213, 679.6586115, 5.2021325, 0.010989, 0.01, 2784.0174406, 0.2130897, 21.3089739%</strong> when considering the second scenario.</p>
+<p>We can also visualise Individual risk:</p>
+<pre class="r"><code>
+risksum &lt;- as.data.frame(sdc.dataanom@risk$individual[, &quot;risk&quot;])
+names(risksum)[1] &lt;- &quot;indrisk&quot;
+risksum$class.fixed &lt;- as.factor(classInt::findCols(classIntervals(risksum$indrisk, n = 8, style = &quot;fixed&quot;, fixedBreaks = c(0, 0.001, 0.01, 0.5, 0.1, 0.15, 0.30, 0.5, 1))))
+
+risksum$class.fixed.name &lt;- recode_factor(risksum$class.fixed, `1` = &quot;Individual Risk is lower than 0.1%&quot;,
+                                          `2` = &quot;Individual Risk is higher than 0.1% and lower than 1%&quot;,
+                                     `3` = &quot;Individual Risk is higher than 1% and lower than 5%&quot;,
+                                      `4` = &quot;Individual Risk is higher than 5% and lower than 10%&quot;,
+                                     `5` = &quot;Individual Risk is higher than 10% and lower than 15%&quot;,
+                                     `6` = &quot;Individual Risk is higher than 15% and lower than 30%&quot;,
+                                     `7` = &quot;Individual Risk is higher than 30% and lower than 50%&quot;,
+                                     `8` = &quot;Individual Risk is higher than 50% and lower than 100%&quot;)
+risksum$class.fixed.name &lt;- factor(risksum$class.fixed.name, 
+                                   levels = c(&quot;Individual Risk is lower than 0.1%&quot;,
+                                               &quot;Individual Risk is higher than 0.1% and lower than 1%&quot;,
+                                               &quot;Individual Risk is higher than 1% and lower than 5%&quot;,
+                                               &quot;Individual Risk is higher than 5% and lower than 10%&quot;,
+                                                &quot;Individual Risk is higher than 10% and lower than 15%&quot;,
+                                               &quot;Individual Risk is higher than 15% and lower than 30%&quot;,
+                                               &quot;Individual Risk is higher than 30% and lower than 50%&quot;,
+                                               &quot;Individual Risk is higher than 50% and lower than 100%&quot;))
+risksum2 &lt;- as.data.frame(cbind(table(risksum$class.fixed.name ), prop.table(table(risksum$class.fixed.name ))))
+risksum2$class.fixed.name &lt;- row.names(risksum2) 
+risksum2$class.fixed.name &lt;- factor(risksum2$class.fixed.name, 
+                                    levels = c( &quot;Individual Risk is higher than 50% and lower than 100%&quot;,
+                                                &quot;Individual Risk is higher than 30% and lower than 50%&quot;,
+                                                &quot;Individual Risk is higher than 15% and lower than 30%&quot;,
+                                                &quot;Individual Risk is higher than 10% and lower than 15%&quot;,
+                                                &quot;Individual Risk is higher than 5% and lower than 10%&quot;,
+                                                &quot;Individual Risk is higher than 1% and lower than 5%&quot;,
+                                                &quot;Individual Risk is higher than 0.1% and lower than 1%&quot;,
+                                                &quot;Individual Risk is lower than 0.1%&quot;))
+risksum2$percentreponse &lt;- paste0(round(risksum2$V2*100,digits = 1),&quot;%&quot;)
+
+risksum2$scenario &lt;- &quot;age.is.an.id&quot;
+
+risksumall &lt;- risksum2
+
+risksum &lt;- as.data.frame(sdc.dataanom2@risk$individual[, &quot;risk&quot;])
+names(risksum)[1] &lt;- &quot;indrisk&quot;
+risksum$class.fixed &lt;- as.factor(classInt::findCols(classIntervals(risksum$indrisk, n = 8, style = &quot;fixed&quot;, fixedBreaks = c(0, 0.001, 0.01, 0.5, 0.1, 0.15, 0.30, 0.5, 1))))
+
+risksum$class.fixed.name &lt;- recode_factor(risksum$class.fixed, `1` = &quot;Individual Risk is lower than 0.1%&quot;,
+                                          `2` = &quot;Individual Risk is higher than 0.1% and lower than 1%&quot;,
+                                     `3` = &quot;Individual Risk is higher than 1% and lower than 5%&quot;,
+                                      `4` = &quot;Individual Risk is higher than 5% and lower than 10%&quot;,
+                                     `5` = &quot;Individual Risk is higher than 10% and lower than 15%&quot;,
+                                     `6` = &quot;Individual Risk is higher than 15% and lower than 30%&quot;,
+                                     `7` = &quot;Individual Risk is higher than 30% and lower than 50%&quot;,
+                                     `8` = &quot;Individual Risk is higher than 50% and lower than 100%&quot;)
+risksum$class.fixed.name &lt;- factor(risksum$class.fixed.name, levels = c(&quot;Individual Risk is lower than 0.1%&quot;,
+                                               &quot;Individual Risk is higher than 0.1% and lower than 1%&quot;,
+                                               &quot;Individual Risk is higher than 1% and lower than 5%&quot;,
+                                               &quot;Individual Risk is higher than 5% and lower than 10%&quot;,
+                                                &quot;Individual Risk is higher than 10% and lower than 15%&quot;,
+                                               &quot;Individual Risk is higher than 15% and lower than 30%&quot;,
+                                               &quot;Individual Risk is higher than 30% and lower than 50%&quot;,
+                                               &quot;Individual Risk is higher than 50% and lower than 100%&quot;))
+risksum2 &lt;- as.data.frame(cbind(table(risksum$class.fixed.name ), prop.table(table(risksum$class.fixed.name ))))
+risksum2$class.fixed.name &lt;- row.names(risksum2) 
+risksum2$class.fixed.name &lt;- factor(risksum2$class.fixed.name, levels = c(
+  &quot;Individual Risk is higher than 50% and lower than 100%&quot;,
+  &quot;Individual Risk is higher than 30% and lower than 50%&quot;,
+  &quot;Individual Risk is higher than 15% and lower than 30%&quot;,
+  &quot;Individual Risk is higher than 10% and lower than 15%&quot;,
+  &quot;Individual Risk is higher than 5% and lower than 10%&quot;,
+  &quot;Individual Risk is higher than 1% and lower than 5%&quot;,
+  &quot;Individual Risk is higher than 0.1% and lower than 1%&quot;,
+  &quot;Individual Risk is lower than 0.1%&quot;))
+risksum2$percentreponse &lt;- paste0(round(risksum2$V2*100,digits = 1),&quot;%&quot;)
+
+risksum2$scenario &lt;- &quot;age.is.not.an.id&quot;
+
+risksumall &lt;- rbind(risksumall, risksum2)
+
+## and now the graph
+ggplot(risksumall, aes(x = class.fixed.name, y = V1)) +
+geom_bar(fill = &quot;#2a87c8&quot;,colour = &quot;#2a87c8&quot;, stat = &quot;identity&quot;, width = .8) +
+guides(fill = FALSE) +
+facet_wrap(vars(scenario), nrow = 1) +
+geom_label_repel(aes(y = V1, label = percentreponse), fill = &quot;#2a87c8&quot;, color = &#39;white&#39;) +
+ylab(&quot;&quot;) +
+xlab(&quot;&quot;) +
+coord_flip() +
+ggtitle(&quot;Number of Observation broken down per individual disclosure risk level&quot;) +
+theme(plot.title = element_text(face = &quot;bold&quot;, size = 9 ),
+plot.background = element_rect(fill = &quot;transparent&quot;,colour = NA))</code></pre>
+<p><img src="anonymisation_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre class="r"><code>
+#cat(&quot;Displaying records with potential high risk (&gt; 0.2)&quot;)
+#high.risk.dataanoms &lt;- dataanom.anom[sdc.dataanom@risk$individual[, &quot;risk&quot;] &gt; 0.2, selected.keyVars ]
+#high.risk.dataanoms</code></pre>
+</div>
+<div id="consequences-of-treatment-1" class="section level4">
+<h4>Consequences of treatment</h4>
+<p>A 5% threshold may be used as a reference (although again it depends initially on the intrusion scenario..) to apply the anonymisation treatment.</p>
+<p>Below is the number of records value to remove to achieve minimise the depending on the scenario</p>
+<pre class="r"><code>for (h in 1:length(selected.keyVars))
+{
+# h &lt;-1  
+sdc.dataanom15 &lt;- localSupp(sdc.dataanom, keyVar = selected.keyVars[h], threshold = 0.05)  
+sdc.dataanom.localsuppressiont15  &lt;- t(as.data.frame(sdc.dataanom15@localSuppression$supps))
+sdc.dataanom.localsuppressiont15  &lt;- as.data.frame(sdc.dataanom15@localSuppression$supps)
+sdc.dataanom.localsuppressiont &lt;- as.data.frame(t(sdc.dataanom.localsuppressiont15))
+names(sdc.dataanom.localsuppressiont)[1] &lt;- &quot;Suppression&quot;
+
+
+cat(&quot;
+
+&quot;)
+cat(paste0(&quot;Needed suppressions to achieve a 5% individual risk threshold for variable: &quot;, selected.key1[h, c(&quot;Label&quot;)]))
+cat(&quot;
+
+&quot;)
+print(sdc.dataanom.localsuppressiont)
+}
+  
+  
+  Needed suppressions to achieve a 5% individual risk threshold for variable: Sex of household member
+  
+             Suppression
+  hargeisa3        13065
+  hargeisa7            0
+  hargeisa26           0
+  hargeisa10           0
+  hargeisa14           0
+  
+  
+  Needed suppressions to achieve a 5% individual risk threshold for variable: District of origin of household
+  
+             Suppression
+  hargeisa3            0
+  hargeisa7        11128
+  hargeisa26           0
+  hargeisa10           0
+  hargeisa14           0
+  
+  
+  Needed suppressions to achieve a 5% individual risk threshold for variable: Age of all household members (not grouped)
+  
+             Suppression
+  hargeisa3            0
+  hargeisa7            0
+  hargeisa26       13065
+  hargeisa10           0
+  hargeisa14           0
+  
+  
+  Needed suppressions to achieve a 5% individual risk threshold for variable: Number of members living in household
+  
+             Suppression
+  hargeisa3            0
+  hargeisa7            0
+  hargeisa26           0
+  hargeisa10       13065
+  hargeisa14           0
+  
+  
+  Needed suppressions to achieve a 5% individual risk threshold for variable: Settlement name
+  
+             Suppression
+  hargeisa3            0
+  hargeisa7            0
+  hargeisa26           0
+  hargeisa10           0
+  hargeisa14       13065
+
+#print(sdc.dataanom, type = &quot;ls&quot;)</code></pre>
+</div>
+</div>
+</div>
+<div id="distribution-of-the-distinct-l-diversity-score" class="section level2">
+<h2>Distribution of the distinct l-diversity score</h2>
+<p>The objective is to avoid that records sharing a combination of key attributes in a k-anonymous data set also share the values for one or more confidential attributes. There’s a need to ensure that the sensitive variable has at least l-distinct values for each group of observations with the same pattern of key variables.</p>
+<p><code>l-diverstiy</code> is an extension of the k-anonymity approach where also the uniqueness in sensible variables for each pattern spanned by the key variables are evaluated.</p>
+<pre class="r"><code>
+
+for (h in 1:length(selected.sensibleVars))
+ {
+  # h &lt;-1
+ res1 &lt;- ldiversity(dataanom.anom, keyVars = selected.keyVars, ldiv_index = selected.sensibleVars[h])
+
+ cat(paste0(&quot;Displaying l-didersity risk for: &quot;, selected.sensible1[ h, c(&quot;Label&quot;)], &quot;\n&quot;) )
+ # res1
+ print(res1)
+ }
+  Displaying l-didersity risk for: Household member has a physical disability
+     Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+        1       1       1       1       1       1 
+  Displaying l-didersity risk for: Household member has a mental disability
+     Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+        1       1       1       1       1       1 
+  Displaying l-didersity risk for: Household member has chronic illness
+     Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+        1       1       1       1       1       1 
+  Displaying l-didersity risk for: Household member is a child without parent
+     Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+        1       1       1       1       1       1</code></pre>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>Preparing raw microdata files for dissemination involves processes that may adjust the content and/or number of records. Microdata, when they reach a sufficient level of anonymisation to be released publicly (Public Use File) with data licensing terms equivalent to open data, comes with important information loss that does not make them good enough for instance for vulnerability analysis and scorecard calibration.</p>
+<p>Microdata files for open dissemination almost always differ from those strictly for use by staff involved in the responding agencies (application of the need to know data protection principle). Licensed Files—also called Research Files—are distinct from PUFs: their dissemination is restricted to users who have received access authorization after submitting a documented application and signing an agreement governing the data’s use. While licensed files are usually anonymized to minimize the risk of identifying individuals when used in isolation, they may contain potentially identifiable data if linked with other data files.</p>
+<p>One important take-away form this exploration is to understand that anonymisation remains relative and that more than data sharing, the key challenge is to <strong>establish research agreement</strong> in order to support collective and joint data interpretation. Within such research agreement, the confidentiality issue can be addressed in the joint data interpretation is performed directly on “crunched data”, i.e. processed and visualized tabulation. Within such scenario, data sharing is more about</p>
+</div>

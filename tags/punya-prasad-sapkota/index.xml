@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Punya-Prasad-Sapkota on HumanitaRian useR Group</title>
@@ -8,20 +10,13 @@
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/punya-prasad-sapkota/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     <item>
-      <title>Accessing data from REST API using R: examples for KoBoToolbox and Country Based Pooled Fund (CBPF) data</title>
-      <link>/post/kobo_restapi/</link>
+      <title>Punya-Prasad-Sapkota</title>
+      <link>/tags/punya-prasad-sapkota/</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/kobo_restapi/</guid>
-      <description>R program has become a language of choice for data science work. It has rich feature library that can be readily used for variety of data management tasks. This article focuses on accessing data from the KoBoToolbox.
- KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
-KoBoToolbox has a number of advanced features which are very useful for advanced use case scenario.</description>
+      <guid>/tags/punya-prasad-sapkota/</guid>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

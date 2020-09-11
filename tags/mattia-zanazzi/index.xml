@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mattia-Zanazzi on HumanitaRian useR Group</title>
@@ -8,20 +10,13 @@
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/mattia-zanazzi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     <item>
-      <title>How-to: Access ActivityInfo data with R</title>
-      <link>/post/activityinfoscript/</link>
+      <title>Mattia-Zanazzi</title>
+      <link>/tags/mattia-zanazzi/</link>
       <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/activityinfoscript/</guid>
-      <description>ActivityInfo is a data collection and management platform used in the humanitarian sector, designed particularly for Monitoring &amp;amp; Evaluation. This short tutorial aims to explain how to access data using the ActivityInfo API with R. 
-ActivityInfo version used for this tutorial is V4.0, focusing on the new interface (forms, not activities).
-The activityinfo-R package “Be Data Driven”, the company managing ActivityInfo, has developed the “activityinfo-R” package. The package conveniently allows R users to read and write data through the ActivityInfo API.</description>
+      <guid>/tags/mattia-zanazzi/</guid>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

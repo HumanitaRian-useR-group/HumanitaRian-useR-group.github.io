@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HumanitaRian useR Group</title>
@@ -7,175 +6,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Thu, 19 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Conjoint analysis: modeling judgement to calibrate vulnerability scoring</title>
-      <link>/post/conjoint-analysis/</link>
-      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/conjoint-analysis/</guid>
-      <description>What is Conjoint analysis? Conjoint analysis originated in mathematical psychology by psychometricians and was developed since the mid-sixties also by researchers in marketing and business. Conjoint analysis (CA) is often used to evaluate how people make decisions between a set of different options when considering a number of criteria at the same time (conjoint features; “trade-offs”). Rather than rating the importance of each attribute separately, participants rate their preferences for profiles or products with different combinations of the attributes or criteria.</description>
-    </item>
     
     <item>
-      <title>Using Analytic Hierarchy Process to weight vulnerability scorecard</title>
-      <link>/post/analytic-hierachy-process/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <title>Post</title>
+      <link>/post/</link>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/analytic-hierachy-process/</guid>
-      <description>Problem Statement: Defining vulnerabilities scorecard weights through expert judgment In humanitarian contexts, it’s not always possible to use a statistically representative dataset in order to infer the relative weights to be used for each criteria from the full vulnerability scorecard. The only options is to use multiple expert judgement in order to Define relative weights to be used for each criteria when designing composite indicator for vulnerability measurement.</description>
-    </item>
-    
-    <item>
-      <title>A practical implementation of deprivation model: index of protection risks</title>
-      <link>/post/deprivation/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/</guid>
+      <description></description>
       
-      <guid>/post/deprivation/</guid>
-      <description>This example is based on the note: A new index of refugee protection. It explainss the construction of a lack-of-protection index (or “index of protection risks”), a composite indicator constructed from two sub-dimensions: safety problems (18 indicators) and movement restrictions (6 indicators). To feel safe and secure in one’s home and surroundings is one of the core aspects of humanitarian protection, as is the freedom of movement.
-The Limitation of measurement based on incident analysis It is tempting to build measures of protection or of the lack thereof from counts of incident sand of other reported events for populations at risk.</description>
-    </item>
-    
-    <item>
-      <title>Fuzzy geocoding on location name</title>
-      <link>/post/geonames/</link>
-      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/geonames/</guid>
-      <description>Geocoding location is one of the common task for many humanitarian information management officers. While the regular google is working very well in many countries, most of countries where we work are often poorly covered. Geoname.org is the most extensive database of toponyme. It aggregates a huge number of data source: https://www.geonames.org/datasources/.
- In this post, we will see how to quickly geocode a list of location using the fuzzy search capacity of Geonames.</description>
-    </item>
-    
-    <item>
-      <title>Profile of preference: Rashtree analysis</title>
-      <link>/post/profile-of-preference/</link>
-      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/profile-of-preference/</guid>
-      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.
- This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
-Loading packages ## This function will retrieve the packae if they are not yet installed.</description>
-    </item>
-    
-    <item>
-      <title>Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</title>
-      <link>/post/plackett-luce/</link>
-      <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/plackett-luce/</guid>
-      <description>Ratings and rankings account for the majority of data generated in the course of rapid key informant needs assessments during humanitarian emergencies. Using this information to develop consolidated need prioritisation comes with challenges. 
-Practically speaking, the method presented here can be used for dataset that includes questions such as
- what’s your first need? (select_one among different options)
-  what’s your second need? (select_one among different options)</description>
-    </item>
-    
-    <item>
-      <title>Building Severity Index with R</title>
-      <link>/post/compositeindicator/</link>
-      <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/compositeindicator/</guid>
-      <description>In this tutorial, We will see how to build a severity index using a key informant interview dataset. Building such index, also called [composite indicator](a composite indicator, is among the regular and expected task of any humanitarian data analyst.The objective is to summarize information into a simple indicator that can reduce information overflow. Severity index informs the sectoral and inter-sectoral discussions taking place as part of the Humanitarian Needs Overview (HNO) process, in particular facilitating a comparison of needs across geographic areas.</description>
-    </item>
-    
-    <item>
-      <title>How-to: Access ActivityInfo data with R</title>
-      <link>/post/activityinfoscript/</link>
-      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/activityinfoscript/</guid>
-      <description>ActivityInfo is a data collection and management platform used in the humanitarian sector, designed particularly for Monitoring &amp;amp; Evaluation. This short tutorial aims to explain how to access data using the ActivityInfo API with R. 
-ActivityInfo version used for this tutorial is V4.0, focusing on the new interface (forms, not activities).
-The activityinfo-R package “Be Data Driven”, the company managing ActivityInfo, has developed the “activityinfo-R” package. The package conveniently allows R users to read and write data through the ActivityInfo API.</description>
-    </item>
-    
-    <item>
-      <title>Data Quality Monitoring</title>
-      <link>/post/dataqualitymonitoring/</link>
-      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/dataqualitymonitoring/</guid>
-      <description>In this quick tutorial, I share a simple method to graphically display information to monitor data quality of survey teams using a little bit of dplyr and ggplot2 
-There is a lot to be said and done about data quality monitoring. Here is just one simple method to graphically observe “curb-stoning” or “flat-lining” - when enumerators stop administering/recording real questions and responses and instead start making up answers. Often fictious responses are not random and can sometimes be detected graphically.</description>
-    </item>
-    
-    <item>
-      <title>Quick and Dirty Data Security</title>
-      <link>/post/datasecurity/</link>
-      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/datasecurity/</guid>
-      <description>In this quick tutorial, I share 3 methods to keep you and your data out of trouble. 
-Disclaimer : the fields of Data Security and Data Protection are vast. This tutorial hardly skims the surface. Check with your institution on the specific standards and tools which may be relevant to you.
-Quick note on the tutorial You should be able to follow and recreate all of the results by copying the syntax in the grey boxes.</description>
-    </item>
-    
-    <item>
-      <title>Euler chart for multichoice questions from Kobo</title>
-      <link>/post/eulerkobo/</link>
-      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/eulerkobo/</guid>
-      <description>Multiple choice question in which respondent can select more than one correct answer from the list is a usual part of almost every survey.
-It is usually visualized as a simple bar chart ignoring the overlap between the different categories, while this overlap can bring more analytical value and depth to the analysis. 
-Euler diagram is a perfect way to show the relationship between different subsets and that’s hardly possible to build it with the commonly used spreadsheet software such as MS Excel.</description>
-    </item>
-    
-    <item>
-      <title>Bar Chart Race for Refugees</title>
-      <link>/post/refugee-bar-chart-race/</link>
-      <pubDate>Sun, 24 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/refugee-bar-chart-race/</guid>
-      <description>“Bar Chart Race” are a specific type of bar chart that moves to show rankings over time. It became recently a quite popular approach to bring a storytelling elements within a longitudinal dataset. Readers are suggested to connect and combine what they see on the chart with other qualitive elements that they know about (elements of history). By using the allegory of F1 Race, it gives a very dynamic dimension.</description>
-    </item>
-    
-    <item>
-      <title>Fatal events in the Sahel</title>
-      <link>/post/sahel-fatalities/</link>
-      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/sahel-fatalities/</guid>
-      <description>In this short post (crossposted here), we will show how to use the rhdx, dplyr, purrr, sf and gganimate R packages to show the number of fatal incidents in 5 Sahelian countries.
- The rhdx package is not yet on CRAN, so you will need to use the remotes package to install it first:
-remotes::install_gitlab(&amp;quot;dickoa/rhxl&amp;quot;) ## rhdx dependency remotes::install_gitlab(&amp;quot;dickoa/rhdx&amp;quot;) ## github mirror also avalailable install.packages(&amp;quot;gifski&amp;quot;) This analysis was inspired by this tweet by José Luengo-Cabrera, researcher at the Crisis Group.</description>
-    </item>
-    
-    <item>
-      <title>Refugee Population Data Visualisation</title>
-      <link>/post/refugee-population-viz/</link>
-      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/refugee-population-viz/</guid>
-      <description>UNHCR Population Statistics Database contains data about UNHCR’s populations of concern from the year 1951 up to 2014 as well as their general composition by location of residence or origin, their status, their evolution over time.
- Displacement Statistics The Population Database UNHCR’s populations of concern status includes:
- Refugees include individuals recognised under the 1951 Convention relating to the Status of Refugees; its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary forms of protection; or those enjoying temporary protection.</description>
-    </item>
-    
-    <item>
-      <title>rhdx: a R package to interact with HDX</title>
-      <link>/post/rhdx_demo/</link>
-      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rhdx_demo/</guid>
-      <description>rhdx is an R package to interact with the HDX API.
-It provide a series of utilities to facilitates interaction &amp;amp; analysis.
-The Humanitarian Data Exchange (HDX) is an open platform for sharing data across crises and organisations. Launched in July 2014, the goal of HDX is to make humanitarian data easy to find and use for analysis. Our growing collection of datasets has been accessed by users in over 200 countries and territories.</description>
-    </item>
-    
-    <item>
-      <title>Accessing data from REST API using R: examples for KoBoToolbox and Country Based Pooled Fund (CBPF) data</title>
-      <link>/post/kobo_restapi/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/kobo_restapi/</guid>
-      <description>R program has become a language of choice for data science work. It has rich feature library that can be readily used for variety of data management tasks. This article focuses on accessing data from the KoBoToolbox.
- KoBoToolbox KoBoToolbox provides a suite of tools for field data collection in the challenging environments. It is free and open source and works both on and offline.
-KoBoToolbox has a number of advanced features which are very useful for advanced use case scenario.</description>
     </item>
     
     <item>
@@ -184,55 +27,46 @@ KoBoToolbox has a number of advanced features which are very useful for advanced
       <pubDate>Wed, 28 Nov 2018 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This site hosts information related to the HumanitaRian-useR-group. This group is open to Humanitarian Information Management officers from any organisation. The initial group was created in November 2018 after a workshop in Amman funded by UNHCR.
-The idea is to:
- Share and disseminate some interesting approaches.
- Link up colleagues for potential code peer review
- Organise regular webinars using different format: panel discussion, one long in-depth talk, a couple of shorter talks or open-mic &amp;ldquo;quickfire&amp;rdquo; talks&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Support the Grand Bargain commitment on Impartial &amp; Joint Needs Assessment</title>
-      <link>/post/first-meeting/</link>
-      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      <description>&lt;p&gt;This site hosts information related to the HumanitaRian-useR-group. This group is open to Humanitarian Information Management officers from any organisation. The initial group was created in November 2018 after a workshop in Amman funded by UNHCR.&lt;/p&gt;
+&lt;p&gt;The idea is to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Share and disseminate some interesting approaches.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Link up colleagues for potential code peer review&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Organise regular webinars using different format: panel discussion, one long in-depth talk, a couple of shorter talks or open-mic &amp;ldquo;quickfire&amp;rdquo; talks&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;why-r-statistical-language&#34;&gt;Why R statistical language?&lt;/h3&gt;
+&lt;p&gt;R has many advantages&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It is the Analysis &lt;em&gt;lingua franca&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It facilitates &lt;em&gt;Reproducible analysis&lt;/em&gt;: from data cleaning to final reporting&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;why-this-group&#34;&gt;Why this group?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Visit the &lt;a href=&#34;https://humanitarian-user-group.github.io/&#34;&gt;Blog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Follow the account on &lt;a href=&#34;https://twitter.com/HumanitaRianus1&#34;&gt;twitter&lt;/a&gt; and tweet with the hashtag #humanitaRian_useR #rstats&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Join the discussions in the &lt;a href=&#34;https://join.skype.com/qYBKC5q3wKp4&#34;&gt;Skype Group&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Share your projects by &lt;a href=&#34;https://github.com/HumanitaRian-useR-group/blogdown&#34;&gt;forking and sending pull request&lt;/a&gt; so that we can showcase them&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       
-      <guid>/post/first-meeting/</guid>
-      <description>This report is the output of a 2 days workshop held in Amman -5-6 Nov 2018. The presentation &amp;amp; group work output that fed the discussions are accessible here. Participation was diverse and included analysts from all organisations below: 
-Problem statement: Science is “show me”, not “trust me”! While the data collection phase has been for years the main challenge, we have now a deluge of data that we do not always make the most of.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown - How to contribute to this site?</title>
-      <link>/post/r-rmarkdown/</link>
-      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/r-rmarkdown/</guid>
-      <description>Creating Websites with R Markdown is easy and can be done directly R Blogfown package. This is how this site is built.
- The website is generated from R Markdown documents (R is optional, i.e., you can use plain Markdown documents without R code chunks). This brings a huge amount of benefits, especially if your website is related to data analysis or (R) programming. Being able to use Markdown implies simplicity and more importantly, portability (e.</description>
-    </item>
-    
-    <item>
-      <title>How to make the most of our data?</title>
-      <link>/post/make-most-of-data/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/make-most-of-data/</guid>
-      <description> An excellent video on how to build a data science culture within an organisation 
-AirBnB particpated to the recent R user conference in NYC in May 2017.
-The video posted here and this blog post presents 3 important principles:
- Develop packages to mainstream analysis workflow.
- Promote education &amp;amp; contributions within the organisation
- Ensure reproducibility.
-  </description>
-    </item>
-    
-    <item>
-      <title>Humanitarian Data Scientist Job</title>
-      <link>/post/humanitarian-data-scientist/</link>
-      <pubDate>Sat, 20 Dec 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/post/humanitarian-data-scientist/</guid>
-      <description>We have all heard and seen the trend of increasing volumes of data becoming available to us through a variety of mechanisms. With this trend, we have also seen the increased recognition of those who know how to handle such data. Historically, we may have referred to them as statisticians. However, as technologies in this discipline have multiplied and become affordable (or free), increasing numbers of people have been empowered to enter the business.</description>
     </item>
     
   </channel>

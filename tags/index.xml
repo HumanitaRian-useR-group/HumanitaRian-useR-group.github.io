@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on HumanitaRian useR Group</title>
@@ -7,154 +9,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Jun 2020 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Ahmadou-Dicko</title>
-      <link>/tags/ahmadou-dicko/</link>
-      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      <title>Tags</title>
+      <link>/tags/</link>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ahmadou-dicko/</guid>
+      <guid>/tags/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>Andrej-Verity</title>
-      <link>/tags/andrej-verity/</link>
-      <pubDate>Sat, 20 Dec 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/andrej-verity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Benini</title>
-      <link>/tags/benini/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/benini/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bill-Olander</title>
-      <link>/tags/bill-olander/</link>
-      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/bill-olander/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data-Center</title>
-      <link>/tags/data-center/</link>
-      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-center/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Edouard-Legoupil</title>
-      <link>/tags/edouard-legoupil/</link>
-      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/edouard-legoupil/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hisham-Galal</title>
-      <link>/tags/hisham-galal/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/hisham-galal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IMMAP</title>
-      <link>/tags/immap/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/immap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mattia-Zanazzi</title>
-      <link>/tags/mattia-zanazzi/</link>
-      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/mattia-zanazzi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Okular-Analytics</title>
-      <link>/tags/okular-analytics/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/okular-analytics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Oleksandr-Yaroshenko</title>
-      <link>/tags/oleksandr-yaroshenko/</link>
-      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/oleksandr-yaroshenko/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Punya-Prasad-Sapkota</title>
-      <link>/tags/punya-prasad-sapkota/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/punya-prasad-sapkota/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UNHCR</title>
-      <link>/tags/unhcr/</link>
-      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/unhcr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UNOCHA</title>
-      <link>/tags/unocha/</link>
-      <pubDate>Sat, 20 Dec 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/unocha/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>User-group</title>
-      <link>/tags/user-group/</link>
-      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/user-group/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WFP</title>
-      <link>/tags/wfp/</link>
-      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/wfp/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

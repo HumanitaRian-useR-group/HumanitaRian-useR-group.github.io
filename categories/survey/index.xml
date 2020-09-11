@@ -1,0 +1,22 @@
+---
+layout: null
+---
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Survey on HumanitaRian useR Group</title>
+    <link>/categories/survey/</link>
+    <description>Recent content in Survey on HumanitaRian useR Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Thu, 25 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Survey</title>
+      <link>/categories/survey/</link>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/survey/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

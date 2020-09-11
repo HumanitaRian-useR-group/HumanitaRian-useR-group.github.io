@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prioritisation on HumanitaRian useR Group</title>
@@ -8,32 +10,13 @@
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/prioritisation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     <item>
-      <title>Profile of preference: Rashtree analysis</title>
-      <link>/post/profile-of-preference/</link>
+      <title>Prioritisation</title>
+      <link>/categories/prioritisation/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/profile-of-preference/</guid>
-      <description>Often affected population or key informant are requested to share their preference for specific type of interventions. How can we identify patterns of preference within a dataset? Can we identify groupings on the basis of several (categorical or continuous) variables that differentiate profiles optimally.
- This tutorial is based on the publication Priorities and preferences in humanitarian needs assessments -Their measurement by rating and ranking methods.
-Loading packages ## This function will retrieve the packae if they are not yet installed.</description>
+      <guid>/categories/prioritisation/</guid>
+      <description></description>
     </item>
-    
-    <item>
-      <title>Estimation of sectoral priorities: Borda Count &amp; Plackett-Luce model</title>
-      <link>/post/plackett-luce/</link>
-      <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/plackett-luce/</guid>
-      <description>Ratings and rankings account for the majority of data generated in the course of rapid key informant needs assessments during humanitarian emergencies. Using this information to develop consolidated need prioritisation comes with challenges. 
-Practically speaking, the method presented here can be used for dataset that includes questions such as
- what’s your first need? (select_one among different options)
-  what’s your second need? (select_one among different options)</description>
-    </item>
-    
   </channel>
 </rss>

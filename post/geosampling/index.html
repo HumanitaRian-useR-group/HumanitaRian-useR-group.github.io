@@ -1,0 +1,1361 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Using Gridded Population Data for Household Survey Sampling</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.74.3" />
+        
+
+
+        
+            <meta name="author" content="Hisham Galal">
+        
+        
+            
+                <meta name="description" content="The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Gridded Population Data for Household Survey Sampling"/>
+<meta name="twitter:description" content="Household surveys can deliver immense insight into the living conditions of affected populations. Their uptake by the humanitarian system, however, has been stalled by a multitude of logistical challenges, not least of which is the absence of up-to-date sampling frames. The issue is normally mitigated through the application of multi-stage cluster sampling in stable situations, but those require the presence of up-to-date population estimates at granular levels of administrative divisions."/>
+
+        <meta property="og:title" content="Using Gridded Population Data for Household Survey Sampling" />
+<meta property="og:description" content="Household surveys can deliver immense insight into the living conditions of affected populations. Their uptake by the humanitarian system, however, has been stalled by a multitude of logistical challenges, not least of which is the absence of up-to-date sampling frames. The issue is normally mitigated through the application of multi-stage cluster sampling in stable situations, but those require the presence of up-to-date population estimates at granular levels of administrative divisions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/geosampling/" />
+<meta property="article:published_time" content="2020-04-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-14T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Using Gridded Population Data for Household Survey Sampling">
+<meta itemprop="description" content="Household surveys can deliver immense insight into the living conditions of affected populations. Their uptake by the humanitarian system, however, has been stalled by a multitude of logistical challenges, not least of which is the absence of up-to-date sampling frames. The issue is normally mitigated through the application of multi-stage cluster sampling in stable situations, but those require the presence of up-to-date population estimates at granular levels of administrative divisions.">
+<meta itemprop="datePublished" content="2020-04-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-04-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3318">
+
+
+
+<meta itemprop="keywords" content="UNHCR,Hisham-Galal," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+      
+            <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+			  
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+        <h1><a href="/">post</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post/index.html">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-info-circle">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-database">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.r-bloggers.com/">
+                            <i class="fa fa-universal-access">&nbsp;</i>learn more with R-bloggers
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post/index.html">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-info-circle">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-database">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <h3>
+                                <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.r-bloggers.com/">
+                            <h3>
+                                <i class="fa fa-universal-access">&nbsp;</i>learn more with R-bloggers
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/anonymisation/">Anonymisation: Intrusion scenario and risk threshold</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-06-25'>
+                                    June 25, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/">Post</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-06-25'>
+                                    June 25, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/tidysampling/">Working with Survey Samples in the Tidyverse</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-05-29'>
+                                    May 29, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/geosampling/">Using Gridded Population Data for Household Survey Sampling</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-04-14'>
+                                    April 14, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/quick-tips-for-visualising-data/">Quick tips for visualising data (with R)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-04-02'>
+                                    April 2, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-19'>
+                                    March 19, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-02-23'>
+                                    February 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">See more</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2fgeosampling%2f&amp;text=Using%20Gridded%20Population%20Data%20for%20Household%20Survey%20Sampling&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2fgeosampling%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fgeosampling%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2fgeosampling%2f&amp;title=Using%20Gridded%20Population%20Data%20for%20Household%20Survey%20Sampling" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2fgeosampling%2f&amp;title=Using%20Gridded%20Population%20Data%20for%20Household%20Survey%20Sampling" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2fgeosampling%2f&amp;title=Using%20Gridded%20Population%20Data%20for%20Household%20Survey%20Sampling" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2fgeosampling%2f&amp;description=Using%20Gridded%20Population%20Data%20for%20Household%20Survey%20Sampling" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Hisham%20Galal&amp;body=%2fpost%2fgeosampling%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/geosampling/">Using Gridded Population Data for Household Survey Sampling</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        <time class="published"
+            datetime='2020-04-14 00:00:00 &#43;0000 UTC'>
+            April 14, 2020</time>
+        <span class="author">Hisham Galal</span>
+        
+            <p>16 minutes read</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  
+  <div>
+     
+ <div id="go-to-folding-div" style="display: inline-block;vertical-align: top;height: 1px;margin-top: -4em;"></div>
+ <div id="code-folding-buttons" class="btn-group pull-right">
+   <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast="">
+     <span>Show/Hide all code</span> 
+     <span class="caret"></span>
+   </button>
+   <ul class="dropdown-menu" style="min-width: 50px;">
+   <li><a id="rmd-show-all-code" href="#go-to-folding-div">Show All Code</a>
+   </li><li><a id="rmd-hide-all-code" href="#go-to-folding-div">Hide All Code</a></li>
+   </ul>
+ </div>
+ 
+
+    <br/>
+    <div id="content" class="article-entry">
+      
+<link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<p>Household surveys can deliver immense insight into the living conditions of affected populations. Their uptake by the humanitarian system, however, has been stalled by a multitude of logistical challenges, not least of which is the absence of up-to-date sampling frames. The issue is normally mitigated through the application of multi-stage cluster sampling in stable situations, but those require the presence of up-to-date population estimates at granular levels of administrative divisions. Information which is not always readily available in humanitarian settings where the mass scale of displacement and destruction can quickly render official maps and population figures out of touch with reality.</p>
+<!--MORE-->
+<div id="background" class="section level1">
+<h1>Background</h1>
+<p>The challenge with missing population data is not unique to humanitarian settings alone prompting research interest into the use of alternative data sources to fill in the gap for missing census records. With the growing availability of high-resolution satellite imagery coupled with recent advances in machine learning methods, organizations like <a href="https://www.worldpop.org/">WorldPop</a>, <a href="https://dataforgood.fb.com/tools/population-density-maps/">Facebook</a>, and the <a href="https://ghsl.jrc.ec.europa.eu/ghs_pop2019.php">EU’s JRC</a>, to name a few, have been able to produce extremely detailed population estimates for all countries across the globe. Those estimates are provided in the form of a fine grid overlaid on top of the target geographic area where the grid cells contain estimates of the population in each cell hence the name “gridded population data”.</p>
+<p>The idea of geospatial sampling is to use this kind of gridded population data to fill in for the missing sampling frame. While population grids may not be 100% perfect, <a href="https://blogs.worldbank.org/opendata/first-look-facebook-s-high-resolution-population-maps">independent verifications</a> have found them to be surprisingly accurate and they are definitely a step-up from not having household surveys or the use of non-probabilistic sampling methods.</p>
+<p>We’re going to use Syria as an example in this tutorial. A war-torn country where the official population figure of 26.5 million widely diverges from the UN Population Division’s 17.5 million estimate making it difficult to rely on official data for sampling purposes.</p>
+<p>Let’s first load up the necessary packages.</p>
+<pre class="r"><code>## This function will retrieve the packae if they are not yet installed.
+using &lt;- function(...) {
+    libs &lt;- unlist(list(...))
+    req &lt;- unlist(lapply(libs,require,character.only = TRUE))
+    need &lt;- libs[req == FALSE]
+    if (length(need) &gt; 0) { 
+        install.packages(need)
+        lapply(need,require,character.only = TRUE)
+    }
+}
+
+## Getting all necessary package
+using(&quot;tidyverse&quot;, &quot;osmdata&quot;, &quot;ggmap&quot;, &quot;OpenStreetMap&quot;, &quot;viridis&quot;, &quot;stars&quot;, &quot;sf&quot;)
+
+rm(using)</code></pre>
+<p>Next we’ll import <a href="https://www.worldpop.org/geodata/summary?id=29123">WorldPop’s 2020 UNPD-adjusted Syria population grid</a> with a cell resolution of 3 arc seconds (approx. 100 meters at the equator).</p>
+<pre class="r"><code># url &lt;- &quot;ftp://ftp.worldpop.org.uk/GIS/Population/Global_2000_2020/2020/SYR/syr_ppp_2020_UNadj.tif&quot;
+
+#ppp100m &lt;- read_stars(url) %&gt;% select(ppp = 1) # ppp stands for &quot;population per pixel&quot;
+file &lt;- paste0(getwd(),&quot;/syr_ppp_2020_UNadj.tif&quot;)
+ppp100m &lt;- read_stars(file) %&gt;% select(ppp = 1) </code></pre>
+<p>To pull in some satellite imagery for illustration purposes, there’s 2 options:</p>
+<ul>
+<li><p>Google Maps API with ggmap package. User shall first enabled billing on your own account in order to create their API <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">key</a></p></li>
+<li><p>Bing imagery using the OpenStreetMap package (no account required).</p></li>
+</ul>
+<p>to keep it simpler, the rest of the tutorial will use the second option.</p>
+<pre class="r"><code>#key &lt;- Sys.getenv(&quot;GMAPS_API_KEY&quot;) # Need to have this configured in .Rprofile first
+# as of mid-2018, registering with Google Cloud to obtain an API key is required to use any of Google&#39;s services, including get_googlemap. Usage and billing may apply
+## do not forget to enable the static maps API on google cloud to avoid message such as 
+# &quot;The Google Maps Platform server rejected your request. This API project is not authorized to use this API.&quot;
+## This will require you to first enabled billing on your own account
+#register_google(key)</code></pre>
+</div>
+<div id="delineating-populated-places" class="section level1">
+<h1>Delineating Populated Places</h1>
+<p>If gridded population data can substitute for missing census records, what about the problem of missing human settlement maps?</p>
+<p>Luckily, a recent proposal endorsed by the UN Statistical Commission’s 51st session allows for the delineation of cities, urban, and rural areas using gridded population data without the need for administrative boundary maps.</p>
+<p>The <a href="https://unstats.un.org/unsd/statcom/51st-session/documents/BG-Item3j-Recommendation-E.pdf">Degree of Urbanization</a> method, as it is known, starts with a population grid of 1 km^2 cells which are then clustered based on population density, contiguity, and population size to identify human settlement boundaries. The classification of grid cells/clusters is summarized in the following table:</p>
+<pre class="r"><code>douclass &lt;- 
+  tribble(
+    ~&quot;Class&quot;, ~&quot;Population/km^2&quot;, ~&quot;Total Population&quot;, ~&quot;Human Settlement&quot;, ~&quot;Common Name&quot;,
+    &quot;Urban center&quot;, &quot;&gt;= 1,500&quot;, &quot;&gt;= 50,000&quot;, TRUE, &quot;City&quot;,
+    &quot;Dense urban cluster&quot;, &quot;&gt;= 1,500&quot;, &quot;5,000 - 49,999&quot;, TRUE, &quot;Dense Town&quot;,
+    &quot;Semi-dense urban cluster&quot;, &quot;&gt;= 300&quot;, &quot;&gt;= 5,000&quot;, TRUE, &quot;Semi-dense Town&quot;,
+    &quot;Suburban or peri-urban cells&quot;, &quot;&gt;= 300&quot;, NA, FALSE, &quot;Suburban or peri-urban area&quot;,
+    &quot;Rural cluser&quot;, &quot;&gt;= 300&quot;, &quot;500 - 4,999&quot;, TRUE, &quot;Village&quot;,
+    &quot;Low density rural grid cells&quot;, &quot;&gt;= 50&quot;, NA, FALSE, &quot;Dispersed rural area&quot;,
+    &quot;Very low density rural grid cells&quot;, &quot;&lt; 50&quot;, NA, FALSE, &quot;Mostly uninhabited areas&quot;)
+
+douclass %&gt;% rmarkdown::paged_table()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Class"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Population/km^2"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Total Population"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Human Settlement"],"name":[4],"type":["lgl"],"align":["right"]},{"label":["Common Name"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Urban center","2":">= 1,500","3":">= 50,000","4":"TRUE","5":"City"},{"1":"Dense urban cluster","2":">= 1,500","3":"5,000 - 49,999","4":"TRUE","5":"Dense Town"},{"1":"Semi-dense urban cluster","2":">= 300","3":">= 5,000","4":"TRUE","5":"Semi-dense Town"},{"1":"Suburban or peri-urban cells","2":">= 300","3":"NA","4":"FALSE","5":"Suburban or peri-urban area"},{"1":"Rural cluser","2":">= 300","3":"500 - 4,999","4":"TRUE","5":"Village"},{"1":"Low density rural grid cells","2":">= 50","3":"NA","4":"FALSE","5":"Dispersed rural area"},{"1":"Very low density rural grid cells","2":"< 50","3":"NA","4":"FALSE","5":"Mostly uninhabited areas"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Do note that the use of “common name” here is somewhat misleading. According to the classification, an administrative unit should be designated as a city, for example, if the majority of its population resides in urban centers but the two are not meant to be synonymous. The distinction, however, is immaterial for our purposes because our objective is to identify populated places not to recover the exact (often arbitrary) boundaries of administrative units.</p>
+<p>Moving on, operationalizing the definition necessitates aggregating every 10x10 cells in our 100m x 100m population grid into a “supercell” of 1 km^2 each.</p>
+<pre class="r"><code># FIXME: the original raster is only 100m at the equator. That&#39;s about 85m in Syria because of Earth&#39;s curvature.
+# Need to reflect that below.
+ppp1km &lt;-
+  st_as_stars(
+    st_bbox(ppp100m),
+    dx = st_dimensions(ppp100m)$x$delta*10,
+    dy = st_dimensions(ppp100m)$y$delta*10) %&gt;%
+  st_warp(
+    src = ppp100m,
+    method = &quot;average&quot;,
+    use_gdal = TRUE)
+
+ppp1km &lt;- ppp1km %&gt;% select(ppp = 1) %&gt;% mutate(ppp = ppp*100)</code></pre>
+<p><strong><em>N.B.:</em></strong> This calculation actually under-estimates the population within 1km from the border because of the way <code>method="average"</code> weighs <code>NODATA</code> cells in the <code>src</code> raster. This should be fixed with the upcoming release of GDAL 3.1 which introduces <code>method="sum"</code> to handle similar use cases.</p>
+<p>Here’s what our gridded population map looks like.</p>
+<pre class="r"><code>ggplot() + 
+  geom_stars(data = ppp1km) +
+  scale_x_continuous(labels = function(x) { str_c(x, &quot;°&quot;, if_else(x &gt;= 0, &quot;E&quot;, &quot;W&quot;)) }) +
+  scale_y_continuous(labels = function(y) { str_c(y, &quot;°&quot;, if_else(y &gt;= 0, &quot;N&quot;, &quot;S&quot;)) }) +
+  #scale_fill_viridis_b(
+  scale_fill_viridis(option = &quot;B&quot;,
+    trans = &quot;log10&quot;,
+    breaks = 10^(0:3),
+    label = scales::label_comma(accuracy = 1),
+    direction = -1) +
+  theme_minimal() +
+  labs(
+    title = &quot;2020 Syria Population (UNPD-adjusted)&quot;,
+    fill = &quot;persons/km²&quot;,
+    x = NULL, y = NULL)</code></pre>
+<p><img src="/post/geosampling_files/figure-html/ppp1km_viz-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Now we can classify cells based on their Degree of Urbanization:</p>
+<pre class="r"><code>douclust &lt;- function(data, type, cellmin, popmin) {
+  data %&gt;% 
+    filter(ppp &gt;= cellmin) %&gt;% 
+    mutate(
+      cluster = 
+        st_disjoint(., .) %&gt;% as.dist() %&gt;% hclust(method = &quot;single&quot;) %&gt;% cutree(h = 0)) %&gt;% 
+    group_by(cluster) %&gt;% 
+    summarize(class = type, pop = sum(ppp)) %&gt;% 
+    filter(pop &gt;= popmin) %&gt;% 
+    select(-cluster)
+}
+
+ppp1km_sf &lt;- ppp1km %&gt;% st_as_sf()
+
+workingset &lt;- ppp1km_sf
+
+rural_vlow &lt;- 
+  workingset %&gt;% 
+  filter(ppp &lt; 50) %&gt;% 
+  summarize(class = &quot;Very low density rural grid cells&quot;, pop = sum(ppp))
+
+workingset &lt;- workingset %&gt;% filter(ppp &gt;= 50)
+
+urban_centers &lt;- workingset %&gt;% douclust(&quot;Urban center&quot;, 1500, 50000)
+
+urban_clusters &lt;- workingset %&gt;% douclust(&quot;Urban cluster&quot;, 300, 5000)
+
+workingset &lt;- workingset %&gt;% st_difference(st_union(urban_centers))
+
+urban_dense_clusters &lt;- workingset %&gt;% douclust(&quot;Dense urban cluster&quot;, 1500, 5000)
+
+workingset &lt;- workingset %&gt;% st_difference(st_union(urban_dense_clusters))
+
+urban_semidense_clusters &lt;- 
+  workingset %&gt;% 
+  douclust(&quot;Semi-dense urban cluster&quot;, 300, 5000) %&gt;% 
+  st_filter(
+    st_union(st_union(urban_centers), st_union(urban_dense_clusters)),
+    .predicate = negate(st_is_within_distance),
+    dist = units::set_units(2, km))
+
+workingset &lt;- workingset %&gt;% st_difference(st_union(urban_semidense_clusters))
+
+urban_suburban_cells &lt;- 
+  workingset %&gt;% 
+  st_filter(urban_clusters, .predicate = st_within) %&gt;% 
+  douclust(&quot;Suburban or peri-urban grid cells&quot;, 0, 0)
+
+workingset &lt;- workingset %&gt;% st_difference(st_union(urban_suburban_cells))
+
+rural_clusters &lt;- workingset %&gt;% douclust(&quot;Rural cluster&quot;, 300, 500)
+
+workingset &lt;- workingset %&gt;% st_difference(st_union(rural_clusters))
+
+rural_low &lt;- workingset %&gt;% summarize(class = &quot;Low density rural grid cells&quot;, pop = sum(ppp))
+
+rm(workingset)
+
+doumap &lt;- 
+  rbind(
+    urban_centers,
+    urban_dense_clusters, urban_semidense_clusters, urban_suburban_cells,
+    rural_clusters, rural_low, rural_vlow)</code></pre>
+<p>And here’s what our map looks like based on the Degree of Urbanization:</p>
+<pre class="r"><code>doumap %&gt;% 
+  ggplot() + 
+  geom_sf(aes(fill = as_factor(class)), color = NA) +
+  scale_x_continuous(labels = function(x) { str_c(x, &quot;°&quot;, if_else(x &gt;= 0, &quot;E&quot;, &quot;W&quot;)) }) +
+  scale_y_continuous(labels = function(y) { str_c(y, &quot;°&quot;, if_else(y &gt;= 0, &quot;N&quot;, &quot;S&quot;)) }) +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  labs(title = &quot;Degree of Urbanization&quot;, fill = NULL)</code></pre>
+<p><img src="/post/geosampling_files/figure-html/dou_viz-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>It may be difficult to see from the above map, but we’ve identified 8 cities, 185 towns, and 619 villages using this method. According to our mapping, 59% of the Syrian population lives in urban areas. Meantime, <a href="https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=SY&amp;year_high_desc=false">the World Bank puts the figure at 54%</a>. Close enough. This suggests that the Degree of Urbanization method has correctly picked up all major populated places as expected <em>and without the need for a pre-produced map of settlement boundaries</em>.</p>
+</div>
+<div id="geospatial-sampling" class="section level1">
+<h1>Geospatial Sampling</h1>
+<p>Armed with our population grid and populated places map, we now have the necessary ingredients for multi-stage cluster sampling. The only difference with geospatial sampling is that, instead of using census enumeration areas as sampling units as we normally would, we’re going to use the 1km x 1km supercells and the 100m x 100m cells as primary and secondary sampling units, respectively. Sampling is done using probability proportional to size where the measure of size is cell population. A third stage of sampling is also required to select dwellings within the secondary sampling units, by randomly drawing a point in the cell and choosing the nearest building, followed by a fourth and final stage in the field to select respondent units from multi-household dwellings.</p>
+<p>The beauty of R is that it allows us to do all this in just a few lines of code. <a href="https://r-spatial.github.io/sf/">Simple Features</a> let us manipulate geodata no differently from any regular tabular dataset without the need for specialized GIS software. To illustrate how this works, let’s say we were planning a needs assessment in Aleppo with a target sample of 1,000 households spread over 100 clusters of 10 households each.</p>
+<pre class="r"><code>set.seed(1)
+
+# Extract Aleppo knowing that it&#39;s the second largest city in Syria
+aleppo &lt;- urban_centers %&gt;% arrange(desc(pop)) %&gt;% slice(2)
+
+nclust &lt;- 100
+hh_per_clust &lt;- 10
+
+s &lt;- 
+  ppp1km_sf %&gt;% 
+  st_filter(aleppo, .predice = st_within) %&gt;% 
+  mutate(psuid = row_number()) %&gt;% 
+  sample_n(nclust, weight = .$ppp) %&gt;% 
+  rename(psupop = ppp, psugeometry = geometry) %&gt;% 
+  rowwise() %&gt;% 
+  mutate(
+    ssu = 
+      ppp100m %&gt;% 
+      st_crop(psugeometry) %&gt;% 
+      st_as_sf() %&gt;% 
+      mutate(ssuid = row_number()) %&gt;% 
+      sample_n(hh_per_clust, weight = .$ppp) %&gt;% 
+      rename(ssupop = ppp, ssugeometry = geometry) %&gt;% 
+      list()) %&gt;% 
+  unnest(ssu) %&gt;% 
+  st_as_sf(sf_column_name = &quot;ssugeometry&quot;) %&gt;% 
+  mutate(tsugeometry = st_sample(., rep(1, nrow(.))))</code></pre>
+<p>Or, for the more visually inclined, here’s what the primary sampling stage looks like:</p>
+<pre class="r"><code># Draw a random PSU to use as an example
+ex &lt;- 
+  s %&gt;% filter(psuid == sample(psuid, 1, prob = psupop)) %&gt;% st_set_geometry(&quot;psugeometry&quot;)
+
+## Extract bounding box to get bing imagery
+bbox &lt;- aleppo %&gt;%  st_bbox()
+
+## Extract imagery background
+map &lt;- openmap(c(bbox$ymax,bbox$xmin), c(bbox$ymin,bbox$xmax), 
+               zoom = 11,
+               type =  &quot;bing&quot; ,
+               mergeTiles = TRUE)
+
+
+
+## OSM CRS :: &quot;+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs&quot;
+map.latlon &lt;- openproj(map, projection = &quot;+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs&quot;)
+
+psubg &lt;- 
+  
+## option for google map background---   
+#   get_googlemap(
+#     center = aleppo %&gt;% st_centroid() %&gt;% st_coordinates(),
+#     zoom = 11,
+#     scale = 1,
+#     maptype = &quot;satellite&quot;)
+
+#psubg %&gt;% 
+  #ggmap() +
+  
+## Option for bing background
+  autoplot.OpenStreetMap(map.latlon)  +
+  geom_sf(aes(fill = ppp), inherit.aes = FALSE, alpha = .15, 
+          data = ppp1km_sf %&gt;% st_filter(aleppo, .predicate = st_within)) +
+  geom_sf(aes(geometry = psugeometry), inherit.aes = FALSE,
+          fill = NA, color = &quot;red&quot;, alpha = .15, 
+          data = s) +
+  geom_sf(aes(geometry = psugeometry), inherit.aes = FALSE,
+          color = &quot;blue&quot;, fill = NA, alpha = .15,
+          data = ex) +
+  scale_fill_viridis_c(labels = scales::comma) +
+  scale_x_continuous(labels = function(x) { str_c(x, &quot;°&quot;, if_else(x &gt;= 0, &quot;E&quot;, &quot;W&quot;)) }) +
+  scale_y_continuous(labels = function(y) { str_c(y, &quot;°&quot;, if_else(y &gt;= 0, &quot;N&quot;, &quot;S&quot;)) }) +
+  theme_minimal() +
+  labs(title = &quot;Primary Sampling Stage&quot;,
+       fill = &quot;persons/cell&quot;, caption = &quot;1 cell = 1km x 1km&quot;,
+       x = NULL, y = NULL)
+
+psubg</code></pre>
+<p><img src="/post/geosampling_files/figure-html/psu_viz-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>And here are the other two sampling stages (zooming in on the blue cell from above):</p>
+<pre class="r"><code>## Extract bounding box to get bing imagery
+bbox &lt;- ex %&gt;%  st_bbox()
+
+## Extract imagery background
+map &lt;- openmap(c(bbox$ymax,bbox$xmin), c(bbox$ymin,bbox$xmax), 
+               zoom = 16,
+               type =  &quot;bing&quot; ,
+               mergeTiles = TRUE)
+
+
+
+## OSM CRS :: &quot;+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs&quot;
+map.latlon &lt;- openproj(map, projection = &quot;+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs&quot;)
+
+
+ssubg &lt;- 
+  
+## option for google map background---   
+#   get_googlemap(
+#     center = ex %&gt;% st_union() %&gt;% st_centroid() %&gt;% st_coordinates(),
+#     zoom = 16,
+#     scale = 1,
+#     maptype = &quot;satellite&quot;)
+# 
+# ssubg %&gt;% 
+#   ggmap() +
+
+## Option for bing background  
+  
+  autoplot.OpenStreetMap(map.latlon)  +
+  
+  geom_sf(aes(fill = ppp), inherit.aes = FALSE, alpha = .15, 
+          data = ppp100m %&gt;% st_crop(ex) %&gt;% st_as_sf()) +
+  geom_sf(aes(geometry = ssugeometry), inherit.aes = FALSE,
+          fill = NA, color = &quot;red&quot;, alpha = .15, 
+          data = s %&gt;% st_filter(ex, .predicate = st_within)) +
+  geom_sf(aes(geometry = tsugeometry), inherit.aes = FALSE,
+          color = &quot;blue&quot;, size = 2,
+          data = s %&gt;% st_filter(ex, .predicate = st_within)) +
+  scale_fill_viridis_c(labels = scales::comma) +
+  scale_x_continuous(labels = function(x) { str_c(x, &quot;°&quot;, if_else(x &gt;= 0, &quot;E&quot;, &quot;W&quot;)) }) +
+  scale_y_continuous(labels = function(y) { str_c(y, &quot;°&quot;, if_else(y &gt;= 0, &quot;N&quot;, &quot;S&quot;)) }) +
+  theme_minimal() +
+  labs(title = &quot;Secondary &amp; Tertiary Sampling Stages&quot;,
+       fill = &quot;persons/cell&quot;, caption = &quot;1 cell = 100m x 100m&quot;,
+       x = NULL, y = NULL)
+
+ssubg</code></pre>
+<p><img src="/post/geosampling_files/figure-html/ssu_viz-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>The blue dots above represent the random locations chosen in the third sampling stage. The rational behind this extra step is to avoid introducing bias into the sample by leaving the selection of dwelling units to the discretion of the enumerators.</p>
+<p>One important implementation detail to note is the possibility that some of the sampled cells will have no dwellings in them. Machine learning methods aren’t perfect, and while errors cancel out in coarser grids, problems doesn’t cease to manifest at the more detailed levels. The way to deal with this is pretty much what we would do in any survey: enlarge our sample to account for likely non-response. It’s also possible to eyeball the sampled units against satellite imagery (as we have done here) to eliminate and replace empty cells before sending enumerators to the field.</p>
+<p>Once the sample selection process is complete, the GPS coordinates of the sampled dwellings can be loaded onto the enumerators’ mobile data collection devices so they can easily find their way in the field.</p>
+</div>
+<div id="calculating-weights" class="section level1">
+<h1>Calculating Weights</h1>
+<p>Last but not least, we need to calculate our sample’s design weights before we wrap up.</p>
+<p>The first and second stage inclusion probabilities are fairly straightforward:</p>
+<pre class="r"><code>s &lt;- s %&gt;% mutate(psup = psupop/aleppo$pop, ssup = ssupop/psupop)
+s %&gt;% 
+  select( ssupop,ssuid, psup,ssup) %&gt;% 
+  rmarkdown::paged_table()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["ssupop"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["ssuid"],"name":[2],"type":["int"],"align":["right"]},{"label":["psup"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ssup"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["ssugeometry"],"name":[5],"type":["S3: sfc_POLYGON"],"align":["right"]}],"data":[{"1":"63.120155","2":"24","3":"0.0033986664","4":"0.009873399","5":"<S3: sfc_POLYGON>"},{"1":"64.975777","2":"81","3":"0.0033986664","4":"0.010163659","5":"<S3: sfc_POLYGON>"},{"1":"65.386551","2":"64","3":"0.0033986664","4":"0.010227913","5":"<S3: sfc_POLYGON>"},{"1":"60.719852","2":"38","3":"0.0033986664","4":"0.009497938","5":"<S3: sfc_POLYGON>"},{"1":"63.246635","2":"45","3":"0.0033986664","4":"0.009893183","5":"<S3: sfc_POLYGON>"},{"1":"65.409668","2":"87","3":"0.0033986664","4":"0.010231529","5":"<S3: sfc_POLYGON>"},{"1":"65.784607","2":"96","3":"0.0033986664","4":"0.010290178","5":"<S3: sfc_POLYGON>"},{"1":"64.285912","2":"72","3":"0.0033986664","4":"0.010055749","5":"<S3: sfc_POLYGON>"},{"1":"61.649162","2":"5","3":"0.0033986664","4":"0.009643302","5":"<S3: sfc_POLYGON>"},{"1":"63.478855","2":"79","3":"0.0033986664","4":"0.009929507","5":"<S3: sfc_POLYGON>"},{"1":"38.560440","2":"75","3":"0.0032012635","4":"0.006403652","5":"<S3: sfc_POLYGON>"},{"1":"55.778156","2":"8","3":"0.0032012635","4":"0.009262962","5":"<S3: sfc_POLYGON>"},{"1":"68.706551","2":"41","3":"0.0032012635","4":"0.011409954","5":"<S3: sfc_POLYGON>"},{"1":"67.555779","2":"55","3":"0.0032012635","4":"0.011218847","5":"<S3: sfc_POLYGON>"},{"1":"71.870834","2":"14","3":"0.0032012635","4":"0.011935440","5":"<S3: sfc_POLYGON>"},{"1":"73.180542","2":"45","3":"0.0032012635","4":"0.012152940","5":"<S3: sfc_POLYGON>"},{"1":"55.839489","2":"51","3":"0.0032012635","4":"0.009273148","5":"<S3: sfc_POLYGON>"},{"1":"72.202110","2":"17","3":"0.0032012635","4":"0.011990454","5":"<S3: sfc_POLYGON>"},{"1":"66.955162","2":"98","3":"0.0032012635","4":"0.011119104","5":"<S3: sfc_POLYGON>"},{"1":"58.238571","2":"18","3":"0.0032012635","4":"0.009671558","5":"<S3: sfc_POLYGON>"},{"1":"8.683281","2":"23","3":"0.0023086266","4":"0.001999573","5":"<S3: sfc_POLYGON>"},{"1":"54.193718","2":"52","3":"0.0023086266","4":"0.012479650","5":"<S3: sfc_POLYGON>"},{"1":"54.205635","2":"53","3":"0.0023086266","4":"0.012482394","5":"<S3: sfc_POLYGON>"},{"1":"60.857174","2":"27","3":"0.0023086266","4":"0.014014101","5":"<S3: sfc_POLYGON>"},{"1":"45.508289","2":"93","3":"0.0023086266","4":"0.010479582","5":"<S3: sfc_POLYGON>"},{"1":"54.796581","2":"45","3":"0.0023086266","4":"0.012618477","5":"<S3: sfc_POLYGON>"},{"1":"53.800591","2":"62","3":"0.0023086266","4":"0.012389121","5":"<S3: sfc_POLYGON>"},{"1":"60.189644","2":"36","3":"0.0023086266","4":"0.013860383","5":"<S3: sfc_POLYGON>"},{"1":"59.380772","2":"37","3":"0.0023086266","4":"0.013674117","5":"<S3: sfc_POLYGON>"},{"1":"52.154095","2":"72","3":"0.0023086266","4":"0.012009969","5":"<S3: sfc_POLYGON>"},{"1":"21.225828","2":"61","3":"0.0008829234","4":"0.012780527","5":"<S3: sfc_POLYGON>"},{"1":"38.457928","2":"96","3":"0.0008829234","4":"0.023156344","5":"<S3: sfc_POLYGON>"},{"1":"38.986919","2":"92","3":"0.0008829234","4":"0.023474861","5":"<S3: sfc_POLYGON>"},{"1":"17.395082","2":"68","3":"0.0008829234","4":"0.010473953","5":"<S3: sfc_POLYGON>"},{"1":"6.008191","2":"31","3":"0.0008829234","4":"0.003617661","5":"<S3: sfc_POLYGON>"},{"1":"18.852272","2":"70","3":"0.0008829234","4":"0.011351358","5":"<S3: sfc_POLYGON>"},{"1":"21.713095","2":"63","3":"0.0008829234","4":"0.013073921","5":"<S3: sfc_POLYGON>"},{"1":"21.917334","2":"71","3":"0.0008829234","4":"0.013196897","5":"<S3: sfc_POLYGON>"},{"1":"3.529054","2":"7","3":"0.0008829234","4":"0.002124919","5":"<S3: sfc_POLYGON>"},{"1":"21.981192","2":"76","3":"0.0008829234","4":"0.013235347","5":"<S3: sfc_POLYGON>"},{"1":"65.263870","2":"63","3":"0.0034897369","4":"0.009942310","5":"<S3: sfc_POLYGON>"},{"1":"65.390663","2":"83","3":"0.0034897369","4":"0.009961626","5":"<S3: sfc_POLYGON>"},{"1":"66.935020","2":"12","3":"0.0034897369","4":"0.010196893","5":"<S3: sfc_POLYGON>"},{"1":"66.826447","2":"32","3":"0.0034897369","4":"0.010180353","5":"<S3: sfc_POLYGON>"},{"1":"65.190094","2":"35","3":"0.0034897369","4":"0.009931071","5":"<S3: sfc_POLYGON>"},{"1":"65.827141","2":"40","3":"0.0034897369","4":"0.010028119","5":"<S3: sfc_POLYGON>"},{"1":"67.173668","2":"88","3":"0.0034897369","4":"0.010233249","5":"<S3: sfc_POLYGON>"},{"1":"65.009087","2":"55","3":"0.0034897369","4":"0.009903496","5":"<S3: sfc_POLYGON>"},{"1":"67.309288","2":"86","3":"0.0034897369","4":"0.010253909","5":"<S3: sfc_POLYGON>"},{"1":"64.076675","2":"14","3":"0.0034897369","4":"0.009761452","5":"<S3: sfc_POLYGON>"},{"1":"18.009159","2":"56","3":"0.0009292630","4":"0.010302958","5":"<S3: sfc_POLYGON>"},{"1":"18.967474","2":"68","3":"0.0009292630","4":"0.010851205","5":"<S3: sfc_POLYGON>"},{"1":"23.573715","2":"34","3":"0.0009292630","4":"0.013486415","5":"<S3: sfc_POLYGON>"},{"1":"19.484711","2":"33","3":"0.0009292630","4":"0.011147114","5":"<S3: sfc_POLYGON>"},{"1":"19.338810","2":"26","3":"0.0009292630","4":"0.011063645","5":"<S3: sfc_POLYGON>"},{"1":"30.297432","2":"23","3":"0.0009292630","4":"0.017333023","5":"<S3: sfc_POLYGON>"},{"1":"19.098043","2":"28","3":"0.0009292630","4":"0.010925904","5":"<S3: sfc_POLYGON>"},{"1":"35.283443","2":"1","3":"0.0009292630","4":"0.020185497","5":"<S3: sfc_POLYGON>"},{"1":"23.933674","2":"15","3":"0.0009292630","4":"0.013692346","5":"<S3: sfc_POLYGON>"},{"1":"25.224659","2":"7","3":"0.0009292630","4":"0.014430912","5":"<S3: sfc_POLYGON>"},{"1":"14.661086","2":"95","3":"0.0006138412","4":"0.012697472","5":"<S3: sfc_POLYGON>"},{"1":"9.523527","2":"62","3":"0.0006138412","4":"0.008248005","5":"<S3: sfc_POLYGON>"},{"1":"13.735703","2":"50","3":"0.0006138412","4":"0.011896028","5":"<S3: sfc_POLYGON>"},{"1":"10.791372","2":"45","3":"0.0006138412","4":"0.009346043","5":"<S3: sfc_POLYGON>"},{"1":"9.751731","2":"24","3":"0.0006138412","4":"0.008445645","5":"<S3: sfc_POLYGON>"},{"1":"14.053630","2":"85","3":"0.0006138412","4":"0.012171374","5":"<S3: sfc_POLYGON>"},{"1":"23.297264","2":"80","3":"0.0006138412","4":"0.020176974","5":"<S3: sfc_POLYGON>"},{"1":"14.312386","2":"94","3":"0.0006138412","4":"0.012395474","5":"<S3: sfc_POLYGON>"},{"1":"11.225037","2":"34","3":"0.0006138412","4":"0.009721625","5":"<S3: sfc_POLYGON>"},{"1":"14.300426","2":"76","3":"0.0006138412","4":"0.012385116","5":"<S3: sfc_POLYGON>"},{"1":"32.574974","2":"90","3":"0.0019219904","4":"0.009010316","5":"<S3: sfc_POLYGON>"},{"1":"28.547771","2":"27","3":"0.0019219904","4":"0.007896382","5":"<S3: sfc_POLYGON>"},{"1":"28.109001","2":"38","3":"0.0019219904","4":"0.007775017","5":"<S3: sfc_POLYGON>"},{"1":"41.065434","2":"11","3":"0.0019219904","4":"0.011358797","5":"<S3: sfc_POLYGON>"},{"1":"41.186913","2":"56","3":"0.0019219904","4":"0.011392399","5":"<S3: sfc_POLYGON>"},{"1":"26.801081","2":"98","3":"0.0019219904","4":"0.007413243","5":"<S3: sfc_POLYGON>"},{"1":"32.364571","2":"35","3":"0.0019219904","4":"0.008952118","5":"<S3: sfc_POLYGON>"},{"1":"30.337017","2":"21","3":"0.0019219904","4":"0.008391292","5":"<S3: sfc_POLYGON>"},{"1":"34.285950","2":"92","3":"0.0019219904","4":"0.009483576","5":"<S3: sfc_POLYGON>"},{"1":"26.576633","2":"37","3":"0.0019219904","4":"0.007351160","5":"<S3: sfc_POLYGON>"},{"1":"52.121338","2":"17","3":"0.0021007914","4":"0.013189848","5":"<S3: sfc_POLYGON>"},{"1":"54.009434","2":"11","3":"0.0021007914","4":"0.013667650","5":"<S3: sfc_POLYGON>"},{"1":"22.605585","2":"89","3":"0.0021007914","4":"0.005720579","5":"<S3: sfc_POLYGON>"},{"1":"49.373367","2":"18","3":"0.0021007914","4":"0.012494445","5":"<S3: sfc_POLYGON>"},{"1":"25.088816","2":"61","3":"0.0021007914","4":"0.006348986","5":"<S3: sfc_POLYGON>"},{"1":"55.003563","2":"42","3":"0.0021007914","4":"0.013919225","5":"<S3: sfc_POLYGON>"},{"1":"38.069885","2":"66","3":"0.0021007914","4":"0.009633981","5":"<S3: sfc_POLYGON>"},{"1":"40.654587","2":"19","3":"0.0021007914","4":"0.010288067","5":"<S3: sfc_POLYGON>"},{"1":"18.685583","2":"81","3":"0.0021007914","4":"0.004728582","5":"<S3: sfc_POLYGON>"},{"1":"48.996048","2":"4","3":"0.0021007914","4":"0.012398961","5":"<S3: sfc_POLYGON>"},{"1":"66.933258","2":"21","3":"0.0037441207","4":"0.009503844","5":"<S3: sfc_POLYGON>"},{"1":"72.781059","2":"97","3":"0.0037441207","4":"0.010334172","5":"<S3: sfc_POLYGON>"},{"1":"77.357513","2":"69","3":"0.0037441207","4":"0.010983982","5":"<S3: sfc_POLYGON>"},{"1":"64.039024","2":"52","3":"0.0037441207","4":"0.009092892","5":"<S3: sfc_POLYGON>"},{"1":"73.769508","2":"96","3":"0.0037441207","4":"0.010474522","5":"<S3: sfc_POLYGON>"},{"1":"69.425995","2":"4","3":"0.0037441207","4":"0.009857787","5":"<S3: sfc_POLYGON>"},{"1":"77.046814","2":"59","3":"0.0037441207","4":"0.010939866","5":"<S3: sfc_POLYGON>"},{"1":"64.748222","2":"92","3":"0.0037441207","4":"0.009193591","5":"<S3: sfc_POLYGON>"},{"1":"73.293327","2":"26","3":"0.0037441207","4":"0.010406909","5":"<S3: sfc_POLYGON>"},{"1":"65.398903","2":"2","3":"0.0037441207","4":"0.009285981","5":"<S3: sfc_POLYGON>"},{"1":"73.713638","2":"36","3":"0.0034828539","4":"0.011251742","5":"<S3: sfc_POLYGON>"},{"1":"75.878563","2":"16","3":"0.0034828539","4":"0.011582198","5":"<S3: sfc_POLYGON>"},{"1":"67.349220","2":"33","3":"0.0034828539","4":"0.010280269","5":"<S3: sfc_POLYGON>"},{"1":"72.838486","2":"84","3":"0.0034828539","4":"0.011118157","5":"<S3: sfc_POLYGON>"},{"1":"76.545036","2":"6","3":"0.0034828539","4":"0.011683930","5":"<S3: sfc_POLYGON>"},{"1":"67.316597","2":"58","3":"0.0034828539","4":"0.010275289","5":"<S3: sfc_POLYGON>"},{"1":"65.495743","2":"45","3":"0.0034828539","4":"0.009997352","5":"<S3: sfc_POLYGON>"},{"1":"77.472755","2":"8","3":"0.0034828539","4":"0.011825538","5":"<S3: sfc_POLYGON>"},{"1":"73.325127","2":"37","3":"0.0034828539","4":"0.011192439","5":"<S3: sfc_POLYGON>"},{"1":"62.650059","2":"94","3":"0.0034828539","4":"0.009562983","5":"<S3: sfc_POLYGON>"},{"1":"52.780056","2":"36","3":"0.0035296624","4":"0.007949573","5":"<S3: sfc_POLYGON>"},{"1":"76.888206","2":"54","3":"0.0035296624","4":"0.011580671","5":"<S3: sfc_POLYGON>"},{"1":"63.724171","2":"49","3":"0.0035296624","4":"0.009597943","5":"<S3: sfc_POLYGON>"},{"1":"54.280300","2":"37","3":"0.0035296624","4":"0.008175536","5":"<S3: sfc_POLYGON>"},{"1":"62.812695","2":"1","3":"0.0035296624","4":"0.009460659","5":"<S3: sfc_POLYGON>"},{"1":"70.777763","2":"22","3":"0.0035296624","4":"0.010660334","5":"<S3: sfc_POLYGON>"},{"1":"67.539932","2":"67","3":"0.0035296624","4":"0.010172662","5":"<S3: sfc_POLYGON>"},{"1":"54.259644","2":"38","3":"0.0035296624","4":"0.008172424","5":"<S3: sfc_POLYGON>"},{"1":"54.543304","2":"48","3":"0.0035296624","4":"0.008215149","5":"<S3: sfc_POLYGON>"},{"1":"70.437134","2":"50","3":"0.0035296624","4":"0.010609029","5":"<S3: sfc_POLYGON>"},{"1":"51.372192","2":"92","3":"0.0017543702","4":"0.015567326","5":"<S3: sfc_POLYGON>"},{"1":"57.345592","2":"98","3":"0.0017543702","4":"0.017377446","5":"<S3: sfc_POLYGON>"},{"1":"46.423458","2":"65","3":"0.0017543702","4":"0.014067710","5":"<S3: sfc_POLYGON>"},{"1":"35.128838","2":"73","3":"0.0017543702","4":"0.010645099","5":"<S3: sfc_POLYGON>"},{"1":"19.580153","2":"22","3":"0.0017543702","4":"0.005933377","5":"<S3: sfc_POLYGON>"},{"1":"34.893646","2":"66","3":"0.0017543702","4":"0.010573829","5":"<S3: sfc_POLYGON>"},{"1":"49.209305","2":"77","3":"0.0017543702","4":"0.014911905","5":"<S3: sfc_POLYGON>"},{"1":"77.553497","2":"90","3":"0.0017543702","4":"0.023501052","5":"<S3: sfc_POLYGON>"},{"1":"36.700787","2":"94","3":"0.0017543702","4":"0.011121447","5":"<S3: sfc_POLYGON>"},{"1":"21.120884","2":"4","3":"0.0017543702","4":"0.006400266","5":"<S3: sfc_POLYGON>"},{"1":"62.593117","2":"35","3":"0.0031083346","4":"0.010705476","5":"<S3: sfc_POLYGON>"},{"1":"64.286255","2":"52","3":"0.0031083346","4":"0.010995058","5":"<S3: sfc_POLYGON>"},{"1":"62.146175","2":"39","3":"0.0031083346","4":"0.010629034","5":"<S3: sfc_POLYGON>"},{"1":"60.861729","2":"33","3":"0.0031083346","4":"0.010409352","5":"<S3: sfc_POLYGON>"},{"1":"62.052261","2":"24","3":"0.0031083346","4":"0.010612972","5":"<S3: sfc_POLYGON>"},{"1":"60.129910","2":"46","3":"0.0031083346","4":"0.010284186","5":"<S3: sfc_POLYGON>"},{"1":"59.997047","2":"56","3":"0.0031083346","4":"0.010261463","5":"<S3: sfc_POLYGON>"},{"1":"61.334602","2":"44","3":"0.0031083346","4":"0.010490228","5":"<S3: sfc_POLYGON>"},{"1":"61.965916","2":"53","3":"0.0031083346","4":"0.010598204","5":"<S3: sfc_POLYGON>"},{"1":"61.918949","2":"63","3":"0.0031083346","4":"0.010590171","5":"<S3: sfc_POLYGON>"},{"1":"33.972687","2":"42","3":"0.0014797047","4":"0.012205680","5":"<S3: sfc_POLYGON>"},{"1":"27.532850","2":"92","3":"0.0014797047","4":"0.009891981","5":"<S3: sfc_POLYGON>"},{"1":"19.419193","2":"48","3":"0.0014797047","4":"0.006976912","5":"<S3: sfc_POLYGON>"},{"1":"41.568214","2":"21","3":"0.0014797047","4":"0.014934595","5":"<S3: sfc_POLYGON>"},{"1":"30.079664","2":"13","3":"0.0014797047","4":"0.010806998","5":"<S3: sfc_POLYGON>"},{"1":"36.375717","2":"91","3":"0.0014797047","4":"0.013069039","5":"<S3: sfc_POLYGON>"},{"1":"28.908106","2":"63","3":"0.0014797047","4":"0.010386082","5":"<S3: sfc_POLYGON>"},{"1":"42.335270","2":"54","3":"0.0014797047","4":"0.015210182","5":"<S3: sfc_POLYGON>"},{"1":"28.554777","2":"79","3":"0.0014797047","4":"0.010259138","5":"<S3: sfc_POLYGON>"},{"1":"18.200665","2":"4","3":"0.0014797047","4":"0.006539120","5":"<S3: sfc_POLYGON>"},{"1":"43.818771","2":"11","3":"0.0026348260","4":"0.008841286","5":"<S3: sfc_POLYGON>"},{"1":"30.162983","2":"32","3":"0.0026348260","4":"0.006085966","5":"<S3: sfc_POLYGON>"},{"1":"60.762714","2":"96","3":"0.0026348260","4":"0.012260054","5":"<S3: sfc_POLYGON>"},{"1":"49.776970","2":"57","3":"0.0026348260","4":"0.010043467","5":"<S3: sfc_POLYGON>"},{"1":"60.497112","2":"76","3":"0.0026348260","4":"0.012206464","5":"<S3: sfc_POLYGON>"},{"1":"72.588730","2":"39","3":"0.0026348260","4":"0.014646182","5":"<S3: sfc_POLYGON>"},{"1":"66.092308","2":"99","3":"0.0026348260","4":"0.013335403","5":"<S3: sfc_POLYGON>"},{"1":"56.804295","2":"2","3":"0.0026348260","4":"0.011461366","5":"<S3: sfc_POLYGON>"},{"1":"62.561333","2":"38","3":"0.0026348260","4":"0.012622960","5":"<S3: sfc_POLYGON>"},{"1":"26.980747","2":"63","3":"0.0026348260","4":"0.005443888","5":"<S3: sfc_POLYGON>"},{"1":"35.769089","2":"29","3":"0.0016755096","4":"0.011349275","5":"<S3: sfc_POLYGON>"},{"1":"39.535957","2":"1","3":"0.0016755096","4":"0.012544475","5":"<S3: sfc_POLYGON>"},{"1":"41.371006","2":"73","3":"0.0016755096","4":"0.013126723","5":"<S3: sfc_POLYGON>"},{"1":"25.096292","2":"9","3":"0.0016755096","4":"0.007962873","5":"<S3: sfc_POLYGON>"},{"1":"27.754309","2":"66","3":"0.0016755096","4":"0.008806242","5":"<S3: sfc_POLYGON>"},{"1":"44.592575","2":"48","3":"0.0016755096","4":"0.014148903","5":"<S3: sfc_POLYGON>"},{"1":"46.891666","2":"63","3":"0.0016755096","4":"0.014878388","5":"<S3: sfc_POLYGON>"},{"1":"26.146265","2":"14","3":"0.0016755096","4":"0.008296022","5":"<S3: sfc_POLYGON>"},{"1":"31.249071","2":"35","3":"0.0016755096","4":"0.009915105","5":"<S3: sfc_POLYGON>"},{"1":"44.457546","2":"54","3":"0.0016755096","4":"0.014106060","5":"<S3: sfc_POLYGON>"},{"1":"6.879511","2":"94","3":"0.0002102717","4":"0.017393381","5":"<S3: sfc_POLYGON>"},{"1":"5.306700","2":"82","3":"0.0002102717","4":"0.013416863","5":"<S3: sfc_POLYGON>"},{"1":"4.222538","2":"75","3":"0.0002102717","4":"0.010675790","5":"<S3: sfc_POLYGON>"},{"1":"5.224190","2":"80","3":"0.0002102717","4":"0.013208253","5":"<S3: sfc_POLYGON>"},{"1":"4.383019","2":"86","3":"0.0002102717","4":"0.011081532","5":"<S3: sfc_POLYGON>"},{"1":"4.635233","2":"29","3":"0.0002102717","4":"0.011719201","5":"<S3: sfc_POLYGON>"},{"1":"4.406084","2":"39","3":"0.0002102717","4":"0.011139846","5":"<S3: sfc_POLYGON>"},{"1":"5.186701","2":"60","3":"0.0002102717","4":"0.013113471","5":"<S3: sfc_POLYGON>"},{"1":"3.987244","2":"69","3":"0.0002102717","4":"0.010080898","5":"<S3: sfc_POLYGON>"},{"1":"3.299792","2":"35","3":"0.0002102717","4":"0.008342822","5":"<S3: sfc_POLYGON>"},{"1":"67.882980","2":"22","3":"0.0031385331","4":"0.011498504","5":"<S3: sfc_POLYGON>"},{"1":"62.996670","2":"14","3":"0.0031385331","4":"0.010670826","5":"<S3: sfc_POLYGON>"},{"1":"50.767033","2":"43","3":"0.0031385331","4":"0.008599283","5":"<S3: sfc_POLYGON>"},{"1":"65.042603","2":"89","3":"0.0031385331","4":"0.011017381","5":"<S3: sfc_POLYGON>"},{"1":"66.418213","2":"90","3":"0.0031385331","4":"0.011250391","5":"<S3: sfc_POLYGON>"},{"1":"65.824783","2":"78","3":"0.0031385331","4":"0.011149872","5":"<S3: sfc_POLYGON>"},{"1":"65.197296","2":"75","3":"0.0031385331","4":"0.011043584","5":"<S3: sfc_POLYGON>"},{"1":"65.766632","2":"66","3":"0.0031385331","4":"0.011140022","5":"<S3: sfc_POLYGON>"},{"1":"65.844093","2":"98","3":"0.0031385331","4":"0.011153143","5":"<S3: sfc_POLYGON>"},{"1":"65.377129","2":"56","3":"0.0031385331","4":"0.011074045","5":"<S3: sfc_POLYGON>"},{"1":"43.413101","2":"89","3":"0.0014341281","4":"0.016093111","5":"<S3: sfc_POLYGON>"},{"1":"52.060806","2":"99","3":"0.0014341281","4":"0.019298790","5":"<S3: sfc_POLYGON>"},{"1":"6.424524","2":"70","3":"0.0014341281","4":"0.002381553","5":"<S3: sfc_POLYGON>"},{"1":"39.735840","2":"91","3":"0.0014341281","4":"0.014729961","5":"<S3: sfc_POLYGON>"},{"1":"32.544323","2":"90","3":"0.0014341281","4":"0.012064086","5":"<S3: sfc_POLYGON>"},{"1":"26.978006","2":"27","3":"0.0014341281","4":"0.010000669","5":"<S3: sfc_POLYGON>"},{"1":"52.410561","2":"100","3":"0.0014341281","4":"0.019428443","5":"<S3: sfc_POLYGON>"},{"1":"51.293114","2":"95","3":"0.0014341281","4":"0.019014209","5":"<S3: sfc_POLYGON>"},{"1":"55.390034","2":"96","3":"0.0014341281","4":"0.020532925","5":"<S3: sfc_POLYGON>"},{"1":"14.563927","2":"22","3":"0.0014341281","4":"0.005398805","5":"<S3: sfc_POLYGON>"},{"1":"15.820064","2":"17","3":"0.0006643225","4":"0.012660079","5":"<S3: sfc_POLYGON>"},{"1":"28.315008","2":"51","3":"0.0006643225","4":"0.022659215","5":"<S3: sfc_POLYGON>"},{"1":"17.113657","2":"13","3":"0.0006643225","4":"0.013695283","5":"<S3: sfc_POLYGON>"},{"1":"17.445297","2":"16","3":"0.0006643225","4":"0.013960679","5":"<S3: sfc_POLYGON>"},{"1":"18.838472","2":"34","3":"0.0006643225","4":"0.015075574","5":"<S3: sfc_POLYGON>"},{"1":"3.362803","2":"99","3":"0.0006643225","4":"0.002691098","5":"<S3: sfc_POLYGON>"},{"1":"26.744326","2":"43","3":"0.0006643225","4":"0.021402270","5":"<S3: sfc_POLYGON>"},{"1":"7.402184","2":"65","3":"0.0006643225","4":"0.005923632","5":"<S3: sfc_POLYGON>"},{"1":"29.881216","2":"31","3":"0.0006643225","4":"0.023912581","5":"<S3: sfc_POLYGON>"},{"1":"17.887327","2":"45","3":"0.0006643225","4":"0.014314416","5":"<S3: sfc_POLYGON>"},{"1":"66.914330","2":"71","3":"0.0034737554","4":"0.010240639","5":"<S3: sfc_POLYGON>"},{"1":"66.749893","2":"83","3":"0.0034737554","4":"0.010215473","5":"<S3: sfc_POLYGON>"},{"1":"63.676247","2":"55","3":"0.0034737554","4":"0.009745079","5":"<S3: sfc_POLYGON>"},{"1":"64.577950","2":"61","3":"0.0034737554","4":"0.009883077","5":"<S3: sfc_POLYGON>"},{"1":"66.578255","2":"23","3":"0.0034737554","4":"0.010189205","5":"<S3: sfc_POLYGON>"},{"1":"65.492989","2":"5","3":"0.0034737554","4":"0.010023115","5":"<S3: sfc_POLYGON>"},{"1":"67.044975","2":"96","3":"0.0034737554","4":"0.010260633","5":"<S3: sfc_POLYGON>"},{"1":"66.307198","2":"13","3":"0.0034737554","4":"0.010147723","5":"<S3: sfc_POLYGON>"},{"1":"62.119972","2":"49","3":"0.0034737554","4":"0.009506905","5":"<S3: sfc_POLYGON>"},{"1":"64.821297","2":"36","3":"0.0034737554","4":"0.009920319","5":"<S3: sfc_POLYGON>"},{"1":"31.315546","2":"46","3":"0.0019422189","4":"0.008571740","5":"<S3: sfc_POLYGON>"},{"1":"46.063866","2":"86","3":"0.0019422189","4":"0.012608672","5":"<S3: sfc_POLYGON>"},{"1":"41.814724","2":"70","3":"0.0019422189","4":"0.011445591","5":"<S3: sfc_POLYGON>"},{"1":"22.462786","2":"21","3":"0.0019422189","4":"0.006148548","5":"<S3: sfc_POLYGON>"},{"1":"29.506788","2":"49","3":"0.0019422189","4":"0.008076644","5":"<S3: sfc_POLYGON>"},{"1":"25.369087","2":"51","3":"0.0019422189","4":"0.006944066","5":"<S3: sfc_POLYGON>"},{"1":"30.228146","2":"24","3":"0.0019422189","4":"0.008274095","5":"<S3: sfc_POLYGON>"},{"1":"30.424053","2":"84","3":"0.0019422189","4":"0.008327719","5":"<S3: sfc_POLYGON>"},{"1":"48.053776","2":"8","3":"0.0019422189","4":"0.013153354","5":"<S3: sfc_POLYGON>"},{"1":"30.583445","2":"64","3":"0.0019422189","4":"0.008371348","5":"<S3: sfc_POLYGON>"},{"1":"64.281059","2":"40","3":"0.0036098932","4":"0.009466639","5":"<S3: sfc_POLYGON>"},{"1":"68.872749","2":"51","3":"0.0036098932","4":"0.010142855","5":"<S3: sfc_POLYGON>"},{"1":"68.586273","2":"75","3":"0.0036098932","4":"0.010100666","5":"<S3: sfc_POLYGON>"},{"1":"66.430779","2":"70","3":"0.0036098932","4":"0.009783227","5":"<S3: sfc_POLYGON>"},{"1":"71.639877","2":"82","3":"0.0036098932","4":"0.010550368","5":"<S3: sfc_POLYGON>"},{"1":"68.739304","2":"64","3":"0.0036098932","4":"0.010123202","5":"<S3: sfc_POLYGON>"},{"1":"68.081955","2":"48","3":"0.0036098932","4":"0.010026395","5":"<S3: sfc_POLYGON>"},{"1":"69.546227","2":"71","3":"0.0036098932","4":"0.010242038","5":"<S3: sfc_POLYGON>"},{"1":"67.322136","2":"1","3":"0.0036098932","4":"0.009914497","5":"<S3: sfc_POLYGON>"},{"1":"64.889679","2":"46","3":"0.0036098932","4":"0.009556270","5":"<S3: sfc_POLYGON>"},{"1":"61.801819","2":"76","3":"0.0033928489","4":"0.009683757","5":"<S3: sfc_POLYGON>"},{"1":"65.252396","2":"14","3":"0.0033928489","4":"0.010224430","5":"<S3: sfc_POLYGON>"},{"1":"63.603447","2":"46","3":"0.0033928489","4":"0.009966055","5":"<S3: sfc_POLYGON>"},{"1":"64.274963","2":"49","3":"0.0033928489","4":"0.010071275","5":"<S3: sfc_POLYGON>"},{"1":"62.838707","2":"87","3":"0.0033928489","4":"0.009846228","5":"<S3: sfc_POLYGON>"},{"1":"64.949974","2":"37","3":"0.0033928489","4":"0.010177043","5":"<S3: sfc_POLYGON>"},{"1":"63.860065","2":"45","3":"0.0033928489","4":"0.010006265","5":"<S3: sfc_POLYGON>"},{"1":"65.378708","2":"7","3":"0.0033928489","4":"0.010244222","5":"<S3: sfc_POLYGON>"},{"1":"64.292076","2":"4","3":"0.0033928489","4":"0.010073957","5":"<S3: sfc_POLYGON>"},{"1":"62.304440","2":"92","3":"0.0033928489","4":"0.009762513","5":"<S3: sfc_POLYGON>"},{"1":"64.297661","2":"26","3":"0.0030849082","4":"0.011080519","5":"<S3: sfc_POLYGON>"},{"1":"74.439941","2":"31","3":"0.0030849082","4":"0.012828354","5":"<S3: sfc_POLYGON>"},{"1":"51.447533","2":"79","3":"0.0030849082","4":"0.008866035","5":"<S3: sfc_POLYGON>"},{"1":"66.507904","2":"6","3":"0.0030849082","4":"0.011461413","5":"<S3: sfc_POLYGON>"},{"1":"29.563753","2":"95","3":"0.0030849082","4":"0.005094769","5":"<S3: sfc_POLYGON>"},{"1":"71.342506","2":"21","3":"0.0030849082","4":"0.012294568","5":"<S3: sfc_POLYGON>"},{"1":"47.415195","2":"86","3":"0.0030849082","4":"0.008171136","5":"<S3: sfc_POLYGON>"},{"1":"74.144562","2":"37","3":"0.0030849082","4":"0.012777451","5":"<S3: sfc_POLYGON>"},{"1":"46.358326","2":"82","3":"0.0030849082","4":"0.007989004","5":"<S3: sfc_POLYGON>"},{"1":"64.292313","2":"16","3":"0.0030849082","4":"0.011079597","5":"<S3: sfc_POLYGON>"},{"1":"78.992134","2":"24","3":"0.0039464003","4":"0.010641182","5":"<S3: sfc_POLYGON>"},{"1":"75.994240","2":"47","3":"0.0039464003","4":"0.010237330","5":"<S3: sfc_POLYGON>"},{"1":"71.556976","2":"76","3":"0.0039464003","4":"0.009639577","5":"<S3: sfc_POLYGON>"},{"1":"76.562256","2":"27","3":"0.0039464003","4":"0.010313848","5":"<S3: sfc_POLYGON>"},{"1":"72.684830","2":"3","3":"0.0039464003","4":"0.009791513","5":"<S3: sfc_POLYGON>"},{"1":"71.612015","2":"77","3":"0.0039464003","4":"0.009646992","5":"<S3: sfc_POLYGON>"},{"1":"79.988152","2":"23","3":"0.0039464003","4":"0.010775357","5":"<S3: sfc_POLYGON>"},{"1":"72.030785","2":"83","3":"0.0039464003","4":"0.009703405","5":"<S3: sfc_POLYGON>"},{"1":"72.075409","2":"9","3":"0.0039464003","4":"0.009709416","5":"<S3: sfc_POLYGON>"},{"1":"73.835403","2":"57","3":"0.0039464003","4":"0.009946509","5":"<S3: sfc_POLYGON>"},{"1":"78.428627","2":"41","3":"0.0030949522","4":"0.013471868","5":"<S3: sfc_POLYGON>"},{"1":"74.993515","2":"91","3":"0.0030949522","4":"0.012881811","5":"<S3: sfc_POLYGON>"},{"1":"30.281427","2":"19","3":"0.0030949522","4":"0.005201511","5":"<S3: sfc_POLYGON>"},{"1":"80.763756","2":"44","3":"0.0030949522","4":"0.013872978","5":"<S3: sfc_POLYGON>"},{"1":"80.919182","2":"14","3":"0.0030949522","4":"0.013899676","5":"<S3: sfc_POLYGON>"},{"1":"78.512756","2":"2","3":"0.0030949522","4":"0.013486319","5":"<S3: sfc_POLYGON>"},{"1":"79.543640","2":"4","3":"0.0030949522","4":"0.013663396","5":"<S3: sfc_POLYGON>"},{"1":"35.992619","2":"78","3":"0.0030949522","4":"0.006182536","5":"<S3: sfc_POLYGON>"},{"1":"81.415894","2":"52","3":"0.0030949522","4":"0.013984998","5":"<S3: sfc_POLYGON>"},{"1":"77.289337","2":"15","3":"0.0030949522","4":"0.013276169","5":"<S3: sfc_POLYGON>"},{"1":"23.670307","2":"74","3":"0.0010738106","4":"0.011718806","5":"<S3: sfc_POLYGON>"},{"1":"18.127764","2":"33","3":"0.0010738106","4":"0.008974777","5":"<S3: sfc_POLYGON>"},{"1":"16.250013","2":"23","3":"0.0010738106","4":"0.008045132","5":"<S3: sfc_POLYGON>"},{"1":"10.786123","2":"50","3":"0.0010738106","4":"0.005340044","5":"<S3: sfc_POLYGON>"},{"1":"36.050053","2":"95","3":"0.0010738106","4":"0.017847827","5":"<S3: sfc_POLYGON>"},{"1":"34.573524","2":"51","3":"0.0010738106","4":"0.017116821","5":"<S3: sfc_POLYGON>"},{"1":"14.358917","2":"100","3":"0.0010738106","4":"0.007108879","5":"<S3: sfc_POLYGON>"},{"1":"13.575469","2":"58","3":"0.0010738106","4":"0.006721006","5":"<S3: sfc_POLYGON>"},{"1":"54.075619","2":"61","3":"0.0010738106","4":"0.026772008","5":"<S3: sfc_POLYGON>"},{"1":"11.488488","2":"10","3":"0.0010738106","4":"0.005687774","5":"<S3: sfc_POLYGON>"},{"1":"77.393974","2":"57","3":"0.0032676315","4":"0.012591609","5":"<S3: sfc_POLYGON>"},{"1":"78.083672","2":"75","3":"0.0032676315","4":"0.012703819","5":"<S3: sfc_POLYGON>"},{"1":"41.643574","2":"19","3":"0.0032676315","4":"0.006775199","5":"<S3: sfc_POLYGON>"},{"1":"66.069824","2":"11","3":"0.0032676315","4":"0.010749227","5":"<S3: sfc_POLYGON>"},{"1":"77.109009","2":"77","3":"0.0032676315","4":"0.012545247","5":"<S3: sfc_POLYGON>"},{"1":"70.991013","2":"3","3":"0.0032676315","4":"0.011549879","5":"<S3: sfc_POLYGON>"},{"1":"59.786938","2":"46","3":"0.0032676315","4":"0.009727033","5":"<S3: sfc_POLYGON>"},{"1":"73.534622","2":"88","3":"0.0032676315","4":"0.011963712","5":"<S3: sfc_POLYGON>"},{"1":"70.982468","2":"37","3":"0.0032676315","4":"0.011548489","5":"<S3: sfc_POLYGON>"},{"1":"77.152672","2":"74","3":"0.0032676315","4":"0.012552350","5":"<S3: sfc_POLYGON>"},{"1":"48.012707","2":"28","3":"0.0026474172","4":"0.009641419","5":"<S3: sfc_POLYGON>"},{"1":"71.166306","2":"69","3":"0.0026474172","4":"0.014290887","5":"<S3: sfc_POLYGON>"},{"1":"28.665962","2":"12","3":"0.0026474172","4":"0.005756404","5":"<S3: sfc_POLYGON>"},{"1":"31.874636","2":"72","3":"0.0026474172","4":"0.006400737","5":"<S3: sfc_POLYGON>"},{"1":"29.442757","2":"7","3":"0.0026474172","4":"0.005912392","5":"<S3: sfc_POLYGON>"},{"1":"44.375866","2":"33","3":"0.0026474172","4":"0.008911106","5":"<S3: sfc_POLYGON>"},{"1":"64.564934","2":"40","3":"0.0026474172","4":"0.012965267","5":"<S3: sfc_POLYGON>"},{"1":"40.352627","2":"19","3":"0.0026474172","4":"0.008103200","5":"<S3: sfc_POLYGON>"},{"1":"78.112572","2":"100","3":"0.0026474172","4":"0.015685765","5":"<S3: sfc_POLYGON>"},{"1":"29.890375","2":"22","3":"0.0026474172","4":"0.006002278","5":"<S3: sfc_POLYGON>"},{"1":"18.722717","2":"90","3":"0.0022035214","4":"0.004517090","5":"<S3: sfc_POLYGON>"},{"1":"59.050411","2":"37","3":"0.0022035214","4":"0.014246652","5":"<S3: sfc_POLYGON>"},{"1":"32.585728","2":"53","3":"0.0022035214","4":"0.007861715","5":"<S3: sfc_POLYGON>"},{"1":"31.474463","2":"11","3":"0.0022035214","4":"0.007593609","5":"<S3: sfc_POLYGON>"},{"1":"34.475986","2":"54","3":"0.0022035214","4":"0.008317764","5":"<S3: sfc_POLYGON>"},{"1":"48.827236","2":"45","3":"0.0022035214","4":"0.011780183","5":"<S3: sfc_POLYGON>"},{"1":"47.918514","2":"3","3":"0.0022035214","4":"0.011560942","5":"<S3: sfc_POLYGON>"},{"1":"61.541790","2":"25","3":"0.0022035214","4":"0.014847728","5":"<S3: sfc_POLYGON>"},{"1":"34.046066","2":"67","3":"0.0022035214","4":"0.008214040","5":"<S3: sfc_POLYGON>"},{"1":"28.760622","2":"32","3":"0.0022035214","4":"0.006938861","5":"<S3: sfc_POLYGON>"},{"1":"55.179337","2":"89","3":"0.0026090958","4":"0.011243295","5":"<S3: sfc_POLYGON>"},{"1":"52.382843","2":"48","3":"0.0026090958","4":"0.010673484","5":"<S3: sfc_POLYGON>"},{"1":"47.048855","2":"15","3":"0.0026090958","4":"0.009586635","5":"<S3: sfc_POLYGON>"},{"1":"60.182426","2":"45","3":"0.0026090958","4":"0.012262720","5":"<S3: sfc_POLYGON>"},{"1":"55.671440","2":"72","3":"0.0026090958","4":"0.011343566","5":"<S3: sfc_POLYGON>"},{"1":"55.320976","2":"65","3":"0.0026090958","4":"0.011272155","5":"<S3: sfc_POLYGON>"},{"1":"60.631622","2":"26","3":"0.0026090958","4":"0.012354248","5":"<S3: sfc_POLYGON>"},{"1":"36.537884","2":"59","3":"0.0026090958","4":"0.007444928","5":"<S3: sfc_POLYGON>"},{"1":"39.646725","2":"76","3":"0.0026090958","4":"0.008078383","5":"<S3: sfc_POLYGON>"},{"1":"38.662693","2":"78","3":"0.0026090958","4":"0.007877878","5":"<S3: sfc_POLYGON>"},{"1":"41.610600","2":"17","3":"0.0035083624","4":"0.006305313","5":"<S3: sfc_POLYGON>"},{"1":"79.671471","2":"70","3":"0.0035083624","4":"0.012072731","5":"<S3: sfc_POLYGON>"},{"1":"76.475342","2":"86","3":"0.0035083624","4":"0.011588417","5":"<S3: sfc_POLYGON>"},{"1":"75.107201","2":"95","3":"0.0035083624","4":"0.011381101","5":"<S3: sfc_POLYGON>"},{"1":"78.616661","2":"84","3":"0.0035083624","4":"0.011912895","5":"<S3: sfc_POLYGON>"},{"1":"65.107140","2":"32","3":"0.0035083624","4":"0.009865778","5":"<S3: sfc_POLYGON>"},{"1":"70.531326","2":"36","3":"0.0035083624","4":"0.010687712","5":"<S3: sfc_POLYGON>"},{"1":"79.985443","2":"69","3":"0.0035083624","4":"0.012120308","5":"<S3: sfc_POLYGON>"},{"1":"75.503098","2":"66","3":"0.0035083624","4":"0.011441092","5":"<S3: sfc_POLYGON>"},{"1":"41.698723","2":"18","3":"0.0035083624","4":"0.006318667","5":"<S3: sfc_POLYGON>"},{"1":"54.432953","2":"12","3":"0.0012331081","4":"0.023467557","5":"<S3: sfc_POLYGON>"},{"1":"33.909611","2":"52","3":"0.0012331081","4":"0.014619374","5":"<S3: sfc_POLYGON>"},{"1":"21.949232","2":"17","3":"0.0012331081","4":"0.009462923","5":"<S3: sfc_POLYGON>"},{"1":"18.510151","2":"54","3":"0.0012331081","4":"0.007980240","5":"<S3: sfc_POLYGON>"},{"1":"42.562374","2":"22","3":"0.0012331081","4":"0.018349821","5":"<S3: sfc_POLYGON>"},{"1":"25.810574","2":"15","3":"0.0012331081","4":"0.011127655","5":"<S3: sfc_POLYGON>"},{"1":"28.617949","2":"6","3":"0.0012331081","4":"0.012337992","5":"<S3: sfc_POLYGON>"},{"1":"14.389832","2":"69","3":"0.0012331081","4":"0.006203856","5":"<S3: sfc_POLYGON>"},{"1":"51.721649","2":"1","3":"0.0012331081","4":"0.022298639","5":"<S3: sfc_POLYGON>"},{"1":"53.576603","2":"2","3":"0.0012331081","4":"0.023098361","5":"<S3: sfc_POLYGON>"},{"1":"15.314283","2":"10","3":"0.0018105234","4":"0.004496760","5":"<S3: sfc_POLYGON>"},{"1":"41.983437","2":"65","3":"0.0018105234","4":"0.012327670","5":"<S3: sfc_POLYGON>"},{"1":"45.636501","2":"85","3":"0.0018105234","4":"0.013400326","5":"<S3: sfc_POLYGON>"},{"1":"59.015846","2":"11","3":"0.0018105234","4":"0.017328926","5":"<S3: sfc_POLYGON>"},{"1":"65.747131","2":"31","3":"0.0018105234","4":"0.019305445","5":"<S3: sfc_POLYGON>"},{"1":"32.268257","2":"76","3":"0.0018105234","4":"0.009474985","5":"<S3: sfc_POLYGON>"},{"1":"36.049461","2":"73","3":"0.0018105234","4":"0.010585266","5":"<S3: sfc_POLYGON>"},{"1":"14.438760","2":"60","3":"0.0018105234","4":"0.004239678","5":"<S3: sfc_POLYGON>"},{"1":"35.453907","2":"97","3":"0.0018105234","4":"0.010410393","5":"<S3: sfc_POLYGON>"},{"1":"62.962181","2":"21","3":"0.0018105234","4":"0.018487695","5":"<S3: sfc_POLYGON>"},{"1":"43.942146","2":"37","3":"0.0013546908","4":"0.017244406","5":"<S3: sfc_POLYGON>"},{"1":"32.876129","2":"5","3":"0.0013546908","4":"0.012901721","5":"<S3: sfc_POLYGON>"},{"1":"52.677372","2":"38","3":"0.0013546908","4":"0.020672408","5":"<S3: sfc_POLYGON>"},{"1":"33.380848","2":"35","3":"0.0013546908","4":"0.013099790","5":"<S3: sfc_POLYGON>"},{"1":"41.419903","2":"30","3":"0.0013546908","4":"0.016254591","5":"<S3: sfc_POLYGON>"},{"1":"13.858368","2":"72","3":"0.0013546908","4":"0.005438499","5":"<S3: sfc_POLYGON>"},{"1":"18.280949","2":"77","3":"0.0013546908","4":"0.007174071","5":"<S3: sfc_POLYGON>"},{"1":"43.010468","2":"50","3":"0.0013546908","4":"0.016878783","5":"<S3: sfc_POLYGON>"},{"1":"29.851879","2":"45","3":"0.0013546908","4":"0.011714902","5":"<S3: sfc_POLYGON>"},{"1":"19.700901","2":"90","3":"0.0013546908","4":"0.007731310","5":"<S3: sfc_POLYGON>"},{"1":"67.945175","2":"51","3":"0.0036317206","4":"0.009946112","5":"<S3: sfc_POLYGON>"},{"1":"66.754684","2":"38","3":"0.0036317206","4":"0.009771843","5":"<S3: sfc_POLYGON>"},{"1":"67.604256","2":"88","3":"0.0036317206","4":"0.009896207","5":"<S3: sfc_POLYGON>"},{"1":"68.320717","2":"3","3":"0.0036317206","4":"0.010001086","5":"<S3: sfc_POLYGON>"},{"1":"70.267204","2":"21","3":"0.0036317206","4":"0.010286021","5":"<S3: sfc_POLYGON>"},{"1":"69.309715","2":"60","3":"0.0036317206","4":"0.010145859","5":"<S3: sfc_POLYGON>"},{"1":"67.349480","2":"58","3":"0.0036317206","4":"0.009858912","5":"<S3: sfc_POLYGON>"},{"1":"67.967392","2":"23","3":"0.0036317206","4":"0.009949364","5":"<S3: sfc_POLYGON>"},{"1":"67.909554","2":"91","3":"0.0036317206","4":"0.009940898","5":"<S3: sfc_POLYGON>"},{"1":"67.644417","2":"84","3":"0.0036317206","4":"0.009902086","5":"<S3: sfc_POLYGON>"},{"1":"26.350052","2":"88","3":"0.0015923200","4":"0.008797480","5":"<S3: sfc_POLYGON>"},{"1":"41.567291","2":"61","3":"0.0015923200","4":"0.013878053","5":"<S3: sfc_POLYGON>"},{"1":"21.614414","2":"66","3":"0.0015923200","4":"0.007216395","5":"<S3: sfc_POLYGON>"},{"1":"18.826851","2":"68","3":"0.0015923200","4":"0.006285712","5":"<S3: sfc_POLYGON>"},{"1":"29.958584","2":"35","3":"0.0015923200","4":"0.010002259","5":"<S3: sfc_POLYGON>"},{"1":"31.521067","2":"22","3":"0.0015923200","4":"0.010523924","5":"<S3: sfc_POLYGON>"},{"1":"39.581017","2":"24","3":"0.0015923200","4":"0.013214896","5":"<S3: sfc_POLYGON>"},{"1":"54.255554","2":"92","3":"0.0015923200","4":"0.018114277","5":"<S3: sfc_POLYGON>"},{"1":"21.172623","2":"56","3":"0.0015923200","4":"0.007068894","5":"<S3: sfc_POLYGON>"},{"1":"42.345150","2":"33","3":"0.0015923200","4":"0.014137756","5":"<S3: sfc_POLYGON>"},{"1":"77.361809","2":"30","3":"0.0030122844","4":"0.013653305","5":"<S3: sfc_POLYGON>"},{"1":"31.382750","2":"70","3":"0.0030122844","4":"0.005538628","5":"<S3: sfc_POLYGON>"},{"1":"73.504639","2":"37","3":"0.0030122844","4":"0.012972567","5":"<S3: sfc_POLYGON>"},{"1":"74.876190","2":"23","3":"0.0030122844","4":"0.013214627","5":"<S3: sfc_POLYGON>"},{"1":"71.547234","2":"42","3":"0.0030122844","4":"0.012627112","5":"<S3: sfc_POLYGON>"},{"1":"70.532806","2":"7","3":"0.0030122844","4":"0.012448079","5":"<S3: sfc_POLYGON>"},{"1":"70.763412","2":"33","3":"0.0030122844","4":"0.012488778","5":"<S3: sfc_POLYGON>"},{"1":"68.015099","2":"62","3":"0.0030122844","4":"0.012003738","5":"<S3: sfc_POLYGON>"},{"1":"35.690186","2":"93","3":"0.0030122844","4":"0.006298831","5":"<S3: sfc_POLYGON>"},{"1":"75.544151","2":"16","3":"0.0030122844","4":"0.013332513","5":"<S3: sfc_POLYGON>"},{"1":"24.730009","2":"90","3":"0.0012406313","4":"0.010597141","5":"<S3: sfc_POLYGON>"},{"1":"19.112719","2":"50","3":"0.0012406313","4":"0.008190056","5":"<S3: sfc_POLYGON>"},{"1":"20.008131","2":"29","3":"0.0012406313","4":"0.008573752","5":"<S3: sfc_POLYGON>"},{"1":"20.067118","2":"53","3":"0.0012406313","4":"0.008599029","5":"<S3: sfc_POLYGON>"},{"1":"28.052494","2":"7","3":"0.0012406313","4":"0.012020870","5":"<S3: sfc_POLYGON>"},{"1":"12.389588","2":"95","3":"0.0012406313","4":"0.005309105","5":"<S3: sfc_POLYGON>"},{"1":"28.709145","2":"17","3":"0.0012406313","4":"0.012302253","5":"<S3: sfc_POLYGON>"},{"1":"16.202394","2":"67","3":"0.0012406313","4":"0.006942943","5":"<S3: sfc_POLYGON>"},{"1":"17.196892","2":"70","3":"0.0012406313","4":"0.007369099","5":"<S3: sfc_POLYGON>"},{"1":"25.683416","2":"38","3":"0.0012406313","4":"0.011005688","5":"<S3: sfc_POLYGON>"},{"1":"19.677105","2":"38","3":"0.0019299750","4":"0.005420217","5":"<S3: sfc_POLYGON>"},{"1":"53.224239","2":"88","3":"0.0019299750","4":"0.014661045","5":"<S3: sfc_POLYGON>"},{"1":"78.503792","2":"91","3":"0.0019299750","4":"0.021624501","5":"<S3: sfc_POLYGON>"},{"1":"27.277805","2":"53","3":"0.0019299750","4":"0.007513891","5":"<S3: sfc_POLYGON>"},{"1":"29.653622","2":"56","3":"0.0019299750","4":"0.008168329","5":"<S3: sfc_POLYGON>"},{"1":"69.559731","2":"73","3":"0.0019299750","4":"0.019160787","5":"<S3: sfc_POLYGON>"},{"1":"35.565342","2":"69","3":"0.0019299750","4":"0.009796760","5":"<S3: sfc_POLYGON>"},{"1":"47.327358","2":"65","3":"0.0019299750","4":"0.013036702","5":"<S3: sfc_POLYGON>"},{"1":"63.345051","2":"84","3":"0.0019299750","4":"0.017448904","5":"<S3: sfc_POLYGON>"},{"1":"34.543663","2":"51","3":"0.0019299750","4":"0.009515330","5":"<S3: sfc_POLYGON>"},{"1":"20.286913","2":"74","3":"0.0013833144","4":"0.007796546","5":"<S3: sfc_POLYGON>"},{"1":"23.023659","2":"65","3":"0.0013833144","4":"0.008848316","5":"<S3: sfc_POLYGON>"},{"1":"31.156874","2":"56","3":"0.0013833144","4":"0.011974025","5":"<S3: sfc_POLYGON>"},{"1":"37.150764","2":"90","3":"0.0013833144","4":"0.014277561","5":"<S3: sfc_POLYGON>"},{"1":"29.403738","2":"37","3":"0.0013833144","4":"0.011300270","5":"<S3: sfc_POLYGON>"},{"1":"17.953169","2":"93","3":"0.0013833144","4":"0.006899655","5":"<S3: sfc_POLYGON>"},{"1":"20.636299","2":"14","3":"0.0013833144","4":"0.007930820","5":"<S3: sfc_POLYGON>"},{"1":"21.871723","2":"29","3":"0.0013833144","4":"0.008405611","5":"<S3: sfc_POLYGON>"},{"1":"16.187412","2":"2","3":"0.0013833144","4":"0.006221050","5":"<S3: sfc_POLYGON>"},{"1":"14.803602","2":"1","3":"0.0013833144","4":"0.005689232","5":"<S3: sfc_POLYGON>"},{"1":"47.374119","2":"48","3":"0.0023854558","4":"0.010557885","5":"<S3: sfc_POLYGON>"},{"1":"79.878654","2":"2","3":"0.0023854558","4":"0.017801907","5":"<S3: sfc_POLYGON>"},{"1":"70.606743","2":"21","3":"0.0023854558","4":"0.015735551","5":"<S3: sfc_POLYGON>"},{"1":"75.576363","2":"4","3":"0.0023854558","4":"0.016843090","5":"<S3: sfc_POLYGON>"},{"1":"77.114609","2":"7","3":"0.0023854558","4":"0.017185906","5":"<S3: sfc_POLYGON>"},{"1":"77.874695","2":"16","3":"0.0023854558","4":"0.017355301","5":"<S3: sfc_POLYGON>"},{"1":"70.103149","2":"10","3":"0.0023854558","4":"0.015623319","5":"<S3: sfc_POLYGON>"},{"1":"70.243965","2":"23","3":"0.0023854558","4":"0.015654702","5":"<S3: sfc_POLYGON>"},{"1":"76.302536","2":"3","3":"0.0023854558","4":"0.017004926","5":"<S3: sfc_POLYGON>"},{"1":"45.746742","2":"59","3":"0.0023854558","4":"0.010195205","5":"<S3: sfc_POLYGON>"},{"1":"54.115936","2":"85","3":"0.0025040995","4":"0.011488961","5":"<S3: sfc_POLYGON>"},{"1":"30.394213","2":"39","3":"0.0025040995","4":"0.006452774","5":"<S3: sfc_POLYGON>"},{"1":"45.065334","2":"26","3":"0.0025040995","4":"0.009567493","5":"<S3: sfc_POLYGON>"},{"1":"55.981995","2":"32","3":"0.0025040995","4":"0.011885130","5":"<S3: sfc_POLYGON>"},{"1":"62.397758","2":"92","3":"0.0025040995","4":"0.013247214","5":"<S3: sfc_POLYGON>"},{"1":"63.976494","2":"91","3":"0.0025040995","4":"0.013582384","5":"<S3: sfc_POLYGON>"},{"1":"19.965954","2":"20","3":"0.0025040995","4":"0.004238826","5":"<S3: sfc_POLYGON>"},{"1":"54.091034","2":"86","3":"0.0025040995","4":"0.011483674","5":"<S3: sfc_POLYGON>"},{"1":"48.248940","2":"33","3":"0.0025040995","4":"0.010243382","5":"<S3: sfc_POLYGON>"},{"1":"41.513145","2":"60","3":"0.0025040995","4":"0.008813354","5":"<S3: sfc_POLYGON>"},{"1":"18.979553","2":"42","3":"0.0013658930","4":"0.007387142","5":"<S3: sfc_POLYGON>"},{"1":"24.510201","2":"92","3":"0.0013658930","4":"0.009539758","5":"<S3: sfc_POLYGON>"},{"1":"49.257343","2":"97","3":"0.0013658930","4":"0.019171737","5":"<S3: sfc_POLYGON>"},{"1":"17.971901","2":"40","3":"0.0013658930","4":"0.006994948","5":"<S3: sfc_POLYGON>"},{"1":"22.136627","2":"31","3":"0.0013658930","4":"0.008615926","5":"<S3: sfc_POLYGON>"},{"1":"29.526140","2":"12","3":"0.0013658930","4":"0.011492041","5":"<S3: sfc_POLYGON>"},{"1":"37.917309","2":"86","3":"0.0013658930","4":"0.014758017","5":"<S3: sfc_POLYGON>"},{"1":"42.811440","2":"99","3":"0.0013658930","4":"0.016662890","5":"<S3: sfc_POLYGON>"},{"1":"20.232473","2":"68","3":"0.0013658930","4":"0.007874799","5":"<S3: sfc_POLYGON>"},{"1":"19.983791","2":"45","3":"0.0013658930","4":"0.007778008","5":"<S3: sfc_POLYGON>"},{"1":"72.598671","2":"40","3":"0.0038655672","4":"0.009984414","5":"<S3: sfc_POLYGON>"},{"1":"76.990417","2":"17","3":"0.0038655672","4":"0.010588406","5":"<S3: sfc_POLYGON>"},{"1":"75.251572","2":"75","3":"0.0038655672","4":"0.010349265","5":"<S3: sfc_POLYGON>"},{"1":"71.245895","2":"64","3":"0.0038655672","4":"0.009798369","5":"<S3: sfc_POLYGON>"},{"1":"68.799263","2":"12","3":"0.0038655672","4":"0.009461886","5":"<S3: sfc_POLYGON>"},{"1":"72.119949","2":"83","3":"0.0038655672","4":"0.009918576","5":"<S3: sfc_POLYGON>"},{"1":"76.185066","2":"19","3":"0.0038655672","4":"0.010477647","5":"<S3: sfc_POLYGON>"},{"1":"72.752831","2":"21","3":"0.0038655672","4":"0.010005616","5":"<S3: sfc_POLYGON>"},{"1":"75.733452","2":"34","3":"0.0038655672","4":"0.010415537","5":"<S3: sfc_POLYGON>"},{"1":"59.823780","2":"4","3":"0.0038655672","4":"0.008227498","5":"<S3: sfc_POLYGON>"},{"1":"68.563637","2":"22","3":"0.0027048505","4":"0.013475899","5":"<S3: sfc_POLYGON>"},{"1":"60.313972","2":"81","3":"0.0027048505","4":"0.011854461","5":"<S3: sfc_POLYGON>"},{"1":"64.981995","2":"44","3":"0.0027048505","4":"0.012771942","5":"<S3: sfc_POLYGON>"},{"1":"73.325111","2":"14","3":"0.0027048505","4":"0.014411747","5":"<S3: sfc_POLYGON>"},{"1":"44.143921","2":"89","3":"0.0027048505","4":"0.008676305","5":"<S3: sfc_POLYGON>"},{"1":"57.795521","2":"92","3":"0.0027048505","4":"0.011359470","5":"<S3: sfc_POLYGON>"},{"1":"55.397179","2":"73","3":"0.0027048505","4":"0.010888086","5":"<S3: sfc_POLYGON>"},{"1":"60.478203","2":"91","3":"0.0027048505","4":"0.011886740","5":"<S3: sfc_POLYGON>"},{"1":"41.949238","2":"57","3":"0.0027048505","4":"0.008244949","5":"<S3: sfc_POLYGON>"},{"1":"51.692200","2":"100","3":"0.0027048505","4":"0.010159888","5":"<S3: sfc_POLYGON>"},{"1":"58.326672","2":"50","3":"0.0015780109","4":"0.019650082","5":"<S3: sfc_POLYGON>"},{"1":"7.817470","2":"63","3":"0.0015780109","4":"0.002633682","5":"<S3: sfc_POLYGON>"},{"1":"45.457817","2":"88","3":"0.0015780109","4":"0.015314603","5":"<S3: sfc_POLYGON>"},{"1":"67.152489","2":"58","3":"0.0015780109","4":"0.022623473","5":"<S3: sfc_POLYGON>"},{"1":"49.308388","2":"87","3":"0.0015780109","4":"0.016611849","5":"<S3: sfc_POLYGON>"},{"1":"54.983368","2":"46","3":"0.0015780109","4":"0.018523733","5":"<S3: sfc_POLYGON>"},{"1":"63.210526","2":"60","3":"0.0015780109","4":"0.021295438","5":"<S3: sfc_POLYGON>"},{"1":"51.607201","2":"76","3":"0.0015780109","4":"0.017386312","5":"<S3: sfc_POLYGON>"},{"1":"6.778517","2":"34","3":"0.0015780109","4":"0.002283662","5":"<S3: sfc_POLYGON>"},{"1":"38.967449","2":"20","3":"0.0015780109","4":"0.013128017","5":"<S3: sfc_POLYGON>"},{"1":"31.345430","2":"62","3":"0.0017186584","4":"0.009695983","5":"<S3: sfc_POLYGON>"},{"1":"39.411442","2":"77","3":"0.0017186584","4":"0.012191016","5":"<S3: sfc_POLYGON>"},{"1":"26.232990","2":"54","3":"0.0017186584","4":"0.008114568","5":"<S3: sfc_POLYGON>"},{"1":"29.771917","2":"86","3":"0.0017186584","4":"0.009209253","5":"<S3: sfc_POLYGON>"},{"1":"24.818613","2":"99","3":"0.0017186584","4":"0.007677063","5":"<S3: sfc_POLYGON>"},{"1":"30.124620","2":"88","3":"0.0017186584","4":"0.009318353","5":"<S3: sfc_POLYGON>"},{"1":"32.933022","2":"39","3":"0.0017186584","4":"0.010187067","5":"<S3: sfc_POLYGON>"},{"1":"32.470573","2":"58","3":"0.0017186584","4":"0.010044019","5":"<S3: sfc_POLYGON>"},{"1":"35.243450","2":"61","3":"0.0017186584","4":"0.010901745","5":"<S3: sfc_POLYGON>"},{"1":"33.466633","2":"11","3":"0.0017186584","4":"0.010352127","5":"<S3: sfc_POLYGON>"},{"1":"41.167439","2":"37","3":"0.0027071464","4":"0.008084427","5":"<S3: sfc_POLYGON>"},{"1":"31.656376","2":"35","3":"0.0027071464","4":"0.006216653","5":"<S3: sfc_POLYGON>"},{"1":"66.291481","2":"86","3":"0.0027071464","4":"0.013018266","5":"<S3: sfc_POLYGON>"},{"1":"46.848026","2":"21","3":"0.0027071464","4":"0.009199976","5":"<S3: sfc_POLYGON>"},{"1":"29.080124","2":"42","3":"0.0027071464","4":"0.005710731","5":"<S3: sfc_POLYGON>"},{"1":"29.117529","2":"32","3":"0.0027071464","4":"0.005718076","5":"<S3: sfc_POLYGON>"},{"1":"63.051556","2":"39","3":"0.0027071464","4":"0.012382012","5":"<S3: sfc_POLYGON>"},{"1":"61.291523","2":"76","3":"0.0027071464","4":"0.012036378","5":"<S3: sfc_POLYGON>"},{"1":"31.237888","2":"54","3":"0.0027071464","4":"0.006134471","5":"<S3: sfc_POLYGON>"},{"1":"66.831459","2":"90","3":"0.0027071464","4":"0.013124306","5":"<S3: sfc_POLYGON>"},{"1":"12.618759","2":"31","3":"0.0010876730","4":"0.006167731","5":"<S3: sfc_POLYGON>"},{"1":"26.607677","2":"68","3":"0.0010876730","4":"0.013005162","5":"<S3: sfc_POLYGON>"},{"1":"21.447598","2":"20","3":"0.0010876730","4":"0.010483045","5":"<S3: sfc_POLYGON>"},{"1":"21.244089","2":"77","3":"0.0010876730","4":"0.010383575","5":"<S3: sfc_POLYGON>"},{"1":"15.704185","2":"24","3":"0.0010876730","4":"0.007675810","5":"<S3: sfc_POLYGON>"},{"1":"26.150192","2":"67","3":"0.0010876730","4":"0.012781555","5":"<S3: sfc_POLYGON>"},{"1":"42.756096","2":"39","3":"0.0010876730","4":"0.020898102","5":"<S3: sfc_POLYGON>"},{"1":"26.802488","2":"18","3":"0.0010876730","4":"0.013100381","5":"<S3: sfc_POLYGON>"},{"1":"18.239086","2":"54","3":"0.0010876730","4":"0.008914806","5":"<S3: sfc_POLYGON>"},{"1":"47.707771","2":"60","3":"0.0010876730","4":"0.023318356","5":"<S3: sfc_POLYGON>"},{"1":"39.339149","2":"24","3":"0.0028985986","4":"0.007215128","5":"<S3: sfc_POLYGON>"},{"1":"73.694901","2":"71","3":"0.0028985986","4":"0.013516259","5":"<S3: sfc_POLYGON>"},{"1":"61.385460","2":"74","3":"0.0028985986","4":"0.011258605","5":"<S3: sfc_POLYGON>"},{"1":"76.836617","2":"63","3":"0.0028985986","4":"0.014092476","5":"<S3: sfc_POLYGON>"},{"1":"70.156311","2":"12","3":"0.0028985986","4":"0.012867253","5":"<S3: sfc_POLYGON>"},{"1":"53.944679","2":"3","3":"0.0028985986","4":"0.009893904","5":"<S3: sfc_POLYGON>"},{"1":"71.579933","2":"66","3":"0.0028985986","4":"0.013128357","5":"<S3: sfc_POLYGON>"},{"1":"53.193264","2":"82","3":"0.0028985986","4":"0.009756088","5":"<S3: sfc_POLYGON>"},{"1":"63.011391","2":"50","3":"0.0028985986","4":"0.011556815","5":"<S3: sfc_POLYGON>"},{"1":"33.492298","2":"16","3":"0.0028985986","4":"0.006142767","5":"<S3: sfc_POLYGON>"},{"1":"62.087666","2":"7","3":"0.0034261417","4":"0.009634011","5":"<S3: sfc_POLYGON>"},{"1":"65.060150","2":"89","3":"0.0034261417","4":"0.010095246","5":"<S3: sfc_POLYGON>"},{"1":"65.207382","2":"95","3":"0.0034261417","4":"0.010118091","5":"<S3: sfc_POLYGON>"},{"1":"62.390831","2":"38","3":"0.0034261417","4":"0.009681053","5":"<S3: sfc_POLYGON>"},{"1":"64.746239","2":"54","3":"0.0034261417","4":"0.010046537","5":"<S3: sfc_POLYGON>"},{"1":"65.726486","2":"22","3":"0.0034261417","4":"0.010198640","5":"<S3: sfc_POLYGON>"},{"1":"67.709618","2":"71","3":"0.0034261417","4":"0.010506358","5":"<S3: sfc_POLYGON>"},{"1":"67.873711","2":"83","3":"0.0034261417","4":"0.010531820","5":"<S3: sfc_POLYGON>"},{"1":"63.146149","2":"44","3":"0.0034261417","4":"0.009798254","5":"<S3: sfc_POLYGON>"},{"1":"63.294228","2":"74","3":"0.0034261417","4":"0.009821231","5":"<S3: sfc_POLYGON>"},{"1":"65.864838","2":"7","3":"0.0037097907","4":"0.009438682","5":"<S3: sfc_POLYGON>"},{"1":"72.174774","2":"23","3":"0.0037097907","4":"0.010342920","5":"<S3: sfc_POLYGON>"},{"1":"62.441723","2":"10","3":"0.0037097907","4":"0.008948137","5":"<S3: sfc_POLYGON>"},{"1":"72.740761","2":"93","3":"0.0037097907","4":"0.010424028","5":"<S3: sfc_POLYGON>"},{"1":"68.308395","2":"60","3":"0.0037097907","4":"0.009788853","5":"<S3: sfc_POLYGON>"},{"1":"72.695488","2":"22","3":"0.0037097907","4":"0.010417541","5":"<S3: sfc_POLYGON>"},{"1":"77.488312","2":"71","3":"0.0037097907","4":"0.011104370","5":"<S3: sfc_POLYGON>"},{"1":"67.937729","2":"64","3":"0.0037097907","4":"0.009735735","5":"<S3: sfc_POLYGON>"},{"1":"68.827255","2":"67","3":"0.0037097907","4":"0.009863208","5":"<S3: sfc_POLYGON>"},{"1":"61.293156","2":"39","3":"0.0037097907","4":"0.008783543","5":"<S3: sfc_POLYGON>"},{"1":"68.425568","2":"29","3":"0.0036329710","4":"0.010012986","5":"<S3: sfc_POLYGON>"},{"1":"62.742184","2":"54","3":"0.0036329710","4":"0.009181314","5":"<S3: sfc_POLYGON>"},{"1":"72.416634","2":"8","3":"0.0036329710","4":"0.010597015","5":"<S3: sfc_POLYGON>"},{"1":"71.912643","2":"36","3":"0.0036329710","4":"0.010523264","5":"<S3: sfc_POLYGON>"},{"1":"70.269516","2":"95","3":"0.0036329710","4":"0.010282819","5":"<S3: sfc_POLYGON>"},{"1":"76.011116","2":"19","3":"0.0036329710","4":"0.011123010","5":"<S3: sfc_POLYGON>"},{"1":"74.499184","2":"78","3":"0.0036329710","4":"0.010901763","5":"<S3: sfc_POLYGON>"},{"1":"69.848892","2":"16","3":"0.0036329710","4":"0.010221267","5":"<S3: sfc_POLYGON>"},{"1":"67.305130","2":"58","3":"0.0036329710","4":"0.009849028","5":"<S3: sfc_POLYGON>"},{"1":"56.979401","2":"31","3":"0.0036329710","4":"0.008338023","5":"<S3: sfc_POLYGON>"},{"1":"66.932091","2":"41","3":"0.0033119495","4":"0.010743798","5":"<S3: sfc_POLYGON>"},{"1":"59.883030","2":"23","3":"0.0033119495","4":"0.009612298","5":"<S3: sfc_POLYGON>"},{"1":"70.497864","2":"92","3":"0.0033119495","4":"0.011316168","5":"<S3: sfc_POLYGON>"},{"1":"65.225716","2":"2","3":"0.0033119495","4":"0.010469894","5":"<S3: sfc_POLYGON>"},{"1":"67.029663","2":"86","3":"0.0033119495","4":"0.010759460","5":"<S3: sfc_POLYGON>"},{"1":"65.475311","2":"40","3":"0.0033119495","4":"0.010509959","5":"<S3: sfc_POLYGON>"},{"1":"49.472198","2":"26","3":"0.0033119495","4":"0.007941173","5":"<S3: sfc_POLYGON>"},{"1":"69.124863","2":"65","3":"0.0033119495","4":"0.011095777","5":"<S3: sfc_POLYGON>"},{"1":"66.896873","2":"32","3":"0.0033119495","4":"0.010738145","5":"<S3: sfc_POLYGON>"},{"1":"64.732048","2":"39","3":"0.0033119495","4":"0.010390652","5":"<S3: sfc_POLYGON>"},{"1":"39.386082","2":"98","3":"0.0025146714","4":"0.008326619","5":"<S3: sfc_POLYGON>"},{"1":"51.482944","2":"35","3":"0.0025146714","4":"0.010884019","5":"<S3: sfc_POLYGON>"},{"1":"33.123032","2":"69","3":"0.0025146714","4":"0.007002546","5":"<S3: sfc_POLYGON>"},{"1":"51.154991","2":"25","3":"0.0025146714","4":"0.010814686","5":"<S3: sfc_POLYGON>"},{"1":"55.039932","2":"16","3":"0.0025146714","4":"0.011636002","5":"<S3: sfc_POLYGON>"},{"1":"61.035603","2":"64","3":"0.0025146714","4":"0.012903548","5":"<S3: sfc_POLYGON>"},{"1":"62.575817","2":"67","3":"0.0025146714","4":"0.013229165","5":"<S3: sfc_POLYGON>"},{"1":"71.467010","2":"94","3":"0.0025146714","4":"0.015108854","5":"<S3: sfc_POLYGON>"},{"1":"64.567848","2":"30","3":"0.0025146714","4":"0.013650301","5":"<S3: sfc_POLYGON>"},{"1":"64.579666","2":"96","3":"0.0025146714","4":"0.013652799","5":"<S3: sfc_POLYGON>"},{"1":"28.754253","2":"29","3":"0.0018111497","4":"0.008440242","5":"<S3: sfc_POLYGON>"},{"1":"28.353090","2":"25","3":"0.0018111497","4":"0.008322489","5":"<S3: sfc_POLYGON>"},{"1":"49.075798","2":"61","3":"0.0018111497","4":"0.014405230","5":"<S3: sfc_POLYGON>"},{"1":"36.345169","2":"68","3":"0.0018111497","4":"0.010668405","5":"<S3: sfc_POLYGON>"},{"1":"34.208241","2":"88","3":"0.0018111497","4":"0.010041152","5":"<S3: sfc_POLYGON>"},{"1":"36.391357","2":"41","3":"0.0018111497","4":"0.010681963","5":"<S3: sfc_POLYGON>"},{"1":"38.310570","2":"55","3":"0.0018111497","4":"0.011245310","5":"<S3: sfc_POLYGON>"},{"1":"37.840996","2":"47","3":"0.0018111497","4":"0.011107476","5":"<S3: sfc_POLYGON>"},{"1":"67.006874","2":"81","3":"0.0018111497","4":"0.019668542","5":"<S3: sfc_POLYGON>"},{"1":"22.755890","2":"14","3":"0.0018111497","4":"0.006679541","5":"<S3: sfc_POLYGON>"},{"1":"73.747009","2":"84","3":"0.0030247594","4":"0.012961663","5":"<S3: sfc_POLYGON>"},{"1":"62.901875","2":"17","3":"0.0030247594","4":"0.011055539","5":"<S3: sfc_POLYGON>"},{"1":"48.952560","2":"59","3":"0.0030247594","4":"0.008603828","5":"<S3: sfc_POLYGON>"},{"1":"58.850430","2":"87","3":"0.0030247594","4":"0.010343463","5":"<S3: sfc_POLYGON>"},{"1":"65.314354","2":"64","3":"0.0030247594","4":"0.011479552","5":"<S3: sfc_POLYGON>"},{"1":"61.046059","2":"28","3":"0.0030247594","4":"0.010729363","5":"<S3: sfc_POLYGON>"},{"1":"49.988605","2":"23","3":"0.0030247594","4":"0.008785922","5":"<S3: sfc_POLYGON>"},{"1":"72.942551","2":"91","3":"0.0030247594","4":"0.012820273","5":"<S3: sfc_POLYGON>"},{"1":"34.992634","2":"3","3":"0.0030247594","4":"0.006150253","5":"<S3: sfc_POLYGON>"},{"1":"63.507576","2":"38","3":"0.0030247594","4":"0.011161996","5":"<S3: sfc_POLYGON>"},{"1":"10.418053","2":"35","3":"0.0007826234","4":"0.007076864","5":"<S3: sfc_POLYGON>"},{"1":"11.816274","2":"43","3":"0.0007826234","4":"0.008026660","5":"<S3: sfc_POLYGON>"},{"1":"13.208598","2":"67","3":"0.0007826234","4":"0.008972450","5":"<S3: sfc_POLYGON>"},{"1":"13.722468","2":"48","3":"0.0007826234","4":"0.009321516","5":"<S3: sfc_POLYGON>"},{"1":"14.404451","2":"53","3":"0.0007826234","4":"0.009784779","5":"<S3: sfc_POLYGON>"},{"1":"25.808805","2":"100","3":"0.0007826234","4":"0.017531627","5":"<S3: sfc_POLYGON>"},{"1":"17.266634","2":"61","3":"0.0007826234","4":"0.011729027","5":"<S3: sfc_POLYGON>"},{"1":"15.483726","2":"69","3":"0.0007826234","4":"0.010517918","5":"<S3: sfc_POLYGON>"},{"1":"9.867913","2":"33","3":"0.0007826234","4":"0.006703161","5":"<S3: sfc_POLYGON>"},{"1":"13.582736","2":"28","3":"0.0007826234","4":"0.009226597","5":"<S3: sfc_POLYGON>"},{"1":"62.629383","2":"47","3":"0.0033393449","4":"0.009970662","5":"<S3: sfc_POLYGON>"},{"1":"63.221462","2":"6","3":"0.0033393449","4":"0.010064922","5":"<S3: sfc_POLYGON>"},{"1":"65.392021","2":"62","3":"0.0033393449","4":"0.010410477","5":"<S3: sfc_POLYGON>"},{"1":"62.540806","2":"15","3":"0.0033393449","4":"0.009956561","5":"<S3: sfc_POLYGON>"},{"1":"63.558689","2":"23","3":"0.0033393449","4":"0.010118609","5":"<S3: sfc_POLYGON>"},{"1":"63.580593","2":"71","3":"0.0033393449","4":"0.010122096","5":"<S3: sfc_POLYGON>"},{"1":"66.858833","2":"75","3":"0.0033393449","4":"0.010643995","5":"<S3: sfc_POLYGON>"},{"1":"65.277924","2":"63","3":"0.0033393449","4":"0.010392313","5":"<S3: sfc_POLYGON>"},{"1":"63.478722","2":"42","3":"0.0033393449","4":"0.010105878","5":"<S3: sfc_POLYGON>"},{"1":"62.551651","2":"43","3":"0.0033393449","4":"0.009958287","5":"<S3: sfc_POLYGON>"},{"1":"79.854797","2":"10","3":"0.0027664870","4":"0.015345447","5":"<S3: sfc_POLYGON>"},{"1":"51.965607","2":"3","3":"0.0027664870","4":"0.009986068","5":"<S3: sfc_POLYGON>"},{"1":"33.416824","2":"54","3":"0.0027664870","4":"0.006421607","5":"<S3: sfc_POLYGON>"},{"1":"47.258984","2":"53","3":"0.0027664870","4":"0.009081611","5":"<S3: sfc_POLYGON>"},{"1":"68.039902","2":"17","3":"0.0027664870","4":"0.013075015","5":"<S3: sfc_POLYGON>"},{"1":"38.171486","2":"98","3":"0.0027664870","4":"0.007335295","5":"<S3: sfc_POLYGON>"},{"1":"65.787460","2":"73","3":"0.0027664870","4":"0.012642171","5":"<S3: sfc_POLYGON>"},{"1":"53.022423","2":"69","3":"0.0027664870","4":"0.010189153","5":"<S3: sfc_POLYGON>"},{"1":"59.426956","2":"48","3":"0.0027664870","4":"0.011419892","5":"<S3: sfc_POLYGON>"},{"1":"77.786980","2":"91","3":"0.0027664870","4":"0.014948081","5":"<S3: sfc_POLYGON>"},{"1":"56.562256","2":"59","3":"0.0032788672","4":"0.009170860","5":"<S3: sfc_POLYGON>"},{"1":"68.000008","2":"24","3":"0.0032788672","4":"0.011025348","5":"<S3: sfc_POLYGON>"},{"1":"56.322041","2":"11","3":"0.0032788672","4":"0.009131912","5":"<S3: sfc_POLYGON>"},{"1":"76.919098","2":"34","3":"0.0032788672","4":"0.012471466","5":"<S3: sfc_POLYGON>"},{"1":"63.740925","2":"4","3":"0.0032788672","4":"0.010334791","5":"<S3: sfc_POLYGON>"},{"1":"73.195930","2":"15","3":"0.0032788672","4":"0.011867801","5":"<S3: sfc_POLYGON>"},{"1":"73.655296","2":"25","3":"0.0032788672","4":"0.011942282","5":"<S3: sfc_POLYGON>"},{"1":"52.915588","2":"13","3":"0.0032788672","4":"0.008579598","5":"<S3: sfc_POLYGON>"},{"1":"75.686218","2":"56","3":"0.0032788672","4":"0.012271570","5":"<S3: sfc_POLYGON>"},{"1":"76.415741","2":"54","3":"0.0032788672","4":"0.012389853","5":"<S3: sfc_POLYGON>"},{"1":"46.845741","2":"72","3":"0.0018306987","4":"0.013603805","5":"<S3: sfc_POLYGON>"},{"1":"42.075539","2":"96","3":"0.0018306987","4":"0.012218558","5":"<S3: sfc_POLYGON>"},{"1":"41.299812","2":"92","3":"0.0018306987","4":"0.011993290","5":"<S3: sfc_POLYGON>"},{"1":"51.238533","2":"53","3":"0.0018306987","4":"0.014879453","5":"<S3: sfc_POLYGON>"},{"1":"52.310371","2":"62","3":"0.0018306987","4":"0.015190710","5":"<S3: sfc_POLYGON>"},{"1":"45.969475","2":"64","3":"0.0018306987","4":"0.013349341","5":"<S3: sfc_POLYGON>"},{"1":"43.663101","2":"14","3":"0.0018306987","4":"0.012679580","5":"<S3: sfc_POLYGON>"},{"1":"24.199247","2":"78","3":"0.0018306987","4":"0.007027359","5":"<S3: sfc_POLYGON>"},{"1":"54.575802","2":"12","3":"0.0018306987","4":"0.015848582","5":"<S3: sfc_POLYGON>"},{"1":"33.990982","2":"98","3":"0.0018306987","4":"0.009870837","5":"<S3: sfc_POLYGON>"},{"1":"64.180496","2":"51","3":"0.0033967173","4":"0.010045020","5":"<S3: sfc_POLYGON>"},{"1":"62.194771","2":"27","3":"0.0033967173","4":"0.009734230","5":"<S3: sfc_POLYGON>"},{"1":"63.969776","2":"56","3":"0.0033967173","4":"0.010012040","5":"<S3: sfc_POLYGON>"},{"1":"65.463058","2":"89","3":"0.0033967173","4":"0.010245757","5":"<S3: sfc_POLYGON>"},{"1":"64.209312","2":"46","3":"0.0033967173","4":"0.010049530","5":"<S3: sfc_POLYGON>"},{"1":"65.221443","2":"94","3":"0.0033967173","4":"0.010207941","5":"<S3: sfc_POLYGON>"},{"1":"64.251442","2":"41","3":"0.0033967173","4":"0.010056124","5":"<S3: sfc_POLYGON>"},{"1":"65.098991","2":"39","3":"0.0033967173","4":"0.010188776","5":"<S3: sfc_POLYGON>"},{"1":"61.116886","2":"8","3":"0.0033967173","4":"0.009565528","5":"<S3: sfc_POLYGON>"},{"1":"64.202988","2":"86","3":"0.0033967173","4":"0.010048540","5":"<S3: sfc_POLYGON>"},{"1":"45.905495","2":"54","3":"0.0026202031","4":"0.009314014","5":"<S3: sfc_POLYGON>"},{"1":"62.110527","2":"32","3":"0.0026202031","4":"0.012601940","5":"<S3: sfc_POLYGON>"},{"1":"35.355095","2":"5","3":"0.0026202031","4":"0.007173386","5":"<S3: sfc_POLYGON>"},{"1":"61.730366","2":"9","3":"0.0026202031","4":"0.012524807","5":"<S3: sfc_POLYGON>"},{"1":"62.019005","2":"62","3":"0.0026202031","4":"0.012583371","5":"<S3: sfc_POLYGON>"},{"1":"62.056126","2":"22","3":"0.0026202031","4":"0.012590902","5":"<S3: sfc_POLYGON>"},{"1":"48.458172","2":"80","3":"0.0026202031","4":"0.009831940","5":"<S3: sfc_POLYGON>"},{"1":"46.131481","2":"60","3":"0.0026202031","4":"0.009359865","5":"<S3: sfc_POLYGON>"},{"1":"33.791054","2":"46","3":"0.0026202031","4":"0.006856049","5":"<S3: sfc_POLYGON>"},{"1":"46.233589","2":"44","3":"0.0026202031","4":"0.009380583","5":"<S3: sfc_POLYGON>"},{"1":"28.576363","2":"32","3":"0.0014114299","4":"0.010763532","5":"<S3: sfc_POLYGON>"},{"1":"19.628244","2":"61","3":"0.0014114299","4":"0.007393146","5":"<S3: sfc_POLYGON>"},{"1":"68.113510","2":"1","3":"0.0014114299","4":"0.025655537","5":"<S3: sfc_POLYGON>"},{"1":"13.038861","2":"29","3":"0.0014114299","4":"0.004911199","5":"<S3: sfc_POLYGON>"},{"1":"24.209959","2":"79","3":"0.0014114299","4":"0.009118888","5":"<S3: sfc_POLYGON>"},{"1":"30.986338","2":"24","3":"0.0014114299","4":"0.011671269","5":"<S3: sfc_POLYGON>"},{"1":"59.608017","2":"11","3":"0.0014114299","4":"0.022451870","5":"<S3: sfc_POLYGON>"},{"1":"20.335007","2":"8","3":"0.0014114299","4":"0.007659354","5":"<S3: sfc_POLYGON>"},{"1":"37.160229","2":"87","3":"0.0014114299","4":"0.013996718","5":"<S3: sfc_POLYGON>"},{"1":"13.052257","2":"39","3":"0.0014114299","4":"0.004916244","5":"<S3: sfc_POLYGON>"},{"1":"64.233627","2":"61","3":"0.0036738948","4":"0.009294861","5":"<S3: sfc_POLYGON>"},{"1":"67.937065","2":"87","3":"0.0036738948","4":"0.009830763","5":"<S3: sfc_POLYGON>"},{"1":"67.824371","2":"60","3":"0.0036738948","4":"0.009814456","5":"<S3: sfc_POLYGON>"},{"1":"71.867493","2":"70","3":"0.0036738948","4":"0.010399511","5":"<S3: sfc_POLYGON>"},{"1":"66.099136","2":"29","3":"0.0036738948","4":"0.009564807","5":"<S3: sfc_POLYGON>"},{"1":"75.565582","2":"99","3":"0.0036738948","4":"0.010934640","5":"<S3: sfc_POLYGON>"},{"1":"70.916168","2":"55","3":"0.0036738948","4":"0.010261851","5":"<S3: sfc_POLYGON>"},{"1":"74.055237","2":"56","3":"0.0036738948","4":"0.010716087","5":"<S3: sfc_POLYGON>"},{"1":"71.975922","2":"1","3":"0.0036738948","4":"0.010415201","5":"<S3: sfc_POLYGON>"},{"1":"80.797386","2":"13","3":"0.0036738948","4":"0.011691702","5":"<S3: sfc_POLYGON>"},{"1":"29.650738","2":"13","3":"0.0009824389","4":"0.016044903","5":"<S3: sfc_POLYGON>"},{"1":"33.076973","2":"5","3":"0.0009824389","4":"0.017898941","5":"<S3: sfc_POLYGON>"},{"1":"11.977443","2":"72","3":"0.0009824389","4":"0.006481353","5":"<S3: sfc_POLYGON>"},{"1":"21.945147","2":"60","3":"0.0009824389","4":"0.011875176","5":"<S3: sfc_POLYGON>"},{"1":"17.498701","2":"26","3":"0.0009824389","4":"0.009469072","5":"<S3: sfc_POLYGON>"},{"1":"16.436760","2":"97","3":"0.0009824389","4":"0.008894423","5":"<S3: sfc_POLYGON>"},{"1":"24.973194","2":"14","3":"0.0009824389","4":"0.013513744","5":"<S3: sfc_POLYGON>"},{"1":"17.850286","2":"98","3":"0.0009824389","4":"0.009659325","5":"<S3: sfc_POLYGON>"},{"1":"14.232942","2":"67","3":"0.0009824389","4":"0.007701871","5":"<S3: sfc_POLYGON>"},{"1":"21.713778","2":"12","3":"0.0009824389","4":"0.011749976","5":"<S3: sfc_POLYGON>"},{"1":"47.801144","2":"79","3":"0.0032546215","4":"0.007808093","5":"<S3: sfc_POLYGON>"},{"1":"76.402580","2":"4","3":"0.0032546215","4":"0.012480003","5":"<S3: sfc_POLYGON>"},{"1":"35.908447","2":"50","3":"0.0032546215","4":"0.005865476","5":"<S3: sfc_POLYGON>"},{"1":"58.925709","2":"98","3":"0.0032546215","4":"0.009625238","5":"<S3: sfc_POLYGON>"},{"1":"73.039970","2":"31","3":"0.0032546215","4":"0.011930737","5":"<S3: sfc_POLYGON>"},{"1":"62.353802","2":"92","3":"0.0032546215","4":"0.010185201","5":"<S3: sfc_POLYGON>"},{"1":"69.395523","2":"61","3":"0.0032546215","4":"0.011335433","5":"<S3: sfc_POLYGON>"},{"1":"42.717300","2":"59","3":"0.0032546215","4":"0.006977671","5":"<S3: sfc_POLYGON>"},{"1":"70.238083","2":"55","3":"0.0032546215","4":"0.011473061","5":"<S3: sfc_POLYGON>"},{"1":"76.329849","2":"26","3":"0.0032546215","4":"0.012468123","5":"<S3: sfc_POLYGON>"},{"1":"29.985367","2":"93","3":"0.0011333106","4":"0.014065901","5":"<S3: sfc_POLYGON>"},{"1":"29.458614","2":"8","3":"0.0011333106","4":"0.013818805","5":"<S3: sfc_POLYGON>"},{"1":"29.938093","2":"75","3":"0.0011333106","4":"0.014043725","5":"<S3: sfc_POLYGON>"},{"1":"8.045295","2":"29","3":"0.0011333106","4":"0.003773985","5":"<S3: sfc_POLYGON>"},{"1":"29.390310","2":"69","3":"0.0011333106","4":"0.013786765","5":"<S3: sfc_POLYGON>"},{"1":"25.950134","2":"9","3":"0.0011333106","4":"0.012173005","5":"<S3: sfc_POLYGON>"},{"1":"9.706086","2":"27","3":"0.0011333106","4":"0.004553049","5":"<S3: sfc_POLYGON>"},{"1":"9.927421","2":"17","3":"0.0011333106","4":"0.004656875","5":"<S3: sfc_POLYGON>"},{"1":"30.712635","2":"67","3":"0.0011333106","4":"0.014407057","5":"<S3: sfc_POLYGON>"},{"1":"20.459843","2":"61","3":"0.0011333106","4":"0.009597552","5":"<S3: sfc_POLYGON>"},{"1":"69.587372","2":"29","3":"0.0032403026","4":"0.011417000","5":"<S3: sfc_POLYGON>"},{"1":"64.030632","2":"42","3":"0.0032403026","4":"0.010505322","5":"<S3: sfc_POLYGON>"},{"1":"56.451149","2":"18","3":"0.0032403026","4":"0.009261778","5":"<S3: sfc_POLYGON>"},{"1":"51.627235","2":"9","3":"0.0032403026","4":"0.008470332","5":"<S3: sfc_POLYGON>"},{"1":"47.847275","2":"63","3":"0.0032403026","4":"0.007850165","5":"<S3: sfc_POLYGON>"},{"1":"78.602722","2":"24","3":"0.0032403026","4":"0.012896123","5":"<S3: sfc_POLYGON>"},{"1":"72.580185","2":"11","3":"0.0032403026","4":"0.011908023","5":"<S3: sfc_POLYGON>"},{"1":"68.835983","2":"47","3":"0.0032403026","4":"0.011293722","5":"<S3: sfc_POLYGON>"},{"1":"70.338280","2":"39","3":"0.0032403026","4":"0.011540200","5":"<S3: sfc_POLYGON>"},{"1":"56.791901","2":"16","3":"0.0032403026","4":"0.009317684","5":"<S3: sfc_POLYGON>"},{"1":"62.862881","2":"47","3":"0.0032688870","4":"0.010223545","5":"<S3: sfc_POLYGON>"},{"1":"56.451447","2":"63","3":"0.0032688870","4":"0.009180838","5":"<S3: sfc_POLYGON>"},{"1":"60.777267","2":"91","3":"0.0032688870","4":"0.009884357","5":"<S3: sfc_POLYGON>"},{"1":"62.370106","2":"70","3":"0.0032688870","4":"0.010143404","5":"<S3: sfc_POLYGON>"},{"1":"63.291775","2":"90","3":"0.0032688870","4":"0.010293297","5":"<S3: sfc_POLYGON>"},{"1":"63.085667","2":"38","3":"0.0032688870","4":"0.010259777","5":"<S3: sfc_POLYGON>"},{"1":"64.203018","2":"12","3":"0.0032688870","4":"0.010441495","5":"<S3: sfc_POLYGON>"},{"1":"59.868118","2":"33","3":"0.0032688870","4":"0.009736500","5":"<S3: sfc_POLYGON>"},{"1":"48.779919","2":"52","3":"0.0032688870","4":"0.007933198","5":"<S3: sfc_POLYGON>"},{"1":"63.213486","2":"46","3":"0.0032688870","4":"0.010280565","5":"<S3: sfc_POLYGON>"},{"1":"32.254421","2":"14","3":"0.0026063736","4":"0.006578998","5":"<S3: sfc_POLYGON>"},{"1":"65.175667","2":"70","3":"0.0026063736","4":"0.013294009","5":"<S3: sfc_POLYGON>"},{"1":"59.568050","2":"55","3":"0.0026063736","4":"0.012150213","5":"<S3: sfc_POLYGON>"},{"1":"52.431831","2":"33","3":"0.0026063736","4":"0.010694624","5":"<S3: sfc_POLYGON>"},{"1":"52.676136","2":"86","3":"0.0026063736","4":"0.010744455","5":"<S3: sfc_POLYGON>"},{"1":"53.389595","2":"49","3":"0.0026063736","4":"0.010889981","5":"<S3: sfc_POLYGON>"},{"1":"71.842323","2":"80","3":"0.0026063736","4":"0.014653820","5":"<S3: sfc_POLYGON>"},{"1":"47.845154","2":"40","3":"0.0026063736","4":"0.009759070","5":"<S3: sfc_POLYGON>"},{"1":"44.411045","2":"82","3":"0.0026063736","4":"0.009058608","5":"<S3: sfc_POLYGON>"},{"1":"55.518597","2":"47","3":"0.0026063736","4":"0.011324237","5":"<S3: sfc_POLYGON>"},{"1":"10.406383","2":"20","3":"0.0008842175","4":"0.006256736","5":"<S3: sfc_POLYGON>"},{"1":"15.835894","2":"33","3":"0.0008842175","4":"0.009521177","5":"<S3: sfc_POLYGON>"},{"1":"46.154041","2":"96","3":"0.0008842175","4":"0.027749668","5":"<S3: sfc_POLYGON>"},{"1":"3.424631","2":"61","3":"0.0008842175","4":"0.002059026","5":"<S3: sfc_POLYGON>"},{"1":"24.666740","2":"56","3":"0.0008842175","4":"0.014830637","5":"<S3: sfc_POLYGON>"},{"1":"41.821362","2":"95","3":"0.0008842175","4":"0.025144686","5":"<S3: sfc_POLYGON>"},{"1":"23.526867","2":"88","3":"0.0008842175","4":"0.014145300","5":"<S3: sfc_POLYGON>"},{"1":"15.873052","2":"78","3":"0.0008842175","4":"0.009543518","5":"<S3: sfc_POLYGON>"},{"1":"24.565208","2":"87","3":"0.0008842175","4":"0.014769592","5":"<S3: sfc_POLYGON>"},{"1":"24.569641","2":"93","3":"0.0008842175","4":"0.014772257","5":"<S3: sfc_POLYGON>"},{"1":"35.063683","2":"49","3":"0.0010554616","4":"0.017661282","5":"<S3: sfc_POLYGON>"},{"1":"26.282564","2":"39","3":"0.0010554616","4":"0.013238307","5":"<S3: sfc_POLYGON>"},{"1":"16.044352","2":"25","3":"0.0010554616","4":"0.008081405","5":"<S3: sfc_POLYGON>"},{"1":"34.069820","2":"48","3":"0.0010554616","4":"0.017160682","5":"<S3: sfc_POLYGON>"},{"1":"33.632935","2":"58","3":"0.0010554616","4":"0.016940627","5":"<S3: sfc_POLYGON>"},{"1":"23.901514","2":"66","3":"0.0010554616","4":"0.012038992","5":"<S3: sfc_POLYGON>"},{"1":"20.419617","2":"79","3":"0.0010554616","4":"0.010285189","5":"<S3: sfc_POLYGON>"},{"1":"17.665518","2":"16","3":"0.0010554616","4":"0.008897973","5":"<S3: sfc_POLYGON>"},{"1":"15.001571","2":"15","3":"0.0010554616","4":"0.007556165","5":"<S3: sfc_POLYGON>"},{"1":"32.349907","2":"47","3":"0.0010554616","4":"0.016294376","5":"<S3: sfc_POLYGON>"},{"1":"62.718868","2":"84","3":"0.0030526985","4":"0.010922485","5":"<S3: sfc_POLYGON>"},{"1":"35.022373","2":"69","3":"0.0030526985","4":"0.006099143","5":"<S3: sfc_POLYGON>"},{"1":"54.114925","2":"96","3":"0.0030526985","4":"0.009424109","5":"<S3: sfc_POLYGON>"},{"1":"63.999088","2":"15","3":"0.0030526985","4":"0.011145435","5":"<S3: sfc_POLYGON>"},{"1":"62.338219","2":"31","3":"0.0030526985","4":"0.010856195","5":"<S3: sfc_POLYGON>"},{"1":"67.574051","2":"22","3":"0.0030526985","4":"0.011768014","5":"<S3: sfc_POLYGON>"},{"1":"63.418091","2":"3","3":"0.0030526985","4":"0.011044254","5":"<S3: sfc_POLYGON>"},{"1":"62.629147","2":"45","3":"0.0030526985","4":"0.010906860","5":"<S3: sfc_POLYGON>"},{"1":"56.301624","2":"56","3":"0.0030526985","4":"0.009804922","5":"<S3: sfc_POLYGON>"},{"1":"34.730583","2":"78","3":"0.0030526985","4":"0.006048328","5":"<S3: sfc_POLYGON>"},{"1":"30.502058","2":"98","3":"0.0013659987","4":"0.011870965","5":"<S3: sfc_POLYGON>"},{"1":"17.893835","2":"44","3":"0.0013659987","4":"0.006964025","5":"<S3: sfc_POLYGON>"},{"1":"16.631336","2":"42","3":"0.0013659987","4":"0.006472678","5":"<S3: sfc_POLYGON>"},{"1":"19.216549","2":"24","3":"0.0013659987","4":"0.007478806","5":"<S3: sfc_POLYGON>"},{"1":"27.154543","2":"5","3":"0.0013659987","4":"0.010568160","5":"<S3: sfc_POLYGON>"},{"1":"22.092970","2":"36","3":"0.0013659987","4":"0.008598268","5":"<S3: sfc_POLYGON>"},{"1":"21.963848","2":"71","3":"0.0013659987","4":"0.008548015","5":"<S3: sfc_POLYGON>"},{"1":"23.317335","2":"11","3":"0.0013659987","4":"0.009074773","5":"<S3: sfc_POLYGON>"},{"1":"25.373087","2":"81","3":"0.0013659987","4":"0.009874842","5":"<S3: sfc_POLYGON>"},{"1":"31.283167","2":"87","3":"0.0013659987","4":"0.012174961","5":"<S3: sfc_POLYGON>"},{"1":"26.315561","2":"2","3":"0.0004475515","4":"0.031259120","5":"<S3: sfc_POLYGON>"},{"1":"19.196856","2":"3","3":"0.0004475515","4":"0.022803116","5":"<S3: sfc_POLYGON>"},{"1":"17.818010","2":"13","3":"0.0004475515","4":"0.021165246","5":"<S3: sfc_POLYGON>"},{"1":"22.184896","2":"12","3":"0.0004475515","4":"0.026352481","5":"<S3: sfc_POLYGON>"},{"1":"15.195340","2":"43","3":"0.0004475515","4":"0.018049889","5":"<S3: sfc_POLYGON>"},{"1":"17.397612","2":"45","3":"0.0004475515","4":"0.020665872","5":"<S3: sfc_POLYGON>"},{"1":"12.258314","2":"15","3":"0.0004475515","4":"0.014561122","5":"<S3: sfc_POLYGON>"},{"1":"19.148046","2":"11","3":"0.0004475515","4":"0.022745138","5":"<S3: sfc_POLYGON>"},{"1":"21.988981","2":"1","3":"0.0004475515","4":"0.026119762","5":"<S3: sfc_POLYGON>"},{"1":"17.042421","2":"6","3":"0.0004475515","4":"0.020243957","5":"<S3: sfc_POLYGON>"},{"1":"42.173885","2":"25","3":"0.0028595314","4":"0.007840719","5":"<S3: sfc_POLYGON>"},{"1":"45.723557","2":"29","3":"0.0028595314","4":"0.008500653","5":"<S3: sfc_POLYGON>"},{"1":"68.121773","2":"3","3":"0.0028595314","4":"0.012664797","5":"<S3: sfc_POLYGON>"},{"1":"73.006851","2":"67","3":"0.0028595314","4":"0.013573001","5":"<S3: sfc_POLYGON>"},{"1":"69.643974","2":"77","3":"0.0028595314","4":"0.012947795","5":"<S3: sfc_POLYGON>"},{"1":"79.921661","2":"68","3":"0.0028595314","4":"0.014858562","5":"<S3: sfc_POLYGON>"},{"1":"78.465820","2":"59","3":"0.0028595314","4":"0.014587901","5":"<S3: sfc_POLYGON>"},{"1":"73.462433","2":"76","3":"0.0028595314","4":"0.013657700","5":"<S3: sfc_POLYGON>"},{"1":"75.897324","2":"69","3":"0.0028595314","4":"0.014110381","5":"<S3: sfc_POLYGON>"},{"1":"79.943108","2":"60","3":"0.0028595314","4":"0.014862549","5":"<S3: sfc_POLYGON>"},{"1":"31.675350","2":"90","3":"0.0015910209","4":"0.010584070","5":"<S3: sfc_POLYGON>"},{"1":"25.200344","2":"14","3":"0.0015910209","4":"0.008420497","5":"<S3: sfc_POLYGON>"},{"1":"27.463802","2":"15","3":"0.0015910209","4":"0.009176814","5":"<S3: sfc_POLYGON>"},{"1":"42.959385","2":"50","3":"0.0015910209","4":"0.014354542","5":"<S3: sfc_POLYGON>"},{"1":"45.675587","2":"96","3":"0.0015910209","4":"0.015262139","5":"<S3: sfc_POLYGON>"},{"1":"33.077759","2":"91","3":"0.0015910209","4":"0.011052674","5":"<S3: sfc_POLYGON>"},{"1":"40.771004","2":"80","3":"0.0015910209","4":"0.013623311","5":"<S3: sfc_POLYGON>"},{"1":"26.867884","2":"25","3":"0.0015910209","4":"0.008977693","5":"<S3: sfc_POLYGON>"},{"1":"27.204748","2":"73","3":"0.0015910209","4":"0.009090253","5":"<S3: sfc_POLYGON>"},{"1":"21.505213","2":"51","3":"0.0015910209","4":"0.007185798","5":"<S3: sfc_POLYGON>"},{"1":"73.130653","2":"81","3":"0.0030170070","4":"0.012886361","5":"<S3: sfc_POLYGON>"},{"1":"29.150324","2":"80","3":"0.0030170070","4":"0.005136582","5":"<S3: sfc_POLYGON>"},{"1":"25.379847","2":"99","3":"0.0030170070","4":"0.004472186","5":"<S3: sfc_POLYGON>"},{"1":"76.361740","2":"42","3":"0.0030170070","4":"0.013455711","5":"<S3: sfc_POLYGON>"},{"1":"37.580528","2":"76","3":"0.0030170070","4":"0.006622069","5":"<S3: sfc_POLYGON>"},{"1":"50.856834","2":"83","3":"0.0030170070","4":"0.008961489","5":"<S3: sfc_POLYGON>"},{"1":"55.038902","2":"20","3":"0.0030170070","4":"0.009698411","5":"<S3: sfc_POLYGON>"},{"1":"73.573914","2":"62","3":"0.0030170070","4":"0.012964468","5":"<S3: sfc_POLYGON>"},{"1":"67.972626","2":"46","3":"0.0030170070","4":"0.011977464","5":"<S3: sfc_POLYGON>"},{"1":"71.752464","2":"21","3":"0.0030170070","4":"0.012643510","5":"<S3: sfc_POLYGON>"},{"1":"66.798538","2":"21","3":"0.0033039805","4":"0.010748222","5":"<S3: sfc_POLYGON>"},{"1":"40.692562","2":"93","3":"0.0033039805","4":"0.006547639","5":"<S3: sfc_POLYGON>"},{"1":"75.184410","2":"55","3":"0.0033039805","4":"0.012097551","5":"<S3: sfc_POLYGON>"},{"1":"73.563690","2":"36","3":"0.0033039805","4":"0.011836769","5":"<S3: sfc_POLYGON>"},{"1":"56.950970","2":"79","3":"0.0033039805","4":"0.009163699","5":"<S3: sfc_POLYGON>"},{"1":"56.581650","2":"3","3":"0.0033039805","4":"0.009104273","5":"<S3: sfc_POLYGON>"},{"1":"40.474682","2":"92","3":"0.0033039805","4":"0.006512581","5":"<S3: sfc_POLYGON>"},{"1":"71.445808","2":"81","3":"0.0033039805","4":"0.011495991","5":"<S3: sfc_POLYGON>"},{"1":"53.433735","2":"83","3":"0.0033039805","4":"0.008597758","5":"<S3: sfc_POLYGON>"},{"1":"72.840096","2":"43","3":"0.0033039805","4":"0.011720339","5":"<S3: sfc_POLYGON>"},{"1":"38.285000","2":"23","3":"0.0014355517","4":"0.014178065","5":"<S3: sfc_POLYGON>"},{"1":"16.981989","2":"50","3":"0.0014355517","4":"0.006288932","5":"<S3: sfc_POLYGON>"},{"1":"41.573757","2":"35","3":"0.0014355517","4":"0.015395989","5":"<S3: sfc_POLYGON>"},{"1":"31.036053","2":"75","3":"0.0014355517","4":"0.011493566","5":"<S3: sfc_POLYGON>"},{"1":"29.853308","2":"85","3":"0.0014355517","4":"0.011055561","5":"<S3: sfc_POLYGON>"},{"1":"30.740540","2":"53","3":"0.0014355517","4":"0.011384129","5":"<S3: sfc_POLYGON>"},{"1":"24.967091","2":"21","3":"0.0014355517","4":"0.009246050","5":"<S3: sfc_POLYGON>"},{"1":"22.496565","2":"77","3":"0.0014355517","4":"0.008331142","5":"<S3: sfc_POLYGON>"},{"1":"17.420313","2":"29","3":"0.0014355517","4":"0.006451256","5":"<S3: sfc_POLYGON>"},{"1":"20.679817","2":"97","3":"0.0014355517","4":"0.007658347","5":"<S3: sfc_POLYGON>"},{"1":"72.137070","2":"58","3":"0.0034911978","4":"0.010984776","5":"<S3: sfc_POLYGON>"},{"1":"70.995316","2":"57","3":"0.0034911978","4":"0.010810913","5":"<S3: sfc_POLYGON>"},{"1":"67.835617","2":"87","3":"0.0034911978","4":"0.010329766","5":"<S3: sfc_POLYGON>"},{"1":"60.202072","2":"86","3":"0.0034911978","4":"0.009167357","5":"<S3: sfc_POLYGON>"},{"1":"68.234779","2":"1","3":"0.0034911978","4":"0.010390549","5":"<S3: sfc_POLYGON>"},{"1":"70.556320","2":"20","3":"0.0034911978","4":"0.010744065","5":"<S3: sfc_POLYGON>"},{"1":"52.692162","2":"73","3":"0.0034911978","4":"0.008023774","5":"<S3: sfc_POLYGON>"},{"1":"71.081985","2":"90","3":"0.0034911978","4":"0.010824111","5":"<S3: sfc_POLYGON>"},{"1":"68.584450","2":"17","3":"0.0034911978","4":"0.010443795","5":"<S3: sfc_POLYGON>"},{"1":"73.777176","2":"60","3":"0.0034911978","4":"0.011234525","5":"<S3: sfc_POLYGON>"},{"1":"39.310905","2":"35","3":"0.0015919206","4":"0.013128007","5":"<S3: sfc_POLYGON>"},{"1":"32.995811","2":"46","3":"0.0015919206","4":"0.011019061","5":"<S3: sfc_POLYGON>"},{"1":"49.389355","2":"38","3":"0.0015919206","4":"0.016493739","5":"<S3: sfc_POLYGON>"},{"1":"26.905396","2":"56","3":"0.0015919206","4":"0.008985146","5":"<S3: sfc_POLYGON>"},{"1":"40.571442","2":"47","3":"0.0015919206","4":"0.013548967","5":"<S3: sfc_POLYGON>"},{"1":"43.862465","2":"49","3":"0.0015919206","4":"0.014648015","5":"<S3: sfc_POLYGON>"},{"1":"38.703735","2":"19","3":"0.0015919206","4":"0.012925241","5":"<S3: sfc_POLYGON>"},{"1":"19.305866","2":"100","3":"0.0015919206","4":"0.006447258","5":"<S3: sfc_POLYGON>"},{"1":"17.067137","2":"84","3":"0.0015919206","4":"0.005699627","5":"<S3: sfc_POLYGON>"},{"1":"23.737411","2":"67","3":"0.0015919206","4":"0.007927187","5":"<S3: sfc_POLYGON>"},{"1":"39.554028","2":"7","3":"0.0036047304","4":"0.005833445","5":"<S3: sfc_POLYGON>"},{"1":"70.420563","2":"49","3":"0.0036047304","4":"0.010385654","5":"<S3: sfc_POLYGON>"},{"1":"73.028099","2":"94","3":"0.0036047304","4":"0.010770215","5":"<S3: sfc_POLYGON>"},{"1":"50.343071","2":"5","3":"0.0036047304","4":"0.007424617","5":"<S3: sfc_POLYGON>"},{"1":"76.647209","2":"84","3":"0.0036047304","4":"0.011303963","5":"<S3: sfc_POLYGON>"},{"1":"77.701996","2":"61","3":"0.0036047304","4":"0.011459523","5":"<S3: sfc_POLYGON>"},{"1":"78.878410","2":"33","3":"0.0036047304","4":"0.011633021","5":"<S3: sfc_POLYGON>"},{"1":"69.623749","2":"36","3":"0.0036047304","4":"0.010268140","5":"<S3: sfc_POLYGON>"},{"1":"68.413002","2":"68","3":"0.0036047304","4":"0.010089578","5":"<S3: sfc_POLYGON>"},{"1":"65.100456","2":"28","3":"0.0036047304","4":"0.009601043","5":"<S3: sfc_POLYGON>"},{"1":"72.543648","2":"28","3":"0.0034031702","4":"0.011332425","5":"<S3: sfc_POLYGON>"},{"1":"72.048012","2":"47","3":"0.0034031702","4":"0.011255000","5":"<S3: sfc_POLYGON>"},{"1":"35.654865","2":"3","3":"0.0034031702","4":"0.005569834","5":"<S3: sfc_POLYGON>"},{"1":"66.706841","2":"72","3":"0.0034031702","4":"0.010420627","5":"<S3: sfc_POLYGON>"},{"1":"71.928535","2":"67","3":"0.0034031702","4":"0.011236336","5":"<S3: sfc_POLYGON>"},{"1":"65.755051","2":"56","3":"0.0034031702","4":"0.010271943","5":"<S3: sfc_POLYGON>"},{"1":"65.193253","2":"55","3":"0.0034031702","4":"0.010184182","5":"<S3: sfc_POLYGON>"},{"1":"69.271057","2":"95","3":"0.0034031702","4":"0.010821197","5":"<S3: sfc_POLYGON>"},{"1":"34.377018","2":"13","3":"0.0034031702","4":"0.005370215","5":"<S3: sfc_POLYGON>"},{"1":"65.240372","2":"63","3":"0.0034031702","4":"0.010191542","5":"<S3: sfc_POLYGON>"},{"1":"68.764915","2":"85","3":"0.0035681729","4":"0.010245383","5":"<S3: sfc_POLYGON>"},{"1":"67.204384","2":"70","3":"0.0035681729","4":"0.010012877","5":"<S3: sfc_POLYGON>"},{"1":"66.770332","2":"19","3":"0.0035681729","4":"0.009948207","5":"<S3: sfc_POLYGON>"},{"1":"68.285454","2":"9","3":"0.0035681729","4":"0.010173947","5":"<S3: sfc_POLYGON>"},{"1":"68.712112","2":"98","3":"0.0035681729","4":"0.010237515","5":"<S3: sfc_POLYGON>"},{"1":"66.153961","2":"5","3":"0.0035681729","4":"0.009856373","5":"<S3: sfc_POLYGON>"},{"1":"66.741051","2":"18","3":"0.0035681729","4":"0.009943844","5":"<S3: sfc_POLYGON>"},{"1":"67.524040","2":"94","3":"0.0035681729","4":"0.010060503","5":"<S3: sfc_POLYGON>"},{"1":"68.298470","2":"10","3":"0.0035681729","4":"0.010175886","5":"<S3: sfc_POLYGON>"},{"1":"67.645485","2":"93","3":"0.0035681729","4":"0.010078597","5":"<S3: sfc_POLYGON>"},{"1":"65.591522","2":"7","3":"0.0034319475","4":"0.010160480","5":"<S3: sfc_POLYGON>"},{"1":"65.116661","2":"65","3":"0.0034319475","4":"0.010086922","5":"<S3: sfc_POLYGON>"},{"1":"66.787338","2":"53","3":"0.0034319475","4":"0.010345718","5":"<S3: sfc_POLYGON>"},{"1":"49.952030","2":"12","3":"0.0034319475","4":"0.007737839","5":"<S3: sfc_POLYGON>"},{"1":"68.707634","2":"83","3":"0.0034319475","4":"0.010643183","5":"<S3: sfc_POLYGON>"},{"1":"70.060097","2":"69","3":"0.0034319475","4":"0.010852686","5":"<S3: sfc_POLYGON>"},{"1":"65.720688","2":"67","3":"0.0034319475","4":"0.010180489","5":"<S3: sfc_POLYGON>"},{"1":"65.368576","2":"9","3":"0.0034319475","4":"0.010125945","5":"<S3: sfc_POLYGON>"},{"1":"61.804245","2":"46","3":"0.0034319475","4":"0.009573810","5":"<S3: sfc_POLYGON>"},{"1":"65.258865","2":"5","3":"0.0034319475","4":"0.010108950","5":"<S3: sfc_POLYGON>"},{"1":"48.125313","2":"92","3":"0.0037577946","4":"0.006808441","5":"<S3: sfc_POLYGON>"},{"1":"78.639069","2":"50","3":"0.0037577946","4":"0.011125319","5":"<S3: sfc_POLYGON>"},{"1":"85.314835","2":"46","3":"0.0037577946","4":"0.012069761","5":"<S3: sfc_POLYGON>"},{"1":"41.620327","2":"9","3":"0.0037577946","4":"0.005888160","5":"<S3: sfc_POLYGON>"},{"1":"80.859184","2":"67","3":"0.0037577946","4":"0.011439406","5":"<S3: sfc_POLYGON>"},{"1":"55.563343","2":"10","3":"0.0037577946","4":"0.007860723","5":"<S3: sfc_POLYGON>"},{"1":"59.361137","2":"7","3":"0.0037577946","4":"0.008398009","5":"<S3: sfc_POLYGON>"},{"1":"82.523834","2":"56","3":"0.0037577946","4":"0.011674909","5":"<S3: sfc_POLYGON>"},{"1":"84.890404","2":"33","3":"0.0037577946","4":"0.012009715","5":"<S3: sfc_POLYGON>"},{"1":"82.808151","2":"59","3":"0.0037577946","4":"0.011715132","5":"<S3: sfc_POLYGON>"},{"1":"55.756023","2":"64","3":"0.0018120586","4":"0.016357868","5":"<S3: sfc_POLYGON>"},{"1":"25.671524","2":"99","3":"0.0018120586","4":"0.007531588","5":"<S3: sfc_POLYGON>"},{"1":"50.701900","2":"53","3":"0.0018120586","4":"0.014875075","5":"<S3: sfc_POLYGON>"},{"1":"25.068436","2":"97","3":"0.0018120586","4":"0.007354652","5":"<S3: sfc_POLYGON>"},{"1":"50.138435","2":"55","3":"0.0018120586","4":"0.014709764","5":"<S3: sfc_POLYGON>"},{"1":"26.643852","2":"14","3":"0.0018120586","4":"0.007816853","5":"<S3: sfc_POLYGON>"},{"1":"41.049355","2":"42","3":"0.0018120586","4":"0.012043182","5":"<S3: sfc_POLYGON>"},{"1":"47.536846","2":"92","3":"0.0018120586","4":"0.013946502","5":"<S3: sfc_POLYGON>"},{"1":"44.636616","2":"46","3":"0.0018120586","4":"0.013095623","5":"<S3: sfc_POLYGON>"},{"1":"26.894558","2":"38","3":"0.0018120586","4":"0.007890406","5":"<S3: sfc_POLYGON>"},{"1":"16.725422","2":"24","3":"0.0009528565","4":"0.009331614","5":"<S3: sfc_POLYGON>"},{"1":"19.794113","2":"1","3":"0.0009528565","4":"0.011043729","5":"<S3: sfc_POLYGON>"},{"1":"24.684286","2":"4","3":"0.0009528565","4":"0.013772102","5":"<S3: sfc_POLYGON>"},{"1":"9.782746","2":"73","3":"0.0009528565","4":"0.005458087","5":"<S3: sfc_POLYGON>"},{"1":"15.628902","2":"90","3":"0.0009528565","4":"0.008719833","5":"<S3: sfc_POLYGON>"},{"1":"35.170658","2":"29","3":"0.0009528565","4":"0.019622763","5":"<S3: sfc_POLYGON>"},{"1":"22.974194","2":"3","3":"0.0009528565","4":"0.012817991","5":"<S3: sfc_POLYGON>"},{"1":"18.406805","2":"25","3":"0.0009528565","4":"0.010269708","5":"<S3: sfc_POLYGON>"},{"1":"11.771967","2":"96","3":"0.0009528565","4":"0.006567933","5":"<S3: sfc_POLYGON>"},{"1":"37.335232","2":"6","3":"0.0009528565","4":"0.020830444","5":"<S3: sfc_POLYGON>"},{"1":"31.738808","2":"22","3":"0.0013211051","4":"0.012772044","5":"<S3: sfc_POLYGON>"},{"1":"34.534222","2":"21","3":"0.0013211051","4":"0.013896949","5":"<S3: sfc_POLYGON>"},{"1":"23.281466","2":"83","3":"0.0013211051","4":"0.009368717","5":"<S3: sfc_POLYGON>"},{"1":"25.811384","2":"98","3":"0.0013211051","4":"0.010386784","5":"<S3: sfc_POLYGON>"},{"1":"32.646873","2":"13","3":"0.0013211051","4":"0.013137460","5":"<S3: sfc_POLYGON>"},{"1":"26.285776","2":"47","3":"0.0013211051","4":"0.010577684","5":"<S3: sfc_POLYGON>"},{"1":"24.269712","2":"95","3":"0.0013211051","4":"0.009766398","5":"<S3: sfc_POLYGON>"},{"1":"28.951611","2":"71","3":"0.0013211051","4":"0.011650445","5":"<S3: sfc_POLYGON>"},{"1":"25.937246","2":"35","3":"0.0013211051","4":"0.010437432","5":"<S3: sfc_POLYGON>"},{"1":"16.568598","2":"65","3":"0.0013211051","4":"0.006667385","5":"<S3: sfc_POLYGON>"},{"1":"41.098873","2":"33","3":"0.0012735659","4":"0.017155985","5":"<S3: sfc_POLYGON>"},{"1":"26.122747","2":"39","3":"0.0012735659","4":"0.010904471","5":"<S3: sfc_POLYGON>"},{"1":"27.481644","2":"18","3":"0.0012735659","4":"0.011471718","5":"<S3: sfc_POLYGON>"},{"1":"16.350346","2":"68","3":"0.0012735659","4":"0.006825158","5":"<S3: sfc_POLYGON>"},{"1":"17.229832","2":"66","3":"0.0012735659","4":"0.007192283","5":"<S3: sfc_POLYGON>"},{"1":"36.142097","2":"11","3":"0.0012735659","4":"0.015086868","5":"<S3: sfc_POLYGON>"},{"1":"20.720364","2":"49","3":"0.0012735659","4":"0.008649343","5":"<S3: sfc_POLYGON>"},{"1":"27.963154","2":"36","3":"0.0012735659","4":"0.011672715","5":"<S3: sfc_POLYGON>"},{"1":"24.753721","2":"53","3":"0.0012735659","4":"0.010332995","5":"<S3: sfc_POLYGON>"},{"1":"38.360661","2":"35","3":"0.0012735659","4":"0.016012967","5":"<S3: sfc_POLYGON>"},{"1":"69.210846","2":"95","3":"0.0026420539","4":"0.013926425","5":"<S3: sfc_POLYGON>"},{"1":"32.014202","2":"60","3":"0.0026420539","4":"0.006441814","5":"<S3: sfc_POLYGON>"},{"1":"36.755707","2":"42","3":"0.0026420539","4":"0.007395887","5":"<S3: sfc_POLYGON>"},{"1":"65.498764","2":"92","3":"0.0026420539","4":"0.013179489","5":"<S3: sfc_POLYGON>"},{"1":"52.550938","2":"75","3":"0.0026420539","4":"0.010574162","5":"<S3: sfc_POLYGON>"},{"1":"31.751923","2":"39","3":"0.0026420539","4":"0.006389038","5":"<S3: sfc_POLYGON>"},{"1":"62.759781","2":"86","3":"0.0026420539","4":"0.012628358","5":"<S3: sfc_POLYGON>"},{"1":"65.664902","2":"73","3":"0.0026420539","4":"0.013212919","5":"<S3: sfc_POLYGON>"},{"1":"29.264900","2":"56","3":"0.0026420539","4":"0.005888606","5":"<S3: sfc_POLYGON>"},{"1":"55.009144","2":"99","3":"0.0026420539","4":"0.011068795","5":"<S3: sfc_POLYGON>"},{"1":"65.516762","2":"26","3":"0.0028797775","4":"0.012094854","5":"<S3: sfc_POLYGON>"},{"1":"73.069443","2":"4","3":"0.0028797775","4":"0.013489132","5":"<S3: sfc_POLYGON>"},{"1":"53.296864","2":"84","3":"0.0028797775","4":"0.009838975","5":"<S3: sfc_POLYGON>"},{"1":"59.396137","2":"45","3":"0.0028797775","4":"0.010964944","5":"<S3: sfc_POLYGON>"},{"1":"44.415054","2":"82","3":"0.0028797775","4":"0.008199331","5":"<S3: sfc_POLYGON>"},{"1":"55.659981","2":"87","3":"0.0028797775","4":"0.010275223","5":"<S3: sfc_POLYGON>"},{"1":"49.879757","2":"67","3":"0.0028797775","4":"0.009208153","5":"<S3: sfc_POLYGON>"},{"1":"69.436302","2":"18","3":"0.0028797775","4":"0.012818429","5":"<S3: sfc_POLYGON>"},{"1":"60.696644","2":"37","3":"0.0028797775","4":"0.011205027","5":"<S3: sfc_POLYGON>"},{"1":"59.808956","2":"9","3":"0.0028797775","4":"0.011041153","5":"<S3: sfc_POLYGON>"},{"1":"34.168118","2":"65","3":"0.0012260625","4":"0.014815476","5":"<S3: sfc_POLYGON>"},{"1":"33.947289","2":"64","3":"0.0012260625","4":"0.014719723","5":"<S3: sfc_POLYGON>"},{"1":"22.858831","2":"88","3":"0.0012260625","4":"0.009911710","5":"<S3: sfc_POLYGON>"},{"1":"48.556576","2":"92","3":"0.0012260625","4":"0.021054387","5":"<S3: sfc_POLYGON>"},{"1":"18.650955","2":"31","3":"0.0012260625","4":"0.008087152","5":"<S3: sfc_POLYGON>"},{"1":"14.951907","2":"40","3":"0.0012260625","4":"0.006483226","5":"<S3: sfc_POLYGON>"},{"1":"25.225021","2":"51","3":"0.0012260625","4":"0.010937702","5":"<S3: sfc_POLYGON>"},{"1":"39.859104","2":"83","3":"0.0012260625","4":"0.017283118","5":"<S3: sfc_POLYGON>"},{"1":"12.806539","2":"28","3":"0.0012260625","4":"0.005552983","5":"<S3: sfc_POLYGON>"},{"1":"33.041645","2":"67","3":"0.0012260625","4":"0.014327031","5":"<S3: sfc_POLYGON>"},{"1":"48.106354","2":"55","3":"0.0020087469","4":"0.012731641","5":"<S3: sfc_POLYGON>"},{"1":"32.520321","2":"35","3":"0.0020087469","4":"0.008606702","5":"<S3: sfc_POLYGON>"},{"1":"64.645348","2":"82","3":"0.0020087469","4":"0.017108787","5":"<S3: sfc_POLYGON>"},{"1":"61.332005","2":"66","3":"0.0020087469","4":"0.016231890","5":"<S3: sfc_POLYGON>"},{"1":"32.770515","2":"89","3":"0.0020087469","4":"0.008672917","5":"<S3: sfc_POLYGON>"},{"1":"27.312597","2":"49","3":"0.0020087469","4":"0.007228446","5":"<S3: sfc_POLYGON>"},{"1":"77.177528","2":"93","3":"0.0020087469","4":"0.020425505","5":"<S3: sfc_POLYGON>"},{"1":"39.015125","2":"99","3":"0.0020087469","4":"0.010325592","5":"<S3: sfc_POLYGON>"},{"1":"35.066185","2":"40","3":"0.0020087469","4":"0.009280480","5":"<S3: sfc_POLYGON>"},{"1":"18.863186","2":"12","3":"0.0020087469","4":"0.004992258","5":"<S3: sfc_POLYGON>"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>What about the third-stage selection of dwellings? One might assume that the selection is equiprobable since we’re simply drawing a random location within each cell but that is, in fact, incorrect.</p>
+<p>To understand why, let’s run a simulation where we draw 10,000 random points from each of a few grid cells and see where they lead us to. We’ll zoom in to a small block in downtown Aleppo for the next illustration.</p>
+<pre class="r"><code>exloc &lt;- st_point(c(37.118120, 36.214080))
+
+ss &lt;- 
+  cbind(
+    ppp1km_sf %&gt;% 
+      st_filter(exloc) %&gt;% rename(psupop = ppp, psugeometry = geometry),
+    ppp100m %&gt;% 
+      st_crop(exloc) %&gt;% st_as_sf() %&gt;% rename(ssupop = ppp, ssugeometry = geometry),
+    tibble(
+      tsugeometry = list(exloc)) %&gt;% 
+      st_sf(crs = st_crs(ppp1km_sf), sf_column_name = &quot;tsugeometry&quot;)) %&gt;% 
+  st_set_geometry(&quot;ssugeometry&quot;) %&gt;% 
+  mutate(psup = psupop/aleppo$pop, ssup = ssupop/psupop)
+
+exssu &lt;- 
+  ppp100m %&gt;% 
+  st_crop(ppp1km_sf %&gt;% st_filter(ss)) %&gt;% 
+  st_as_sf() %&gt;% 
+  st_filter(ss) %&gt;% 
+  mutate(ssuid = row_number()) %&gt;% 
+  rename(ssupop = ppp, ssugeometry = geometry)
+
+buildings &lt;- 
+  opq(st_bbox(exssu)) %&gt;% 
+  add_osm_feature(&quot;building&quot;) %&gt;% 
+  osmdata_sf() %&gt;% 
+  pluck(&quot;osm_polygons&quot;) %&gt;% 
+  transmute(tsuid = row_number()) %&gt;% 
+  rename(tsugeometry = geometry)
+
+voronoi &lt;- 
+  exssu %&gt;% 
+  rowwise() %&gt;% 
+  mutate(dots = st_sample(ssugeometry, 10000) %&gt;% st_as_sf() %&gt;% list()) %&gt;% 
+  mutate(tsuid = 
+           st_nearest_feature(
+             st_set_crs(dots, st_crs(exssu)),
+             buildings %&gt;% st_crop(ssugeometry)) %&gt;% 
+           enframe(NULL, &quot;id&quot;) %&gt;% 
+           left_join(buildings %&gt;% st_crop(ssugeometry) %&gt;% mutate(id = row_number())) %&gt;% 
+           pluck(&quot;tsuid&quot;) %&gt;% 
+           list()) %&gt;% 
+  unnest(c(dots, tsuid)) %&gt;% 
+  group_by(ssuid, tsuid) %&gt;% 
+  summarize(catchment = st_convex_hull(st_union(x))) %&gt;% 
+  ungroup() %&gt;% 
+  mutate_at(vars(catchment), st_sfc, crs = st_crs(exssu)) %&gt;%
+  st_as_sf()
+
+voronoi &lt;- voronoi %&gt;% mutate(tsup = as.numeric(st_area(.)/st_area(exssu %&gt;% head(1))))
+
+voronoi %&gt;% 
+  ggplot() + 
+  geom_sf(aes(fill = tsup)) +
+  geom_sf(fill = &quot;brown&quot;, data = buildings) +
+  geom_sf(fill = NA, color = &quot;blue&quot;, data = exssu) +
+  expand_limits(fill = c(0, 1)) +
+  scale_fill_viridis_c(labels = scales::percent) +
+  scale_x_continuous(labels = function(x) { str_c(x, &quot;°&quot;, if_else(x &gt;= 0, &quot;E&quot;, &quot;W&quot;)) }) +
+  scale_y_continuous(labels = function(y) { str_c(y, &quot;°&quot;, if_else(y &gt;= 0, &quot;N&quot;, &quot;S&quot;)) }) +
+  theme_minimal() +
+  labs(
+    title = &quot;Third-stage Inclusion Probabilities&quot;, 
+    fill = &quot;probability&quot;, caption = &quot;1 cell = 100m x 100m&quot;)</code></pre>
+<p><img src="/post/geosampling_files/figure-html/wtviz-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>The technical term for this beautiful piece of abstract art is a <a href="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi tessellation</a> over the dwellings in each secondary sampling unit. What it’s telling us, basically, is that larger buildings and those in less crowded areas have more points leading to them than do the other buildings. As such, the third-stage inclusion probabilities should reflect the varying size of the catchment area between the different dwellings in a single grid cell.</p>
+<p>Unfortunately, the process of producing these tessellations can only be partially automated. It requires someone to trace the outline of <em>every</em> dwelling intersecting the <em>selected</em> secondary sampling units (whether using shiny/leaflet or their favorite choice of GIS application) to feed the algorithm. This stage is essentially equivalent to the household listing step in any field survey except in this case it can be done completely from the office using freely available satellite imagery even before sending anyone to the field. We cheated here by purposefully selecting a block for which building outlines could be retrieved from OpenStreetMap. But that’s the exception rather than the norm. Most of the time building information simply isn’t available and has to be produced manually.</p>
+<p>We can now update our sample to replace the random dot with its nearest building and include the third-stage sampling probability as well.</p>
+<pre class="r"><code>ss &lt;- 
+  ss %&gt;% 
+  st_set_geometry(&quot;tsugeometry&quot;) %&gt;% 
+  st_join(voronoi %&gt;% select(tsuid, tsup)) %&gt;% 
+  mutate(tsugeometry = buildings %&gt;% st_filter(voronoi %&gt;% st_filter(tsugeometry)) %&gt;% st_geometry())</code></pre>
+<p>Allowing us to produce normalized sample weights using the familiar formula:</p>
+<pre class="r"><code>ss &lt;- 
+  ss %&gt;% 
+  mutate(
+    p = psup*ssup*tsup,
+    wt = 1/p, wt = wt*length(wt)/sum(wt))
+
+ss %&gt;% 
+  select(psupop, ssupop, psup,ssup,tsuid, tsup, p, wt  )%&gt;% 
+  rmarkdown::paged_table()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["psupop"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["ssupop"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["psup"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["ssup"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["tsuid"],"name":[5],"type":["int"],"align":["right"]},{"label":["tsup"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["p"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["psugeometry"],"name":[9],"type":["S3: sfc_POLYGON"],"align":["right"]}],"data":[{"1":"6754.319","2":"68.45786","3":"0.003590779","4":"0.01013542","5":"10","6":"0.260015","7":"9.463002e-06","8":"1","9":"<S3: sfc_POLYGON>","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Needless to say, both <code>ss</code> and <code>exssu</code> in the above calculations should be replaced with <code>s</code> (the sample) in real-world implementation. The substitution was only done here to skirt around the problem of missing building data.</p>
+<p>The final implementation detail to be aware of concerns fourth-stage selection procedures. While household survey protocols normally include guidance on selecting respondent units from multi-tenant dwellings, the issue warrants special attention in the context of geospatial sampling. The reason is that whereas in common sampling processes enumeration units are segmented so that dwellings would fall into one enumeration area or the other, in geospatial sampling from gridded population data it is not uncommon for dwellings to straddle the area between two or more grid cells. This complicates the calculation of selection probabilities as the same dwelling may enter the sample through more than one secondary sampling unit and selection probabilities need to be adjusted for that based on the probability calculation for sampling with replacement. One alternative would be to conceptually subdivide such dwellings so that, for example, if a building stretches across two cells, then even numbered apartments would be assigned to the Northern/Eastern cell and odd ones to the Southern/Western one. Standard procedures would then apply to select respondent units from among eligible apartments without affecting the calculation of weights.</p>
+</div>
+<div id="epilogue" class="section level1">
+<h1>Epilogue</h1>
+<p>The objective of this tutorial was to demonstrate the utility of marrying geospatial methods with household survey sampling techniques to produce representative samples in data poor environments. All too often, humanitarians have used the principle of “good enough” to justify fallback on methodically unsound approaches to needs assessment like convenience sampling and endless extrapolation from questionably designated key informants. Hopefully this tutorial has made the case that the challenges of data deprivation can be circumvented without compromising on methodical rigor.</p>
+<p>This tutorial was inspired by <a href="https://link.springer.com/chapter/10.1007/978-3-030-25120-8_7">recent work</a> by the World Bank in fragility, conflict, and violence settings. Special thanks goes to Edouard Legoupil for his encouragement to write this post.</p>
+</div>
+
+    </div>
+      
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/sampling">Sampling</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/survey">Survey</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/geodata">Geodata</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/mapping">Mapping</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/unhcr">UNHCR</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/hisham-galal">Hisham-Galal</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+    
+ 
+  <script>
+  $(document).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
+  });
+  </script>
+  
+  <script>
+    window.initializeCodeFolding = function(show) {
+
+  
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  
+  var currentIndex = 1;
+
+  
+  var rCodeBlocks = $('');
+  rCodeBlocks.each(function() {
+
+    
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+
+  </script>
+  
+
+
+  </footer>
+  
+
+<div class="related-articles">
+<h3>Related articles</h3>
+<ul>
+	<li>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+          </h3>
+          
+          <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+          February 23, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/quick-tips-for-visualising-data/">Quick tips for visualising data (with R)</a>
+          </h3>
+          
+          <time class="published" datetime='2020-04-02 00:00:00 &#43;0000 UTC'>
+          April 2, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a>
+          </h3>
+          
+          <time class="published" datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+          March 19, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	</li>	
+</ul>
+</div>
+
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/quick-tips-for-visualising-data/"
+                class="button big previous">Quick tips for visualising data (with R)</a></li>
+    
+
+    
+        <li><a href="/post/tidysampling/"
+                class="button big next">Working with Survey Samples in the Tidyverse</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/images/avatar.png" alt="HumanitaRian useR Group" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>~ Science is 'show me' - not 'trust me' ~</p>
+      </header>
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/anonymisation/">Anonymisation: Intrusion scenario and risk threshold</a>
+              </h3>
+              
+              <time class="published" datetime='2020-06-25 00:00:00 &#43;0000 UTC'>
+              June 25, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/">Post</a>
+              </h3>
+              
+              <time class="published" datetime='2020-06-25 00:00:00 &#43;0000 UTC'>
+              June 25, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/tidysampling/">Working with Survey Samples in the Tidyverse</a>
+              </h3>
+              
+              <time class="published" datetime='2020-05-29 00:00:00 &#43;0000 UTC'>
+              May 29, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/geosampling/">Using Gridded Population Data for Household Survey Sampling</a>
+              </h3>
+              
+              <time class="published" datetime='2020-04-14 00:00:00 &#43;0000 UTC'>
+              April 14, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/quick-tips-for-visualising-data/">Quick tips for visualising data (with R)</a>
+              </h3>
+              
+              <time class="published" datetime='2020-04-02 00:00:00 &#43;0000 UTC'>
+              April 2, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+              March 19, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+              </h3>
+              
+              <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+              February 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">See more</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+
+  
+  
+    <section id="mini-bio">
+      <h3>about</h3>
+      <p>The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.</p>
+      <a href="/about" class="button">learn more</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+    
+    
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+    
+
+    
+      
+        
+      
+    
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+      
+          
+    
+      <script src="/js/collapse.js"></script>
+      <script src="/js/dropdown.js"></script>
+      <script src="/js/transition.js"></script>
+    
+    
+  </body>
+</html>
+

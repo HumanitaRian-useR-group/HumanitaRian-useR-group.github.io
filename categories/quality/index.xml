@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quality on HumanitaRian useR Group</title>
@@ -8,19 +10,13 @@
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Tue, 18 Jun 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/quality/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     <item>
-      <title>Data Quality Monitoring</title>
-      <link>/post/dataqualitymonitoring/</link>
+      <title>Quality</title>
+      <link>/categories/quality/</link>
       <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/dataqualitymonitoring/</guid>
-      <description>In this quick tutorial, I share a simple method to graphically display information to monitor data quality of survey teams using a little bit of dplyr and ggplot2 
-There is a lot to be said and done about data quality monitoring. Here is just one simple method to graphically observe “curb-stoning” or “flat-lining” - when enumerators stop administering/recording real questions and responses and instead start making up answers. Often fictious responses are not random and can sometimes be detected graphically.</description>
+      <guid>/categories/quality/</guid>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

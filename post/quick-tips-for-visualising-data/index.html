@@ -1,0 +1,1201 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Quick tips for visualising data (with R)</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.74.3" />
+        
+
+
+        
+            <meta name="author" content="Edouard Legoupil">
+        
+        
+            
+                <meta name="description" content="The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Quick tips for visualising data (with R)"/>
+<meta name="twitter:description" content="The OCHA’s Centre for Humanitarian Data has recently produce some Quick Tips for Visualising Data using examples from the COVID-19 Pandemic. It includes a tutorial explaining how to generate a Logarithmic Line Chart with Excel. This tutorial will demonstrate how to increase your productivity by doing the same with R.
+ R often appears a bit complicated for beginners as it is based on command rather than point on click on a graphical interface."/>
+
+        <meta property="og:title" content="Quick tips for visualising data (with R)" />
+<meta property="og:description" content="The OCHA’s Centre for Humanitarian Data has recently produce some Quick Tips for Visualising Data using examples from the COVID-19 Pandemic. It includes a tutorial explaining how to generate a Logarithmic Line Chart with Excel. This tutorial will demonstrate how to increase your productivity by doing the same with R.
+ R often appears a bit complicated for beginners as it is based on command rather than point on click on a graphical interface." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/quick-tips-for-visualising-data/" />
+<meta property="article:published_time" content="2020-04-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-02T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Quick tips for visualising data (with R)">
+<meta itemprop="description" content="The OCHA’s Centre for Humanitarian Data has recently produce some Quick Tips for Visualising Data using examples from the COVID-19 Pandemic. It includes a tutorial explaining how to generate a Logarithmic Line Chart with Excel. This tutorial will demonstrate how to increase your productivity by doing the same with R.
+ R often appears a bit complicated for beginners as it is based on command rather than point on click on a graphical interface.">
+<meta itemprop="datePublished" content="2020-04-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-04-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1575">
+
+
+
+<meta itemprop="keywords" content="UNHCR,Edouard-Legoupil," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-131350181-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+      
+            <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+			  
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+        <h1><a href="/">post</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post/index.html">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-info-circle">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-database">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.r-bloggers.com/">
+                            <i class="fa fa-universal-access">&nbsp;</i>learn more with R-bloggers
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post/index.html">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-info-circle">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Contributors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-database">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://join.skype.com/qYBKC5q3wKp4">
+                            <h3>
+                                <i class="fa fa-phone">&nbsp;</i>Join the Skype-group
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.r-bloggers.com/">
+                            <h3>
+                                <i class="fa fa-universal-access">&nbsp;</i>learn more with R-bloggers
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/anonymisation/">Anonymisation: Intrusion scenario and risk threshold</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-06-25'>
+                                    June 25, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/">Post</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-06-25'>
+                                    June 25, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/tidysampling/">Working with Survey Samples in the Tidyverse</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-05-29'>
+                                    May 29, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/geosampling/">Using Gridded Population Data for Household Survey Sampling</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-04-14'>
+                                    April 14, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/quick-tips-for-visualising-data/">Quick tips for visualising data (with R)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-04-02'>
+                                    April 2, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-19'>
+                                    March 19, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-02-23'>
+                                    February 23, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">See more</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2fquick-tips-for-visualising-data%2f&amp;text=Quick%20tips%20for%20visualising%20data%20%28with%20R%29&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2fquick-tips-for-visualising-data%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fquick-tips-for-visualising-data%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2fquick-tips-for-visualising-data%2f&amp;title=Quick%20tips%20for%20visualising%20data%20%28with%20R%29" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2fquick-tips-for-visualising-data%2f&amp;title=Quick%20tips%20for%20visualising%20data%20%28with%20R%29" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2fquick-tips-for-visualising-data%2f&amp;title=Quick%20tips%20for%20visualising%20data%20%28with%20R%29" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2fquick-tips-for-visualising-data%2f&amp;description=Quick%20tips%20for%20visualising%20data%20%28with%20R%29" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Edouard%20Legoupil&amp;body=%2fpost%2fquick-tips-for-visualising-data%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/quick-tips-for-visualising-data/">Quick tips for visualising data (with R)</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        <time class="published"
+            datetime='2020-04-02 00:00:00 &#43;0000 UTC'>
+            April 2, 2020</time>
+        <span class="author">Edouard Legoupil</span>
+        
+            <p>8 minutes read</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  
+  <div>
+     
+ <div id="go-to-folding-div" style="display: inline-block;vertical-align: top;height: 1px;margin-top: -4em;"></div>
+ <div id="code-folding-buttons" class="btn-group pull-right">
+   <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast="">
+     <span>Show/Hide all code</span> 
+     <span class="caret"></span>
+   </button>
+   <ul class="dropdown-menu" style="min-width: 50px;">
+   <li><a id="rmd-show-all-code" href="#go-to-folding-div">Show All Code</a>
+   </li><li><a id="rmd-hide-all-code" href="#go-to-folding-div">Hide All Code</a></li>
+   </ul>
+ </div>
+ 
+
+    <br/>
+    <div id="content" class="article-entry">
+      
+
+
+<p>The OCHA’s Centre for Humanitarian Data has recently produce some <a href="https://ocha-dap.github.io/quick-tips-for-visualising-data/#/doityourself_about">Quick Tips for Visualising Data using examples from the COVID-19 Pandemic</a>. It includes a tutorial explaining how to generate a Logarithmic Line Chart with <a href="https://drive.google.com/file/d/1z0V_eRDuDy5i0F0_fOUZ1FOVLoOjnXuL/view">Excel</a>. This tutorial will demonstrate how to increase your productivity by doing the same with R.</p>
+<!--MORE-->
+<p>R often appears a bit complicated for beginners as it is based on command rather than point on click on a graphical interface. With some practice, what might appear as a challenge is actually an advantage as you can very quickly reproduce a results or review what someonelse has done. Over time, copy-pasting command is lot more effective than clicking and is the key to professional level productivity.</p>
+<p>Using the World Health Organization (WHO) data from the Humanitarian Data Exchange (HDX)
+here <a href="https://data.humdata.org/m/dataset/coronavirus-covid-19-cases-and-deaths">coronavirus-covid-19-cases-and-deaths</a>, we will create a logarithmic chart for the cumulative COVID-19 cases for Afghanistan.</p>
+<p>We will:</p>
+<ul>
+<li><p>Download the data from the live data source (here google spreadsheet);</p></li>
+<li><p>Prepare &amp; structure the data;</p></li>
+<li><p>Insert a line graph;</p></li>
+<li><p>Explore using a logarithmic scale; and</p></li>
+<li><p>Customize the design.</p></li>
+</ul>
+<p>The tutorial below assumes that you have installed <a href="https://cran.r-project.org/">R</a> and <a href="https://rstudio.com/products/rstudio/">Rstudio</a>, both being open source software, working on any operating system and coming at no cost for you and your organisation. A good starting point can be to go through this guide: <a href="https://github.com/WdeNooy/Switch2R/blob/master/HelpMyCollaboratorUsesR.pdf">Help, My Collaborator Uses R! An Introduction to ReproducibleStatistical Analyses in R</a>.</p>
+<p>Once installed just create a new project and copy paste the code presented below in your interface. Alternatively you can download this tutorial notebook here and run code chunk one by one.</p>
+<div id="get-the-packages" class="section level2">
+<h2>Get the packages</h2>
+<p>R works with packages. They are the equivalent of macro functions in Excel. They can be easly installed with one command line. Getting easiy access to the packages and being able to create and distribute them is one of the big advantage of R.</p>
+<pre class="r"><code>## Getting all necessary package
+using &lt;- function(...) {
+    libs &lt;- unlist(list(...))
+    req &lt;- unlist(lapply(libs,require,character.only = TRUE))
+    need &lt;- libs[req == FALSE]
+    if (length(need) &gt; 0) { 
+        install.packages(need, repos = &#39;https://mirrors.tuna.tsinghua.edu.cn/CRAN/&#39;)
+        lapply(need,require,character.only = TRUE)
+    }
+}
+
+## Getting all necessary package
+using(&quot;ggplot2&quot;, &quot;ggthemes&quot;)</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## Loading required package: ggthemes</code></pre>
+</div>
+<div id="first-get-the-data" class="section level2">
+<h2>First Get the data</h2>
+<p>No need to download and save the data. R can retrieve data directly from the HDX server! Just insert the URL to get thhe data with the base <code>read.csv</code> function.</p>
+<p>You are have the basis of R: i.e it’s all about mapinuplating different type of object. An object is simply created by giving it name, here <code>mydata</code> and use the assing sttement <code>&lt;-</code></p>
+<pre class="r"><code>mydata &lt;- read.csv(&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vSe-8lf6l_ShJHvd126J-jGti992SUbNLu-kmJfx1IRkvma_r4DHi0bwEW89opArs8ZkSY5G2-Bc1yT/pub?gid=0&amp;single=true&amp;output=csv&quot;)</code></pre>
+<p>The command <code>names</code> will tell us the names of the variable</p>
+<pre class="r"><code>names(mydata)</code></pre>
+<pre><code>##  [1] &quot;OBJECTID&quot;      &quot;ISO_2_CODE&quot;    &quot;ISO_3_CODE&quot;    &quot;ADM0_NAME&quot;    
+##  [5] &quot;date_epicrv&quot;   &quot;NewCase&quot;       &quot;CumCase&quot;       &quot;NewDeath&quot;     
+##  [9] &quot;CumDeath&quot;      &quot;Short_Name_ZH&quot; &quot;Short_Name_FR&quot; &quot;Short_Name_ES&quot;
+## [13] &quot;Short_Name_RU&quot; &quot;Short_Name_AR&quot;</code></pre>
+</div>
+<div id="structure-data" class="section level2">
+<h2>Structure Data</h2>
+<p>You first need to structure your data With Category representing the Horizontal (X) Axis and Series representing that values for different variables being represented.</p>
+<ol style="list-style-type: decimal">
+<li>First filter the data set to show only Afghanistan data</li>
+</ol>
+<pre class="r"><code>mydata &lt;- mydata[ mydata$ISO_3_CODE == &quot;AFG&quot;, ]</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Date Field: We want to have a readable date field. The format specified here (e.g. 2020-02-24T00:00:00.000Z) can be recognied quickly by R.</li>
+</ol>
+<p>The format here is Y-m-dThhmmss.sss</p>
+<p>Below is the required command. We can save the recognised variable as anew variable within the same data frame by just changing the variable name. Here <code>date_epicrv2</code> is created</p>
+<pre class="r"><code>mydata$date_epicrv2 &lt;- as.Date(parsedate::format_iso_8601(mydata$date_epicrv))
+str(mydata)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    161 obs. of  15 variables:
+##  $ OBJECTID     : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ ISO_2_CODE   : chr  &quot;AF&quot; &quot;AF&quot; &quot;AF&quot; &quot;AF&quot; ...
+##  $ ISO_3_CODE   : chr  &quot;AFG&quot; &quot;AFG&quot; &quot;AFG&quot; &quot;AFG&quot; ...
+##  $ ADM0_NAME    : chr  &quot;Afghanistan&quot; &quot;Afghanistan&quot; &quot;Afghanistan&quot; &quot;Afghanistan&quot; ...
+##  $ date_epicrv  : chr  &quot;2020-02-24T00:00:00.000Z&quot; &quot;2020-02-25T00:00:00.000Z&quot; &quot;2020-02-26T00:00:00.000Z&quot; &quot;2020-02-27T00:00:00.000Z&quot; ...
+##  $ NewCase      : int  5 0 0 0 0 0 0 0 0 0 ...
+##  $ CumCase      : int  5 5 5 5 5 5 5 5 5 5 ...
+##  $ NewDeath     : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ CumDeath     : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Short_Name_ZH: chr  &quot;阿富汗&quot; &quot;阿富汗&quot; &quot;阿富汗&quot; &quot;阿富汗&quot; ...
+##  $ Short_Name_FR: chr  &quot;Afghanistan&quot; &quot;Afghanistan&quot; &quot;Afghanistan&quot; &quot;Afghanistan&quot; ...
+##  $ Short_Name_ES: chr  &quot;Afganistán&quot; &quot;Afganistán&quot; &quot;Afganistán&quot; &quot;Afganistán&quot; ...
+##  $ Short_Name_RU: chr  &quot;Афганистан&quot; &quot;Афганистан&quot; &quot;Афганистан&quot; &quot;Афганистан&quot; ...
+##  $ Short_Name_AR: chr  &quot;أفغانستان&quot; &quot;أفغانستان&quot; &quot;أفغانستان&quot; &quot;أفغانستان&quot; ...
+##  $ date_epicrv2 : Date, format: &quot;2020-02-24&quot; &quot;2020-02-25&quot; ...</code></pre>
+</div>
+<div id="create-a-first-line-chart" class="section level2">
+<h2>Create a first line Chart</h2>
+<pre class="r"><code>library(&quot;ggplot2&quot;)
+##creating a new object called &#39;myveryfirstplot&#39; where I will store my chart
+myveryfirstplot &lt;- ggplot(mydata, 
+                   aes(x = date_epicrv2, 
+                       y = CumCase, 
+                       group = 1 ))  +
+                   geom_line()
+
+## displaying it on my screen
+myveryfirstplot </code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>With 4 lines of command, you should have already done your first chart. It is not yet beautifull in a couple of lines we will make it better</p>
+</div>
+<div id="configures-label" class="section level2">
+<h2>Configures label</h2>
+<ol style="list-style-type: decimal">
+<li>Title: Change the title to “Cumulative COVID-19 CasesAfghanistan (as of 20 April)”.</li>
+</ol>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                   ggtitle( &quot;Cumulative COVID-19 Cases Afghanistan (as of 20 April)&quot;)
+myveryfirstplot </code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Let’s split between title and subtitle</p>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                   ggtitle( &quot;Cumulative COVID-19 Cases in Afghanistan&quot;,
+                   sub = &quot;As of 20 April&quot;)
+myveryfirstplot </code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Label for x &amp; y are not useful, let’s remove them</p>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                    labs(x = &quot;&quot;, y = &quot;&quot;)
+myveryfirstplot </code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Add a Source: “Source: WHO”</p>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                   labs(caption = &quot;Source: WHO&quot;)
+myveryfirstplot </code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Gridline: Remove the grid line in the chart and a white clean background</p>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                    theme_bw() +
+                    theme(
+                          axis.line.y = element_blank(),
+                          axis.line = element_line(color = &quot;gray&quot;, size = 1, linetype = &quot;solid&quot;),
+                          panel.background = ggplot2::element_blank(),
+                          panel.border = element_blank(),
+                          panel.grid.major.y = element_line(color = &quot;#cbcbcb&quot;), 
+                          panel.grid.major.x = element_blank(), 
+                          panel.grid.minor.x = element_blank(), 
+                          panel.grid.minor.y = element_blank()) ### changing grid line that should appear
+
+myveryfirstplot </code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Change the font to “Avenir” or another font of your choice and make the font size of the date smaller than the title. We chose 14 points for the main title and 12 points for the date.</p>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                    ggplot2::theme( plot.title = ggplot2::element_text(family = &quot;Avenir&quot;,
+                                                                       size = 14, 
+                                                                       face = &quot;bold&quot;, 
+                                                                       color = &quot;#222222&quot;),
+                                    plot.subtitle  = ggplot2::element_text(family = &quot;Avenir&quot;, 
+                                                                       size = 12, 
+                                                                       color = &quot;#222222&quot;))
+myveryfirstplot </code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Change color data series line: We have selected Orange Accent 2.</p>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                   geom_line(color = &quot;orange&quot;, size = 1)
+
+## displaying it on my screen
+myveryfirstplot </code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="format-x-axis" class="section level2">
+<h2>Format X axis</h2>
+<p>We nned only up to 20 April
+We want to see the month spelled out with only the number for the day and no year displayed.
+We want to show every 14 days.</p>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                    scale_x_date(limits=c(as.Date(&quot;2020-02-24&quot;), as.Date(&quot;2020-04-20&quot;)),
+                                 labels = scales::label_date(format(&quot;%d-%b&quot;) ))
+
+myveryfirstplot </code></pre>
+<pre><code>## Warning: Removed 104 row(s) containing missing values (geom_path).
+
+## Warning: Removed 104 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+<div id="format-vertical-axis" class="section level2">
+<h2>Format Vertical Axis</h2>
+<ol style="list-style-type: decimal">
+<li>Now we want to make the chart display in a Logarithmic scale.
+Starting with 10, the numbers will grow by a factor of ten - 10, 100, 1000, 10,000 etc.</li>
+</ol>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +
+                     scale_y_log10(breaks = c(10,100, 1000, 10000), labels = c(10,100, 1000, 10000)) 
+myveryfirstplot </code></pre>
+<pre><code>## Warning: Removed 104 row(s) containing missing values (geom_path).
+
+## Warning: Removed 104 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Summary Figures: Let’s add some summary figures to give readers context.
+The total number of cumulative cases and the total number of deaths may be useful.</li>
+</ol>
+<p>They are 996 cumulative cases (this is the same number presented in the graph at 20 April) and 33 deaths.</p>
+<p>The white space in the upper left hand corner should be enough. To add such annotation</p>
+<pre class="r"><code>myveryfirstplot  &lt;- myveryfirstplot   +  
+  
+                 geom_label(aes( x = as.Date(&quot;2020-02-25&quot;),
+                                 y = 500,
+                                 label = stringr::str_wrap(&quot;They are 996 cumulative cases and 33 deaths&quot;,
+                                                           30)), 
+                           hjust = 0, 
+                           vjust = 0.5, 
+                           colour = &quot;#555555&quot;, 
+                           fill = &quot;white&quot;, 
+                           label.size = NA, 
+                           family = &quot;Avenir&quot;, 
+                           size = 3)
+myveryfirstplot </code></pre>
+<pre><code>## Warning: Removed 104 row(s) containing missing values (geom_path).
+
+## Warning: Removed 104 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>One interesting capacity of ggplot2 package is the possiblility to <a href="https://ggplot2.tidyverse.org/reference/theme.html">create your own themes</a>. The ggthemes package includes already <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">some examples</a></li>
+</ol>
+<p>For instance:</p>
+<ul>
+<li>Wall Street Journal theme</li>
+</ul>
+<pre class="r"><code>myveryfirstplot1  &lt;- myveryfirstplot   +  
+                    theme_wsj()
+myveryfirstplot1 </code></pre>
+<pre><code>## Warning: Removed 104 row(s) containing missing values (geom_path).
+
+## Warning: Removed 104 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<ul>
+<li>The Economist theme</li>
+</ul>
+<pre class="r"><code>myveryfirstplot1  &lt;- myveryfirstplot   +  
+                    theme_economist()
+myveryfirstplot1 </code></pre>
+<pre><code>## Warning: Removed 104 row(s) containing missing values (geom_path).
+
+## Warning: Removed 104 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<ul>
+<li>Tufte Maximal Data, Minimal Ink Theme</li>
+</ul>
+<pre class="r"><code>myveryfirstplot1  &lt;- myveryfirstplot   +  
+                    theme_tufte()
+myveryfirstplot1 </code></pre>
+<pre><code>## Warning: Removed 104 row(s) containing missing values (geom_path).
+
+## Warning: Removed 104 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<ul>
+<li>Themes based on Stata graph schemes</li>
+</ul>
+<pre class="r"><code>myveryfirstplot1  &lt;- myveryfirstplot   +  
+                    theme_stata()
+myveryfirstplot1 </code></pre>
+<pre><code>## Warning: Removed 104 row(s) containing missing values (geom_path).
+
+## Warning: Removed 104 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<ul>
+<li>Themes based on old Excel one</li>
+</ul>
+<pre class="r"><code>myveryfirstplot1  &lt;- myveryfirstplot   +  
+                    theme_excel()
+myveryfirstplot1 </code></pre>
+<pre><code>## Warning: Removed 104 row(s) containing missing values (geom_path).
+
+## Warning: Removed 104 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="/post/quick-tips-for-visualising-data_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+</div>
+<div id="using-chart" class="section level1">
+<h1>Using Chart</h1>
+<p>To use the chart in reports, presentations, etc. There are several options.</p>
+<ul>
+<li><p>Copy and Paste: You can simply click on the chart, copy it and paste it into the document you want to use it in, such as MS Word or Powerpoint. You could also take a screenshot but would get</p></li>
+<li><p>Export Chart: You can save it out as a separate file.</p></li>
+<li><p>Embbed directly within a word or powerpoint file, by knitting your code notebook using different output.</p></li>
+</ul>
+<p>You can learn more using <a href="https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html">Slow ggploting here</a></p>
+</div>
+
+    </div>
+      
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/dataviz">dataviz</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/unhcr">UNHCR</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/edouard-legoupil">Edouard-Legoupil</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+    
+ 
+  <script>
+  $(document).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
+  });
+  </script>
+  
+  <script>
+    window.initializeCodeFolding = function(show) {
+
+  
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  
+  var currentIndex = 1;
+
+  
+  var rCodeBlocks = $('');
+  rCodeBlocks.each(function() {
+
+    
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+
+  </script>
+  
+
+
+  </footer>
+  
+
+<div class="related-articles">
+<h3>Related articles</h3>
+<ul>
+	<li>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a>
+          </h3>
+          
+          <time class="published" datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+          March 19, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+          </h3>
+          
+          <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+          February 23, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	  <ul>
+      <article class="mini-post">
+        <header>
+          <h3>
+            <a href="/post/deprivation/">A practical implementation of deprivation model: index of protection risks</a>
+          </h3>
+          
+          <time class="published" datetime='2020-01-23 00:00:00 &#43;0000 UTC'>
+          January 23, 2020</time>
+        </header>
+        
+
+      </article>
+  	</ul>
+	
+	</li>	
+</ul>
+</div>
+
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-humanitarian-user-group-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/conjoint-analysis/"
+                class="button big previous">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a></li>
+    
+
+    
+        <li><a href="/post/geosampling/"
+                class="button big next">Using Gridded Population Data for Household Survey Sampling</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/images/avatar.png" alt="HumanitaRian useR Group" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>~ Science is 'show me' - not 'trust me' ~</p>
+      </header>
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/anonymisation/">Anonymisation: Intrusion scenario and risk threshold</a>
+              </h3>
+              
+              <time class="published" datetime='2020-06-25 00:00:00 &#43;0000 UTC'>
+              June 25, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/">Post</a>
+              </h3>
+              
+              <time class="published" datetime='2020-06-25 00:00:00 &#43;0000 UTC'>
+              June 25, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/tidysampling/">Working with Survey Samples in the Tidyverse</a>
+              </h3>
+              
+              <time class="published" datetime='2020-05-29 00:00:00 &#43;0000 UTC'>
+              May 29, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/geosampling/">Using Gridded Population Data for Household Survey Sampling</a>
+              </h3>
+              
+              <time class="published" datetime='2020-04-14 00:00:00 &#43;0000 UTC'>
+              April 14, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/quick-tips-for-visualising-data/">Quick tips for visualising data (with R)</a>
+              </h3>
+              
+              <time class="published" datetime='2020-04-02 00:00:00 &#43;0000 UTC'>
+              April 2, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/conjoint-analysis/">Conjoint analysis: modeling judgement to calibrate vulnerability scoring</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-19 00:00:00 &#43;0000 UTC'>
+              March 19, 2020</time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/analytic-hierachy-process/">Using Analytic Hierarchy Process to weight vulnerability scorecard</a>
+              </h3>
+              
+              <time class="published" datetime='2020-02-23 00:00:00 &#43;0000 UTC'>
+              February 23, 2020</time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">See more</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+
+  
+  
+    <section id="mini-bio">
+      <h3>about</h3>
+      <p>The humanitarian data analysis professional community shall work towards using a common and open language to build interoperable and transparent analysis standards for joint needs assessments and to obtain maximum value for any data collected.</p>
+      <a href="/about" class="button">learn more</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+    
+    
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+    
+
+    
+      
+        
+      
+    
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+      
+          
+    
+      <script src="/js/collapse.js"></script>
+      <script src="/js/dropdown.js"></script>
+      <script src="/js/transition.js"></script>
+    
+    
+  </body>
+</html>
+

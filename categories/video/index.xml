@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+---
+layout: null
+---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Video on HumanitaRian useR Group</title>
@@ -8,24 +10,13 @@
     <language>en-us</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/video/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     <item>
-      <title>How to make the most of our data?</title>
-      <link>/post/make-most-of-data/</link>
+      <title>Video</title>
+      <link>/categories/video/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/make-most-of-data/</guid>
-      <description> An excellent video on how to build a data science culture within an organisation 
-AirBnB particpated to the recent R user conference in NYC in May 2017.
-The video posted here and this blog post presents 3 important principles:
- Develop packages to mainstream analysis workflow.
- Promote education &amp;amp; contributions within the organisation
- Ensure reproducibility.
-  </description>
+      <guid>/categories/video/</guid>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

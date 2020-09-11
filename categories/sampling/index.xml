@@ -1,0 +1,22 @@
+---
+layout: null
+---
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sampling on HumanitaRian useR Group</title>
+    <link>/categories/sampling/</link>
+    <description>Recent content in Sampling on HumanitaRian useR Group</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Fri, 29 May 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Sampling</title>
+      <link>/categories/sampling/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/sampling/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
